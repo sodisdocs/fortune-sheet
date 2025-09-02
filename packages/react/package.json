@@ -10,6 +10,8 @@
   "repository": "https://github.com/ruilisi/fortune-sheet",
   "license": "MIT",
   "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
     "tsc": "tsc"
   },
   "dependencies": {
