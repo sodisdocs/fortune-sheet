@@ -1,7 +1,7 @@
 import {
   locale,
   handleCopy,
-  handlePasteByClick,
+  handlePaste,
   deleteRowCol,
   insertRowCol,
   removeActiveImage,
@@ -16,6 +16,7 @@ import {
   api,
   isAllowEdit,
   jfrefreshgrid,
+  selectionCache,
 } from "@fortune-sheet/core";
 import _ from "lodash";
 import React, { useContext, useRef, useCallback, useLayoutEffect } from "react";
@@ -66,24 +67,131 @@ const ContextMenu: React.FC = () => {
           <Menu
             key={name}
             onClick={async () => {
-              let clipboardText = "";
-              const sessionClipboardText =
-                sessionStorage.getItem("localClipboard") || "";
-
+              console.log("1. Клик по кнопке Вставить");
               try {
-                clipboardText = await navigator.clipboard.readText();
-              } catch (err) {
-                console.warn(
-                  "Clipboard access blocked. Attempting to use sessionStorage fallback."
+                // Получаем данные из буфера обмена
+                let htmlData = "";
+                let plainData = "";
+
+                try {
+                  console.log("2. Пытаемся прочитать буфер обмена...");
+                  const clipboardItems = await navigator.clipboard.read();
+                  console.log("3. Получены clipboardItems:", clipboardItems);
+
+                  // Используем Promise.all вместо цикла for-of
+                  const results = await Promise.all(
+                    clipboardItems.map(async (item) => {
+                      console.log("4. Обрабатываем item, types:", item.types);
+                      const data: { html?: string; plain?: string } = {};
+                      if (item.types.includes("text/html")) {
+                        console.log("5. Найден text/html");
+                        const htmlBlob = await item.getType("text/html");
+                        data.html = await htmlBlob.text();
+                        console.log(
+                          "6. HTML данные (первые 200 символов):",
+                          data.html.substring(0, 200)
+                        );
+                      }
+                      if (item.types.includes("text/plain")) {
+                        console.log("7. Найден text/plain");
+                        const plainBlob = await item.getType("text/plain");
+                        data.plain = await plainBlob.text();
+                        console.log(
+                          "8. Plain данные (первые 200 символов):",
+                          data.plain.substring(0, 200)
+                        );
+                      }
+                      return data;
+                    })
+                  );
+
+                  console.log("9. Результаты обработки:", results);
+
+                  // Берём первый результат с данными
+                  const firstResult = results.find((r) => r.html || r.plain);
+                  if (firstResult) {
+                    htmlData = firstResult.html || "";
+                    plainData = firstResult.plain || "";
+                    console.log("10. Финальные данные:", {
+                      htmlLength: htmlData.length,
+                      plainLength: plainData.length,
+                    });
+                  } else {
+                    console.log("10. Нет данных в результатах");
+                  }
+                } catch (err) {
+                  console.warn(
+                    "11. clipboard.read() не поддерживается, используем readText:",
+                    err
+                  );
+                  plainData = await navigator.clipboard.readText();
+                  console.log(
+                    "12. Plain text через readText:",
+                    plainData.substring(0, 200)
+                  );
+                }
+
+                console.log("13. Создаём синтетическое ClipboardEvent");
+                // Создаём синтетическое ClipboardEvent как при Ctrl+V
+                const dataTransfer = new DataTransfer();
+                if (htmlData) {
+                  dataTransfer.setData("text/html", htmlData);
+                  console.log("14. Установлен text/html в DataTransfer");
+                }
+                dataTransfer.setData("text/plain", plainData || htmlData);
+                console.log("15. Установлен text/plain в DataTransfer");
+
+                const syntheticEvent = new ClipboardEvent("paste", {
+                  clipboardData: dataTransfer,
+                  bubbles: true,
+                  cancelable: true,
+                });
+
+                console.log(
+                  "16. Создано синтетическое событие:",
+                  syntheticEvent
                 );
+                console.log("17. clipboardData:", syntheticEvent.clipboardData);
+                console.log(
+                  "18. HTML из события:",
+                  syntheticEvent.clipboardData?.getData("text/html")
+                );
+                console.log(
+                  "19. Plain из события:",
+                  syntheticEvent.clipboardData?.getData("text/plain")
+                );
+
+                // Вызываем обработчик paste напрямую через handlePaste
+                console.log("20. Вызываем setContext");
+                setContext((draftCtx) => {
+                  console.log("21. Внутри setContext, вызываем handlePaste");
+                  console.log(
+                    "21a. Устанавливаем selectionCache.isPasteAction = true"
+                  );
+                  selectionCache.isPasteAction = true;
+                  try {
+                    handlePaste(draftCtx, syntheticEvent);
+                    console.log("22. handlePaste выполнен успешно");
+                  } catch (err: any) {
+                    console.error("23. Ошибка при вызове handlePaste:", err);
+                    console.error("24. Stack trace:", err.stack);
+                  } finally {
+                    console.log(
+                      "24a. Сбрасываем selectionCache.isPasteAction = false"
+                    );
+                    selectionCache.isPasteAction = false;
+                  }
+                  draftCtx.contextMenu = {};
+                  console.log("25. Контекстное меню закрыто");
+                });
+                console.log("26. setContext завершён");
+              } catch (err) {
+                console.error("27. Общая ошибка при обработке вставки:", err);
+                console.error("28. Stack trace:", (err as Error).stack);
+                setContext((draftCtx) => {
+                  draftCtx.contextMenu = {};
+                });
               }
-
-              const finalText = clipboardText || sessionClipboardText;
-
-              setContext((draftCtx) => {
-                handlePasteByClick(draftCtx, finalText);
-                draftCtx.contextMenu = {};
-              });
             }}
           >
             {rightclick.paste}
