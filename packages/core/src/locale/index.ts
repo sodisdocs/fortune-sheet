@@ -1,17 +1,22 @@
 import en from "./en";
-// import zh from "./zh";
+import zh from "./zh";
 // import es from "./es";
 // import hi from "./hi";
 import ru from "./ru";
 // import zh_tw from "./zh_tw";
 import { Context } from "..";
 
-const localeObj: Record<string, typeof en> = {
+const localeObj: Record<string, typeof zh> = {
+  // @ts-ignore
   en,
   // zh,
+  // @ts-ignore
   // es,
+  // @ts-ignore
   // "zh-TW": zh_tw,
+  // @ts-ignore
   // hi,
+  // @ts-ignore
   ru,
 };
 

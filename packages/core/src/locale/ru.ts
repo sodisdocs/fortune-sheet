@@ -1,25 +1,25 @@
 export default {
   generalDialog: {
     partiallyError:
-      "Невозможно выполнить эту операцию с частично объединенными ячейками",
+      "Невозможно выполнить эту операцию над частично объединенными ячейками",
     readOnlyError:
       "Невозможно выполнить эту операцию в режиме только для чтения",
     dataNullError:
-      "Невозможно выполнить эту операцию с несуществующими данными",
-    noSeletionError: "Операция выделения еще не выполнена",
-    cannotSelectMultiple: "Невозможно выбрать несколько выделений",
+      "Невозможно выполнить эту операцию с данными, которые не существуют",
+    noSeletionError: "Операция по отбору еще не выполнена",
+    cannotSelectMultiple: "Невозможно выбрать несколько вариантов",
   },
   functionlist: [
     {
-      n: "SUMIF",
+      n: "СУММЕСЛИ",
       t: 0,
-      d: "Returns a conditional sum across a range.",
-      a: "A conditional sum across a range.",
+      d: "Возвращает сумму значений в диапазоне, удовлетворяющих заданному условию.",
+      a: "Сумма значений в диапазоне по условию.",
       m: [2, 3],
       p: [
         {
           name: "range",
-          detail: "The range which is tested against `criterion`.",
+          detail: "Диапазон, который проверяется по критерию.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -27,7 +27,7 @@ export default {
         },
         {
           name: "criterion",
-          detail: "The pattern or test to apply to `range`.",
+          detail: "Шаблон или условие, применяемое к диапазону.",
           example: '">20"',
           require: "m",
           repeat: "n",
@@ -35,7 +35,7 @@ export default {
         },
         {
           name: "sum_range",
-          detail: "The range to be summed, if different from `range`.",
+          detail: "Диапазон для суммирования, если отличается от `range`.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -46,13 +46,13 @@ export default {
     {
       n: "TAN",
       t: 0,
-      d: "Returns the tangent of an angle provided in radians.",
-      a: "Tangent of an angle provided in radians.",
+      d: "Возвращает тангенс угла, заданного в радианах.",
+      a: "Тангенс угла в радианах.",
       m: [1, 1],
       p: [
         {
           name: "angle",
-          detail: "The angle to find the tangent of, in radians.",
+          detail: "Угол в радианах, для которого вычисляется тангенс.",
           example: "45*PI()/180",
           require: "m",
           repeat: "n",
@@ -63,13 +63,14 @@ export default {
     {
       n: "TANH",
       t: 0,
-      d: "Returns the hyperbolic tangent of any real number.",
-      a: "Hyperbolic tangent of any real number.",
+      d: "Возвращает гиперболический тангенс любого действительного числа.",
+      a: "Гиперболический тангенс любого действительного числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "Any real value to calculate the hyperbolic tangent of.",
+          detail:
+            "Любое действительное значение, для которого вычисляется гиперболический тангенс.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -80,14 +81,14 @@ export default {
     {
       n: "CEILING",
       t: 0,
-      d: "Rounds a number up to the nearest integer multiple of specified significance `factor`.",
-      a: "Rounds number up to nearest multiple of a factor.",
+      d: "Округляет число вверх до ближайшего целого, кратного указанному значению `factor`.",
+      a: "Округление числа вверх до ближайшего кратного.",
       m: [2, 2],
       p: [
         {
           name: "value",
           detail:
-            "The value to round up to the nearest integer multiple of `factor`.",
+            "Значение, которое округляется вверх до ближайшего целого, кратного `factor`.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -95,7 +96,7 @@ export default {
         },
         {
           name: "factor",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "Число, до кратного которому округляется `value`.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -106,13 +107,13 @@ export default {
     {
       n: "ATAN",
       t: 0,
-      d: "Returns the inverse tangent of a value, in radians.",
-      a: "Inverse tangent of a value, in radians.",
+      d: "Возвращает арктангенс значения в радианах.",
+      a: "Арктангенс значения в радианах.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value for which to calculate the inverse tangent.",
+          detail: "Значение, для которого вычисляется арктангенс.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -123,14 +124,14 @@ export default {
     {
       n: "ASINH",
       t: 0,
-      d: "Returns the inverse hyperbolic sine of a number.",
-      a: "Inverse hyperbolic sine of a number.",
+      d: "Возвращает обратный гиперболический синус числа.",
+      a: "Обратный гиперболический синус числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The value for which to calculate the inverse hyperbolic sine.",
+            "Значение, для которого вычисляется обратный гиперболический синус.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -141,13 +142,13 @@ export default {
     {
       n: "ABS",
       t: 0,
-      d: "Returns the absolute value of a number.",
-      a: "Absolute value of a number.",
+      d: "Возвращает абсолютное значение числа.",
+      a: "Абсолютное значение числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The number of which to return the absolute value.",
+          detail: "Число, для которого возвращается абсолютное значение.",
           example: "-2",
           require: "m",
           repeat: "n",
@@ -158,14 +159,14 @@ export default {
     {
       n: "ACOS",
       t: 0,
-      d: "Returns the inverse cosine of a value, in radians.",
-      a: "Inverse cosine of a value, in radians.",
+      d: "Возвращает арккосинус значения в радианах.",
+      a: "Арккосинус значения в радианах.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The value for which to calculate the inverse cosine. Must be between `-1` and `1`, inclusive.",
+            "Значение, для которого вычисляется арккосинус. Должно быть в диапазоне от `-1` до `1` включительно.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -176,14 +177,14 @@ export default {
     {
       n: "ACOSH",
       t: 0,
-      d: "Returns the inverse hyperbolic cosine of a number.",
-      a: "Inverse hyperbolic cosine of a number.",
+      d: "Возвращает обратный гиперболический косинус числа.",
+      a: "Обратный гиперболический косинус числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The value for which to calculate the inverse hyperbolic cosine. Must be greater than or equal to `1`.",
+            "Значение, для которого вычисляется обратный гиперболический косинус. Должно быть больше или равно `1`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -192,15 +193,15 @@ export default {
       ],
     },
     {
-      n: "MULTINOMIAL",
+      n: "ПОЛИНОМ",
       t: 0,
-      d: "Returns the factorial of the sum of values divided by the product of the values' factorials.",
-      a: "Multinomial distribution function.",
+      d: "Возвращает факториал суммы значений, делённый на произведение факториалов этих значений.",
+      a: "Мультиномиальная функция распределения.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range to consider.",
+          detail: "Первое значение или диапазон для рассмотрения.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -208,7 +209,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to consider.",
+          detail: "Дополнительные значения или диапазоны для рассмотрения.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -219,14 +220,14 @@ export default {
     {
       n: "ATANH",
       t: 0,
-      d: "Returns the inverse hyperbolic tangent of a number.",
-      a: "Inverse hyperbolic tangent of a number.",
+      d: "Возвращает обратный гиперболический тангенс числа.",
+      a: "Обратный гиперболический тангенс числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The value for which to calculate the inverse hyperbolic tangent. Must be between -1 and 1, exclusive.",
+            "Значение, для которого вычисляется обратный гиперболический тангенс. Должно быть в диапазоне от -1 до 1 (исключительно).",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -237,14 +238,14 @@ export default {
     {
       n: "ATAN2",
       t: 0,
-      d: "Returns the angle between the x-axis and a line segment from the origin (0,0) to specified coordinate pair (`x`,`y`), in radians.",
-      a: "Arctangent of a value.",
+      d: "Возвращает угол между осью X и отрезком от начала координат (0,0) до заданной пары координат (`x`,`y`) в радианах.",
+      a: "Арктангенс значения.",
       m: [2, 2],
       p: [
         {
           name: "x",
           detail:
-            "The x coordinate of the endpoint of the line segment for which to calculate the angle from the x-axis.",
+            "Координата X конечной точки отрезка, для которой вычисляется угол относительно оси X.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -253,7 +254,7 @@ export default {
         {
           name: "y",
           detail:
-            "The y coordinate of the endpoint of the line segment for which to calculate the angle from the x-axis.",
+            "Координата Y конечной точки отрезка, для которой вычисляется угол относительно оси X.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -264,14 +265,14 @@ export default {
     {
       n: "COUNTBLANK",
       t: 1,
-      d: "Returns the number of empty values in a list of values and ranges.",
-      a: "Number of empty values.",
+      d: "Возвращает количество пустых значений в списке значений и диапазонов.",
+      a: "Количество пустых значений.",
       m: [1, 1],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range in which to count the number of blanks.",
+            "Первое значение или диапазон, в котором подсчитывается количество пустых ячеек.",
           example: "A2:C100",
           require: "m",
           repeat: "n",
@@ -282,13 +283,14 @@ export default {
     {
       n: "COSH",
       t: 0,
-      d: "Returns the hyperbolic cosine of any real number.",
-      a: "Hyperbolic cosine of any real number.",
+      d: "Возвращает гиперболический косинус любого действительного числа.",
+      a: "Гиперболический косинус любого действительного числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "Any real value to calculate the hyperbolic cosine of.",
+          detail:
+            "Любое действительное значение, для которого вычисляется гиперболический косинус.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -299,13 +301,13 @@ export default {
     {
       n: "INT",
       t: 0,
-      d: "Rounds a number down to the nearest integer that is less than or equal to it.",
-      a: "Rounds number down to nearest integer.",
+      d: "Округляет число вниз до ближайшего целого, меньшего или равного ему.",
+      a: "Округление числа вниз до ближайшего целого.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to round down to the nearest integer.",
+          detail: "Значение, которое округляется вниз до ближайшего целого.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -314,15 +316,15 @@ export default {
       ],
     },
     {
-      n: "ISEVEN",
+      n: "ЕЧЁТН",
       t: 0,
-      d: "Checks whether the provided value is even.",
-      a: "Whether the provided value is even.",
+      d: "Проверяет, является ли предоставленное значение чётным.",
+      a: "Является ли предоставленное значение чётным.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be verified as even.",
+          detail: "Значение, которое проверяется на чётность.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -331,15 +333,15 @@ export default {
       ],
     },
     {
-      n: "ISODD",
+      n: "ЕНЕЧЁТ",
       t: 0,
-      d: "Checks whether the provided value is odd.",
-      a: "Whether the provided value is odd.",
+      d: "Проверяет, является ли предоставленное значение нечётным.",
+      a: "Является ли предоставленное значение нечётным.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be verified as odd.",
+          detail: "Значение, которое проверяется на нечётность.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -348,16 +350,16 @@ export default {
       ],
     },
     {
-      n: "LCM",
+      n: "НОК",
       t: 0,
-      d: "Returns the least common multiple of one or more integers.",
-      a: "Least common multiple of one or more integers.",
+      d: "Возвращает наименьшее общее кратное одного или нескольких целых чисел.",
+      a: "Наименьшее общее кратное одного или нескольких целых чисел.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range whose factors to consider in a calculation to find the least common multiple.",
+            "Первое значение или диапазон, факторы которого учитываются при вычислении наименьшего общего кратного.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -366,7 +368,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges whose factors to consider to find the least common multiple.",
+            "Дополнительные значения или диапазоны, факторы которых учитываются при вычислении наименьшего общего кратного.",
           example: "3",
           require: "o",
           repeat: "y",
@@ -377,13 +379,13 @@ export default {
     {
       n: "LN",
       t: 0,
-      d: "Returns the logarithm of a number, base e (Euler's number).",
-      a: "The logarithm of a number, base e (euler's number).",
+      d: "Возвращает натуральный логарифм числа (по основанию e, числу Эйлера).",
+      a: "Натуральный логарифм числа (по основанию e).",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value for which to calculate the logarithm, base e.",
+          detail: "Значение, для которого вычисляется натуральный логарифм.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -394,13 +396,13 @@ export default {
     {
       n: "LOG",
       t: 0,
-      d: "Returns the logarithm of a number with respect to a base.",
-      a: "The logarithm of a number with respect to a base.",
+      d: "Возвращает логарифм числа по указанному основанию.",
+      a: "Логарифм числа по указанному основанию.",
       m: [1, 2],
       p: [
         {
           name: "value",
-          detail: "The value for which to calculate the logarithm.",
+          detail: "Значение, для которого вычисляется логарифм.",
           example: "128",
           require: "m",
           repeat: "n",
@@ -408,7 +410,7 @@ export default {
         },
         {
           name: "base",
-          detail: "The base to use for calculation of the logarithm.",
+          detail: "Основание для вычисления логарифма.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -419,13 +421,14 @@ export default {
     {
       n: "LOG10",
       t: 0,
-      d: "Returns the logarithm of a number, base 10.",
-      a: "The logarithm of a number, base 10.",
+      d: "Возвращает логарифм числа по основанию 10.",
+      a: "Логарифм числа по основанию 10.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value for which to calculate the logarithm, base 10.",
+          detail:
+            "Значение, для которого вычисляется логарифм по основанию 10.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -434,15 +437,15 @@ export default {
       ],
     },
     {
-      n: "MOD",
+      n: "ОСТАТ",
       t: 0,
-      d: "Returns the result of the modulo operator, the remainder after a division operation.",
-      a: "Modulo (remainder) operator.",
+      d: "Возвращает остаток от деления одного числа на другое.",
+      a: "Оператор модуля (остаток от деления).",
       m: [2, 2],
       p: [
         {
           name: "dividend",
-          detail: "The number to be divided to find the remainder.",
+          detail: "Число, которое делится для получения остатка.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -450,7 +453,7 @@ export default {
         },
         {
           name: "divisor",
-          detail: "The number to divide by.",
+          detail: "Число, на которое производится деление.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -459,16 +462,16 @@ export default {
       ],
     },
     {
-      n: "MROUND",
+      n: "ОКРУГЛТ",
       t: 0,
-      d: "Rounds one number to the nearest integer multiple of another.",
-      a: "Rounds a number to the nearest integer multiple.",
+      d: "Округляет одно число до ближайшего целого, кратного другому числу.",
+      a: "Округление числа до ближайшего целого кратного.",
       m: [2, 2],
       p: [
         {
           name: "value",
           detail:
-            "The number to round to the nearest integer multiple of another.",
+            "Число, которое округляется до ближайшего целого, кратного другому числу.",
           example: "21",
           require: "m",
           repeat: "n",
@@ -476,7 +479,7 @@ export default {
         },
         {
           name: "factor",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "Число, до кратного которого округляется `value`.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -485,15 +488,16 @@ export default {
       ],
     },
     {
-      n: "ODD",
+      n: "НЕЧЁТ",
       t: 0,
-      d: "Rounds a number up to the nearest odd integer.",
-      a: "Rounds a number up to the nearest odd integer.",
+      d: "Округляет число вверх до ближайшего нечётного целого.",
+      a: "Округление числа вверх до ближайшего нечётного целого.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to round to the next greatest odd number.",
+          detail:
+            "Значение, которое округляется до следующего нечётного числа.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -502,15 +506,15 @@ export default {
       ],
     },
     {
-      n: "SUMSQ",
+      n: "СУММКВ",
       t: 0,
-      d: "Returns the sum of the squares of a series of numbers and/or cells.",
-      a: "Sum of squares.",
+      d: "Возвращает сумму квадратов ряда чисел и/или ячеек.",
+      a: "Сумма квадратов.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first number or range whose squares to add together.",
+          detail: "Первое число или диапазон, квадраты которых суммируются.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -519,7 +523,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional numbers or ranges whose squares to add to the square(s) of `value1`.",
+            "Дополнительные числа или диапазоны, квадраты которых добавляются к квадрату `value1`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -530,13 +534,13 @@ export default {
     {
       n: "COMBIN",
       t: 0,
-      d: "Returns the number of ways to choose some number of objects from a pool of a given size of objects.",
-      a: "Number of combinations from a set of objects.",
+      d: "Возвращает количество способов выбрать заданное количество объектов из пула объектов определённого размера.",
+      a: "Количество комбинаций из набора объектов.",
       m: [2, 2],
       p: [
         {
           name: "n",
-          detail: "The size of the pool of objects to choose from.",
+          detail: "Размер пула объектов для выбора.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -544,7 +548,7 @@ export default {
         },
         {
           name: "k",
-          detail: "The number of objects to choose.",
+          detail: "Количество объектов для выбора.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -553,15 +557,15 @@ export default {
       ],
     },
     {
-      n: "SUM",
+      n: "СУММ",
       t: 0,
-      d: "Returns the sum of a series of numbers and/or cells.",
-      a: "Sum of a series of numbers and/or cells.",
+      d: "Возвращает сумму ряда чисел и/или ячеек.",
+      a: "Сумма ряда чисел и/или ячеек.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first number or range to add together.",
+          detail: "Первое число или диапазон для суммирования.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -569,7 +573,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional numbers or ranges to add to `value1`.",
+          detail:
+            "Дополнительные числа или диапазоны для добавления к `value1`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -578,15 +583,15 @@ export default {
       ],
     },
     {
-      n: "SUBTOTAL",
+      n: "ПРОМЕЖУТОЧНАЯСУММА",
       t: 0,
-      d: "Returns a subtotal for a vertical range of cells using a specified aggregation function.",
-      a: "Subtotal for a range using a specific function.",
+      d: "Возвращает промежуточный итог для вертикального диапазона ячеек с использованием указанной функции агрегации.",
+      a: "Промежуточный итог для диапазона с использованием определённой функции.",
       m: [2, 256],
       p: [
         {
           name: "function_code",
-          detail: "The function to use in subtotal aggregation.",
+          detail: "Код функции для использования в промежуточной агрегации.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -594,7 +599,8 @@ export default {
         },
         {
           name: "range1",
-          detail: "The first range over which to calculate a subtotal.",
+          detail:
+            "Первый диапазон, для которого вычисляется промежуточный итог.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -602,7 +608,8 @@ export default {
         },
         {
           name: "range2",
-          detail: "Additional ranges over which to calculate subtotals.",
+          detail:
+            "Дополнительные диапазоны, для которых вычисляются промежуточные итоги.",
           example: "B2:B8",
           require: "o",
           repeat: "y",
@@ -613,14 +620,14 @@ export default {
     {
       n: "ASIN",
       t: 0,
-      d: "Returns the inverse sine of a value, in radians.",
-      a: "Inverse sine of a value, in radians.",
+      d: "Возвращает арксинус значения в радианах.",
+      a: "Арксинус значения в радианах.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The value for which to calculate the inverse sine. Must be between `-1` and `1`, inclusive.",
+            "Значение, для которого вычисляется арксинус. Должно быть в диапазоне от `-1` до `1` включительно.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -629,15 +636,15 @@ export default {
       ],
     },
     {
-      n: "COUNTIF",
+      n: "СЧЁТЕСЛИ",
       t: 1,
-      d: "Returns a conditional count across a range.",
-      a: "A conditional count across a range.",
+      d: "Возвращает условное количество значений в диапазоне.",
+      a: "Условное количество значений в диапазоне.",
       m: [2, 2],
       p: [
         {
           name: "range",
-          detail: "The range that is tested against `criterion`.",
+          detail: "Диапазон, который проверяется по критерию.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -645,7 +652,7 @@ export default {
         },
         {
           name: "criterion",
-          detail: "The pattern or test to apply to `range`.",
+          detail: "Шаблон или условие, применяемое к диапазону.",
           example: '">20"',
           require: "m",
           repeat: "n",
@@ -654,15 +661,15 @@ export default {
       ],
     },
     {
-      n: "RADIANS",
+      n: "РАДИАНАХ",
       t: 0,
-      d: "Converts an angle value in degrees to radians.",
-      a: "Converts an angle value in degrees to radians.",
+      d: "Преобразует угол из градусов в радианы.",
+      a: "Преобразует угол из градусов в радианы.",
       m: [1, 1],
       p: [
         {
           name: "angle",
-          detail: "The angle to convert from degrees to radians.",
+          detail: "Угол для преобразования из градусов в радианы.",
           example: "180",
           require: "m",
           repeat: "n",
@@ -673,21 +680,21 @@ export default {
     {
       n: "RAND",
       t: 0,
-      d: "Returns a random number between 0 inclusive and 1 exclusive.",
-      a: "A random number between 0 inclusive and 1 exclusive.",
+      d: "Возвращает случайное число от 0 (включительно) до 1 (исключительно).",
+      a: "Случайное число от 0 (включительно) до 1 (исключительно).",
       m: [0, 0],
       p: [],
     },
     {
       n: "COUNTUNIQUE",
       t: 0,
-      d: "Counts the number of unique values in a list of specified values and ranges.",
-      a: "Counts number of unique values in a range.",
+      d: "Подсчитывает количество уникальных значений в списке указанных значений и диапазонов.",
+      a: "Количество уникальных значений в диапазоне.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range to consider for uniqueness.",
+          detail: "Первое значение или диапазон для учёта уникальности.",
           example: "A1:C100",
           require: "m",
           repeat: "n",
@@ -695,7 +702,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to consider for uniqueness.",
+          detail:
+            "Дополнительные значения или диапазоны для учёта уникальности.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -704,15 +712,15 @@ export default {
       ],
     },
     {
-      n: "DEGREES",
+      n: "ГРАДУСОВ",
       t: 0,
-      d: "Converts an angle value in radians to degrees.",
-      a: "Converts an angle value in radians to degrees.",
+      d: "Преобразует угол из радиан в градусы.",
+      a: "Преобразует угол из радиан в градусы.",
       m: [1, 1],
       p: [
         {
           name: "angle",
-          detail: "The angle to convert from radians to degrees.",
+          detail: "Угол для преобразования из радиан в градусы.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -721,16 +729,16 @@ export default {
       ],
     },
     {
-      n: "ERFC",
+      n: "ДФОШ",
       t: 9,
-      d: "Returns the complementary Gauss error function of a value.",
-      a: "Complementary gauss error function of a value.",
+      d: "Возвращает дополнительную функцию ошибок Гаусса для заданного значения.",
+      a: "Дополнительная функция ошибок Гаусса для значения.",
       m: [1, 1],
       p: [
         {
           name: "z",
           detail:
-            "The number for which to calculate the complementary Gauss error function.",
+            "Число, для которого вычисляется дополнительная функция ошибок Гаусса.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -739,15 +747,15 @@ export default {
       ],
     },
     {
-      n: "EVEN",
+      n: "ЧЁТН",
       t: 0,
-      d: "Rounds a number up to the nearest even integer.",
-      a: "Rounds a number up to the nearest even integer.",
+      d: "Округляет число вверх до ближайшего чётного целого.",
+      a: "Округление числа вверх до ближайшего чётного целого.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to round to the next greatest even number.",
+          detail: "Значение, которое округляется до следующего чётного числа.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -758,13 +766,13 @@ export default {
     {
       n: "EXP",
       t: 0,
-      d: "Returns Euler's number, e (~2.718) raised to a power.",
-      a: "Euler's number, e (~2.718) raised to a power.",
+      d: "Возвращает число Эйлера, e (~2.718), возведённое в указанную степень.",
+      a: "Число Эйлера, e (~2.718), в указанной степени.",
       m: [1, 1],
       p: [
         {
           name: "exponent",
-          detail: "The exponent to raise e to.",
+          detail: "Степень, в которую возводится число e.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -773,16 +781,16 @@ export default {
       ],
     },
     {
-      n: "FACT",
+      n: "ФАКТР",
       t: 0,
-      d: "Returns the factorial of a number.",
-      a: "Factorial of a number.",
+      d: "Возвращает факториал числа.",
+      a: "Факториал числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The number or reference to a number whose factorial will be calculated and returned.",
+            "Число или ссылка на число, факториал которого будет вычислен и возвращён.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -791,16 +799,16 @@ export default {
       ],
     },
     {
-      n: "FACTDOUBLE",
+      n: "ДВФАКТР",
       t: 0,
-      d: 'Returns the "double factorial" of a number.',
-      a: '"double factorial" of a number.',
+      d: 'Возвращает "двойной факториал" числа.',
+      a: "Двойной факториал числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The number or reference to a number whose double factorial will be calculated and returned.",
+            "Число или ссылка на число, двойной факториал которого будет вычислен и возвращён.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -809,24 +817,24 @@ export default {
       ],
     },
     {
-      n: "PI",
+      n: "ПИ",
       t: 0,
-      d: "Returns the value of Pi to 14 decimal places.",
-      a: "The number pi.",
+      d: "Возвращает значение числа Пи с точностью до 14 знаков после запятой.",
+      a: "Число Пи.",
       m: [0, 0],
       p: [],
     },
     {
       n: "FLOOR",
       t: 0,
-      d: "Rounds a number down to the nearest integer multiple of specified significance `factor`.",
-      a: "Rounds number down to nearest multiple of a factor.",
+      d: "Округляет число вниз до ближайшего целого, кратного указанному значению `factor`.",
+      a: "Округление числа вниз до ближайшего кратного.",
       m: [2, 2],
       p: [
         {
           name: "value",
           detail:
-            "The value to round down to the nearest integer multiple of `factor`.",
+            "Значение, которое округляется вниз до ближайшего целого, кратного `factor`.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -834,7 +842,7 @@ export default {
         },
         {
           name: "factor",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "Число, до кратного которого округляется `value`.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -843,16 +851,16 @@ export default {
       ],
     },
     {
-      n: "GCD",
+      n: "НОД",
       t: 0,
-      d: "Returns the greatest common divisor of one or more integers.",
-      a: "Greatest common divisor of one or more integers.",
+      d: "Возвращает наибольший общий делитель одного или нескольких целых чисел.",
+      a: "Наибольший общий делитель одного или нескольких целых чисел.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range whose factors to consider in a calculation to find the greatest common divisor.",
+            "Первое значение или диапазон, факторы которого учитываются при вычислении наибольшего общего делителя.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -861,7 +869,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges whose factors to consider to find the greatest common divisor.",
+            "Дополнительные значения или диапазоны, факторы которых учитываются при вычислении наибольшего общего делителя.",
           example: "96",
           require: "o",
           repeat: "y",
@@ -870,15 +878,15 @@ export default {
       ],
     },
     {
-      n: "RANDBETWEEN",
+      n: "СЛУЧМЕЖДУ",
       t: 0,
-      d: "Returns a uniformly random integer between two values, inclusive.",
-      a: "Random integer between two values, inclusive.",
+      d: "Возвращает случайное целое число между двумя заданными значениями, включая их.",
+      a: "Случайное целое число между двумя значениями, включая их.",
       m: [2, 2],
       p: [
         {
           name: "low",
-          detail: "The low end of the random range.",
+          detail: "Нижняя граница случайного диапазона.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -886,7 +894,7 @@ export default {
         },
         {
           name: "high",
-          detail: "The high end of the random range.",
+          detail: "Верхняя граница случайного диапазона.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -895,41 +903,16 @@ export default {
       ],
     },
     {
-      n: "ROUND",
+      n: "ОКРУГЛ",
       t: 0,
-      d: "Rounds a number to a certain number of decimal places according to standard rules.",
-      a: "Rounds a number according to standard rules.",
-      m: [2, 2],
-      p: [
-        {
-          name: "value",
-          detail: "The value to round to `places` number of places.",
-          example: "99.44",
-          require: "m",
-          repeat: "n",
-          type: "rangenumber",
-        },
-        {
-          name: "places",
-          detail: "The number of decimal places to which to round.",
-          example: "1",
-          require: "m",
-          repeat: "n",
-          type: "rangenumber",
-        },
-      ],
-    },
-    {
-      n: "ROUNDDOWN",
-      t: 0,
-      d: "Rounds a number to a certain number of decimal places, always rounding down to the next valid increment.",
-      a: "Rounds down a number.",
+      d: "Округляет число до указанного количества знаков после запятой по стандартным правилам.",
+      a: "Округление числа по стандартным правилам.",
       m: [2, 2],
       p: [
         {
           name: "value",
           detail:
-            "The value to round to `places` number of places, always rounding down.",
+            "Значение, которое округляется до указанного количества знаков после запятой.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -937,7 +920,7 @@ export default {
         },
         {
           name: "places",
-          detail: "The number of decimal places to which to round.",
+          detail: "Количество знаков после запятой для округления.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -946,16 +929,16 @@ export default {
       ],
     },
     {
-      n: "ROUNDUP",
+      n: "ОКРУГЛВНИЗ",
       t: 0,
-      d: "Rounds a number to a certain number of decimal places, always rounding up to the next valid increment.",
-      a: "Rounds up a number.",
+      d: "Округляет число до указанного количества знаков после запятой, всегда округляя вниз до следующего допустимого приращения.",
+      a: "Округление числа вниз.",
       m: [2, 2],
       p: [
         {
           name: "value",
           detail:
-            "The value to round to `places` number of places, always rounding up.",
+            "Значение, которое округляется до указанного количества знаков после запятой, всегда округляя вниз.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -963,7 +946,7 @@ export default {
         },
         {
           name: "places",
-          detail: "The number of decimal places to which to round.",
+          detail: "Количество знаков после запятой для округления.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -972,16 +955,42 @@ export default {
       ],
     },
     {
-      n: "SERIESSUM",
+      n: "ОКРУГЛВВЕРХ",
       t: 0,
-      d: "Given parameters `x`, `n`, `m`, and `a`, returns the power series sum a",
-      a: "Sum of a power series.",
+      d: "Округляет число до указанного количества знаков после запятой, всегда округляя вверх до следующего допустимого приращения.",
+      a: "Округление числа вверх.",
+      m: [2, 2],
+      p: [
+        {
+          name: "value",
+          detail:
+            "Значение, которое округляется до указанного количества знаков после запятой, всегда округляя вверх.",
+          example: "99.44",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "places",
+          detail: "Количество знаков после запятой для округления.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "РЯД.СУММ",
+      t: 0,
+      d: "Возвращает сумму степенного ряда для заданных параметров `x`, `n`, `m` и `a`.",
+      a: "Сумма степенного ряда.",
       m: [4, 4],
       p: [
         {
           name: "x",
           detail:
-            "The input to the power series. Varies depending on the type of approximation, may be angle, exponent, or some other value.",
+            "Входное значение для степенного ряда. Зависит от типа аппроксимации, может быть углом, степенью или другим значением.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -990,7 +999,7 @@ export default {
         {
           name: "n",
           detail:
-            "The initial power to which to raise `x` in the power series.",
+            "Начальная степень, в которую возводится `x` в степенном ряде.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -998,7 +1007,7 @@ export default {
         },
         {
           name: "m",
-          detail: "The additive increment by which to increase `x`.",
+          detail: "Приращение, на которое увеличивается степень `x`.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1007,7 +1016,7 @@ export default {
         {
           name: "a",
           detail:
-            "The array or range containing the coefficients of the power series.",
+            "Массив или диапазон, содержащий коэффициенты степенного ряда.",
           example: "{FACT(0)",
           require: "m",
           repeat: "n",
@@ -1018,13 +1027,13 @@ export default {
     {
       n: "SIGN",
       t: 0,
-      d: "Given an input number, returns `-1` if it is negative, `1` if positive, and `0` if it is zero.",
-      a: "Sign of a provided number (+/-/0).",
+      d: "Возвращает `-1`, если число отрицательное, `1`, если положительное, и `0`, если равно нулю.",
+      a: "Знак предоставленного числа (+/-/0).",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value whose sign will be evaluated.",
+          detail: "Значение, знак которого будет определён.",
           example: "-42",
           require: "m",
           repeat: "n",
@@ -1035,13 +1044,13 @@ export default {
     {
       n: "SIN",
       t: 0,
-      d: "Returns the sine of an angle provided in radians.",
-      a: "Sine of an angle provided in radians.",
+      d: "Возвращает синус угла, заданного в радианах.",
+      a: "Синус угла, заданного в радианах.",
       m: [1, 1],
       p: [
         {
           name: "angle",
-          detail: "The angle to find the sine of, in radians.",
+          detail: "Угол в радианах, для которого вычисляется синус.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1052,13 +1061,14 @@ export default {
     {
       n: "SINH",
       t: 0,
-      d: "Returns the hyperbolic sine of any real number.",
-      a: "Hyperbolic sine of any real number.",
+      d: "Возвращает гиперболический синус любого действительного числа.",
+      a: "Гиперболический синус любого действительного числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "Any real value to calculate the hyperbolic sine of.",
+          detail:
+            "Любое действительное значение, для которого вычисляется гиперболический синус.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1067,33 +1077,16 @@ export default {
       ],
     },
     {
-      n: "SQRT",
+      n: "КОРЕНЬ",
       t: 0,
-      d: "Returns the positive square root of a positive number.",
-      a: "Positive square root of a positive number.",
-      m: [1, 1],
-      p: [
-        {
-          name: "value",
-          detail: "The number for which to calculate the positive square root.",
-          example: "9",
-          require: "m",
-          repeat: "n",
-          type: "rangenumber",
-        },
-      ],
-    },
-    {
-      n: "SQRTPI",
-      t: 0,
-      d: "Returns the positive square root of the product of Pi and the given positive number.",
-      a: "Square root of the product of pi and number.",
+      d: "Возвращает положительный квадратный корень положительного числа.",
+      a: "Положительный квадратный корень положительного числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The number which will be multiplied by Pi and have the product's square root returned",
+            "Число, для которого вычисляется положительный квадратный корень.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1102,16 +1095,34 @@ export default {
       ],
     },
     {
-      n: "GAMMALN",
+      n: "КОРЕНЬПИ",
+      t: 0,
+      d: "Возвращает положительный квадратный корень произведения числа Пи и заданного положительного числа.",
+      a: "Квадратный корень произведения Пи и числа.",
+      m: [1, 1],
+      p: [
+        {
+          name: "value",
+          detail:
+            "Число, которое умножается на Пи, и возвращается квадратный корень их произведения.",
+          example: "9",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "ГАММАНЛОГ",
       t: 1,
-      d: "Returns the logarithm of a specified Gamma function, base e (Euler's number).",
-      a: "Logarithm of gamma function.",
+      d: "Возвращает натуральный логарифм указанной гамма-функции (по основанию e, числу Эйлера).",
+      a: "Логарифм гамма-функции.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The input to the Gamma function. The natural logarithm of Gamma(`value`) will be returned.",
+            "Входное значение для гамма-функции. Возвращается натуральный логарифм гамма-функции от `value`.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1122,13 +1133,13 @@ export default {
     {
       n: "COS",
       t: 0,
-      d: "Returns the cosine of an angle provided in radians.",
-      a: "Cosine of an angle provided in radians.",
+      d: "Возвращает косинус угла, заданного в радианах.",
+      a: "Косинус угла, заданного в радианах.",
       m: [1, 1],
       p: [
         {
           name: "angle",
-          detail: "The angle to find the cosine of, in radians.",
+          detail: "Угол в радианах, для которого вычисляется косинус.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1137,15 +1148,15 @@ export default {
       ],
     },
     {
-      n: "TRUNC",
+      n: "ОТБР",
       t: 0,
-      d: "Truncates a number to a certain number of significant digits by omitting less significant digits.",
-      a: "Truncates a number.",
+      d: "Усекает число до определённого количества значащих цифр, отбрасывая менее значимые цифры.",
+      a: "Усечение числа.",
       m: [1, 2],
       p: [
         {
           name: "value",
-          detail: "The value to be truncated.",
+          detail: "Значение, которое усекается.",
           example: "3.141592654",
           require: "m",
           repeat: "n",
@@ -1154,7 +1165,7 @@ export default {
         {
           name: "places",
           detail:
-            "The number of significant digits to the right of the decimal point to retain.",
+            "Количество значащих цифр после запятой, которые сохраняются.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -1163,15 +1174,15 @@ export default {
       ],
     },
     {
-      n: "QUOTIENT",
+      n: "ЧАСТНОЕ",
       t: 0,
-      d: "Returns one number divided by another.",
-      a: "One number divided by another.",
+      d: "Возвращает результат деления одного числа на другое.",
+      a: "Результат деления одного числа на другое.",
       m: [2, 2],
       p: [
         {
           name: "dividend",
-          detail: "The number to be divided.",
+          detail: "Число, которое делится.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1179,7 +1190,7 @@ export default {
         },
         {
           name: "divisor",
-          detail: "The number to divide by.",
+          detail: "Число, на которое производится деление.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1188,15 +1199,15 @@ export default {
       ],
     },
     {
-      n: "POWER",
+      n: "СТЕПЕНЬ",
       t: 0,
-      d: "Returns a number raised to a power.",
-      a: "A number raised to a power.",
+      d: "Возвращает число, возведённое в указанную степень.",
+      a: "Число, возведённое в степень.",
       m: [2, 2],
       p: [
         {
           name: "base",
-          detail: "The number to raise to the `exponent` power.",
+          detail: "Число, которое возводится в степень `exponent`.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1204,7 +1215,7 @@ export default {
         },
         {
           name: "exponent",
-          detail: "The exponent to raise `base` to.",
+          detail: "Степень, в которую возводится `base`.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -1213,15 +1224,15 @@ export default {
       ],
     },
     {
-      n: "SUMIFS",
+      n: "СУММЕСЛИМН",
       t: 0,
-      d: "Returns the sum of a range depending on multiple criteria.",
-      a: "Sums a range depending on multiple criteria.",
+      d: "Возвращает сумму значений в диапазоне в зависимости от нескольких критериев.",
+      a: "Суммирует диапазон в зависимости от нескольких критериев.",
       m: [3, 257],
       p: [
         {
           name: "sum_range",
-          detail: "The range to sum.",
+          detail: "Диапазон для суммирования.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1229,24 +1240,24 @@ export default {
         },
         {
           name: "criteria_range1",
-          detail: "The range to check against criterion1.",
-          example: " B1:B10",
+          detail: "Диапазон для проверки по критерию criterion1.",
+          example: "B1:B10",
           require: "m",
           repeat: "n",
           type: "range",
         },
         {
           name: "criterion1",
-          detail: "The pattern or test to apply to criteria_range1.",
-          example: ' ">20"',
+          detail: "Шаблон или условие, применяемое к criteria_range1.",
+          example: '">20"',
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
           name: "criteria_range2",
-          detail: "Additional ranges to check.",
-          example: " C1:C10",
+          detail: "Дополнительные диапазоны для проверки.",
+          example: "C1:C10",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -1254,15 +1265,15 @@ export default {
       ],
     },
     {
-      n: "COUNTIFS",
+      n: "СЧЁТЕСЛИМН",
       t: 1,
-      d: "Returns the count of a range depending on multiple criteria.",
-      a: "Count values depending on multiple criteria.",
+      d: "Возвращает количество значений в диапазоне в зависимости от нескольких критериев.",
+      a: "Подсчёт значений в зависимости от нескольких критериев.",
       m: [2, 256],
       p: [
         {
           name: "criteria_range1",
-          detail: "The range to check against `criterion1`.",
+          detail: "Диапазон для проверки по критерию criterion1.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1270,16 +1281,16 @@ export default {
         },
         {
           name: "criterion1",
-          detail: "The pattern or test to apply to `criteria_range1`.",
-          example: ' ">20"',
+          detail: "Шаблон или условие, применяемое к criteria_range1.",
+          example: '">20"',
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
           name: "criteria_range2",
-          detail: "Additional ranges to check.",
-          example: " B1:B10",
+          detail: "Дополнительные диапазоны для проверки.",
+          example: "B1:B10",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -1287,15 +1298,15 @@ export default {
       ],
     },
     {
-      n: "PRODUCT",
+      n: "ПРОИЗВЕД",
       t: 0,
-      d: "Returns the result of multiplying a series of numbers together.",
-      a: "Result of multiplying a series of numbers together.",
+      d: "Возвращает результат перемножения ряда чисел.",
+      a: "Результат перемножения ряда чисел.",
       m: [1, 255],
       p: [
         {
           name: "factor1",
-          detail: "The first number or range to calculate for the product.",
+          detail: "Первое число или диапазон для вычисления произведения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1303,7 +1314,8 @@ export default {
         },
         {
           name: "factor2",
-          detail: "More numbers or ranges to calculate for the product.",
+          detail:
+            "Дополнительные числа или диапазоны для вычисления произведения.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1312,15 +1324,15 @@ export default {
       ],
     },
     {
-      n: "HARMEAN",
+      n: "СРГАРМ",
       t: 1,
-      d: "Calculates the harmonic mean of a dataset.",
-      a: "The harmonic mean of a dataset.",
+      d: "Вычисляет гармоническое среднее набора данных.",
+      a: "Гармоническое среднее набора данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the population.",
+          detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1328,7 +1340,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the population.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1337,15 +1350,15 @@ export default {
       ],
     },
     {
-      n: "HYPGEOMDIST",
+      n: "ГИПЕРГЕОМ.РАСП",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of successes in a certain number of tries given a population of a certain size containing a certain number of successes, without replacement of draws.",
-      a: "Hypergeometric distribution probability.",
+      d: "Вычисляет вероятность получения определённого количества успехов за заданное количество попыток в популяции определённого размера, содержащей определённое количество успехов, без возвращения выбранных элементов.",
+      a: "Вероятность гипергеометрического распределения.",
       m: [5, 5],
       p: [
         {
           name: "num_successes",
-          detail: "The desired number of successes.",
+          detail: "Желаемое количество успехов.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1353,7 +1366,7 @@ export default {
         },
         {
           name: "num_draws",
-          detail: "The number of permitted draws.",
+          detail: "Количество допустимых попыток.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -1361,7 +1374,7 @@ export default {
         },
         {
           name: "successes_in_pop",
-          detail: "The total number of successes in the population.",
+          detail: "Общее количество успехов в популяции.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -1369,7 +1382,7 @@ export default {
         },
         {
           name: "pop_size",
-          detail: "The total size of the population",
+          detail: "Общий размер популяции.",
           example: "40",
           require: "m",
           repeat: "n",
@@ -1378,7 +1391,7 @@ export default {
         {
           name: "cumulative",
           detail:
-            "Determine the logical value of the function form. \n\nIf cumulative is TRUE(), HYPGEOM.DIST returns the cumulative distribution function;\n\nif FALSE(), it returns the probability density function.",
+            "Определяет форму функции. \n\nЕсли cumulative равно TRUE(), функция HYPGEOMDIST возвращает кумулятивную функцию распределения;\n\nесли FALSE(), возвращается функция плотности вероятности.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1389,14 +1402,14 @@ export default {
     {
       n: "INTERCEPT",
       t: 1,
-      d: "Calculates the y-value at which the line resulting from linear regression of a dataset will intersect the y-axis (x=0).",
-      a: "Y-intercept of line derived via linear regression.",
+      d: "Вычисляет значение y, в котором линия, полученная в результате линейной регрессии набора данных, пересекает ось y (при x=0).",
+      a: "Пересечение с осью y линии, полученной линейной регрессией.",
       m: [2, 2],
       p: [
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1405,7 +1418,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1414,15 +1427,15 @@ export default {
       ],
     },
     {
-      n: "KURT",
+      n: "ЭКСЦЕСС",
       t: 1,
-      d: 'Calculates the kurtosis of a dataset, which describes the shape, and in particular the "peakedness" of that dataset.',
-      a: "Kurtosis of a dataset.",
+      d: 'Вычисляет эксцесс набора данных, который описывает форму и, в частности, "выпуклость" этого набора.',
+      a: "Эксцесс набора данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the dataset.",
+          detail: "Первое значение или диапазон набора данных.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1430,7 +1443,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the dataset.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в набор данных.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1439,15 +1453,16 @@ export default {
       ],
     },
     {
-      n: "LARGE",
+      n: "НАИБОЛЬШИЙ",
       t: 1,
-      d: "Returns the nth largest element from a data set, where n is user-defined.",
-      a: "Nth largest element from a data set.",
+      d: "Возвращает n-й по величине элемент из набора данных, где n задаётся пользователем.",
+      a: "N-й по величине элемент из набора данных.",
       m: [2, 2],
       p: [
         {
           name: "data",
-          detail: "Array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -1455,7 +1470,8 @@ export default {
         },
         {
           name: "n",
-          detail: "The rank from largest to smallest of the element to return.",
+          detail:
+            "Ранг от наибольшего к наименьшему для возвращаемого элемента.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1464,15 +1480,15 @@ export default {
       ],
     },
     {
-      n: "STDEVA",
+      n: "СТАНДОТКЛОН.В",
       t: 1,
-      d: "Calculates the standard deviation based on a sample, setting text to the value `0`.",
-      a: "Standard deviation of sample (text as 0).",
+      d: "Вычисляет стандартное отклонение на основе выборки, присваивая текстовым значениям значение `0`.",
+      a: "Стандартное отклонение выборки (текст как 0).",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the sample.",
+          detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1480,7 +1496,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1489,15 +1506,15 @@ export default {
       ],
     },
     {
-      n: "STDEVP",
+      n: "СТАНДОТКЛОН.Г",
       t: 1,
-      d: "Calculates the standard deviation based on an entire population.",
-      a: "Standard deviation of an entire population.",
+      d: "Вычисляет стандартное отклонение на основе всей популяции.",
+      a: "Стандартное отклонение всей популяции.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the population.",
+          detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1505,7 +1522,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the population.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1514,15 +1532,15 @@ export default {
       ],
     },
     {
-      n: "GEOMEAN",
+      n: "СРГЕОМ",
       t: 1,
-      d: "Calculates the geometric mean of a dataset.",
-      a: "The geometric mean of a dataset.",
+      d: "Вычисляет геометрическое среднее набора данных.",
+      a: "Геометрическое среднее набора данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the population.",
+          detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1530,7 +1548,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the population.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1539,15 +1558,15 @@ export default {
       ],
     },
     {
-      n: "RANK_EQ",
+      n: "РАНГ.РВ",
       t: 1,
-      d: "Returns the rank of a specified value in a dataset. If there is more than one entry of the same value in the dataset, the top rank of the entries will be returned.",
-      a: "Top rank of a specified value in a dataset.",
+      d: "Возвращает ранг указанного значения в наборе данных. Если в наборе данных есть несколько одинаковых значений, возвращается наивысший ранг этих значений.",
+      a: "Наивысший ранг указанного значения в наборе данных.",
       m: [2, 3],
       p: [
         {
           name: "value",
-          detail: "The value whose rank will be determined.",
+          detail: "Значение, ранг которого будет определён.",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1555,7 +1574,8 @@ export default {
         },
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1564,7 +1584,7 @@ export default {
         {
           name: "is_ascending",
           detail:
-            "Whether to consider the values in `data` in descending or ascending order. If omitted, the default is descending (FALSE).",
+            "Определяет, рассматривать ли значения в `data` в порядке убывания или возрастания. Если не указано, по умолчанию используется убывание (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1573,15 +1593,15 @@ export default {
       ],
     },
     {
-      n: "RANK_AVG",
+      n: "РАНГ.СР",
       t: 1,
-      d: "Returns the rank of a specified value in a dataset. If there is more than one entry of the same value in the dataset, the average rank of the entries will be returned.",
-      a: "Average rank of a specified value in a dataset.",
+      d: "Возвращает ранг указанного значения в наборе данных. Если в наборе данных есть несколько одинаковых значений, возвращается средний ранг этих значений.",
+      a: "Средний ранг указанного значения в наборе данных.",
       m: [2, 3],
       p: [
         {
           name: "value",
-          detail: "The value whose rank will be determined.",
+          detail: "Значение, ранг которого будет определён.",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1589,7 +1609,8 @@ export default {
         },
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1598,7 +1619,7 @@ export default {
         {
           name: "is_ascending",
           detail:
-            "Whether to consider the values in `data` in descending or ascending order. If omitted, the default is descending (FALSE).",
+            "Определяет, рассматривать ли значения в `data` в порядке убывания или возрастания. Если не указано, по умолчанию используется убывание (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1609,13 +1630,14 @@ export default {
     {
       n: "PERCENTRANK_EXC",
       t: 1,
-      d: "Returns the percentage rank (percentile) from 0 to 1 exclusive of a specified value in a dataset.",
-      a: "Percentage rank (percentile) from 0 to 1 exclusive.",
+      d: "Возвращает процентный ранг (процентиль) от 0 до 1 (исключительно) для указанного значения в наборе данных.",
+      a: "Процентный ранг (процентиль) от 0 до 1 (исключительно).",
       m: [2, 3],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1623,7 +1645,7 @@ export default {
         },
         {
           name: "value",
-          detail: "The value whose percentage rank will be determined.",
+          detail: "Значение, процентный ранг которого будет определён.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1632,7 +1654,7 @@ export default {
         {
           name: "significant_digits",
           detail:
-            "The number of significant figures to use in the calculation. Default is 3.",
+            "Количество значащих цифр для использования в вычислении. По умолчанию равно 3.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1643,13 +1665,14 @@ export default {
     {
       n: "PERCENTRANK_INC",
       t: 1,
-      d: "Returns the percentage rank (percentile) from 0 to 1 inclusive of a specified value in a dataset.",
-      a: "Percentage rank (percentile) from 0 to 1 inclusive.",
+      d: "Возвращает процентный ранг (процентиль) от 0 до 1 включительно для указанного значения в наборе данных.",
+      a: "Процентный ранг (процентиль) от 0 до 1 включительно.",
       m: [2, 3],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1657,8 +1680,8 @@ export default {
         },
         {
           name: "value",
-          detail: "The value whose percentage rank will be determined.",
-          example: " A2",
+          detail: "Значение, процентный ранг которого будет определён.",
+          example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber",
@@ -1666,7 +1689,7 @@ export default {
         {
           name: "significant_digits",
           detail:
-            "The number of significant figures to use in the calculation. Default is 3.",
+            "Количество значащих цифр для использования в вычислении. По умолчанию равно 3.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1677,13 +1700,13 @@ export default {
     {
       n: "FORECAST",
       t: 1,
-      d: "Calculates the expected y-value for a specified x based on a linear regression of a dataset.",
-      a: "Expected y-value based of linear regression.",
+      d: "Вычисляет ожидаемое значение y для заданного x на основе линейной регрессии набора данных.",
+      a: "Ожидаемое значение y на основе линейной регрессии.",
       m: [3, 3],
       p: [
         {
           name: "x",
-          detail: "The value on the x-axis to forecast.",
+          detail: "Значение на оси x для прогнозирования.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -1692,7 +1715,7 @@ export default {
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1701,7 +1724,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1710,16 +1733,16 @@ export default {
       ],
     },
     {
-      n: "FISHERINV",
+      n: "ФИШЕРОБР",
       t: 1,
-      d: "Returns the inverse Fisher transformation of a specified value.",
-      a: "Inverse fisher transformation of a specified value.",
+      d: "Возвращает обратное преобразование Фишера для указанного значения.",
+      a: "Обратное преобразование Фишера для указанного значения.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The value for which to calculate the inverse Fisher transformation.",
+            "Значение, для которого вычисляется обратное преобразование Фишера.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1728,15 +1751,15 @@ export default {
       ],
     },
     {
-      n: "FISHER",
+      n: "ФИШЕР",
       t: 1,
-      d: "Returns the Fisher transformation of a specified value.",
-      a: "Fisher transformation of a specified value.",
+      d: "Возвращает преобразование Фишера для указанного значения.",
+      a: "Преобразование Фишера для указанного значения.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value for which to calculate the Fisher transformation.",
+          detail: "Значение, для которого вычисляется преобразование Фишера.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1747,13 +1770,13 @@ export default {
     {
       n: "MODE_SNGL",
       t: 1,
-      d: "Returns the most commonly occurring value in a dataset.",
-      a: "Most commonly occurring value in a dataset.",
+      d: "Возвращает наиболее часто встречающееся значение в наборе данных.",
+      a: "Наиболее часто встречающееся значение в наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range to consider when calculating mode.",
+          detail: "Первое значение или диапазон для вычисления моды.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1761,8 +1784,7 @@ export default {
         },
         {
           name: "value2",
-          detail:
-            "Additional values or ranges to consider when calculating mode.",
+          detail: "Дополнительные значения или диапазоны для вычисления моды.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1771,15 +1793,15 @@ export default {
       ],
     },
     {
-      n: "WEIBULL_DIST",
+      n: "ВЕЙБУЛЛ",
       t: 1,
-      d: "Returns the value of the Weibull distribution function (or Weibull cumulative distribution function) for a specified shape and scale.",
-      a: "Weibull distribution function.",
+      d: "Возвращает значение функции распределения Вейбулла (или кумулятивной функции распределения Вейбулла) для указанных параметров формы и масштаба.",
+      a: "Функция распределения Вейбулла.",
       m: [4, 4],
       p: [
         {
           name: "x",
-          detail: "The input to the Weibull distribution function.",
+          detail: "Входное значение для функции распределения Вейбулла.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -1787,7 +1809,7 @@ export default {
         },
         {
           name: "shape",
-          detail: "The shape parameter of the Weibull distribution function.",
+          detail: "Параметр формы функции распределения Вейбулла.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1795,7 +1817,7 @@ export default {
         },
         {
           name: "scale",
-          detail: "The scale parameter of the Weibull distribution function.",
+          detail: "Параметр масштаба функции распределения Вейбулла.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -1803,7 +1825,8 @@ export default {
         },
         {
           name: "cumulative",
-          detail: "Whether to use the cumulative distribution function.",
+          detail:
+            "Определяет, использовать ли кумулятивную функцию распределения.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1814,13 +1837,13 @@ export default {
     {
       n: "COUNT",
       t: 1,
-      d: "Returns the number of numeric values in a dataset.",
-      a: "The number of numeric values in dataset.",
+      d: "Возвращает количество числовых значений в наборе данных.",
+      a: "Количество числовых значений в наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range to consider when counting.",
+          detail: "Первое значение или диапазон для подсчёта.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1828,7 +1851,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to consider when counting.",
+          detail: "Дополнительные значения или диапазоны для подсчёта.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1839,13 +1862,13 @@ export default {
     {
       n: "COUNTA",
       t: 1,
-      d: "Returns the number of values in a dataset.",
-      a: "The number of values in a dataset.",
+      d: "Возвращает количество значений в наборе данных.",
+      a: "Количество значений в наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range to consider when counting.",
+          detail: "Первое значение или диапазон для подсчёта.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1853,7 +1876,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to consider when counting.",
+          detail: "Дополнительные значения или диапазоны для подсчёта.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1862,15 +1885,15 @@ export default {
       ],
     },
     {
-      n: "AVEDEV",
+      n: "СРОТКЛ",
       t: 1,
-      d: "Calculates the average of the magnitudes of deviations of data from a dataset's mean.",
-      a: "Average magnitude of deviations from mean.",
+      d: "Вычисляет среднее значение абсолютных отклонений данных от среднего значения набора данных.",
+      a: "Среднее значение абсолютных отклонений от среднего.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the sample.",
+          detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1878,7 +1901,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1887,16 +1911,16 @@ export default {
       ],
     },
     {
-      n: "AVERAGE",
+      n: "СРЗНАЧ",
       t: 1,
-      d: "Returns the numerical average value in a dataset, ignoring text.",
-      a: "Numerical average value in a dataset, ignoring text.",
+      d: "Возвращает среднее арифметическое числовых значений в наборе данных, игнорируя текст.",
+      a: "Среднее арифметическое числовых значений в наборе данных, игнорируя текст.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range to consider when calculating the average value.",
+            "Первое значение или диапазон для вычисления среднего значения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1905,7 +1929,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges to consider when calculating the average value.",
+            "Дополнительные значения или диапазоны для вычисления среднего значения.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1914,16 +1938,16 @@ export default {
       ],
     },
     {
-      n: "AVERAGEA",
+      n: "СРЗНАЧА",
       t: 1,
-      d: "Returns the numerical average value in a dataset.",
-      a: "Numerical average value in a dataset.",
+      d: "Возвращает среднее арифметическое значений в наборе данных.",
+      a: "Среднее арифметическое значений в наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range to consider when calculating the average value.",
+            "Первое значение или диапазон для вычисления среднего значения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1932,7 +1956,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges to consider when calculating the average value.",
+            "Дополнительные значения или диапазоны для вычисления среднего значения.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1941,16 +1965,16 @@ export default {
       ],
     },
     {
-      n: "BINOM_DIST",
+      n: "БИНОМРАСП",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of successes (or a maximum number of successes) in a certain number of tries given a population of a certain size containing a certain number of successes, with replacement of draws.",
-      a: "Binomial distribution probability.",
+      d: "Вычисляет вероятность получения определённого количества успехов (или максимального количества успехов) за заданное количество попыток в популяции определённого размера, содержащей определённое количество успехов, с возвращением выбранных элементов.",
+      a: "Вероятность биномиального распределения.",
       m: [4, 4],
       p: [
         {
           name: "num_successes",
           detail:
-            "The number of successes for which to calculate the probability in `num_trials` trials.",
+            "Количество успехов, для которого вычисляется вероятность за `num_trials` попыток.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1958,7 +1982,7 @@ export default {
         },
         {
           name: "num_trials",
-          detail: "The number of independent trials.",
+          detail: "Количество независимых попыток.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -1966,7 +1990,7 @@ export default {
         },
         {
           name: "prob_success",
-          detail: "The probability of success in any given trial.",
+          detail: "Вероятность успеха в любой отдельной попытке.",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -1974,7 +1998,8 @@ export default {
         },
         {
           name: "cumulative",
-          detail: "Whether to use the binomial cumulative distribution.",
+          detail:
+            "Определяет, использовать ли кумулятивное биномиальное распределение.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -1983,15 +2008,15 @@ export default {
       ],
     },
     {
-      n: "BINOM_INV",
+      n: "БИНОМ.ОБР",
       t: 1,
-      d: "Calculates the smallest value for which the cumulative binomial distribution is greater than or equal to a specified criteria.",
-      a: "Inverse cumulative binomial distribution function.",
+      d: "Вычисляет наименьшее значение, для которого кумулятивное биномиальное распределение больше или равно указанному критерию.",
+      a: "Обратная функция кумулятивного биномиального распределения.",
       m: [3, 3],
       p: [
         {
           name: "num_trials",
-          detail: "The number of independent trials.",
+          detail: "Количество независимых попыток.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -1999,7 +2024,7 @@ export default {
         },
         {
           name: "prob_success",
-          detail: "The probability of success in any given trial.",
+          detail: "Вероятность успеха в любой отдельной попытке.",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2007,7 +2032,7 @@ export default {
         },
         {
           name: "target_prob",
-          detail: "The desired threshold probability.",
+          detail: "Целевая пороговая вероятность.",
           example: "0.8",
           require: "m",
           repeat: "n",
@@ -2016,16 +2041,16 @@ export default {
       ],
     },
     {
-      n: "CONFIDENCE_NORM",
+      n: "ДОВЕРИТ",
       t: 1,
-      d: "Calculates the width of half the confidence interval for a normal distribution.",
-      a: "Confidence interval for a normal distribution.",
+      d: "Вычисляет половину ширины доверительного интервала для нормального распределения.",
+      a: "Доверительный интервал для нормального распределения.",
       m: [3, 3],
       p: [
         {
           name: "alpha",
           detail:
-            "One minus the desired confidence level. E.g. `0.1` for `0.9`, or 90%, confidence.",
+            "Единица минус желаемый уровень доверия. Например, `0.1` для 90% доверия (`0.9`).",
           example: "0.05",
           require: "m",
           repeat: "n",
@@ -2033,7 +2058,7 @@ export default {
         },
         {
           name: "standard_deviation",
-          detail: "The standard deviation of the population.",
+          detail: "Стандартное отклонение популяции.",
           example: "1.6",
           require: "m",
           repeat: "n",
@@ -2041,7 +2066,7 @@ export default {
         },
         {
           name: "pop_size",
-          detail: "The size of the population.",
+          detail: "Размер популяции.",
           example: "250",
           require: "m",
           repeat: "n",
@@ -2052,14 +2077,14 @@ export default {
     {
       n: "CORREL",
       t: 1,
-      d: "Calculates r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Pearson Product-Moment Correlation Coefficient.",
+      d: "Вычисляет r, коэффициент корреляции Пирсона для набора данных.",
+      a: "Коэффициент корреляции Пирсона.",
       m: [2, 2],
       p: [
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2068,7 +2093,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2079,14 +2104,14 @@ export default {
     {
       n: "COVARIANCE_P",
       t: 1,
-      d: "Calculates the covariance of a dataset.",
-      a: "The covariance of a dataset.",
+      d: "Вычисляет ковариацию набора данных.",
+      a: "Ковариация набора данных.",
       m: [2, 2],
       p: [
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2095,7 +2120,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2106,14 +2131,14 @@ export default {
     {
       n: "COVARIANCE_S",
       t: 1,
-      d: "Calculates the sample covariance of a dataset.",
-      a: "The sample covariance of a dataset.",
+      d: "Вычисляет выборочную ковариацию набора данных.",
+      a: "Выборочная ковариация набора данных.",
       m: [2, 2],
       p: [
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2122,7 +2147,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2133,13 +2158,13 @@ export default {
     {
       n: "DEVSQ",
       t: 1,
-      d: "Calculates the sum of squares of deviations based on a sample.",
-      a: "The sum of squares of deviations based on a sample.",
+      d: "Вычисляет сумму квадратов отклонений на основе выборки.",
+      a: "Сумма квадратов отклонений на основе выборки.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the sample.",
+          detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2147,7 +2172,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2158,13 +2184,14 @@ export default {
     {
       n: "EXPON_DIST",
       t: 1,
-      d: "Returns the value of the exponential distribution function with a specified lambda at a specified value.",
-      a: "Exponential distribution function.",
+      d: "Возвращает значение функции экспоненциального распределения с заданным параметром лямбда для указанного значения.",
+      a: "Функция экспоненциального распределения.",
       m: [3, 3],
       p: [
         {
           name: "x",
-          detail: "The input to the exponential distribution function.",
+          detail:
+            "Входное значение для функции экспоненциального распределения.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2173,7 +2200,7 @@ export default {
         {
           name: "lambda",
           detail:
-            "The lambda to specify the exponential distribution function.",
+            "Параметр лямбда для функции экспоненциального распределения.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -2181,7 +2208,8 @@ export default {
         },
         {
           name: "cumulative",
-          detail: "Whether to use the exponential cumulative distribution.",
+          detail:
+            "Определяет, использовать ли кумулятивное экспоненциальное распределение.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2190,15 +2218,15 @@ export default {
       ],
     },
     {
-      n: "AVERAGEIF",
+      n: "СРЗАНЧЕСЛИ",
       t: 1,
-      d: "Returns the average of a range depending on criteria.",
-      a: "Average of values depending on criteria.",
+      d: "Возвращает среднее значение диапазона в зависимости от критерия.",
+      a: "Среднее значение в зависимости от критерия.",
       m: [2, 3],
       p: [
         {
           name: "criteria_range",
-          detail: "The range to check against `criterion`.",
+          detail: "Диапазон для проверки по критерию.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2206,7 +2234,7 @@ export default {
         },
         {
           name: "criterion",
-          detail: "The pattern or test to apply to `criteria_range`.",
+          detail: "Шаблон или условие, применяемое к `criteria_range`.",
           example: '">20"',
           require: "m",
           repeat: "n",
@@ -2215,7 +2243,7 @@ export default {
         {
           name: "average_range",
           detail:
-            "The range to average. If not included, `criteria_range` is used for the average instead.",
+            "Диапазон для вычисления среднего. Если не указан, используется `criteria_range`.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2224,15 +2252,15 @@ export default {
       ],
     },
     {
-      n: "AVERAGEIFS",
+      n: "СРЗНАЧЕСЛИМН",
       t: 1,
-      d: "Returns the average of a range depending on multiple criteria.",
-      a: "Average of values depending on multiple criteria.",
+      d: "Возвращает среднее значение диапазона в зависимости от нескольких критериев.",
+      a: "Среднее значение в зависимости от нескольких критериев.",
       m: [2, 255],
       p: [
         {
           name: "average_range",
-          detail: "The range to average.",
+          detail: "Диапазон для вычисления среднего.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2240,24 +2268,24 @@ export default {
         },
         {
           name: "criteria_range1",
-          detail: "The range to check against `criterion1`.",
-          example: " B1:B10",
+          detail: "Диапазон для проверки по критерию `criterion1`.",
+          example: "B1:B10",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
           name: "criterion1",
-          detail: "The pattern or test to apply to `criteria_range1`.",
-          example: ' ">20"',
+          detail: "Шаблон или условие, применяемое к `criteria_range1`.",
+          example: '">20"',
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
           name: "criteria_range2",
-          detail: "Additional ranges to check.",
-          example: " C1:C10",
+          detail: "Дополнительные диапазоны для проверки.",
+          example: "C1:C10",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -2267,13 +2295,13 @@ export default {
     {
       n: "PERMUT",
       t: 1,
-      d: "Returns the number of ways to choose some number of objects from a pool of a given size of objects, considering order.",
-      a: "Number of permutations from a number of objects.",
+      d: "Возвращает количество способов выбрать заданное количество объектов из пула объектов определённого размера с учётом порядка.",
+      a: "Количество перестановок из числа объектов.",
       m: [2, 2],
       p: [
         {
           name: "n",
-          detail: "The size of the pool of objects to choose from.",
+          detail: "Размер пула объектов для выбора.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2281,7 +2309,7 @@ export default {
         },
         {
           name: "k",
-          detail: "The number of objects to choose.",
+          detail: "Количество объектов для выбора.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2292,13 +2320,14 @@ export default {
     {
       n: "TRIMMEAN",
       t: 1,
-      d: "Calculates the mean of a dataset excluding some proportion of data from the high and low ends of the dataset.",
-      a: "Mean of a dataset excluding high/low ends.",
+      d: "Вычисляет среднее значение набора данных, исключая заданную долю данных с верхнего и нижнего концов набора.",
+      a: "Среднее значение набора данных, исключая верхние и нижние концы.",
       m: [2, 2],
       p: [
         {
           name: "data",
-          detail: "Array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2306,8 +2335,7 @@ export default {
         },
         {
           name: "exclude_proportion",
-          detail:
-            "The proportion of the dataset to exclude, from the extremities of the set.",
+          detail: "Доля набора данных, исключаемая с крайних значений набора.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2318,13 +2346,14 @@ export default {
     {
       n: "PERCENTILE_EXC",
       t: 1,
-      d: "Returns the value at a given percentile of a dataset exclusive of 0 and 1.",
-      a: "Value at a given percentile of a dataset exclusive of 0 and 1.",
+      d: "Возвращает значение для заданного процентиля набора данных, исключая 0 и 1.",
+      a: "Значение для заданного процентиля набора данных, исключая 0 и 1.",
       m: [2, 2],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2333,7 +2362,7 @@ export default {
         {
           name: "percentile",
           detail:
-            "The percentile, exclusive of 0 and 1, whose value within 'data' will be calculated and returned.",
+            "Процентиль, исключая 0 и 1, значение которого в `data` будет вычислено и возвращено.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2344,13 +2373,14 @@ export default {
     {
       n: "PERCENTILE_INC",
       t: 1,
-      d: "Returns the value at a given percentile of a dataset.",
-      a: "Value at a given percentile of a dataset.",
+      d: "Возвращает значение для заданного процентиля набора данных.",
+      a: "Значение для заданного процентиля набора данных.",
       m: [2, 2],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2359,7 +2389,7 @@ export default {
         {
           name: "percentile",
           detail:
-            "The percentile whose value within `data` will be calculated and returned.`",
+            "Процентиль, значение которого в `data` будет вычислено и возвращено.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2370,14 +2400,14 @@ export default {
     {
       n: "PEARSON",
       t: 1,
-      d: "Calculates r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Pearson Product-Moment Correlation Coefficient.",
+      d: "Вычисляет r, коэффициент корреляции Пирсона для набора данных.",
+      a: "Коэффициент корреляции Пирсона.",
       m: [2, 2],
       p: [
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2386,7 +2416,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2395,16 +2425,16 @@ export default {
       ],
     },
     {
-      n: "NORM_S_INV",
+      n: "NORM.S.INV",
       t: 1,
-      d: "Returns the value of the inverse standard normal distribution function for a specified value.",
-      a: "Inverse standard normal distribution function.",
+      d: "Возвращает значение обратной функции стандартного нормального распределения для указанного значения.",
+      a: "Обратная функция стандартного нормального распределения.",
       m: [1, 1],
       p: [
         {
           name: "x",
           detail:
-            "The input to the inverse standard normal distribution function.",
+            "Входное значение для обратной функции стандартного нормального распределения.",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2413,16 +2443,16 @@ export default {
       ],
     },
     {
-      n: "NORM_S_DIST",
+      n: "NORM.S.DIST",
       t: 1,
-      d: "Returns the value of the standard normal cumulative distribution function for a specified value.",
-      a: "Standard normal cumulative distribution function.",
+      d: "Возвращает значение функции стандартного нормального кумулятивного распределения для указанного значения.",
+      a: "Функция стандартного нормального кумулятивного распределения.",
       m: [2, 2],
       p: [
         {
           name: "x",
           detail:
-            "The input to the standard normal cumulative distribution function.",
+            "Входное значение для функции стандартного нормального кумулятивного распределения.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2431,7 +2461,7 @@ export default {
         {
           name: "cumulative",
           detail:
-            "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+            "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2440,15 +2470,16 @@ export default {
       ],
     },
     {
-      n: "NORM_INV",
+      n: "NORM.INV",
       t: 1,
-      d: "Returns the value of the inverse normal distribution function for a specified value, mean, and standard deviation.",
-      a: "Inverse normal distribution function.",
+      d: "Возвращает значение обратной функции нормального распределения для указанного значения, среднего и стандартного отклонения.",
+      a: "Обратная функция нормального распределения.",
       m: [3, 3],
       p: [
         {
           name: "x",
-          detail: "The input to the inverse normal distribution function.",
+          detail:
+            "Входное значение для обратной функции нормального распределения.",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2456,7 +2487,7 @@ export default {
         },
         {
           name: "mean",
-          detail: "The mean (mu) of the normal distribution function.",
+          detail: "Среднее значение (му) функции нормального распределения.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2465,7 +2496,7 @@ export default {
         {
           name: "standard_deviation",
           detail:
-            "The standard deviation (sigma) of the normal distribution function.",
+            "Стандартное отклонение (сигма) функции нормального распределения.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2474,15 +2505,15 @@ export default {
       ],
     },
     {
-      n: "NORM_DIST",
+      n: "NORM.DIST",
       t: 1,
-      d: "Returns the value of the normal distribution function (or normal cumulative distribution function) for a specified value, mean, and standard deviation.",
-      a: "Normal distribution function.",
+      d: "Возвращает значение функции нормального распределения (или кумулятивной функции нормального распределения) для указанного значения, среднего и стандартного отклонения.",
+      a: "Функция нормального распределения.",
       m: [4, 4],
       p: [
         {
           name: "x",
-          detail: "The input to the normal distribution function.",
+          detail: "Входное значение для функции нормального распределения.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2490,7 +2521,7 @@ export default {
         },
         {
           name: "mean",
-          detail: "The mean (mu) of the normal distribution function.",
+          detail: "Среднее значение (му) функции нормального распределения.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2499,7 +2530,7 @@ export default {
         {
           name: "standard_deviation",
           detail:
-            "The standard deviation (sigma) of the normal distribution function.",
+            "Стандартное отклонение (сигма) функции нормального распределения.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2508,7 +2539,7 @@ export default {
         {
           name: "cumulative",
           detail:
-            "Whether to use the normal cumulative distribution function rather than the distribution function.",
+            "Определяет, использовать ли кумулятивную функцию нормального распределения вместо функции распределения.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2519,13 +2550,13 @@ export default {
     {
       n: "NEGBINOM_DIST",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of failures before a certain number of successes given a probability of success in independent trials.",
-      a: "Negative binomial distribution probability.",
+      d: "Вычисляет вероятность получения определённого количества неудач перед заданным количеством успехов при заданной вероятности успеха в независимых испытаниях.",
+      a: "Вероятность отрицательного биномиального распределения.",
       m: [4, 4],
       p: [
         {
           name: "num_failures",
-          detail: "The number of failures to model.",
+          detail: "Количество неудач для моделирования.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2533,7 +2564,7 @@ export default {
         },
         {
           name: "num_successes",
-          detail: "The number of successes to model.",
+          detail: "Количество успехов для моделирования.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2541,7 +2572,7 @@ export default {
         },
         {
           name: "prob_success",
-          detail: "The probability of success in any given trial.",
+          detail: "Вероятность успеха в любом отдельном испытании.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2550,7 +2581,7 @@ export default {
         {
           name: "cumulative",
           detail:
-            "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+            "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2561,14 +2592,14 @@ export default {
     {
       n: "MINA",
       t: 1,
-      d: "Returns the minimum numeric value in a dataset.",
-      a: "Minimum numeric value in a dataset.",
+      d: "Возвращает минимальное числовое значение в наборе данных.",
+      a: "Минимальное числовое значение в наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range to consider when calculating the minimum value.",
+            "Первое значение или диапазон для вычисления минимального значения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2577,7 +2608,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges to consider when calculating the minimum value.",
+            "Дополнительные значения или диапазоны для вычисления минимального значения.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2588,14 +2619,14 @@ export default {
     {
       n: "MIN",
       t: 1,
-      d: "Returns the minimum value in a numeric dataset.",
-      a: "Minimum value in a numeric dataset.",
+      d: "Возвращает минимальное значение в числовом наборе данных.",
+      a: "Минимальное значение в числовом наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range to consider when calculating the minimum value.",
+            "Первое значение или диапазон для вычисления минимального значения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2604,7 +2635,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges to consider when calculating the minimum value.",
+            "Дополнительные значения или диапазоны для вычисления минимального значения.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2615,14 +2646,14 @@ export default {
     {
       n: "MEDIAN",
       t: 1,
-      d: "Returns the median value in a numeric dataset.",
-      a: "Median value in a numeric dataset.",
+      d: "Возвращает медианное значение в числовом наборе данных.",
+      a: "Медианное значение в числовом наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range to consider when calculating the median value.",
+            "Первое значение или диапазон для вычисления медианного значения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2631,7 +2662,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges to consider when calculating the median value.",
+            "Дополнительные значения или диапазоны для вычисления медианного значения.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2642,14 +2673,14 @@ export default {
     {
       n: "MAXA",
       t: 1,
-      d: "Returns the maximum numeric value in a dataset.",
-      a: "Maximum numeric value in a dataset.",
+      d: "Возвращает максимальное числовое значение в наборе данных.",
+      a: "Максимальное числовое значение в наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range to consider when calculating the maximum value.",
+            "Первое значение или диапазон для вычисления максимального значения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2658,7 +2689,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges to consider when calculating the maximum value.",
+            "Дополнительные значения или диапазоны для вычисления максимального значения.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2669,14 +2700,14 @@ export default {
     {
       n: "MAX",
       t: 1,
-      d: "Returns the maximum value in a numeric dataset.",
-      a: "Maximum value in a numeric dataset.",
+      d: "Возвращает максимальное значение в числовом наборе данных.",
+      a: "Максимальное значение в числовом наборе данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
           detail:
-            "The first value or range to consider when calculating the maximum value.",
+            "Первое значение или диапазон для вычисления максимального значения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2685,7 +2716,7 @@ export default {
         {
           name: "value2",
           detail:
-            "Additional values or ranges to consider when calculating the maximum value.",
+            "Дополнительные значения или диапазоны для вычисления максимального значения.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2696,14 +2727,14 @@ export default {
     {
       n: "LOGNORM_INV",
       t: 1,
-      d: "Returns the value of the inverse log-normal cumulative distribution with given mean and standard deviation at a specified value.",
-      a: "Inverse log-normal cumulative distribution function.",
+      d: "Возвращает значение обратной функции логнормального кумулятивного распределения с заданным средним и стандартным отклонением для указанного значения.",
+      a: "Обратная функция логнормального кумулятивного распределения.",
       m: [3, 3],
       p: [
         {
           name: "x",
           detail:
-            "The input to the inverse log-normal cumulative distribution function.",
+            "Входное значение для обратной функции логнормального кумулятивного распределения.",
           example: "0.4",
           require: "m",
           repeat: "n",
@@ -2712,7 +2743,7 @@ export default {
         {
           name: "mean",
           detail:
-            "The mean (mu) of the inverse log-normal cumulative distribution function.",
+            "Среднее значение (му) обратной функции логнормального кумулятивного распределения.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2721,7 +2752,7 @@ export default {
         {
           name: "standard_deviation",
           detail:
-            "The standard deviation (sigma) of the inverse log-normal cumulative distribution function.",
+            "Стандартное отклонение (сигма) обратной функции логнормального кумулятивного распределения.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -2732,14 +2763,14 @@ export default {
     {
       n: "LOGNORM_DIST",
       t: 1,
-      d: "Returns the value of the log-normal cumulative distribution with given mean and standard deviation at a specified value.",
-      a: "Log-normal cumulative distribution probability.",
+      d: "Возвращает значение логнормального кумулятивного распределения с заданным средним и стандартным отклонением для указанного значения.",
+      a: "Вероятность логнормального кумулятивного распределения.",
       m: [4, 4],
       p: [
         {
           name: "x",
           detail:
-            "The input to the log-normal cumulative distribution function.",
+            "Входное значение для функции логнормального кумулятивного распределения.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2748,7 +2779,7 @@ export default {
         {
           name: "mean",
           detail:
-            "The mean (mu) of the log-normal cumulative distribution function.",
+            "Среднее значение (му) функции логнормального кумулятивного распределения.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2757,7 +2788,7 @@ export default {
         {
           name: "standard_deviation",
           detail:
-            "The standard deviation (sigma) of the log-normal cumulative distribution function.",
+            "Стандартное отклонение (сигма) функции логнормального кумулятивного распределения.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -2766,7 +2797,7 @@ export default {
         {
           name: "cumulative",
           detail:
-            "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+            "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2777,13 +2808,14 @@ export default {
     {
       n: "Z_TEST",
       t: 1,
-      d: "Returns the one-tailed p-value of a Z-test with standard distribution.",
-      a: "One-tailed p-value of a z-test.",
+      d: "Возвращает одностороннее p-значение Z-теста с нормальным распределением.",
+      a: "Одностороннее p-значение Z-теста.",
       m: [2, 3],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2791,7 +2823,7 @@ export default {
         },
         {
           name: "value",
-          detail: "The test statistic to use in the Z-test.",
+          detail: "Тестовая статистика для использования в Z-тесте.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -2800,7 +2832,7 @@ export default {
         {
           name: "standard_deviation",
           detail:
-            "The standard deviation to assume for the Z-test. If this is not provided, the standard deviation of the data will be used.",
+            "Стандартное отклонение для Z-теста. Если не указано, используется стандартное отклонение данных.",
           example: "3",
           require: "o",
           repeat: "n",
@@ -2811,13 +2843,14 @@ export default {
     {
       n: "PROB",
       t: 1,
-      d: "Given a set of values and corresponding probabilities, calculates the probability that a value chosen at random falls between two limits.",
-      a: "Probability values lie in a range.",
+      d: "Вычисляет вероятность того, что случайно выбранное значение из набора значений и соответствующих вероятностей попадёт в заданный диапазон.",
+      a: "Вероятность попадания значений в диапазон.",
       m: [3, 4],
       p: [
         {
           name: "data",
-          detail: "Array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A3:A6",
           require: "m",
           repeat: "n",
@@ -2826,7 +2859,7 @@ export default {
         {
           name: "probabilities",
           detail:
-            "Array or range containing probabilities corresponding to `data`.",
+            "Массив или диапазон, содержащий вероятности, соответствующие `data`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2835,7 +2868,7 @@ export default {
         {
           name: "low_limit",
           detail:
-            "The lower bound on the value range for which to calculate the probability.",
+            "Нижняя граница диапазона значений для вычисления вероятности.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -2844,7 +2877,7 @@ export default {
         {
           name: "high_limit",
           detail:
-            "The upper bound on the value range for which to calculate the probability.",
+            "Верхняя граница диапазона значений для вычисления вероятности.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -2855,13 +2888,14 @@ export default {
     {
       n: "QUARTILE_EXC",
       t: 1,
-      d: "Returns a value nearest to a specified quartile of a dataset exclusive of 0 and 4.",
-      a: "Value nearest to a specific quartile of a dataset exclusive of 0 and 4.",
+      d: "Возвращает значение, ближайшее к заданному квартилю набора данных, исключая 0 и 4.",
+      a: "Значение, ближайшее к заданному квартилю набора данных, исключая 0 и 4.",
       m: [2, 2],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2869,7 +2903,7 @@ export default {
         },
         {
           name: "quartile_number",
-          detail: "Which quartile to return.",
+          detail: "Какой квартиль вернуть.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -2880,13 +2914,14 @@ export default {
     {
       n: "QUARTILE_INC",
       t: 1,
-      d: "Returns a value nearest to a specified quartile of a dataset.",
-      a: "Value nearest to a specific quartile of a dataset.",
+      d: "Возвращает значение, ближайшее к заданному квартилю набора данных.",
+      a: "Значение, ближайшее к заданному квартилю набора данных.",
       m: [2, 2],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2894,7 +2929,7 @@ export default {
         },
         {
           name: "quartile_number",
-          detail: "Which quartile value to return.",
+          detail: "Какой квартиль вернуть.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -2905,13 +2940,13 @@ export default {
     {
       n: "POISSON_DIST",
       t: 1,
-      d: "Returns the value of the Poisson distribution function (or Poisson cumulative distribution function) for a specified value and mean.",
-      a: "Poisson distribution function.",
+      d: "Возвращает значение функции распределения Пуассона (или кумулятивной функции распределения Пуассона) для указанного значения и среднего.",
+      a: "Функция распределения Пуассона.",
       m: [3, 3],
       p: [
         {
           name: "x",
-          detail: "The input to the Poisson distribution function.",
+          detail: "Входное значение для функции распределения Пуассона.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2919,7 +2954,7 @@ export default {
         },
         {
           name: "mean",
-          detail: "The mean (mu) of the Poisson distribution function.",
+          detail: "Среднее значение (му) функции распределения Пуассона.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2928,7 +2963,7 @@ export default {
         {
           name: "cumulative",
           detail:
-            "Whether to use the Poisson cumulative distribution function rather than the distribution function.",
+            "Определяет, использовать ли кумулятивную функцию распределения Пуассона вместо функции распределения.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2939,14 +2974,14 @@ export default {
     {
       n: "RSQ",
       t: 1,
-      d: "Calculates the square of r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Square of the correlation coefficient.",
+      d: "Вычисляет квадрат r, коэффициента корреляции Пирсона для набора данных.",
+      a: "Квадрат коэффициента корреляции.",
       m: [2, 2],
       p: [
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2955,7 +2990,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2966,13 +3001,13 @@ export default {
     {
       n: "T_DIST",
       t: 1,
-      d: "Calculates the left tail probability for a Student's t-distribution with a given input (x).",
-      a: "The left-tailed Student's t-distribution",
+      d: "Вычисляет вероятность левого хвоста для t-распределения Стьюдента с заданным входным значением (x).",
+      a: "Левостороннее t-распределение Стьюдента.",
       m: [3, 3],
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "Входное значение для функции t-распределения.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -2980,7 +3015,7 @@ export default {
         },
         {
           name: "degrees_freedom",
-          detail: "The number of degrees of freedom.",
+          detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -2989,7 +3024,7 @@ export default {
         {
           name: "cumulative",
           detail:
-            "If cumulative is TRUE, T.DIST returns the cumulative distribution function; if FALSE, it returns the probability density function.",
+            "Если TRUE(), возвращается кумулятивная функция распределения; если FALSE(), возвращается функция плотности вероятности.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3000,13 +3035,13 @@ export default {
     {
       n: "T_DIST_2T",
       t: 1,
-      d: "Calculates the probability for two tailed Student's t-distribution with a given input (x).",
-      a: "The two tailed Student's t-distribution",
+      d: "Вычисляет вероятность для двухстороннего t-распределения Стьюдента с заданным входным значением (x).",
+      a: "Двухстороннее t-распределение Стьюдента.",
       m: [2, 2],
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "Входное значение для функции t-распределения.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3014,7 +3049,7 @@ export default {
         },
         {
           name: "degrees_freedom",
-          detail: "The number of degrees of freedom.",
+          detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3025,13 +3060,13 @@ export default {
     {
       n: "T_DIST_RT",
       t: 1,
-      d: "Calculates the right tail probability for a Student's t-distribution with a given input (x).",
-      a: "The right-tailed Student's t-distribution",
+      d: "Вычисляет вероятность правого хвоста для t-распределения Стьюдента с заданным входным значением (x).",
+      a: "Правостороннее t-распределение Стьюдента.",
       m: [2, 2],
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "Входное значение для функции t-распределения.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3039,7 +3074,7 @@ export default {
         },
         {
           name: "degrees_freedom",
-          detail: "The number of degrees of freedom.",
+          detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3050,14 +3085,13 @@ export default {
     {
       n: "T_INV",
       t: 1,
-      d: "Calculates the negative inverse of the one-tailed TDIST function.",
-      a: "T.INV",
+      d: "Вычисляет обратное значение односторонней функции TDIST.",
+      a: "T_INV",
       m: [2, 2],
       p: [
         {
           name: "probability",
-          detail:
-            "The probability associated with the two-tailed t-distribution.",
+          detail: "Вероятность, связанная с двухсторонним t-распределением.",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3065,7 +3099,7 @@ export default {
         },
         {
           name: "degrees_freedom",
-          detail: "The number of degrees of freedom.",
+          detail: "Количество степеней свободы.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3076,14 +3110,13 @@ export default {
     {
       n: "T_INV_2T",
       t: 1,
-      d: "Calculates the inverse of the two-tailed TDIST function.",
-      a: "T.INV.2T",
+      d: "Вычисляет обратное значение двухсторонней функции TDIST.",
+      a: "T_INV_2T",
       m: [2, 2],
       p: [
         {
           name: "probability",
-          detail:
-            "The probability associated with the two-tailed t-distribution.",
+          detail: "Вероятность, связанная с двухсторонним t-распределением.",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3091,7 +3124,7 @@ export default {
         },
         {
           name: "degrees_freedom",
-          detail: "The number of degrees of freedom.",
+          detail: "Количество степеней свободы.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3102,14 +3135,13 @@ export default {
     {
       n: "T_TEST",
       t: 1,
-      d: "t-test. Returns the probability associated with Student's t-test. Determines whether two samples are likely to have come from the same two underlying populations that have the same mean.",
-      a: "Returns the probability associated with t-test.",
+      d: "t-тест. Возвращает вероятность, связанную с t-тестом Стьюдента. Определяет, вероятно ли, что две выборки происходят из двух базовых популяций с одинаковым средним.",
+      a: "Возвращает вероятность, связанную с t-тестом.",
       m: [4, 4],
       p: [
         {
           name: "range1",
-          detail:
-            "The first sample of data or group of cells to consider for the t-test.",
+          detail: "Первая выборка данных или группа ячеек для t-теста.",
           example: "A1:A4",
           require: "m",
           repeat: "n",
@@ -3117,8 +3149,7 @@ export default {
         },
         {
           name: "range2",
-          detail:
-            "The second sample of data or group of cells to consider for the t-test.",
+          detail: "Вторая выборка данных или группа ячеек для t-теста.",
           example: "B1:B4",
           require: "m",
           repeat: "n",
@@ -3126,7 +3157,7 @@ export default {
         },
         {
           name: "tails",
-          detail: "Specifies the number of distribution tails.",
+          detail: "Указывает количество хвостов распределения.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3134,7 +3165,7 @@ export default {
         },
         {
           name: "type",
-          detail: "Specifies the type of t-test.",
+          detail: "Указывает тип t-теста.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3145,14 +3176,14 @@ export default {
     {
       n: "F_DIST",
       t: 1,
-      d: "Calculates the left-tailed F probability distribution (degree of diversity) for two data sets with given input x. Alternately called Fisher-Snedecor distribution or Snedecor's F distribution.",
-      a: "F probability distribution (left-tailed).",
+      d: "Вычисляет левостороннее F-распределение (степень разнообразия) для двух наборов данных с заданным входным значением x. Также называется распределением Фишера-Снедекора или F-распределением Снедекора.",
+      a: "Левостороннее F-распределение.",
       m: [4, 4],
       p: [
         {
           name: "x",
           detail:
-            "The input to the F probability distribution function. The value at which to evaluate the function.",
+            "Входное значение для функции F-распределения. Значение, в котором оценивается функция.",
           example: "15.35",
           require: "m",
           repeat: "n",
@@ -3160,7 +3191,7 @@ export default {
         },
         {
           name: "degrees_freedom1",
-          detail: "The numerator of the number of degrees of freedom.",
+          detail: "Числитель количества степеней свободы.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -3168,7 +3199,7 @@ export default {
         },
         {
           name: "degrees_freedom2",
-          detail: "The denominator of the number of degrees of freedom.",
+          detail: "Знаменатель количества степеней свободы.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3176,7 +3207,7 @@ export default {
         },
         {
           name: "cumulative",
-          detail: "Logical value that determines the form of the function.",
+          detail: "Логическое значение, определяющее форму функции.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3187,14 +3218,14 @@ export default {
     {
       n: "F_DIST_RT",
       t: 1,
-      d: "Calculates the right-tailed F probability distribution (degree of diversity) for two data sets with given input x. Alternately called Fisher-Snedecor distribution or Snedecor's F distribution.",
-      a: "F probability distribution.",
+      d: "Вычисляет правостороннее F-распределение (степень разнообразия) для двух наборов данных с заданным входным значением x. Также называется распределением Фишера-Снедекора или F-распределением Снедекора.",
+      a: "F-распределение.",
       m: [3, 3],
       p: [
         {
           name: "x",
           detail:
-            "The input to the F probability distribution function. The value at which to evaluate the function.",
+            "Входное значение для функции F-распределения. Значение, в котором оценивается функция.",
           example: "15.35",
           require: "m",
           repeat: "n",
@@ -3202,7 +3233,7 @@ export default {
         },
         {
           name: "degrees_freedom1",
-          detail: "The numerator of the number of degrees of freedom.",
+          detail: "Числитель количества степеней свободы.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -3210,7 +3241,7 @@ export default {
         },
         {
           name: "degrees_freedom2",
-          detail: "The denominator of the number of degrees of freedom.",
+          detail: "Знаменатель количества степеней свободы.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3221,13 +3252,13 @@ export default {
     {
       n: "VAR_P",
       t: 1,
-      d: "Calculates the variance based on an entire population.",
-      a: "Variance of entire population.",
+      d: "Вычисляет дисперсию на основе всей популяции.",
+      a: "Дисперсия всей популяции.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the population.",
+          detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3235,7 +3266,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the population.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3246,13 +3278,13 @@ export default {
     {
       n: "VAR_S",
       t: 1,
-      d: "Calculates the variance based on a sample.",
-      a: "Variance.",
+      d: "Вычисляет дисперсию на основе выборки.",
+      a: "Дисперсия.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the sample.",
+          detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3260,7 +3292,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3271,13 +3304,13 @@ export default {
     {
       n: "VARA",
       t: 1,
-      d: "Calculates the variance based on a sample, setting text to the value `0`.",
-      a: "Variance of sample (text as 0).",
+      d: "Вычисляет дисперсию на основе выборки, присваивая текстовым значениям значение `0`.",
+      a: "Дисперсия выборки (текст как 0).",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the sample.",
+          detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3285,7 +3318,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3296,13 +3330,13 @@ export default {
     {
       n: "VARPA",
       t: 1,
-      d: "Calculates the variance based on an entire population, setting text to the value `0`.",
-      a: "Variance of entire population (text as 0).",
+      d: "Вычисляет дисперсию на основе всей популяции, присваивая текстовым значениям значение `0`.",
+      a: "Дисперсия всей популяции (текст как 0).",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the population.",
+          detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3310,7 +3344,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the population.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3321,14 +3356,14 @@ export default {
     {
       n: "STEYX",
       t: 1,
-      d: "Calculates the standard error of the predicted y-value for each x in the regression of a dataset.",
-      a: "Standard error of predicted y-values in regression.",
+      d: "Вычисляет стандартную ошибку предсказанного значения y для каждого x в регрессии набора данных.",
+      a: "Стандартная ошибка предсказанных значений y в регрессии.",
       m: [2, 2],
       p: [
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3337,7 +3372,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3348,13 +3383,13 @@ export default {
     {
       n: "STANDARDIZE",
       t: 1,
-      d: "Calculates the normalized equivalent of a random variable given mean and standard deviation of the distribution.",
-      a: "Normalized equivalent of a random variable.",
+      d: "Вычисляет нормализованный эквивалент случайной величины при заданном среднем и стандартном отклонении распределения.",
+      a: "Нормализованный эквивалент случайной величины.",
       m: [3, 3],
       p: [
         {
           name: "value",
-          detail: "The value of the random variable to normalize.",
+          detail: "Значение случайной величины для нормализации.",
           example: "96",
           require: "m",
           repeat: "n",
@@ -3362,7 +3397,7 @@ export default {
         },
         {
           name: "mean",
-          detail: "The mean of the distribution.",
+          detail: "Среднее значение распределения.",
           example: "80",
           require: "m",
           repeat: "n",
@@ -3370,7 +3405,7 @@ export default {
         },
         {
           name: "standard_deviation",
-          detail: "The standard deviation of the distribution.",
+          detail: "Стандартное отклонение распределения.",
           example: "6.7",
           require: "m",
           repeat: "n",
@@ -3381,13 +3416,14 @@ export default {
     {
       n: "SMALL",
       t: 1,
-      d: "Returns the nth smallest element from a data set, where n is user-defined.",
-      a: "Nth smallest element in a data set.",
+      d: "Возвращает n-й наименьший элемент из набора данных, где n задаётся пользователем.",
+      a: "N-й наименьший элемент в наборе данных.",
       m: [2, 2],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the dataset to consider.",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -3395,7 +3431,8 @@ export default {
         },
         {
           name: "n",
-          detail: "The rank from smallest to largest of the element to return.",
+          detail:
+            "Ранг от наименьшего к наибольшему для возвращаемого элемента.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3406,14 +3443,14 @@ export default {
     {
       n: "SLOPE",
       t: 1,
-      d: "Calculates the slope of the line resulting from linear regression of a dataset.",
-      a: "Slope of line from linear regression of data.",
+      d: "Вычисляет наклон линии, полученной в результате линейной регрессии набора данных.",
+      a: "Наклон линии от линейной регрессии данных.",
       m: [2, 2],
       p: [
         {
           name: "data_y",
           detail:
-            "The range representing the array or matrix of dependent data.",
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3422,7 +3459,7 @@ export default {
         {
           name: "data_x",
           detail:
-            "The range representing the array or matrix of independent data.",
+            "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3433,13 +3470,13 @@ export default {
     {
       n: "SKEW",
       t: 1,
-      d: "Calculates the skewness of a dataset, which describes the symmetry of that dataset about the mean.",
-      a: "Skewness of a dataset.",
+      d: "Вычисляет асимметрию набора данных, которая описывает симметрию этого набора относительно среднего значения.",
+      a: "Асимметрия набора данных.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the dataset.",
+          detail: "Первое значение или диапазон набора данных.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3447,7 +3484,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the dataset.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в набор данных.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3458,13 +3496,13 @@ export default {
     {
       n: "SKEW_P",
       t: 1,
-      d: "Calculates the skewness of a dataset, which describes the symmetry of that dataset about the mean. This assumes the dataset is for the population.",
-      a: "Skewness of a population's dataset.",
+      d: "Вычисляет асимметрию набора данных, которая описывает симметрию этого набора относительно среднего значения. Предполагается, что набор данных представляет популяцию.",
+      a: "Асимметрия набора данных популяции.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first value or range of the dataset.",
+          detail: "Первое значение или диапазон набора данных.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3472,7 +3510,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional values or ranges to include in the dataset.",
+          detail:
+            "Дополнительные значения или диапазоны для включения в набор данных.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3483,14 +3522,13 @@ export default {
     {
       n: "VLOOKUP",
       t: 2,
-      d: "Vertical lookup. Searches down the first column of a range for a key and returns the value of a specified cell in the row found.",
-      a: "Vertical lookup.",
+      d: "Вертикальный поиск. Выполняет поиск по первому столбцу диапазона и возвращает значение указанной ячейки в найденной строке.",
+      a: "Вертикальный поиск.",
       m: [3, 4],
       p: [
         {
           name: "search_key",
-          detail:
-            'The value to search for. For example, `42`, `"Cats"`, or `I24`.',
+          detail: 'Значение для поиска. Например, `42`, `"Кошки"` или `I24`.',
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3499,7 +3537,7 @@ export default {
         {
           name: "range",
           detail:
-            "The range to consider for the search. The first column in the range is searched for the key specified in `search_key`.",
+            "Диапазон для поиска. Первый столбец диапазона проверяется на наличие ключа, указанного в `search_key`.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -3508,7 +3546,7 @@ export default {
         {
           name: "index",
           detail:
-            "The column index of the value to be returned, where the first column in `range` is numbered 1.",
+            "Индекс столбца возвращаемого значения, где первый столбец в `range` нумеруется как 1.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3517,7 +3555,7 @@ export default {
         {
           name: "is_sorted",
           detail:
-            "Indicates whether the column to be searched (the first column of the specified range) is sorted, in which case the closest match for `search_key` will be returned.",
+            "Указывает, отсортирован ли столбец для поиска (первый столбец указанного диапазона). В этом случае возвращается ближайшее совпадение для `search_key`.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3528,14 +3566,13 @@ export default {
     {
       n: "HLOOKUP",
       t: 2,
-      d: "Horizontal lookup. Searches across the first row of a range for a key and returns the value of a specified cell in the column found.",
-      a: "Horizontal lookup",
+      d: "Горизонтальный поиск. Выполняет поиск по первой строке диапазона и возвращает значение указанной ячейки в найденном столбце.",
+      a: "Горизонтальный поиск.",
       m: [3, 4],
       p: [
         {
           name: "search_key",
-          detail:
-            'The value to search for. For example, `42`, `"Cats"`, or `I24`.',
+          detail: 'Значение для поиска. Например, `42`, `"Кошки"` или `I24`.',
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3544,7 +3581,7 @@ export default {
         {
           name: "range",
           detail:
-            "The range to consider for the search. The first row in the range is searched for the key specified in `search_key`.",
+            "Диапазон для поиска. Первая строка диапазона проверяется на наличие ключа, указанного в `search_key`.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
@@ -3553,7 +3590,7 @@ export default {
         {
           name: "index",
           detail:
-            "The row index of the value to be returned, where the first row in `range` is numbered 1.",
+            "Индекс строки возвращаемого значения, где первая строка в `range` нумеруется как 1.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3562,7 +3599,7 @@ export default {
         {
           name: "is_sorted",
           detail:
-            "Indicates whether the row to be searched (the first row of the specified range) is sorted.",
+            "Указывает, отсортирована ли строка для поиска (первая строка указанного диапазона).",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3573,14 +3610,14 @@ export default {
     {
       n: "LOOKUP",
       t: 2,
-      d: "Looks through a sorted row or column for a key and returns the value of the cell in a result range located in the same position as the search row or column.",
-      a: "Look up a value.",
+      d: "Ищет ключ в отсортированной строке или столбце и возвращает значение ячейки в диапазоне результатов, расположенное в той же позиции, что и строка или столбец поиска.",
+      a: "Поиск значения.",
       m: [2, 3],
       p: [
         {
           name: "search_key",
           detail:
-            'The value to search for in the row or column. For example, `42`, `"Cats"`, or `I24`.',
+            'Значение для поиска в строке или столбце. Например, `42`, `"Кошки"` или `I24`.',
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3589,7 +3626,7 @@ export default {
         {
           name: "search_range|search_result_array",
           detail:
-            "One method of using this function is to provide a single sorted row or column `search_range` to look through for the `search_key` with a second argument `result_range`. The other way is to combine these two arguments into one `search_result_array` where the first row or column is searched and a value is returned from the last row or column in the array. If `search_key` is not found, a non-exact match may be returned.",
+            "Один из способов использования функции — указать одну отсортированную строку или столбец `search_range` для поиска `search_key` с дополнительным аргументом `result_range`. Другой способ — объединить эти два аргумента в один `search_result_array`, где выполняется поиск в первой строке или столбце, а значение возвращается из последней строки или столбца массива. Если `search_key` не найден, может быть возвращено не точное совпадение.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -3598,7 +3635,7 @@ export default {
         {
           name: "result_range",
           detail:
-            "The range from which to return a result. The value returned corresponds to the location where `search_key` is found in `search_range`. This range must be only a single row or column and should not be used if using the `search_result_array` method.",
+            "Диапазон, из которого возвращается результат. Возвращаемое значение соответствует местоположению, где `search_key` найден в `search_range`. Этот диапазон должен быть только одной строкой или столбцом и не должен использоваться, если применяется метод `search_result_array`.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3609,13 +3646,13 @@ export default {
     {
       n: "ADDRESS",
       t: 2,
-      d: "Returns a cell reference as a string.",
-      a: "Cell reference as a string.",
+      d: "Возвращает ссылку на ячейку в виде строки.",
+      a: "Ссылка на ячейку в виде строки.",
       m: [2, 5],
       p: [
         {
           name: "row",
-          detail: "The row number of the cell reference",
+          detail: "Номер строки ячейки.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3623,8 +3660,7 @@ export default {
         },
         {
           name: "column",
-          detail:
-            "The column number (not name) of the cell reference. `A` is column number `1`.",
+          detail: "Номер столбца (не имя) ячейки. `A` — это столбец номер `1`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3633,7 +3669,7 @@ export default {
         {
           name: "absolute_relative_mode",
           detail:
-            "An indicator of whether the reference is row/column absolute. `1` is row and column absolute (e.g. $A$1), `2` is row absolute and column relative (e.g. A$1), `3` is row relative and column absolute (e.g. $A1), and `4` is row and column relative (e.g. A1).",
+            "Указывает, является ли ссылка абсолютной по строке/столбцу. `1` — строка и столбец абсолютные (например, $A$1), `2` — строка абсолютная, столбец относительный (например, A$1), `3` — строка относительная, столбец абсолютный (например, $A1), `4` — строка и столбец относительные (например, A1).",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3642,7 +3678,7 @@ export default {
         {
           name: "use_a1_notation",
           detail:
-            "A boolean indicating whether to use `A1` style notation (TRUE) or `R1C1` style notation (FALSE).",
+            "Логическое значение, указывающее, использовать ли нотацию `A1` (TRUE) или нотацию `R1C1` (FALSE).",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3650,8 +3686,7 @@ export default {
         },
         {
           name: "sheet",
-          detail:
-            "Text indicating the name of the sheet into which the address points.",
+          detail: "Текст, указывающий имя листа, на который указывает адрес.",
           example: '"Sheet2"',
           require: "o",
           repeat: "n",
@@ -3662,14 +3697,13 @@ export default {
     {
       n: "INDIRECT",
       t: 2,
-      d: "Returns a cell reference specified by a string.",
-      a: "A cell reference specified by a string.",
+      d: "Возвращает ссылку на ячейку, заданную строкой.",
+      a: "Ссылка на ячейку, заданная строкой.",
       m: [1, 2],
       p: [
         {
           name: "cell_reference_as_string",
-          detail:
-            "A cell reference, written as a string with surrounding quotation marks.",
+          detail: "Ссылка на ячейку, записанная как строка в кавычках.",
           example: '"Sheet2!"&B10',
           require: "m",
           repeat: "n",
@@ -3678,7 +3712,7 @@ export default {
         {
           name: "is_A1_notation",
           detail:
-            "Indicates if the cell reference is in A1 notation (TRUE) or R1C1 notation (FALSE).",
+            "Указывает, используется ли нотация A1 (TRUE) или нотация R1C1 (FALSE).",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3687,15 +3721,15 @@ export default {
       ],
     },
     {
-      n: "ROW",
+      n: "СТРОКА",
       t: 2,
-      d: "Returns the row number of a specified cell.",
-      a: "Row number of a specified cell.",
+      d: "Возвращает номер строки указанной ячейки.",
+      a: "Номер строки указанной ячейки.",
       m: [0, 1],
       p: [
         {
           name: "cell_reference",
-          detail: "The cell whose row number will be returned.",
+          detail: "Ячейка, номер строки которой будет возвращён.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -3704,15 +3738,15 @@ export default {
       ],
     },
     {
-      n: "ROWS",
+      n: "СТРОКИ",
       t: 2,
-      d: "Returns the number of rows in a specified array or range.",
-      a: "Number of rows in a specified array or range.",
+      d: "Возвращает количество строк в указанном массиве или диапазоне.",
+      a: "Количество строк в указанном массиве или диапазоне.",
       m: [1, 1],
       p: [
         {
           name: "range",
-          detail: "The range whose row count will be returned.",
+          detail: "Диапазон, количество строк которого будет возвращено.",
           example: "A9:A62",
           require: "m",
           repeat: "n",
@@ -3721,16 +3755,16 @@ export default {
       ],
     },
     {
-      n: "COLUMN",
+      n: "СТОЛБЕЦ",
       t: 2,
-      d: "Returns the column number of a specified cell, with `A=1`.",
-      a: "Column number of a specified cell.",
+      d: "Возвращает номер столбца указанной ячейки, где `A=1`.",
+      a: "Номер столбца указанной ячейки.",
       m: [0, 1],
       p: [
         {
           name: "cell_reference",
           detail:
-            "The cell whose column number will be returned. Column `A` corresponds to `1`.",
+            "Ячейка, номер столбца которой будет возвращён. Столбец `A` соответствует `1`.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -3739,15 +3773,15 @@ export default {
       ],
     },
     {
-      n: "COLUMNS",
+      n: "СТОЛБЦЫ",
       t: 2,
-      d: "Returns the number of columns in a specified array or range.",
-      a: "Number of columns in a specified array or range.",
+      d: "Возвращает количество столбцов в указанном массиве или диапазоне.",
+      a: "Количество столбцов в указанном массиве или диапазоне.",
       m: [1, 1],
       p: [
         {
           name: "range",
-          detail: "The range whose column count will be returned.",
+          detail: "Диапазон, количество столбцов которого будет возвращено.",
           example: "A9:W62",
           require: "m",
           repeat: "n",
@@ -3758,14 +3792,14 @@ export default {
     {
       n: "OFFSET",
       t: 2,
-      d: "Returns a range reference shifted a specified number of rows and columns from a starting cell reference.",
-      a: "A range reference offset relative to a cell.",
+      d: "Возвращает ссылку на диапазон, смещённый на заданное количество строк и столбцов от начальной ячейки.",
+      a: "Ссылка на диапазон, смещённый относительно ячейки.",
       m: [3, 5],
       p: [
         {
           name: "cell_reference",
           detail:
-            "The starting point from which to count the offset rows and columns.",
+            "Начальная точка, от которой отсчитывается смещение строк и столбцов.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3773,7 +3807,7 @@ export default {
         },
         {
           name: "offset_rows",
-          detail: "The number of rows to offset by.",
+          detail: "Количество строк для смещения.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3781,7 +3815,7 @@ export default {
         },
         {
           name: "offset_columns",
-          detail: "The number of columns to offset by.",
+          detail: "Количество столбцов для смещения.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3790,7 +3824,7 @@ export default {
         {
           name: "height",
           detail:
-            "The height of the range to return starting at the offset target.",
+            "Высота возвращаемого диапазона, начиная с целевой точки смещения.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -3799,7 +3833,7 @@ export default {
         {
           name: "width",
           detail:
-            "The width of the range to return starting at the offset target.",
+            "Ширина возвращаемого диапазона, начиная с целевой точки смещения.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -3810,14 +3844,13 @@ export default {
     {
       n: "MATCH",
       t: 2,
-      d: "Returns the relative position of an item in a range that matches a specified value.",
-      a: "Position of item in range that matches value.",
+      d: "Возвращает относительную позицию элемента в диапазоне, соответствующего заданному значению.",
+      a: "Позиция элемента в диапазоне, соответствующего значению.",
       m: [2, 3],
       p: [
         {
           name: "search_key",
-          detail:
-            'The value to search for. For example, `42`, `"Cats"`, or `I24`.',
+          detail: 'Значение для поиска. Например, `42`, `"Кошки"` или `I24`.',
           example: '"Sunday"',
           require: "m",
           repeat: "n",
@@ -3825,7 +3858,7 @@ export default {
         },
         {
           name: "range",
-          detail: "The one-dimensional array to be searched.",
+          detail: "Одномерный массив для поиска.",
           example: "A2:A9",
           require: "m",
           repeat: "n",
@@ -3834,7 +3867,7 @@ export default {
         {
           name: "search_type",
           detail:
-            "The search method. `1` (default) finds the largest value less than or equal to `search_key` when `range` is sorted in ascending order. `0` finds the exact value when `range` is unsorted. `-1` finds the smallest value greater than or equal to `search_key` when `range` is sorted in descending order.",
+            "Метод поиска. `1` (по умолчанию) находит наибольшее значение, меньшее или равное `search_key`, если `range` отсортирован по возрастанию. `0` находит точное совпадение, если `range` не отсортирован. `-1` находит наименьшее значение, большее или равное `search_key`, если `range` отсортирован по убыванию.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -3845,13 +3878,13 @@ export default {
     {
       n: "INDEX",
       t: 2,
-      d: "Returns the content of a cell, specified by row and column offset.",
-      a: "Content of cell specified by row and column offset.",
+      d: "Возвращает содержимое ячейки, заданной смещением по строке и столбцу.",
+      a: "Содержимое ячейки, заданной смещением по строке и столбцу.",
       m: [2, 3],
       p: [
         {
           name: "reference",
-          detail: "The array of cells to be offset into.",
+          detail: "Массив ячеек для смещения.",
           example: "A1:C20",
           require: "m",
           repeat: "n",
@@ -3859,7 +3892,7 @@ export default {
         },
         {
           name: "row",
-          detail: "The number of offset rows.",
+          detail: "Количество строк для смещения.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -3867,7 +3900,7 @@ export default {
         },
         {
           name: "column",
-          detail: "The number of offset columns.",
+          detail: "Количество столбцов для смещения.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3878,14 +3911,14 @@ export default {
     {
       n: "GETPIVOTDATA",
       t: 2,
-      d: "Extracts an aggregated value from a pivot table that corresponds to the specified row and column headings.",
-      a: "Extracts an aggregated value from a pivot table that corresponds to the specified row and column headings.",
+      d: "Извлекает агрегированное значение из сводной таблицы, соответствующее указанным заголовкам строк и столбцов.",
+      a: "Извлекает агрегированное значение из сводной таблицы.",
       m: [2, 254],
       p: [
         {
           name: "value_name",
           detail:
-            "The name of the value in the pivot table for which you want to get data.",
+            "Имя значения в сводной таблице, для которого нужно получить данные.",
           example: '"SUM of number of units"',
           require: "m",
           repeat: "n",
@@ -3894,7 +3927,7 @@ export default {
         {
           name: "any_pivot_table_cell",
           detail:
-            "Any reference to a cell in the desired pivot table (top corner recommended).",
+            "Любая ссылка на ячейку в желаемой сводной таблице (рекомендуется верхний угол).",
           example: "'Pivot table'!A1",
           require: "m",
           repeat: "n",
@@ -3903,7 +3936,7 @@ export default {
         {
           name: "original_column",
           detail:
-            "The name of the column in the original data set (not the pivot table).",
+            "Имя столбца в исходном наборе данных (не в сводной таблице).",
           example: '"division"',
           require: "o",
           repeat: "y",
@@ -3912,7 +3945,7 @@ export default {
         {
           name: "pivot_item",
           detail:
-            "The name of the row or column shown in the pivot table corresponding to *original_column* that you want to retrieve.",
+            "Имя строки или столбца, отображаемого в сводной таблице, соответствующего `original_column`, которое нужно извлечь.",
           example: '"east"',
           require: "o",
           repeat: "y",
@@ -3923,13 +3956,13 @@ export default {
     {
       n: "CHOOSE",
       t: 2,
-      d: "Returns an element from a list of choices based on index.",
-      a: "An element from a list of choices based on index.",
+      d: "Возвращает элемент из списка вариантов на основе индекса.",
+      a: "Элемент из списка вариантов на основе индекса.",
       m: [2, 255],
       p: [
         {
           name: "index",
-          detail: "Which choice (of the up to 30 provided) to return.",
+          detail: "Какой вариант (из до 30 предоставленных) вернуть.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3938,7 +3971,7 @@ export default {
         {
           name: "choice1",
           detail:
-            "A potential value to return. Required. May be a reference to a cell or an individual value.",
+            "Потенциальное значение для возврата. Обязательно. Может быть ссылкой на ячейку или отдельным значением.",
           example: '"A"',
           require: "m",
           repeat: "n",
@@ -3946,7 +3979,7 @@ export default {
         },
         {
           name: "choice2",
-          detail: "Additional values among which to choose.",
+          detail: "Дополнительные значения для выбора.",
           example: '"B"',
           require: "o",
           repeat: "y",
@@ -3957,13 +3990,13 @@ export default {
     {
       n: "HYPERLINK",
       t: 2,
-      d: "Creates a hyperlink inside a cell.",
-      a: "Creates a hyperlink inside a cell.",
+      d: "Создаёт гиперссылку внутри ячейки.",
+      a: "Создаёт гиперссылку внутри ячейки.",
       p: [
         {
           name: "url",
           detail:
-            "The full URL of the link location enclosed in quotation marks, or a reference to a cell containing such a URL.",
+            "Полный URL места ссылки, заключённый в кавычки, или ссылка на ячейку, содержащую такой URL.",
           example: '"http://www.luckysheet.com/"',
           require: "m",
           repeat: "n",
@@ -3972,7 +4005,7 @@ export default {
         {
           name: "link_label",
           detail:
-            "The text to display in the cell as the link, enclosed in quotation marks, or a reference to a cell containing such a label.",
+            "Текст для отображения в ячейке в качестве ссылки, заключённый в кавычки, или ссылка на ячейку, содержащую такую метку.",
           example: '"luckysheet"',
           require: "m",
           repeat: "n",
@@ -3983,13 +4016,13 @@ export default {
     {
       n: "TIME",
       t: 6,
-      d: "Converts a provided hour, minute, and second into a time.",
-      a: "Converts hour/minute/second into a time.",
+      d: "Преобразует указанные часы, минуты и секунды в значение времени.",
+      a: "Преобразует часы/минуты/секунды в значение времени.",
       m: [3, 3],
       p: [
         {
           name: "hour",
-          detail: "The hour component of the time.",
+          detail: "Часовая составляющая времени.",
           example: "11",
           require: "m",
           repeat: "n",
@@ -3997,7 +4030,7 @@ export default {
         },
         {
           name: "minute",
-          detail: "The minute component of the time.",
+          detail: "Минутная составляющая времени.",
           example: "40",
           require: "m",
           repeat: "n",
@@ -4005,7 +4038,7 @@ export default {
         },
         {
           name: "second",
-          detail: "The second component of the time.",
+          detail: "Секундная составляющая времени.",
           example: "59",
           require: "m",
           repeat: "n",
@@ -4016,13 +4049,13 @@ export default {
     {
       n: "TIMEVALUE",
       t: 6,
-      d: "Returns the fraction of a 24-hour day the time represents.",
-      a: "Converts a time string into its serial number representation.",
+      d: "Возвращает долю 24-часового дня, которую представляет время.",
+      a: "Преобразует строку времени в её числовое представление.",
       m: [1, 1],
       p: [
         {
           name: "time_string",
-          detail: "The string that holds the time representation.",
+          detail: "Строка, содержащая представление времени.",
           example: '"2:15 PM"',
           require: "m",
           repeat: "n",
@@ -4033,13 +4066,13 @@ export default {
     {
       n: "EOMONTH",
       t: 6,
-      d: "Returns a date on the last day of a month that falls a specified number of months before or after another date.",
-      a: "Last day of a month before or after a date.",
+      d: "Возвращает дату последнего дня месяца, который находится на заданное количество месяцев до или после другой даты.",
+      a: "Последний день месяца до или после даты.",
       m: [2, 2],
       p: [
         {
           name: "start_date",
-          detail: "The date from which to calculate the result.",
+          detail: "Дата, от которой выполняется расчёт.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4048,7 +4081,7 @@ export default {
         {
           name: "months",
           detail:
-            "The number of months before (negative) or after (positive) 'start_date' to consider.",
+            "Количество месяцев до (отрицательное) или после (положительное) `start_date` для расчёта.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4059,13 +4092,13 @@ export default {
     {
       n: "EDATE",
       t: 6,
-      d: "Returns a date a specified number of months before or after another date.",
-      a: "Date a number of months before/after another date.",
+      d: "Возвращает дату, находящуюся на заданное количество месяцев до или после другой даты.",
+      a: "Дата, находящаяся на заданное количество месяцев до/после другой даты.",
       m: [2, 2],
       p: [
         {
           name: "start_date",
-          detail: "The date from which to calculate the result.",
+          detail: "Дата, от которой выполняется расчёт.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4074,7 +4107,7 @@ export default {
         {
           name: "months",
           detail:
-            "The number of months before (negative) or after (positive) 'start_date' to calculate.",
+            "Количество месяцев до (отрицательное) или после (положительное) `start_date` для расчёта.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4085,13 +4118,13 @@ export default {
     {
       n: "SECOND",
       t: 6,
-      d: "Returns the second component of a specific time, in numeric format.",
-      a: "Second component of a specific time.",
+      d: "Возвращает секундную составляющую указанного времени в числовом формате.",
+      a: "Секундная составляющая указанного времени.",
       m: [1, 1],
       p: [
         {
           name: "time",
-          detail: "The time from which to calculate the second component",
+          detail: "Время, из которого извлекается секундная составляющая.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4102,13 +4135,13 @@ export default {
     {
       n: "MINUTE",
       t: 6,
-      d: "Returns the minute component of a specific time, in numeric format.",
-      a: "Minute component of a specific time.",
+      d: "Возвращает минутную составляющую указанного времени в числовом формате.",
+      a: "Минутная составляющая указанного времени.",
       m: [1, 1],
       p: [
         {
           name: "time",
-          detail: "The time from which to calculate the minute component.",
+          detail: "Время, из которого извлекается минутная составляющая.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4119,13 +4152,13 @@ export default {
     {
       n: "HOUR",
       t: 6,
-      d: "Returns the hour component of a specific time, in numeric format.",
-      a: "Hour component of a specific time.",
+      d: "Возвращает часовую составляющую указанного времени в числовом формате.",
+      a: "Часовая составляющая указанного времени.",
       m: [1, 1],
       p: [
         {
           name: "time",
-          detail: "The time from which to calculate the hour component.",
+          detail: "Время, из которого извлекается часовая составляющая.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4136,22 +4169,22 @@ export default {
     {
       n: "NOW",
       t: 6,
-      d: "Returns the current date and time as a date value.",
-      a: "Current date and time as a date value.",
+      d: "Возвращает текущую дату и время в виде значения даты.",
+      a: "Текущая дата и время в виде значения даты.",
       m: [0, 0],
       p: [],
     },
     {
       n: "NETWORKDAYS",
       t: 6,
-      d: "Returns the number of net working days between two provided days.",
-      a: "Net working days between two provided days.",
+      d: "Возвращает количество чистых рабочих дней между двумя указанными датами.",
+      a: "Чистые рабочие дни между двумя датами.",
       m: [2, 3],
       p: [
         {
           name: "start_date",
           detail:
-            "The start date of the period from which to calculate the number of net working days.",
+            "Начальная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4160,7 +4193,7 @@ export default {
         {
           name: "end_date",
           detail:
-            "The end date of the period from which to calculate the number of net working days.",
+            "Конечная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4169,7 +4202,7 @@ export default {
         {
           name: "holidays",
           detail:
-            "A range or array constant containing the date serial numbers to consider holidays.",
+            "Диапазон или массив констант, содержащий серийные номера дат, считающихся праздниками.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4180,14 +4213,14 @@ export default {
     {
       n: "NETWORKDAYS_INTL",
       t: 6,
-      d: "Returns the number of net working days between two provided days excluding specified weekend days and holidays.",
-      a: "Net working days between two dates (specifying weekends).",
+      d: "Возвращает количество чистых рабочих дней между двумя указанными датами, исключая указанные выходные дни и праздники.",
+      a: "Чистые рабочие дни между двумя датами (с учётом выходных).",
       m: [2, 4],
       p: [
         {
           name: "start_date",
           detail:
-            "The start date of the period from which to calculate the number of net working days.",
+            "Начальная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4196,7 +4229,7 @@ export default {
         {
           name: "end_date",
           detail:
-            "The end date of the period from which to calculate the number of net working days.",
+            "Конечная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4205,7 +4238,7 @@ export default {
         {
           name: "weekend",
           detail:
-            "A number or string representing which days of the week are considered weekends.",
+            "Число или строка, указывающая, какие дни недели считаются выходными.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4214,7 +4247,7 @@ export default {
         {
           name: "holidays",
           detail:
-            "A range or array constant containing the dates to consider as holidays.",
+            "Диапазон или массив констант, содержащий даты, считающиеся праздниками.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4225,14 +4258,14 @@ export default {
     {
       n: "ISOWEEKNUM",
       t: 6,
-      d: "Returns a number representing the ISO week of the year where the provided date falls.",
-      a: "ISO week number of the year.",
+      d: "Возвращает число, представляющее неделю года по стандарту ISO для указанной даты.",
+      a: "Номер недели года по ISO.",
       m: [1, 1],
       p: [
         {
           name: "date",
           detail:
-            "The date for which to determine the ISO week number. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Дата, для которой определяется номер недели по ISO. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4243,14 +4276,14 @@ export default {
     {
       n: "WEEKNUM",
       t: 6,
-      d: "Returns a number representing the week of the year where the provided date falls.",
-      a: "Week number of the year.",
+      d: "Возвращает число, представляющее неделю года для указанной даты.",
+      a: "Номер недели года.",
       m: [1, 2],
       p: [
         {
           name: "date",
           detail:
-            "The date for which to determine the week number. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Дата, для которой определяется номер недели. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4259,7 +4292,1838 @@ export default {
         {
           name: "type",
           detail:
-            "A number representing the day that a week starts on. Sunday = 1.",
+            "Число, представляющее день, с которого начинается неделя. Воскресенье = 1.",
+          example: "7",
+          require: "o",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "NORM.INV",
+      t: 1,
+      d: "Возвращает значение обратной функции нормального распределения для указанного значения, среднего и стандартного отклонения.",
+      a: "Обратная функция нормального распределения.",
+      m: [3, 3],
+      p: [
+        {
+          name: "x",
+          detail:
+            "Входное значение для обратной функции нормального распределения.",
+          example: "0.75",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "mean",
+          detail: "Среднее значение (му) функции нормального распределения.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "standard_deviation",
+          detail:
+            "Стандартное отклонение (сигма) функции нормального распределения.",
+          example: "4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "NORM.DIST",
+      t: 1,
+      d: "Возвращает значение функции нормального распределения (или кумулятивной функции нормального распределения) для указанного значения, среднего и стандартного отклонения.",
+      a: "Функция нормального распределения.",
+      m: [4, 4],
+      p: [
+        {
+          name: "x",
+          detail: "Входное значение для функции нормального распределения.",
+          example: "2.4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "mean",
+          detail: "Среднее значение (му) функции нормального распределения.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "standard_deviation",
+          detail:
+            "Стандартное отклонение (сигма) функции нормального распределения.",
+          example: "4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "cumulative",
+          detail:
+            "Определяет, использовать ли кумулятивную функцию нормального распределения вместо функции распределения.",
+          example: "FALSE()",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "NEGBINOM_DIST",
+      t: 1,
+      d: "Вычисляет вероятность получения определённого количества неудач перед заданным количеством успехов при заданной вероятности успеха в независимых испытаниях.",
+      a: "Вероятность отрицательного биномиального распределения.",
+      m: [4, 4],
+      p: [
+        {
+          name: "num_failures",
+          detail: "Количество неудач для моделирования.",
+          example: "4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "num_successes",
+          detail: "Количество успехов для моделирования.",
+          example: "2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "prob_success",
+          detail: "Вероятность успеха в любом отдельном испытании.",
+          example: "0.1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "cumulative",
+          detail:
+            "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
+          example: "FALSE()",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "MINA",
+      t: 1,
+      d: "Возвращает минимальное числовое значение в наборе данных.",
+      a: "Минимальное числовое значение в наборе данных.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail:
+            "Первое значение или диапазон для вычисления минимального значения.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для вычисления минимального значения.",
+          example: "B2:B100",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "MIN",
+      t: 1,
+      d: "Возвращает минимальное значение в числовом наборе данных.",
+      a: "Минимальное значение в числовом наборе данных.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail:
+            "Первое значение или диапазон для вычисления минимального значения.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для вычисления минимального значения.",
+          example: "B2:B100",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "MEDIAN",
+      t: 1,
+      d: "Возвращает медианное значение в числовом наборе данных.",
+      a: "Медианное значение в числовом наборе данных.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail:
+            "Первое значение или диапазон для вычисления медианного значения.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для вычисления медианного значения.",
+          example: "B2:B100",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "MAXA",
+      t: 1,
+      d: "Возвращает максимальное числовое значение в наборе данных.",
+      a: "Максимальное числовое значение в наборе данных.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail:
+            "Первое значение или диапазон для вычисления максимального значения.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для вычисления максимального значения.",
+          example: "B2:B100",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "MAX",
+      t: 1,
+      d: "Возвращает максимальное значение в числовом наборе данных.",
+      a: "Максимальное значение в числовом наборе данных.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail:
+            "Первое значение или диапазон для вычисления максимального значения.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для вычисления максимального значения.",
+          example: "B2:B100",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "LOGNORM_INV",
+      t: 1,
+      d: "Возвращает значение обратной функции логнормального кумулятивного распределения с заданным средним и стандартным отклонением для указанного значения.",
+      a: "Обратная функция логнормального кумулятивного распределения.",
+      m: [3, 3],
+      p: [
+        {
+          name: "x",
+          detail:
+            "Входное значение для обратной функции логнормального кумулятивного распределения.",
+          example: "0.4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "mean",
+          detail:
+            "Среднее значение (му) обратной функции логнормального кумулятивного распределения.",
+          example: "4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "standard_deviation",
+          detail:
+            "Стандартное отклонение (сигма) обратной функции логнормального кумулятивного распределения.",
+          example: "6",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "LOGNORM_DIST",
+      t: 1,
+      d: "Возвращает значение логнормального кумулятивного распределения с заданным средним и стандартным отклонением для указанного значения.",
+      a: "Вероятность логнормального кумулятивного распределения.",
+      m: [4, 4],
+      p: [
+        {
+          name: "x",
+          detail:
+            "Входное значение для функции логнормального кумулятивного распределения.",
+          example: "4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "mean",
+          detail:
+            "Среднее значение (му) функции логнормального кумулятивного распределения.",
+          example: "4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "standard_deviation",
+          detail:
+            "Стандартное отклонение (сигма) функции логнормального кумулятивного распределения.",
+          example: "6",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "cumulative",
+          detail:
+            "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
+          example: "FALSE()",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "Z_TEST",
+      t: 1,
+      d: "Возвращает одностороннее p-значение Z-теста с нормальным распределением.",
+      a: "Одностороннее p-значение Z-теста.",
+      m: [2, 3],
+      p: [
+        {
+          name: "data",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "range",
+        },
+        {
+          name: "value",
+          detail: "Тестовая статистика для использования в Z-тесте.",
+          example: "B2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "standard_deviation",
+          detail:
+            "Стандартное отклонение для Z-теста. Если не указано, используется стандартное отклонение данных.",
+          example: "3",
+          require: "o",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "PROB",
+      t: 1,
+      d: "Вычисляет вероятность того, что случайно выбранное значение из набора значений и соответствующих вероятностей попадёт в заданный диапазон.",
+      a: "Вероятность попадания значений в диапазон.",
+      m: [3, 4],
+      p: [
+        {
+          name: "data",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
+          example: "A3:A6",
+          require: "m",
+          repeat: "n",
+          type: "range",
+        },
+        {
+          name: "probabilities",
+          detail:
+            "Массив или диапазон, содержащий вероятности, соответствующие `data`.",
+          example: "2",
+          require: "m",
+          repeat: "n",
+          type: "range",
+        },
+        {
+          name: "low_limit",
+          detail:
+            "Нижняя граница диапазона значений для вычисления вероятности.",
+          example: "3",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "high_limit",
+          detail:
+            "Верхняя граница диапазона значений для вычисления вероятности.",
+          example: "4",
+          require: "o",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "QUARTILE_EXC",
+      t: 1,
+      d: "Возвращает значение, ближайшее к заданному квартилю набора данных, исключая 0 и 4.",
+      a: "Значение, ближайшее к заданному квартилю набора данных, исключая 0 и 4.",
+      m: [2, 2],
+      p: [
+        {
+          name: "data",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "quartile_number",
+          detail: "Какой квартиль вернуть.",
+          example: "3",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "QUARTILE_INC",
+      t: 1,
+      d: "Возвращает значение, ближайшее к заданному квартилю набора данных.",
+      a: "Значение, ближайшее к заданному квартилю набора данных.",
+      m: [2, 2],
+      p: [
+        {
+          name: "data",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "quartile_number",
+          detail: "Какой квартиль вернуть.",
+          example: "3",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "POISSON_DIST",
+      t: 1,
+      d: "Возвращает значение функции распределения Пуассона (или кумулятивной функции распределения Пуассона) для указанного значения и среднего.",
+      a: "Функция распределения Пуассона.",
+      m: [3, 3],
+      p: [
+        {
+          name: "x",
+          detail: "Входное значение для функции распределения Пуассона.",
+          example: "2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "mean",
+          detail: "Среднее значение (му) функции распределения Пуассона.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "cumulative",
+          detail:
+            "Определяет, использовать ли кумулятивную функцию распределения Пуассона вместо функции распределения.",
+          example: "FALSE()",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "RSQ",
+      t: 1,
+      d: "Вычисляет квадрат r, коэффициента корреляции Пирсона для набора данных.",
+      a: "Квадрат коэффициента корреляции.",
+      m: [2, 2],
+      p: [
+        {
+          name: "data_y",
+          detail:
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "data_x",
+          detail:
+            "Диапазон, представляющий массив или матрицу независимых данных.",
+          example: "B2:B100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "T_DIST",
+      t: 1,
+      d: "Вычисляет вероятность левого хвоста для t-распределения Стьюдента с заданным входным значением (x).",
+      a: "Левостороннее t-распределение Стьюдента.",
+      m: [3, 3],
+      p: [
+        {
+          name: "x",
+          detail: "Входное значение для функции t-распределения.",
+          example: "A2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom",
+          detail: "Количество степеней свободы.",
+          example: "30",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "cumulative",
+          detail:
+            "Если TRUE(), возвращается кумулятивная функция распределения; если FALSE(), возвращается функция плотности вероятности.",
+          example: "TRUE()",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "T_DIST_2T",
+      t: 1,
+      d: "Вычисляет вероятность для двухстороннего t-распределения Стьюдента с заданным входным значением (x).",
+      a: "Двухстороннее t-распределение Стьюдента.",
+      m: [2, 2],
+      p: [
+        {
+          name: "x",
+          detail: "Входное значение для функции t-распределения.",
+          example: "A2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom",
+          detail: "Количество степеней свободы.",
+          example: "30",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "T_DIST_RT",
+      t: 1,
+      d: "Вычисляет вероятность правого хвоста для t-распределения Стьюдента с заданным входным значением (x).",
+      a: "Правостороннее t-распределение Стьюдента.",
+      m: [2, 2],
+      p: [
+        {
+          name: "x",
+          detail: "Входное значение для функции t-распределения.",
+          example: "A2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom",
+          detail: "Количество степеней свободы.",
+          example: "30",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "T_INV",
+      t: 1,
+      d: "Вычисляет обратное значение односторонней функции TDIST.",
+      a: "T_INV",
+      m: [2, 2],
+      p: [
+        {
+          name: "probability",
+          detail: "Вероятность, связанная с двухсторонним t-распределением.",
+          example: "0.35",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom",
+          detail: "Количество степеней свободы.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "T_INV_2T",
+      t: 1,
+      d: "Вычисляет обратное значение двухсторонней функции TDIST.",
+      a: "T_INV_2T",
+      m: [2, 2],
+      p: [
+        {
+          name: "probability",
+          detail: "Вероятность, связанная с двухсторонним t-распределением.",
+          example: "0.35",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom",
+          detail: "Количество степеней свободы.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "T_TEST",
+      t: 1,
+      d: "t-тест. Возвращает вероятность, связанную с t-тестом Стьюдента. Определяет, вероятно ли, что две выборки происходят из двух базовых популяций с одинаковым средним.",
+      a: "Возвращает вероятность, связанную с t-тестом.",
+      m: [4, 4],
+      p: [
+        {
+          name: "range1",
+          detail: "Первая выборка данных или группа ячеек для t-теста.",
+          example: "A1:A4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "range2",
+          detail: "Вторая выборка данных или группа ячеек для t-теста.",
+          example: "B1:B4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "tails",
+          detail: "Указывает количество хвостов распределения.",
+          example: "2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "type",
+          detail: "Указывает тип t-теста.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "F_DIST",
+      t: 1,
+      d: "Вычисляет левостороннее F-распределение (степень разнообразия) для двух наборов данных с заданным входным значением x. Также называется распределением Фишера-Снедекора или F-распределением Снедекора.",
+      a: "Левостороннее F-распределение.",
+      m: [4, 4],
+      p: [
+        {
+          name: "x",
+          detail:
+            "Входное значение для функции F-распределения. Значение, в котором оценивается функция.",
+          example: "15.35",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom1",
+          detail: "Числитель количества степеней свободы.",
+          example: "7",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom2",
+          detail: "Знаменатель количества степеней свободы.",
+          example: "6",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "cumulative",
+          detail: "Логическое значение, определяющее форму функции.",
+          example: "TRUE()",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "F_DIST_RT",
+      t: 1,
+      d: "Вычисляет правостороннее F-распределение (степень разнообразия) для двух наборов данных с заданным входным значением x. Также называется распределением Фишера-Снедекора или F-распределением Снедекора.",
+      a: "F-распределение.",
+      m: [3, 3],
+      p: [
+        {
+          name: "x",
+          detail:
+            "Входное значение для функции F-распределения. Значение, в котором оценивается функция.",
+          example: "15.35",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom1",
+          detail: "Числитель количества степеней свободы.",
+          example: "7",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "degrees_freedom2",
+          detail: "Знаменатель количества степеней свободы.",
+          example: "6",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "VAR_P",
+      t: 1,
+      d: "Вычисляет дисперсию на основе всей популяции.",
+      a: "Дисперсия всей популяции.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail: "Первое значение или диапазон популяции.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для включения в популяцию.",
+          example: "2",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "VAR_S",
+      t: 1,
+      d: "Вычисляет дисперсию на основе выборки.",
+      a: "Дисперсия.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail: "Первое значение или диапазон выборки.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для включения в выборку.",
+          example: "2",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "VARA",
+      t: 1,
+      d: "Вычисляет дисперсию на основе выборки, присваивая текстовым значениям значение `0`.",
+      a: "Дисперсия выборки (текст как 0).",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail: "Первое значение или диапазон выборки.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для включения в выборку.",
+          example: "2",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "VARPA",
+      t: 1,
+      d: "Вычисляет дисперсию на основе всей популяции, присваивая текстовым значениям значение `0`.",
+      a: "Дисперсия всей популяции (текст как 0).",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail: "Первое значение или диапазон популяции.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для включения в популяцию.",
+          example: "2",
+          require: "o",
+          repeat: "y",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "STEYX",
+      t: 1,
+      d: "Вычисляет стандартную ошибку предсказанного значения y для каждого x в регрессии набора данных.",
+      a: "Стандартная ошибка предсказанных значений y в регрессии.",
+      m: [2, 2],
+      p: [
+        {
+          name: "data_y",
+          detail:
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "data_x",
+          detail:
+            "Диапазон, представляющий массив или матрицу независимых данных.",
+          example: "B2:B100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "STANDARDIZE",
+      t: 1,
+      d: "Вычисляет нормализованный эквивалент случайной величины при заданном среднем и стандартном отклонении распределения.",
+      a: "Нормализованный эквивалент случайной величины.",
+      m: [3, 3],
+      p: [
+        {
+          name: "value",
+          detail: "Значение случайной величины для нормализации.",
+          example: "96",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "mean",
+          detail: "Среднее значение распределения.",
+          example: "80",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "standard_deviation",
+          detail: "Стандартное отклонение распределения.",
+          example: "6.7",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "SMALL",
+      t: 1,
+      d: "Возвращает n-й наименьший элемент из набора данных, где n задаётся пользователем.",
+      a: "N-й наименьший элемент в наборе данных.",
+      m: [2, 2],
+      p: [
+        {
+          name: "data",
+          detail:
+            "Массив или диапазон, содержащий набор данных для рассмотрения.",
+          example: "A2:B100",
+          require: "m",
+          repeat: "n",
+          type: "range",
+        },
+        {
+          name: "n",
+          detail:
+            "Ранг от наименьшего к наибольшему для возвращаемого элемента.",
+          example: "4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "SLOPE",
+      t: 1,
+      d: "Вычисляет наклон линии, полученной в результате линейной регрессии набора данных.",
+      a: "Наклон линии от линейной регрессии данных.",
+      m: [2, 2],
+      p: [
+        {
+          name: "data_y",
+          detail:
+            "Диапазон, представляющий массив или матрицу зависимых данных.",
+          example: "A2:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "data_x",
+          detail:
+            "Диапазон, представляющий массив или матрицу независимых данных.",
+          example: "B2:B100",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "SKEW",
+      t: 1,
+      d: "Вычисляет асимметрию набора данных, которая описывает симметрию этого набора относительно среднего значения.",
+      a: "Асимметрия набора данных.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail: "Первое значение или диапазон набора данных.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для включения в набор данных.",
+          example: "2",
+          require: "o",
+          repeat: "y",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "SKEW_P",
+      t: 1,
+      d: "Вычисляет асимметрию набора данных, которая описывает симметрию этого набора относительно среднего значения. Предполагается, что набор данных представляет популяцию.",
+      a: "Асимметрия набора данных популяции.",
+      m: [1, 255],
+      p: [
+        {
+          name: "value1",
+          detail: "Первое значение или диапазон набора данных.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "value2",
+          detail:
+            "Дополнительные значения или диапазоны для включения в набор данных.",
+          example: "2",
+          require: "o",
+          repeat: "y",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "VLOOKUP",
+      t: 2,
+      d: "Вертикальный поиск. Выполняет поиск по первому столбцу диапазона и возвращает значение указанной ячейки в найденной строке.",
+      a: "Вертикальный поиск.",
+      m: [3, 4],
+      p: [
+        {
+          name: "search_key",
+          detail: 'Значение для поиска. Например, `42`, `"Кошки"` или `I24`.',
+          example: "10003",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "range",
+          detail:
+            "Диапазон для поиска. Первый столбец диапазона проверяется на наличие ключа, указанного в `search_key`.",
+          example: "A2:B26",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "index",
+          detail:
+            "Индекс столбца возвращаемого значения, где первый столбец в `range` нумеруется как 1.",
+          example: "2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "is_sorted",
+          detail:
+            "Указывает, отсортирован ли столбец для поиска (первый столбец указанного диапазона). В этом случае возвращается ближайшее совпадение для `search_key`.",
+          example: "FALSE()",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "HLOOKUP",
+      t: 2,
+      d: "Горизонтальный поиск. Выполняет поиск по первой строке диапазона и возвращает значение указанной ячейки в найденном столбце.",
+      a: "Горизонтальный поиск.",
+      m: [3, 4],
+      p: [
+        {
+          name: "search_key",
+          detail: 'Значение для поиска. Например, `42`, `"Кошки"` или `I24`.',
+          example: "10003",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "range",
+          detail:
+            "Диапазон для поиска. Первая строка диапазона проверяется на наличие ключа, указанного в `search_key`.",
+          example: "A2:Z6",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "index",
+          detail:
+            "Индекс строки возвращаемого значения, где первая строка в `range` нумеруется как 1.",
+          example: "2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "is_sorted",
+          detail:
+            "Указывает, отсортирована ли строка для поиска (первая строка указанного диапазона).",
+          example: "FALSE()",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "LOOKUP",
+      t: 2,
+      d: "Ищет ключ в отсортированной строке или столбце и возвращает значение ячейки в диапазоне результатов, расположенное в той же позиции, что и строка или столбец поиска.",
+      a: "Поиск значения.",
+      m: [2, 3],
+      p: [
+        {
+          name: "search_key",
+          detail:
+            'Значение для поиска в строке или столбце. Например, `42`, `"Кошки"` или `I24`.',
+          example: "10003",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "search_range|search_result_array",
+          detail:
+            "Один из способов использования функции — указать одну отсортированную строку или столбец `search_range` для поиска `search_key` с дополнительным аргументом `result_range`. Другой способ — объединить эти два аргумента в один `search_result_array`, где выполняется поиск в первой строке или столбце, а значение возвращается из последней строки или столбца массива. Если `search_key` не найден, может быть возвращено не точное совпадение.",
+          example: "A1:A100",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "result_range",
+          detail:
+            "Диапазон, из которого возвращается результат. Возвращаемое значение соответствует местоположению, где `search_key` найден в `search_range`. Этот диапазон должен быть только одной строкой или столбцом и не должен использоваться, если применяется метод `search_result_array`.",
+          example: "B1:B100",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "АДРЕС",
+      t: 2,
+      d: "Возвращает ссылку на ячейку в виде строки.",
+      a: "Ссылка на ячейку в виде строки.",
+      m: [2, 5],
+      p: [
+        {
+          name: "row",
+          detail: "Номер строки ячейки.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "column",
+          detail: "Номер столбца (не имя) ячейки. `A` — это столбец номер `1`.",
+          example: "2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "absolute_relative_mode",
+          detail:
+            "Указывает, является ли ссылка абсолютной по строке/столбцу. `1` — строка и столбец абсолютные (например, $A$1), `2` — строка абсолютная, столбец относительный (например, A$1), `3` — строка относительная, столбец абсолютный (например, $A1), `4` — строка и столбец относительные (например, A1).",
+          example: "4",
+          require: "o",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "use_a1_notation",
+          detail:
+            "Логическое значение, указывающее, использовать ли нотацию `A1` (TRUE) или нотацию `R1C1` (FALSE).",
+          example: "FALSE()",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "sheet",
+          detail: "Текст, указывающий имя листа, на который указывает адрес.",
+          example: '"Sheet2"',
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "ДВССЫЛ",
+      t: 2,
+      d: "Возвращает ссылку на ячейку, заданную строкой.",
+      a: "Ссылка на ячейку, заданная строкой.",
+      m: [1, 2],
+      p: [
+        {
+          name: "cell_reference_as_string",
+          detail: "Ссылка на ячейку, записанная как строка в кавычках.",
+          example: '"Sheet2!"&B10',
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "is_A1_notation",
+          detail:
+            "Указывает, используется ли нотация A1 (TRUE) или нотация R1C1 (FALSE).",
+          example: "FALSE()",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "СТРОКА",
+      t: 2,
+      d: "Возвращает номер строки указанной ячейки.",
+      a: "Номер строки указанной ячейки.",
+      m: [0, 1],
+      p: [
+        {
+          name: "cell_reference",
+          detail: "Ячейка, номер строки которой будет возвращён.",
+          example: "A9",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "ЧСТРОК",
+      t: 2,
+      d: "Возвращает количество строк в указанном массиве или диапазоне.",
+      a: "Количество строк в указанном массиве или диапазоне.",
+      m: [1, 1],
+      p: [
+        {
+          name: "range",
+          detail: "Диапазон, количество строк которого будет возвращено.",
+          example: "A9:A62",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "СТОЛБЕЦ",
+      t: 2,
+      d: "Возвращает номер столбца указанной ячейки, где `A=1`.",
+      a: "Номер столбца указанной ячейки.",
+      m: [0, 1],
+      p: [
+        {
+          name: "cell_reference",
+          detail:
+            "Ячейка, номер столбца которой будет возвращён. Столбец `A` соответствует `1`.",
+          example: "A9",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "ЧИСЛСТОЛБ",
+      t: 2,
+      d: "Возвращает количество столбцов в указанном массиве или диапазоне.",
+      a: "Количество столбцов в указанном массиве или диапазоне.",
+      m: [1, 1],
+      p: [
+        {
+          name: "range",
+          detail: "Диапазон, количество столбцов которого будет возвращено.",
+          example: "A9:W62",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "OFFSET",
+      t: 2,
+      d: "Возвращает ссылку на диапазон, смещённый на заданное количество строк и столбцов от начальной ячейки.",
+      a: "Ссылка на диапазон, смещённый относительно ячейки.",
+      m: [3, 5],
+      p: [
+        {
+          name: "cell_reference",
+          detail:
+            "Начальная точка, от которой отсчитывается смещение строк и столбцов.",
+          example: "A2",
+          require: "m",
+          repeat: "n",
+          type: "range",
+        },
+        {
+          name: "offset_rows",
+          detail: "Количество строк для смещения.",
+          example: "3",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "offset_columns",
+          detail: "Количество столбцов для смещения.",
+          example: "4",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "height",
+          detail:
+            "Высота возвращаемого диапазона, начиная с целевой точки смещения.",
+          example: "2",
+          require: "o",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "width",
+          detail:
+            "Ширина возвращаемого диапазона, начиная с целевой точки смещения.",
+          example: "2",
+          require: "o",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "XMATCH",
+      t: 2,
+      d: "Возвращает относительную позицию элемента в диапазоне, соответствующего заданному значению.",
+      a: "Позиция элемента в диапазоне, соответствующего значению.",
+      m: [2, 3],
+      p: [
+        {
+          name: "search_key",
+          detail: 'Значение для поиска. Например, `42`, `"Кошки"` или `I24`.',
+          example: '"Sunday"',
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "range",
+          detail: "Одномерный массив для поиска.",
+          example: "A2:A9",
+          require: "m",
+          repeat: "n",
+          type: "range",
+        },
+        {
+          name: "search_type",
+          detail:
+            "Метод поиска. `1` (по умолчанию) находит наибольшее значение, меньшее или равное `search_key`, если `range` отсортирован по возрастанию. `0` находит точное совпадение, если `range` не отсортирован. `-1` находит наименьшее значение, большее или равное `search_key`, если `range` отсортирован по убыванию.",
+          example: "0",
+          require: "o",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "ИНДЕКС",
+      t: 2,
+      d: "Возвращает содержимое ячейки, заданной смещением по строке и столбцу.",
+      a: "Содержимое ячейки, заданной смещением по строке и столбцу.",
+      m: [2, 3],
+      p: [
+        {
+          name: "reference",
+          detail: "Массив ячеек для смещения.",
+          example: "A1:C20",
+          require: "m",
+          repeat: "n",
+          type: "range",
+        },
+        {
+          name: "row",
+          detail: "Количество строк для смещения.",
+          example: "5",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "column",
+          detail: "Количество столбцов для смещения.",
+          example: "1",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "GETPIVOTDATA",
+      t: 2,
+      d: "Извлекает агрегированное значение из сводной таблицы, соответствующее указанным заголовкам строк и столбцов.",
+      a: "Извлекает агрегированное значение из сводной таблицы.",
+      m: [2, 254],
+      p: [
+        {
+          name: "value_name",
+          detail:
+            "Имя значения в сводной таблице, для которого нужно получить данные.",
+          example: '"SUM of number of units"',
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "any_pivot_table_cell",
+          detail:
+            "Любая ссылка на ячейку в желаемой сводной таблице (рекомендуется верхний угол).",
+          example: "'Pivot table'!A1",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "original_column",
+          detail:
+            "Имя столбца в исходном наборе данных (не в сводной таблице).",
+          example: '"division"',
+          require: "o",
+          repeat: "y",
+          type: "rangeall",
+        },
+        {
+          name: "pivot_item",
+          detail:
+            "Имя строки или столбца, отображаемого в сводной таблице, соответствующего `original_column`, которое нужно извлечь.",
+          example: '"east"',
+          require: "o",
+          repeat: "y",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "ВЫБОР",
+      t: 2,
+      d: "Возвращает элемент из списка вариантов на основе индекса.",
+      a: "Элемент из списка вариантов на основе индекса.",
+      m: [2, 255],
+      p: [
+        {
+          name: "index",
+          detail: "Какой вариант (из до 30 предоставленных) вернуть.",
+          example: "2",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "choice1",
+          detail:
+            "Потенциальное значение для возврата. Обязательно. Может быть ссылкой на ячейку или отдельным значением.",
+          example: '"A"',
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "choice2",
+          detail: "Дополнительные значения для выбора.",
+          example: '"B"',
+          require: "o",
+          repeat: "y",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "ГИПЕРССЫЛКА",
+      t: 2,
+      d: "Создаёт гиперссылку внутри ячейки.",
+      a: "Создаёт гиперссылку внутри ячейки.",
+      p: [
+        {
+          name: "url",
+          detail:
+            "Полный URL места ссылки, заключённый в кавычки, или ссылка на ячейку, содержащую такой URL.",
+          example: '"http://www.luckysheet.com/"',
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "link_label",
+          detail:
+            "Текст для отображения в ячейке в качестве ссылки, заключённый в кавычки, или ссылка на ячейку, содержащую такую метку.",
+          example: '"luckysheet"',
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "ВРЕМЯ",
+      t: 6,
+      d: "Преобразует указанные часы, минуты и секунды в значение времени.",
+      a: "Преобразует часы/минуты/секунды в значение времени.",
+      m: [3, 3],
+      p: [
+        {
+          name: "hour",
+          detail: "Часовая составляющая времени.",
+          example: "11",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "minute",
+          detail: "Минутная составляющая времени.",
+          example: "40",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+        {
+          name: "second",
+          detail: "Секундная составляющая времени.",
+          example: "59",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "TIMEVALUE",
+      t: 6,
+      d: "Возвращает долю 24-часового дня, которую представляет время.",
+      a: "Преобразует строку времени в её числовое представление.",
+      m: [1, 1],
+      p: [
+        {
+          name: "time_string",
+          detail: "Строка, содержащая представление времени.",
+          example: '"2:15 PM"',
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "EOMONTH",
+      t: 6,
+      d: "Возвращает дату последнего дня месяца, который находится на заданное количество месяцев до или после другой даты.",
+      a: "Последний день месяца до или после даты.",
+      m: [2, 2],
+      p: [
+        {
+          name: "start_date",
+          detail: "Дата, от которой выполняется расчёт.",
+          example: "DATE(1969",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "months",
+          detail:
+            "Количество месяцев до (отрицательное) или после (положительное) `start_date` для расчёта.",
+          example: "7",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "EDATE",
+      t: 6,
+      d: "Возвращает дату, находящуюся на заданное количество месяцев до или после другой даты.",
+      a: "Дата, находящаяся на заданное количество месяцев до/после другой даты.",
+      m: [2, 2],
+      p: [
+        {
+          name: "start_date",
+          detail: "Дата, от которой выполняется расчёт.",
+          example: "DATE(1969",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "months",
+          detail:
+            "Количество месяцев до (отрицательное) или после (положительное) `start_date` для расчёта.",
+          example: "7",
+          require: "m",
+          repeat: "n",
+          type: "rangenumber",
+        },
+      ],
+    },
+    {
+      n: "СЕКУНДЫ",
+      t: 6,
+      d: "Возвращает секундную составляющую указанного времени в числовом формате.",
+      a: "Секундная составляющая указанного времени.",
+      m: [1, 1],
+      p: [
+        {
+          name: "time",
+          detail: "Время, из которого извлекается секундная составляющая.",
+          example: "TIME(11",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "МИНУТЫ",
+      t: 6,
+      d: "Возвращает минутную составляющую указанного времени в числовом формате.",
+      a: "Минутная составляющая указанного времени.",
+      m: [1, 1],
+      p: [
+        {
+          name: "time",
+          detail: "Время, из которого извлекается минутная составляющая.",
+          example: "TIME(11",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "ЧАС",
+      t: 6,
+      d: "Возвращает часовую составляющую указанного времени в числовом формате.",
+      a: "Часовая составляющая указанного времени.",
+      m: [1, 1],
+      p: [
+        {
+          name: "time",
+          detail: "Время, из которого извлекается часовая составляющая.",
+          example: "TIME(11",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "СЕГОДНЯ",
+      t: 6,
+      d: "Возвращает текущую дату и время в виде значения даты.",
+      a: "Текущая дата и время в виде значения даты.",
+      m: [0, 0],
+      p: [],
+    },
+    {
+      n: "ЧИСТРАБДНИ",
+      t: 6,
+      d: "Возвращает количество чистых рабочих дней между двумя указанными датами.",
+      a: "Чистые рабочие дни между двумя датами.",
+      m: [2, 3],
+      p: [
+        {
+          name: "start_date",
+          detail:
+            "Начальная дата периода, для которого вычисляется количество чистых рабочих дней.",
+          example: "DATE(1969",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "end_date",
+          detail:
+            "Конечная дата периода, для которого вычисляется количество чистых рабочих дней.",
+          example: "7",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "holidays",
+          detail:
+            "Диапазон или массив констант, содержащий серийные номера дат, считающихся праздниками.",
+          example: "16)",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "NETWORKDAYS_INTL",
+      t: 6,
+      d: "Возвращает количество чистых рабочих дней между двумя указанными датами, исключая указанные выходные дни и праздники.",
+      a: "Чистые рабочие дни между двумя датами (с учётом выходных).",
+      m: [2, 4],
+      p: [
+        {
+          name: "start_date",
+          detail:
+            "Начальная дата периода, для которого вычисляется количество чистых рабочих дней.",
+          example: "DATE(1969",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "end_date",
+          detail:
+            "Конечная дата периода, для которого вычисляется количество чистых рабочих дней.",
+          example: "7",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "weekend",
+          detail:
+            "Число или строка, указывающая, какие дни недели считаются выходными.",
+          example: "16)",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "holidays",
+          detail:
+            "Диапазон или массив констант, содержащий даты, считающиеся праздниками.",
+          example: "DATE(1969",
+          require: "o",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "ISOWEEKNUM",
+      t: 6,
+      d: "Возвращает число, представляющее неделю года по стандарту ISO для указанной даты.",
+      a: "Номер недели года по ISO.",
+      m: [1, 1],
+      p: [
+        {
+          name: "date",
+          detail:
+            "Дата, для которой определяется номер недели по ISO. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
+          example: "DATE(1969",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+      ],
+    },
+    {
+      n: "НОМНЕДЕЛИ",
+      t: 6,
+      d: "Возвращает число, представляющее неделю года для указанной даты.",
+      a: "Номер недели года.",
+      m: [1, 2],
+      p: [
+        {
+          name: "date",
+          detail:
+            "Дата, для которой определяется номер недели. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
+          example: "DATE(1969",
+          require: "m",
+          repeat: "n",
+          type: "rangeall",
+        },
+        {
+          name: "type",
+          detail:
+            "Число, представляющее день, с которого начинается неделя. Воскресенье = 1.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4270,14 +6134,14 @@ export default {
     {
       n: "WEEKDAY",
       t: 6,
-      d: "Returns a number representing the day of the week of the date provided.",
-      a: "Day of the week of the date provided (as number).",
+      d: "Возвращает число, представляющее день недели для указанной даты.",
+      a: "День недели для указанной даты (в числовом формате).",
       m: [1, 2],
       p: [
         {
           name: "date",
           detail:
-            "The date for which to determine the day of the week. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Дата, для которой определяется день недели. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4286,7 +6150,7 @@ export default {
         {
           name: "type",
           detail:
-            "A number indicating which numbering system to use to represent weekdays. By default, counts starting with Sunday = 1.",
+            "Число, указывающее, какую систему нумерации использовать для представления дней недели. По умолчанию отсчёт начинается с воскресенья = 1.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4297,13 +6161,13 @@ export default {
     {
       n: "DAY",
       t: 6,
-      d: "Returns the day of the month that a specific date falls on, in numeric format.",
-      a: "Day of the month that a specific date falls on.",
+      d: "Возвращает день месяца для указанной даты в числовом формате.",
+      a: "День месяца для указанной даты.",
       m: [1, 1],
       p: [
         {
           name: "date",
-          detail: "The date from which to extract the day.",
+          detail: "Дата, из которой извлекается день.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4314,13 +6178,13 @@ export default {
     {
       n: "DAYS",
       t: 6,
-      d: "Returns the number of days between two dates.",
-      a: "Number of days between two dates.",
+      d: "Возвращает количество дней между двумя датами.",
+      a: "Количество дней между двумя датами.",
       m: [2, 2],
       p: [
         {
           name: "end_date",
-          detail: "The end of the date range.",
+          detail: "Конечная дата диапазона.",
           example: "2011-3-15",
           require: "m",
           repeat: "n",
@@ -4328,7 +6192,7 @@ export default {
         },
         {
           name: "start_date",
-          detail: "The start of the date range.",
+          detail: "Начальная дата диапазона.",
           example: "2011-2-1",
           require: "m",
           repeat: "n",
@@ -4339,14 +6203,14 @@ export default {
     {
       n: "DAYS360",
       t: 6,
-      d: "Returns the difference between two days based on the 360 day year used in some financial interest calculations.",
-      a: "Days between two dates on a 360-day year.",
+      d: "Возвращает разницу между двумя датами на основе 360-дневного года, используемого в некоторых финансовых расчётах процентов.",
+      a: "Разница между датами на основе 360-дневного года.",
       m: [2, 3],
       p: [
         {
           name: "start_date",
           detail:
-            "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Начальная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4355,7 +6219,7 @@ export default {
         {
           name: "end_date",
           detail:
-            "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Конечная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4363,7 +6227,7 @@ export default {
         },
         {
           name: "method",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4374,13 +6238,13 @@ export default {
     {
       n: "DATE",
       t: 6,
-      d: "Converts a provided year, month, and day into a date.",
-      a: "Converts year/month/day into a date.",
+      d: "Преобразует указанные год, месяц и день в дату.",
+      a: "Преобразует год/месяц/день в дату.",
       m: [3, 3],
       p: [
         {
           name: "year",
-          detail: "The year component of the date.",
+          detail: "Годовая составляющая даты.",
           example: "1969",
           require: "m",
           repeat: "n",
@@ -4388,7 +6252,7 @@ export default {
         },
         {
           name: "month",
-          detail: "The month component of the date.",
+          detail: "Месячная составляющая даты.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4396,7 +6260,7 @@ export default {
         },
         {
           name: "day",
-          detail: "The day component of the date.",
+          detail: "Дневная составляющая даты.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -4407,13 +6271,13 @@ export default {
     {
       n: "DATEVALUE",
       t: 6,
-      d: "Converts a provided date string in a known format to a date value.",
-      a: "Converts a date string to a date value.",
+      d: "Преобразует строку даты в известном формате в значение даты.",
+      a: "Преобразует строку даты в значение даты.",
       m: [1, 1],
       p: [
         {
           name: "date_string",
-          detail: "The string representing the date.",
+          detail: "Строка, представляющая дату.",
           example: '"1969-7-20"',
           require: "m",
           repeat: "n",
@@ -4424,14 +6288,14 @@ export default {
     {
       n: "DATEDIF",
       t: 6,
-      d: "Calculates the number of days, months, or years between two dates.",
-      a: "Date Difference.",
+      d: "Вычисляет количество дней, месяцев или лет между двумя датами.",
+      a: "Разница между датами.",
       m: [3, 3],
       p: [
         {
           name: "start_date",
           detail:
-            "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Начальная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4440,7 +6304,7 @@ export default {
         {
           name: "end_date",
           detail:
-            "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Конечная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4449,7 +6313,7 @@ export default {
         {
           name: "unit",
           detail:
-            'A string abbreviation for unit of time. For example, "M" for month. Accepted values are "Y","M","D","MD","YM","YD".',
+            'Строковое сокращение для единицы времени. Например, "M" для месяца. Допустимые значения: "Y", "M", "D", "MD", "YM", "YD".',
           example: "16)",
           require: "m",
           repeat: "n",
@@ -4460,13 +6324,13 @@ export default {
     {
       n: "WORKDAY",
       t: 6,
-      d: "Calculates the date after a number of working days from a specified start date.",
-      a: "Number of working days from start date.",
+      d: "Вычисляет дату после заданного количества рабочих дней от указанной начальной даты.",
+      a: "Количество рабочих дней от начальной даты.",
       m: [2, 3],
       p: [
         {
           name: "start_date",
-          detail: "The date from which to begin counting.",
+          detail: "Дата, от которой начинается подсчёт.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4475,7 +6339,7 @@ export default {
         {
           name: "num_days",
           detail:
-            "The number of working days to advance from `start_date`. If negative, counts backwards.",
+            "Количество рабочих дней для продвижения от `start_date`. Если отрицательное, отсчёт идёт назад.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4484,7 +6348,7 @@ export default {
         {
           name: "holidays",
           detail:
-            "A range or array constant containing the dates to consider holidays.",
+            "Диапазон или массив констант, содержащий даты, считающиеся праздниками.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4495,13 +6359,13 @@ export default {
     {
       n: "WORKDAY_INTL",
       t: 6,
-      d: "Calculates the date after a specified number of workdays excluding specified weekend days and holidays.",
-      a: "Date after a number of workdays (specifying weekends).",
+      d: "Вычисляет дату после заданного количества рабочих дней, исключая указанные выходные дни и праздники.",
+      a: "Дата после заданного количества рабочих дней (с учётом выходных).",
       m: [2, 4],
       p: [
         {
           name: "start_date",
-          detail: "The date from which to begin counting.",
+          detail: "Дата, от которой начинается подсчёт.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4510,7 +6374,7 @@ export default {
         {
           name: "num_days",
           detail:
-            "The number of working days to advance from `start_date`. If negative, counts backwards.",
+            "Количество рабочих дней для продвижения от `start_date`. Если отрицательное, отсчёт идёт назад.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4519,7 +6383,7 @@ export default {
         {
           name: "weekend",
           detail:
-            "A number or string representing which days of the week are considered weekends.",
+            "Число или строка, указывающая, какие дни недели считаются выходными.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4528,7 +6392,7 @@ export default {
         {
           name: "holidays",
           detail:
-            "A range or array constant containing the dates to consider holidays.",
+            "Диапазон или массив констант, содержащий даты, считающиеся праздниками.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4539,13 +6403,13 @@ export default {
     {
       n: "YEAR",
       t: 6,
-      d: "Returns the year specified by a given date.",
-      a: "Year specified by a given date.",
+      d: "Возвращает год для указанной даты.",
+      a: "Год для указанной даты.",
       m: [1, 1],
       p: [
         {
           name: "date",
-          detail: "The date from which to extract the year.",
+          detail: "Дата, из которой извлекается год.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4556,14 +6420,14 @@ export default {
     {
       n: "YEARFRAC",
       t: 6,
-      d: "Returns the number of years, including fractional years, between two dates using a specified day count convention.",
-      a: "Exact number of years between two dates.",
+      d: "Возвращает количество лет, включая дробные годы, между двумя датами с использованием указанного метода подсчёта дней.",
+      a: "Точное количество лет между двумя датами.",
       m: [2, 3],
       p: [
         {
           name: "start_date",
           detail:
-            "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Начальная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4572,7 +6436,7 @@ export default {
         {
           name: "end_date",
           detail:
-            "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+            "Конечная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4580,7 +6444,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4591,21 +6455,21 @@ export default {
     {
       n: "TODAY",
       t: 6,
-      d: "Returns the current date as a date value.",
-      a: "Current date as a date value.",
+      d: "Возвращает текущую дату в виде значения даты.",
+      a: "Текущая дата в виде значения даты.",
       m: [0, 0],
       p: [],
     },
     {
       n: "MONTH",
       t: 6,
-      d: "Returns the month of the year a specific date falls in, in numeric format.",
-      a: "Month of the year a specific date falls in.",
+      d: "Возвращает месяц года для указанной даты в числовом формате.",
+      a: "Месяц года для указанной даты.",
       m: [1, 1],
       p: [
         {
           name: "date",
-          detail: "The date from which to extract the month.",
+          detail: "Дата, из которой извлекается месяц.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4616,13 +6480,13 @@ export default {
     {
       n: "EFFECT",
       t: 8,
-      d: "Calculates the annual effective interest rate given the nominal rate and number of compounding periods per year.",
-      a: "Annual effective interest rate.",
+      d: "Вычисляет годовую эффективную процентную ставку на основе номинальной ставки и количества периодов начисления процентов в году.",
+      a: "Годовая эффективная процентная ставка.",
       m: [2, 2],
       p: [
         {
           name: "nominal_rate",
-          detail: "The nominal interest rate per year.",
+          detail: "Номинальная процентная ставка за год.",
           example: "0.99",
           require: "m",
           repeat: "n",
@@ -4630,7 +6494,7 @@ export default {
         },
         {
           name: "periods_per_year",
-          detail: "The number of compounding periods per year.",
+          detail: "Количество периодов начисления процентов в году.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -4641,13 +6505,13 @@ export default {
     {
       n: "DOLLAR",
       t: 12,
-      d: "Formats a number into the currency specific to your spreadsheet locale.",
-      a: "Formats a number as currency specific to your spreadsheet locale.",
+      d: "Форматирует число в валюту, соответствующую локали таблицы.",
+      a: "Форматирует число в валюту, соответствующую локали таблицы.",
       m: [1, 2],
       p: [
         {
           name: "number",
-          detail: "The value to be formatted.",
+          detail: "Значение для форматирования.",
           example: "1.2351",
           require: "m",
           repeat: "n",
@@ -4655,7 +6519,7 @@ export default {
         },
         {
           name: "number_of_places",
-          detail: "The number of decimal places to display.",
+          detail: "Количество знаков после запятой для отображения.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -4666,14 +6530,14 @@ export default {
     {
       n: "DOLLARDE",
       t: 8,
-      d: "Converts a price quotation given as a decimal fraction into a decimal value.",
-      a: "Converts a decimal fraction to decimal value.",
+      d: "Преобразует котировку цены, заданную в виде дробного десятичного числа, в десятичное значение.",
+      a: "Преобразует дробное десятичное число в десятичное значение.",
       m: [2, 2],
       p: [
         {
           name: "fractional_price",
           detail:
-            "The price quotation given using fractional decimal conventions.",
+            "Котировка цены, заданная с использованием дробных десятичных соглашений.",
           example: "100.10",
           require: "m",
           repeat: "n",
@@ -4681,8 +6545,7 @@ export default {
         },
         {
           name: "unit",
-          detail:
-            "The units of the fraction, e.g. `8` for 1/8ths or `32` for 1/32nds.",
+          detail: "Единицы дроби, например, `8` для 1/8 или `32` для 1/32.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -4693,13 +6556,13 @@ export default {
     {
       n: "DOLLARFR",
       t: 8,
-      d: "Converts a price quotation given as a decimal value into a decimal fraction.",
-      a: "Converts a decimal value to decimal fraction.",
+      d: "Преобразует котировку цены, заданную в виде десятичного значения, в дробное десятичное число.",
+      a: "Преобразует десятичное значение в дробное десятичное число.",
       m: [2, 2],
       p: [
         {
           name: "decimal_price",
-          detail: "The price quotation given as a decimal value.",
+          detail: "Котировка цены, заданная в виде десятичного значения.",
           example: "100.125",
           require: "m",
           repeat: "n",
@@ -4708,7 +6571,7 @@ export default {
         {
           name: "unit",
           detail:
-            "The units of the desired fraction, e.g. `8` for 1/8ths or `32` for 1/32nds.",
+            "Единицы желаемой дроби, например, `8` для 1/8 или `32` для 1/32.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -4719,13 +6582,13 @@ export default {
     {
       n: "DB",
       t: 8,
-      d: "Calculates the depreciation of an asset for a specified period using the arithmetic declining balance method.",
-      a: "Depreciation via declining balance method.",
+      d: "Вычисляет амортизацию актива за указанный период с использованием метода арифметического уменьшаемого остатка.",
+      a: "Амортизация методом арифметического уменьшаемого остатка.",
       m: [4, 5],
       p: [
         {
           name: "cost",
-          detail: "The initial cost of the asset.",
+          detail: "Первоначальная стоимость актива.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -4733,7 +6596,7 @@ export default {
         },
         {
           name: "salvage",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "Стоимость актива на конец амортизации.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -4741,7 +6604,8 @@ export default {
         },
         {
           name: "life",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail:
+            "Количество периодов, в течение которых актив амортизируется.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -4750,7 +6614,7 @@ export default {
         {
           name: "period",
           detail:
-            "The single period within `life` for which to calculate depreciation.",
+            "Отдельный период в пределах `life`, для которого рассчитывается амортизация.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -4758,7 +6622,7 @@ export default {
         },
         {
           name: "month",
-          detail: "The number of months in the first year of depreciation.",
+          detail: "Количество месяцев в первом году амортизации.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -4769,13 +6633,13 @@ export default {
     {
       n: "DDB",
       t: 8,
-      d: "Calculates the depreciation of an asset for a specified period using the double-declining balance method.",
-      a: "Depreciation via double-declining balance method.",
+      d: "Вычисляет амортизацию актива за указанный период с использованием метода двойного уменьшаемого остатка.",
+      a: "Амортизация методом двойного уменьшаемого остатка.",
       m: [4, 5],
       p: [
         {
           name: "cost",
-          detail: "The initial cost of the asset.",
+          detail: "Первоначальная стоимость актива.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -4783,7 +6647,7 @@ export default {
         },
         {
           name: "salvage",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "Стоимость актива на конец амортизации.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -4791,7 +6655,8 @@ export default {
         },
         {
           name: "life",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail:
+            "Количество периодов, в течение которых актив амортизируется.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -4800,7 +6665,7 @@ export default {
         {
           name: "period",
           detail:
-            "The single period within `life` for which to calculate depreciation.",
+            "Отдельный период в пределах `life`, для которого рассчитывается амортизация.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -4808,7 +6673,7 @@ export default {
         },
         {
           name: "factor",
-          detail: "The factor by which depreciation decreases.",
+          detail: "Коэффициент, на который уменьшается амортизация.",
           example: "2.25",
           require: "m",
           repeat: "n",
@@ -4819,13 +6684,13 @@ export default {
     {
       n: "RATE",
       t: 8,
-      d: "Calculates the interest rate of an annuity investment based on constant-amount periodic payments and the assumption of a constant interest rate.",
-      a: "Interest rate of an annuity investment.",
+      d: "Вычисляет процентную ставку для аннуитетного инвестирования на основе периодических платежей постоянной суммы и предположения о постоянной процентной ставке.",
+      a: "Процентная ставка аннуитетного инвестирования.",
       m: [3, 6],
       p: [
         {
           name: "number_of_periods",
-          detail: "The number of payments to be made.",
+          detail: "Количество платежей, которые будут произведены.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -4833,7 +6698,7 @@ export default {
         },
         {
           name: "payment_per_period",
-          detail: "The amount per period to be paid.",
+          detail: "Сумма платежа за период.",
           example: "-100",
           require: "m",
           repeat: "n",
@@ -4841,7 +6706,7 @@ export default {
         },
         {
           name: "present_value",
-          detail: "The current value of the annuity.",
+          detail: "Текущая стоимость аннуитета.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -4849,8 +6714,7 @@ export default {
         },
         {
           name: "future_value",
-          detail:
-            "The future value remaining after the final payment has been made.",
+          detail: "Будущая стоимость, остающаяся после последнего платежа.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4859,7 +6723,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4867,7 +6731,7 @@ export default {
         },
         {
           name: "rate_guess",
-          detail: "An estimate for what the interest rate will be.",
+          detail: "Оценка предполагаемой процентной ставки.",
           example: "0.1",
           require: "o",
           repeat: "n",
@@ -4878,13 +6742,13 @@ export default {
     {
       n: "CUMPRINC",
       t: 8,
-      d: "Calculates the cumulative principal paid over a range of payment periods for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Cumulative principal paid over a set of periods.",
+      d: "Вычисляет совокупную основную сумму, выплаченную за диапазон платёжных периодов для инвестиции на основе периодических платежей постоянной суммы и постоянной процентной ставки.",
+      a: "Совокупная основная сумма за набор периодов.",
       m: [6, 6],
       p: [
         {
           name: "rate",
-          detail: "The interest rate.",
+          detail: "Процентная ставка.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -4892,7 +6756,7 @@ export default {
         },
         {
           name: "number_of_periods",
-          detail: "The number of payments to be made.",
+          detail: "Количество платежей, которые будут произведены.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -4900,7 +6764,7 @@ export default {
         },
         {
           name: "present_value",
-          detail: "The current value of the annuity.",
+          detail: "Текущая стоимость аннуитета.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -4908,8 +6772,7 @@ export default {
         },
         {
           name: "first_period",
-          detail:
-            "The number of the payment period to begin the cumulative calculation.",
+          detail: "Номер платёжного периода для начала совокупного расчёта.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -4918,7 +6781,7 @@ export default {
         {
           name: "last_period",
           detail:
-            "The number of the payment period to end the cumulative calculation.",
+            "Номер платёжного периода для завершения совокупного расчёта.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -4927,7 +6790,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -4938,14 +6801,14 @@ export default {
     {
       n: "COUPNUM",
       t: 8,
-      d: "Calculates the number of coupons, or interest payments, between the settlement date and the maturity date of the investment.",
-      a: "Number of coupons between settlement and maturity.",
+      d: "Вычисляет количество купонов или процентных платежей между датой расчёта и датой погашения инвестиции.",
+      a: "Количество купонов между расчётом и погашением.",
       m: [3, 4],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -4954,7 +6817,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "02",
           require: "m",
           repeat: "n",
@@ -4963,7 +6826,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -4971,7 +6834,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4982,13 +6845,13 @@ export default {
     {
       n: "SYD",
       t: 8,
-      d: "Calculates the depreciation of an asset for a specified period using the sum of years digits method.",
-      a: "Depreciation via sum of years digits method.",
+      d: "Вычисляет амортизацию актива за указанный период с использованием метода суммы годовых цифр.",
+      a: "Амортизация методом суммы годовых цифр.",
       m: [4, 4],
       p: [
         {
           name: "cost",
-          detail: "The initial cost of the asset.",
+          detail: "Первоначальная стоимость актива.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -4996,7 +6859,7 @@ export default {
         },
         {
           name: "salvage",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "Стоимость актива на конец амортизации.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5004,7 +6867,8 @@ export default {
         },
         {
           name: "life",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail:
+            "Количество периодов, в течение которых актив амортизируется.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5013,7 +6877,7 @@ export default {
         {
           name: "period",
           detail:
-            "The single period within `life` for which to calculate depreciation.",
+            "Отдельный период в пределах `life`, для которого рассчитывается амортизация.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5024,14 +6888,14 @@ export default {
     {
       n: "TBILLEQ",
       t: 8,
-      d: "Calculates the equivalent annualized rate of return of a US Treasury Bill based on discount rate.",
-      a: "Equivalent rate of return for a Treasury bill.",
+      d: "Вычисляет эквивалентную годовую доходность казначейского векселя США на основе ставки дисконта.",
+      a: "Эквивалентная доходность казначейского векселя.",
       m: [3, 3],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5040,7 +6904,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5048,7 +6912,7 @@ export default {
         },
         {
           name: "discount",
-          detail: "The discount rate of the bill at time of purchase.",
+          detail: "Ставка дисконта векселя на момент покупки.",
           example: "2)",
           require: "m",
           repeat: "n",
@@ -5059,14 +6923,14 @@ export default {
     {
       n: "TBILLYIELD",
       t: 8,
-      d: "Calculates the yield of a US Treasury Bill based on price.",
-      a: "The yield of a us treasury bill based on price.",
+      d: "Вычисляет доходность казначейского векселя США на основе цены.",
+      a: "Доходность казначейского векселя на основе цены.",
       m: [3, 3],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5075,7 +6939,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5084,7 +6948,7 @@ export default {
         {
           name: "price",
           detail:
-            "The price at which the security is bought per 100 face value.",
+            "Цена, по которой ценная бумага куплена за 100 единиц номинальной стоимости.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5095,14 +6959,14 @@ export default {
     {
       n: "TBILLPRICE",
       t: 8,
-      d: "Calculates the price of a US Treasury Bill based on discount rate.",
-      a: "Price of US treasury bill.",
+      d: "Вычисляет цену казначейского векселя США на основе ставки дисконта.",
+      a: "Цена казначейского векселя США.",
       m: [3, 3],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5111,7 +6975,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5119,7 +6983,7 @@ export default {
         },
         {
           name: "discount",
-          detail: "The discount rate of the bill at time of purchase.",
+          detail: "Ставка дисконта векселя на момент покупки.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -5130,13 +6994,13 @@ export default {
     {
       n: "PV",
       t: 8,
-      d: "Calculates the present value of an annuity investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Present value of an annuity investment.",
+      d: "Вычисляет текущую стоимость аннуитетного инвестирования на основе периодических платежей постоянной суммы и постоянной процентной ставки.",
+      a: "Текущая стоимость аннуитетного инвестирования.",
       m: [3, 5],
       p: [
         {
           name: "rate",
-          detail: "The interest rate.",
+          detail: "Процентная ставка.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5144,7 +7008,7 @@ export default {
         },
         {
           name: "number_of_periods",
-          detail: "The number of payments to be made.",
+          detail: "Количество платежей, которые будут произведены.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5152,7 +7016,7 @@ export default {
         },
         {
           name: "payment_amount",
-          detail: "The amount per period to be paid.",
+          detail: "Сумма платежа за период.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5160,8 +7024,7 @@ export default {
         },
         {
           name: "future_value",
-          detail:
-            "The future value remaining after the final payment has been made.",
+          detail: "Будущая стоимость, остающаяся после последнего платежа.",
           example: "D2",
           require: "o",
           repeat: "n",
@@ -5170,7 +7033,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -5181,13 +7044,13 @@ export default {
     {
       n: "ACCRINT",
       t: 8,
-      d: "Calculates the accrued interest of a security that has periodic payments.",
-      a: "Accrued interest of security with periodic payments.",
+      d: "Вычисляет начисленные проценты по ценной бумаге с периодическими выплатами.",
+      a: "Начисленные проценты по ценной бумаге с периодическими выплатами.",
       m: [6, 8],
       p: [
         {
           name: "issue",
-          detail: "The date the security was initially issued.",
+          detail: "Дата первоначального выпуска ценной бумаги.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5195,7 +7058,7 @@ export default {
         },
         {
           name: "first_payment",
-          detail: "The first date interest will be paid.",
+          detail: "Дата первой выплаты процентов.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5204,7 +7067,7 @@ export default {
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5212,7 +7075,7 @@ export default {
         },
         {
           name: "rate",
-          detail: "The annualized rate of interest.",
+          detail: "Годовая процентная ставка.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5220,7 +7083,7 @@ export default {
         },
         {
           name: "redemption",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5229,7 +7092,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5237,7 +7100,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5246,7 +7109,7 @@ export default {
         {
           name: "calc_method",
           detail:
-            "[Optional-defaults to TRUE()] - A logical value that specifies the method used to calculate the total accrued interest when the settlement date is later than the first interest accrual date. \n\nIf the value is TRUE, the total accrued interest from the issue date to the settlement date is returned. \n\nIf the value is FALSE, return the accrued interest from the first interest accrual date to the settlement date.",
+            "Логическое значение, определяющее метод расчёта общей суммы начисленных процентов, когда дата расчёта позже даты первого начисления процентов. \n\nЕсли значение TRUE, возвращается общая сумма начисленных процентов от даты выпуска до даты расчёта. \n\nЕсли значение FALSE, возвращается сумма начисленных процентов от даты первого начисления процентов до даты расчёта.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -5257,13 +7120,13 @@ export default {
     {
       n: "ACCRINTM",
       t: 8,
-      d: "Calculates the accrued interest of a security that pays interest at maturity.",
-      a: "Accrued interest of security paying at maturity.",
+      d: "Вычисляет начисленные проценты по ценной бумаге, проценты по которой выплачиваются при погашении.",
+      a: "Начисленные проценты по ценной бумаге с выплатой при погашении.",
       m: [4, 5],
       p: [
         {
           name: "issue",
-          detail: "The date the security was initially issued.",
+          detail: "Дата первоначального выпуска ценной бумаги.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5271,7 +7134,7 @@ export default {
         },
         {
           name: "maturity",
-          detail: "The maturity date of the security.",
+          detail: "Дата погашения ценной бумаги.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5279,7 +7142,7 @@ export default {
         },
         {
           name: "rate",
-          detail: "The annualized rate of interest.",
+          detail: "Годовая процентная ставка.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5287,7 +7150,7 @@ export default {
         },
         {
           name: "redemption",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "1000",
           require: "m",
           repeat: "n",
@@ -5295,7 +7158,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5306,14 +7169,14 @@ export default {
     {
       n: "COUPDAYBS",
       t: 8,
-      d: "Calculates the number of days from the first coupon, or interest payment, until settlement.",
-      a: "Number of days from first coupon to settlement.",
+      d: "Вычисляет количество дней от первого купона или процентного платежа до даты расчёта.",
+      a: "Количество дней от первого купона до даты расчёта.",
       m: [3, 4],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5322,7 +7185,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5331,7 +7194,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5339,7 +7202,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5350,14 +7213,14 @@ export default {
     {
       n: "COUPDAYS",
       t: 8,
-      d: "Calculates the number of days in the coupon, or interest payment, period that contains the specified settlement date.",
-      a: "Days in coupon period containing settlement date.",
+      d: "Вычисляет количество дней в купонном или процентном платёжном периоде, содержащем указанную дату расчёта.",
+      a: "Дни в купонном периоде, содержащем дату расчёта.",
       m: [3, 4],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5366,7 +7229,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5375,7 +7238,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5383,7 +7246,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5394,14 +7257,14 @@ export default {
     {
       n: "COUPDAYSNC",
       t: 8,
-      d: "Calculates the number of days from the settlement date until the next coupon, or interest payment.",
-      a: "Days from settlement until next coupon.",
+      d: "Вычисляет количество дней от даты расчёта до следующего купона или процентного платежа.",
+      a: "Дни от даты расчёта до следующего купона.",
       m: [3, 4],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5410,7 +7273,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5419,7 +7282,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5427,7 +7290,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5438,14 +7301,14 @@ export default {
     {
       n: "COUPNCD",
       t: 8,
-      d: "Calculates next coupon, or interest payment, date after the settlement date.",
-      a: "Next coupon date after the settlement date.",
+      d: "Вычисляет дату следующего купона или процентного платежа после даты расчёта.",
+      a: "Дата следующего купона после даты расчёта.",
       m: [3, 4],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5454,7 +7317,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5463,7 +7326,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5471,7 +7334,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5482,14 +7345,14 @@ export default {
     {
       n: "COUPPCD",
       t: 8,
-      d: "Calculates last coupon, or interest payment, date before the settlement date.",
-      a: "Last coupon date before settlement date.",
+      d: "Вычисляет дату последнего купона или процентного платежа до даты расчёта.",
+      a: "Дата последнего купона до даты расчёта.",
       m: [3, 4],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5498,7 +7361,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5507,7 +7370,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5515,7 +7378,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5526,13 +7389,13 @@ export default {
     {
       n: "FV",
       t: 8,
-      d: "Calculates the future value of an annuity investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Future value of an annuity investment.",
+      d: "Вычисляет будущую стоимость аннуитетного инвестирования на основе периодических платежей постоянной суммы и постоянной процентной ставки.",
+      a: "Будущая стоимость аннуитетного инвестирования.",
       m: [3, 5],
       p: [
         {
           name: "rate",
-          detail: "The interest rate.",
+          detail: "Процентная ставка.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5540,7 +7403,7 @@ export default {
         },
         {
           name: "number_of_periods",
-          detail: "The number of payments to be made.",
+          detail: "Количество платежей, которые будут произведены.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5548,7 +7411,7 @@ export default {
         },
         {
           name: "payment_amount",
-          detail: "The amount per period to be paid.",
+          detail: "Сумма платежа за период.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5556,7 +7419,7 @@ export default {
         },
         {
           name: "present_value",
-          detail: "The current value of the annuity.",
+          detail: "Текущая стоимость аннуитета.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5565,7 +7428,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5576,13 +7439,14 @@ export default {
     {
       n: "FVSCHEDULE",
       t: 8,
-      d: "Calculates the future value of some principal based on a specified series of potentially varying interest rates.",
-      a: "Future value of principal from series of rates.",
+      d: "Вычисляет будущую стоимость начального капитала на основе ряда потенциально изменяющихся процентных ставок.",
+      a: "Будущая стоимость начального капитала с учётом ряда ставок.",
       m: [2, 2],
       p: [
         {
           name: "principal",
-          detail: "The amount of initial capital or value to compound against.",
+          detail:
+            "Сумма начального капитала или значения для начисления процентов.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5590,8 +7454,7 @@ export default {
         },
         {
           name: "rate_schedule",
-          detail:
-            "A series of interest rates to compound against the `principal`.",
+          detail: "Ряд процентных ставок для начисления на `principal`.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -5602,14 +7465,14 @@ export default {
     {
       n: "YIELD",
       t: 8,
-      d: "Calculates the annual yield of a security paying periodic interest, such as a US Treasury Bond, based on price.",
-      a: "Annual yield of a security paying periodic interest.",
+      d: "Вычисляет годовую доходность ценной бумаги с периодическими процентными выплатами, например, казначейской облигации США, на основе цены.",
+      a: "Годовая доходность ценной бумаги с периодическими выплатами.",
       m: [6, 7],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5618,7 +7481,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5626,7 +7489,7 @@ export default {
         },
         {
           name: "rate",
-          detail: "The annualized rate of interest.",
+          detail: "Годовая процентная ставка.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -5635,7 +7498,7 @@ export default {
         {
           name: "price",
           detail:
-            "The price at which the security is bought per 100 face value.",
+            "Цена, по которой ценная бумага куплена за 100 единиц номинальной стоимости.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5643,7 +7506,7 @@ export default {
         },
         {
           name: "redemption",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5652,7 +7515,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5660,7 +7523,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5671,14 +7534,14 @@ export default {
     {
       n: "YIELDDISC",
       t: 8,
-      d: "Calculates the annual yield of a discount (non-interest-bearing) security, based on price.",
-      a: "Annual yield of a discount security.",
+      d: "Вычисляет годовую доходность дисконтной (не приносящей проценты) ценной бумаги на основе цены.",
+      a: "Годовая доходность дисконтной ценной бумаги.",
       m: [4, 5],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5687,7 +7550,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5696,7 +7559,7 @@ export default {
         {
           name: "price",
           detail:
-            "The price at which the security is bought per 100 face value.",
+            "Цена, по которой ценная бумага куплена за 100 единиц номинальной стоимости.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5704,7 +7567,7 @@ export default {
         },
         {
           name: "redemption",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5712,7 +7575,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5723,13 +7586,13 @@ export default {
     {
       n: "NOMINAL",
       t: 8,
-      d: "Calculates the annual nominal interest rate given the effective rate and number of compounding periods per year.",
-      a: "Annual nominal interest rate.",
+      d: "Вычисляет годовую номинальную процентную ставку на основе эффективной ставки и количества периодов начисления процентов в году.",
+      a: "Годовая номинальная процентная ставка.",
       m: [2, 2],
       p: [
         {
           name: "effective_rate",
-          detail: "The effective interest rate per year.",
+          detail: "Эффективная процентная ставка за год.",
           example: "0.85",
           require: "m",
           repeat: "n",
@@ -5737,7 +7600,7 @@ export default {
         },
         {
           name: "periods_per_year",
-          detail: "The number of compounding periods per year.",
+          detail: "Количество периодов начисления процентов в году.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5748,14 +7611,14 @@ export default {
     {
       n: "XIRR",
       t: 8,
-      d: "Calculates the internal rate of return of an investment based on a specified series of potentially irregularly spaced cash flows.",
-      a: "Internal rate of return given non-periodic cashflows.",
+      d: "Вычисляет внутреннюю норму доходности инвестиции на основе указанной серии потенциально нерегулярных денежных потоков.",
+      a: "Внутренняя норма доходности для непериодических денежных потоков.",
       m: [2, 3],
       p: [
         {
           name: "cashflow_amounts",
           detail:
-            "An array or range containing the income or payments associated with the investment.",
+            "Массив или диапазон, содержащий доходы или платежи, связанные с инвестицией.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -5764,7 +7627,7 @@ export default {
         {
           name: "cashflow_dates",
           detail:
-            "An array or range with dates corresponding to the cash flows in `cashflow_amounts`.",
+            "Массив или диапазон с датами, соответствующими денежным потокам в `cashflow_amounts`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -5772,7 +7635,7 @@ export default {
         },
         {
           name: "rate_guess",
-          detail: "An estimate for what the internal rate of return will be.",
+          detail: "Предполагаемая оценка внутренней нормы доходности.",
           example: "250",
           require: "o",
           repeat: "n",
@@ -5783,14 +7646,14 @@ export default {
     {
       n: "MIRR",
       t: 8,
-      d: "Calculates the modified internal rate of return on an investment based on a series of periodic cash flows and the difference between the interest rate paid on financing versus the return received on reinvested income.",
-      a: "Modified internal rate of return.",
+      d: "Вычисляет модифицированную внутреннюю норму доходности инвестиции на основе серии периодических денежных потоков и разницы между процентной ставкой, уплачиваемой по финансированию, и доходом, полученным от реинвестирования.",
+      a: "Модифицированная внутренняя норма доходности.",
       m: [3, 3],
       p: [
         {
           name: "cashflow_amounts",
           detail:
-            "An array or range containing the income or payments associated with the investment.",
+            "Массив или диапазон, содержащий доходы или платежи, связанные с инвестицией.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -5798,7 +7661,8 @@ export default {
         },
         {
           name: "financing_rate",
-          detail: "The interest rate paid on funds invested.",
+          detail:
+            "Процентная ставка, уплачиваемая по инвестированным средствам.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5807,7 +7671,7 @@ export default {
         {
           name: "reinvestment_return_rate",
           detail:
-            "The return (as a percentage) earned on reinvestment of income received from the investment.",
+            "Доход (в процентах), полученный от реинвестирования доходов от инвестиции.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5818,14 +7682,14 @@ export default {
     {
       n: "IRR",
       t: 8,
-      d: "Calculates the internal rate of return on an investment based on a series of periodic cash flows.",
-      a: "Internal rate of return given periodic cashflows.",
+      d: "Вычисляет внутреннюю норму доходности инвестиции на основе серии периодических денежных потоков.",
+      a: "Внутренняя норма доходности для периодических денежных потоков.",
       m: [1, 2],
       p: [
         {
           name: "cashflow_amounts",
           detail:
-            "An array or range containing the income or payments associated with the investment.",
+            "Массив или диапазон, содержащий доходы или платежи, связанные с инвестицией.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -5833,7 +7697,7 @@ export default {
         },
         {
           name: "rate_guess",
-          detail: "An estimate for what the internal rate of return will be.",
+          detail: "Предполагаемая оценка внутренней нормы доходности.",
           example: "200",
           require: "o",
           repeat: "n",
@@ -5844,13 +7708,13 @@ export default {
     {
       n: "NPV",
       t: 8,
-      d: "Calculates the net present value of an investment based on a series of periodic cash flows and a discount rate.",
-      a: "The net present value of an investment based on a series of periodic cash flows and a discount rate.",
+      d: "Вычисляет чистую приведенную стоимость инвестиции на основе серии периодических денежных потоков и ставки дисконтирования.",
+      a: "Чистая приведенная стоимость инвестиции на основе серии периодических денежных потоков и ставки дисконтирования.",
       m: [2, 255],
       p: [
         {
           name: "discount",
-          detail: "The discount rate of the investment over one period.",
+          detail: "Ставка дисконтирования инвестиции за один период.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5858,7 +7722,7 @@ export default {
         },
         {
           name: "cashflow1",
-          detail: "The first future cash flow.",
+          detail: "Первый будущий денежный поток.",
           example: "200",
           require: "m",
           repeat: "n",
@@ -5866,7 +7730,7 @@ export default {
         },
         {
           name: "cashflow2",
-          detail: "Additional future cash flows.",
+          detail: "Дополнительные будущие денежные потоки.",
           example: "250",
           require: "o",
           repeat: "y",
@@ -5877,13 +7741,13 @@ export default {
     {
       n: "XNPV",
       t: 8,
-      d: "Calculates the net present value of an investment based on a specified series of potentially irregularly spaced cash flows and a discount rate.",
-      a: "Net present value given non-periodic cashflows.",
+      d: "Вычисляет чистую приведенную стоимость инвестиции на основе указанной серии потенциально нерегулярных денежных потоков и ставки дисконтирования.",
+      a: "Чистая приведенная стоимость для непериодических денежных потоков.",
       m: [3, 3],
       p: [
         {
           name: "discount",
-          detail: "The discount rate of the investment over one period.",
+          detail: "Ставка дисконтирования инвестиции за один период.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -5892,7 +7756,7 @@ export default {
         {
           name: "cashflow_amounts",
           detail:
-            "A range of cells containing the income or payments associated with the investment.",
+            "Диапазон ячеек, содержащий доходы или платежи, связанные с инвестицией.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -5901,7 +7765,7 @@ export default {
         {
           name: "cashflow_dates",
           detail:
-            "A range of cells with dates corresponding to the cash flows in `cashflow_amounts`.",
+            "Диапазон ячеек с датами, соответствующими денежным потокам в `cashflow_amounts`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -5912,13 +7776,13 @@ export default {
     {
       n: "CUMIPMT",
       t: 8,
-      d: "Calculates the cumulative interest over a range of payment periods for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Cumulative interest paid over a set of periods.",
+      d: "Вычисляет накопленные проценты за диапазон платежных периодов для инвестиции на основе постоянных периодических платежей и постоянной процентной ставки.",
+      a: "Накопленные проценты, выплаченные за заданный период.",
       m: [6, 6],
       p: [
         {
           name: "rate",
-          detail: "The interest rate.",
+          detail: "Процентная ставка.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5926,7 +7790,7 @@ export default {
         },
         {
           name: "number_of_periods",
-          detail: "The number of payments to be made.",
+          detail: "Количество платежей, которые необходимо сделать.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5934,7 +7798,7 @@ export default {
         },
         {
           name: "present_value",
-          detail: "The current value of the annuity.",
+          detail: "Текущая стоимость аннуитета.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5942,8 +7806,7 @@ export default {
         },
         {
           name: "first_period",
-          detail:
-            "The number of the payment period to begin the cumulative calculation.",
+          detail: "Номер платежного периода для начала накопительного расчета.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5952,7 +7815,7 @@ export default {
         {
           name: "last_period",
           detail:
-            "The number of the payment period to end the cumulative calculation.",
+            "Номер платежного периода для окончания накопительного расчета.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -5961,7 +7824,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5972,13 +7835,13 @@ export default {
     {
       n: "PMT",
       t: 8,
-      d: "Calculates the periodic payment for an annuity investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Periodic payment for an annuity investment.",
+      d: "Вычисляет периодический платеж по аннуитетной инвестиции на основе постоянных периодических платежей и постоянной процентной ставки.",
+      a: "Периодический платеж по аннуитетной инвестиции.",
       m: [3, 5],
       p: [
         {
           name: "rate",
-          detail: "The interest rate.",
+          detail: "Процентная ставка.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -5986,7 +7849,7 @@ export default {
         },
         {
           name: "number_of_periods",
-          detail: "The number of payments to be made.",
+          detail: "Количество платежей, которые необходимо сделать.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5994,7 +7857,7 @@ export default {
         },
         {
           name: "present_value",
-          detail: "The current value of the annuity.",
+          detail: "Текущая стоимость аннуитета.",
           example: " 100000",
           require: "m",
           repeat: "n",
@@ -6002,8 +7865,7 @@ export default {
         },
         {
           name: "future_value",
-          detail:
-            "The future value remaining after the final payment has been made.",
+          detail: "Остаточная стоимость после последнего платежа.",
           example: "D2",
           require: "m",
           repeat: "n",
@@ -6012,7 +7874,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6023,13 +7885,13 @@ export default {
     {
       n: "IPMT",
       t: 8,
-      d: "Calculates the payment on interest for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Payment on interest for an investment.",
+      d: "Вычисляет платеж по процентам для инвестиции на основе постоянных периодических платежей и постоянной процентной ставки.",
+      a: "Платеж по процентам для инвестиции.",
       m: [4, 6],
       p: [
         {
           name: "rate",
-          detail: "The interest rate.",
+          detail: "Процентная ставка.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6037,7 +7899,7 @@ export default {
         },
         {
           name: "period",
-          detail: "The amortization period, in terms of number of periods.",
+          detail: "Период амортизации, выраженный в количестве периодов.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6045,7 +7907,7 @@ export default {
         },
         {
           name: "number_of_periods",
-          detail: "The number of payments to be made.",
+          detail: "Количество платежей, которые необходимо сделать.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6053,7 +7915,7 @@ export default {
         },
         {
           name: "present_value",
-          detail: "The current value of the annuity.",
+          detail: "Текущая стоимость аннуитета.",
           example: "80000",
           require: "m",
           repeat: "n",
@@ -6061,8 +7923,7 @@ export default {
         },
         {
           name: "future_value",
-          detail:
-            "The future value remaining after the final payment has been made.",
+          detail: "Остаточная стоимость после последнего платежа.",
           example: "E2",
           require: "m",
           repeat: "n",
@@ -6071,7 +7932,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6082,13 +7943,13 @@ export default {
     {
       n: "PPMT",
       t: 8,
-      d: "Calculates the payment on the principal of an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Payment on the principal of an investment.",
+      d: "Вычисляет платеж по основному долгу инвестиции на основе постоянных периодических платежей и постоянной процентной ставки.",
+      a: "Платеж по основному долгу инвестиции.",
       m: [4, 6],
       p: [
         {
           name: "rate",
-          detail: "The interest rate.",
+          detail: "Процентная ставка.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6096,7 +7957,7 @@ export default {
         },
         {
           name: "period",
-          detail: "The amortization period, in terms of number of periods.",
+          detail: "Период амортизации, выраженный в количестве периодов.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6104,7 +7965,7 @@ export default {
         },
         {
           name: "number_of_periods",
-          detail: "The number of payments to be made.",
+          detail: "Количество платежей, которые необходимо сделать.",
           example: "3*12",
           require: "m",
           repeat: "n",
@@ -6112,7 +7973,7 @@ export default {
         },
         {
           name: "present_value",
-          detail: "The current value of the annuity.",
+          detail: "Текущая стоимость аннуитета.",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6120,8 +7981,7 @@ export default {
         },
         {
           name: "future_value",
-          detail:
-            "The future value remaining after the final payment has been made.",
+          detail: "Остаточная стоимость после последнего платежа.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6130,7 +7990,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6141,13 +8001,13 @@ export default {
     {
       n: "INTRATE",
       t: 8,
-      d: "Calculates the effective interest rate generated when an investment is purchased at one price and sold at another with no interest or dividends generated by the investment itself.",
-      a: "Calculates effective interest rate.",
+      d: "Вычисляет эффективную процентную ставку, полученную при покупке инвестиции по одной цене и продаже по другой без учета процентов или дивидендов, генерируемых самой инвестицией.",
+      a: "Вычисляет эффективную процентную ставку.",
       m: [4, 5],
       p: [
         {
           name: "buy_date",
-          detail: "The date of purchase of the investment.",
+          detail: "Дата покупки инвестиции.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6155,7 +8015,7 @@ export default {
         },
         {
           name: "sell_date",
-          detail: "The date of sale of the investment.",
+          detail: "Дата продажи инвестиции.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6163,7 +8023,7 @@ export default {
         },
         {
           name: "buy_price",
-          detail: "The price at which the investment was purchased.",
+          detail: "Цена, по которой была приобретена инвестиция.",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6171,7 +8031,7 @@ export default {
         },
         {
           name: "sell_price",
-          detail: "The price at which the investment was sold.",
+          detail: "Цена, по которой была продана инвестиция.",
           example: "101200",
           require: "m",
           repeat: "n",
@@ -6179,7 +8039,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор используемого метода подсчета дней.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6190,14 +8050,14 @@ export default {
     {
       n: "PRICE",
       t: 8,
-      d: "Calculates the price of a security paying periodic interest, such as a US Treasury Bond, based on expected yield.",
-      a: "Price of a security paying periodic interest.",
+      d: "Вычисляет цену ценной бумаги с периодическими процентными выплатами, например казначейских облигаций США, на основе ожидаемой доходности.",
+      a: "Цена ценной бумаги с периодическими процентными выплатами.",
       m: [6, 7],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6206,7 +8066,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6214,7 +8074,7 @@ export default {
         },
         {
           name: "rate",
-          detail: "The annualized rate of interest.",
+          detail: "Годовая процентная ставка.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6222,7 +8082,7 @@ export default {
         },
         {
           name: "yield",
-          detail: "The expected annual yield of the security.",
+          detail: "Ожидаемая годовая доходность ценной бумаги.",
           example: "0.065",
           require: "m",
           repeat: "n",
@@ -6230,7 +8090,7 @@ export default {
         },
         {
           name: "redemption",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6239,7 +8099,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных выплат в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6247,7 +8107,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6258,14 +8118,14 @@ export default {
     {
       n: "PRICEDISC",
       t: 8,
-      d: "Calculates the price of a discount (non-interest-bearing) security, based on expected yield.",
-      a: "Price of a discount security.",
+      d: "Вычисляет цену дисконтной (не приносящей проценты) ценной бумаги на основе ожидаемой доходности.",
+      a: "Цена дисконтной ценной бумаги.",
       m: [4, 5],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6274,7 +8134,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6282,7 +8142,7 @@ export default {
         },
         {
           name: "discount",
-          detail: "The discount rate of the security at time of purchase.",
+          detail: "Дисконтная ставка ценной бумаги на момент покупки.",
           example: "0.0525",
           require: "m",
           repeat: "n",
@@ -6290,7 +8150,7 @@ export default {
         },
         {
           name: "redemption",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6298,7 +8158,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6309,14 +8169,14 @@ export default {
     {
       n: "PRICEMAT",
       t: 8,
-      d: "Calculates the price of a security paying interest at maturity, based on expected yield.",
-      a: "Price of security paying interest at maturity.",
+      d: "Вычисляет цену ценной бумаги, выплачивающей проценты на момент погашения, на основе ожидаемой доходности.",
+      a: "Цена ценной бумаги, выплачивающей проценты на момент погашения.",
       m: [5, 6],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6325,7 +8185,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6333,7 +8193,7 @@ export default {
         },
         {
           name: "issue",
-          detail: "The date the security was initially issued.",
+          detail: "Дата первоначального выпуска ценной бумаги.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6341,7 +8201,7 @@ export default {
         },
         {
           name: "rate",
-          detail: "The annualized rate of interest.",
+          detail: "Годовая процентная ставка.",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6349,7 +8209,7 @@ export default {
         },
         {
           name: "yield",
-          detail: "The expected annual yield of the security.",
+          detail: "Ожидаемая годовая доходность ценной бумаги.",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6357,7 +8217,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6368,14 +8228,14 @@ export default {
     {
       n: "RECEIVED",
       t: 8,
-      d: "Calculates the amount received at maturity for an investment in fixed-income securities purchased on a given date.",
-      a: "Amount received at maturity for a security.",
+      d: "Вычисляет сумму, полученную на момент погашения для инвестиции в ценные бумаги с фиксированным доходом, приобретенные на указанную дату.",
+      a: "Сумма, полученная на момент погашения ценной бумаги.",
       m: [4, 5],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6384,7 +8244,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6393,7 +8253,7 @@ export default {
         {
           name: "investment",
           detail:
-            "The amount invested (irrespective of face value of each security).",
+            "Сумма инвестиции (независимо от номинальной стоимости каждой ценной бумаги).",
           example: "10000000",
           require: "m",
           repeat: "n",
@@ -6401,7 +8261,7 @@ export default {
         },
         {
           name: "discount",
-          detail: "The discount rate of the security invested in.",
+          detail: "Дисконтная ставка инвестированной ценной бумаги.",
           example: "0.0575",
           require: "m",
           repeat: "n",
@@ -6409,7 +8269,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор используемого метода подсчета дней.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6420,14 +8280,14 @@ export default {
     {
       n: "DISC",
       t: 8,
-      d: "Calculates the discount rate of a security based on price.",
-      a: "The discount rate of a security based on price.",
+      d: "Вычисляет дисконтную ставку ценной бумаги на основе ее цены.",
+      a: "Дисконтная ставка ценной бумаги на основе цены.",
       m: [4, 5],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6436,7 +8296,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6445,7 +8305,7 @@ export default {
         {
           name: "price",
           detail:
-            "The price at which the security is bought per 100 face value.",
+            "Цена покупки ценной бумаги за 100 единиц номинальной стоимости.",
           example: "97.975",
           require: "m",
           repeat: "n",
@@ -6453,7 +8313,7 @@ export default {
         },
         {
           name: "redemption",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6461,7 +8321,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор используемого метода подсчета дней.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6472,13 +8332,13 @@ export default {
     {
       n: "NPER",
       t: 8,
-      d: "Calculates the number of payment periods for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Number of payment periods for an investment.",
+      d: "Вычисляет количество платежных периодов для инвестиции на основе постоянных периодических платежей и постоянной процентной ставки.",
+      a: "Количество платежных периодов для инвестиции.",
       m: [3, 5],
       p: [
         {
           name: "rate",
-          detail: "The interest rate.",
+          detail: "Процентная ставка.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6486,7 +8346,7 @@ export default {
         },
         {
           name: "payment_amount",
-          detail: "The amount of each payment made.",
+          detail: "Сумма каждого платежа.",
           example: "500",
           require: "m",
           repeat: "n",
@@ -6494,7 +8354,7 @@ export default {
         },
         {
           name: "present_value",
-          detail: "The current value of the annuity.",
+          detail: "Текущая стоимость аннуитета.",
           example: "40000",
           require: "m",
           repeat: "n",
@@ -6502,8 +8362,7 @@ export default {
         },
         {
           name: "future_value",
-          detail:
-            "The future value remaining after the final payment has been made.",
+          detail: "Остаточная стоимость после последнего платежа.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6512,7 +8371,7 @@ export default {
         {
           name: "end_or_beginning",
           detail:
-            "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+            "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6523,13 +8382,13 @@ export default {
     {
       n: "SLN",
       t: 8,
-      d: "Calculates the depreciation of an asset for one period using the straight-line method.",
-      a: "Depreciation of asset using the straight-line method.",
+      d: "Вычисляет амортизацию актива за один период с использованием метода прямолинейной амортизации.",
+      a: "Амортизация актива с использованием метода прямолинейной амортизации.",
       m: [3, 3],
       p: [
         {
           name: "cost",
-          detail: "The initial cost of the asset.",
+          detail: "Первоначальная стоимость актива.",
           example: "300000",
           require: "m",
           repeat: "n",
@@ -6537,7 +8396,7 @@ export default {
         },
         {
           name: "salvage",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "Стоимость актива в конце периода амортизации.",
           example: "75000",
           require: "m",
           repeat: "n",
@@ -6545,7 +8404,8 @@ export default {
         },
         {
           name: "life",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail:
+            "Количество периодов, в течение которых актив амортизируется.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -6556,14 +8416,14 @@ export default {
     {
       n: "DURATION",
       t: 8,
-      d: "Calculates the number of compounding periods required for an investment of a specified present value appreciating at a given rate to reach a target value.",
-      a: "Number of periods for an investment to reach a value.",
+      d: "Вычисляет количество периодов начисления процентов, необходимых для достижения целевой стоимости инвестиции с заданной текущей стоимостью и заданной процентной ставкой.",
+      a: "Количество периодов для достижения заданной стоимости инвестиции.",
       m: [5, 6],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6572,7 +8432,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6580,7 +8440,7 @@ export default {
         },
         {
           name: "rate",
-          detail: "The annualized rate of interest.",
+          detail: "Годовая процентная ставка.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6588,7 +8448,7 @@ export default {
         },
         {
           name: "yield",
-          detail: "The expected annual yield of the security.",
+          detail: "Ожидаемая годовая доходность ценной бумаги.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -6597,7 +8457,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных выплат в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6605,7 +8465,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6616,14 +8476,14 @@ export default {
     {
       n: "MDURATION",
       t: 8,
-      d: "Calculates the modified Macaulay duration of a security paying periodic interest, such as a US Treasury Bond, based on expected yield.",
-      a: "Modified Macaulay duration.",
+      d: "Вычисляет модифицированную длительность Маколея для ценной бумаги с периодическими процентными выплатами, например казначейских облигаций США, на основе ожидаемой доходности.",
+      a: "Модифицированная длительность Маколея.",
       m: [5, 6],
       p: [
         {
           name: "settlement",
           detail:
-            "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+            "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6632,7 +8492,7 @@ export default {
         {
           name: "maturity",
           detail:
-            "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+            "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6640,7 +8500,7 @@ export default {
         },
         {
           name: "rate",
-          detail: "The annualized rate of interest.",
+          detail: "Годовая процентная ставка.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6648,7 +8508,7 @@ export default {
         },
         {
           name: "yield",
-          detail: "The expected annual yield of the security.",
+          detail: "Ожидаемая годовая доходность ценной бумаги.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -6657,7 +8517,7 @@ export default {
         {
           name: "frequency",
           detail:
-            "The number of interest or coupon payments per year (1, 2, or 4).",
+            "Количество процентных или купонных выплат в год (1, 2 или 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6665,7 +8525,7 @@ export default {
         },
         {
           name: "day_count_convention",
-          detail: "An indicator of what day count method to use.",
+          detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6676,14 +8536,14 @@ export default {
     {
       n: "BIN2DEC",
       t: 9,
-      d: "Converts a signed binary number to decimal format.",
-      a: "Converts a signed binary number to decimal format.",
+      d: "Преобразует знаковое двоичное число в десятичный формат.",
+      a: "Преобразует знаковое двоичное число в десятичный формат.",
       m: [1, 1],
       p: [
         {
           name: "signed_binary_number",
           detail:
-            "The signed 10-bit binary value to be converted to decimal, provided as a string.",
+            "Знаковое 10-битное двоичное значение, которое нужно преобразовать в десятичное, предоставленное в виде строки.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -6694,14 +8554,14 @@ export default {
     {
       n: "BIN2HEX",
       t: 9,
-      d: "Converts a signed binary number to signed hexadecimal format.",
-      a: "Converts a binary number to hexadecimal.",
+      d: "Преобразует знаковое двоичное число в знаковый шестнадцатеричный формат.",
+      a: "Преобразует двоичное число в шестнадцатеричное.",
       m: [1, 2],
       p: [
         {
           name: "signed_binary_number",
           detail:
-            "The signed 10-bit binary value to be converted to signed hexademical, provided as a string.",
+            "Знаковое 10-битное двоичное значение, которое нужно преобразовать в знаковое шестнадцатеричное, предоставленное в виде строки.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -6709,7 +8569,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6720,14 +8581,14 @@ export default {
     {
       n: "BIN2OCT",
       t: 9,
-      d: "Converts a signed binary number to signed octal format.",
-      a: "Converts a binary number to octal.",
+      d: "Преобразует знаковое двоичное число в знаковый восьмеричный формат.",
+      a: "Преобразует двоичное число в восьмеричное.",
       m: [1, 2],
       p: [
         {
           name: "signed_binary_number",
           detail:
-            "The signed 10-bit binary value to be converted to signed octal, provided as a string.",
+            "Знаковое 10-битное двоичное значение, которое нужно преобразовать в знаковое восьмеричное, предоставленное в виде строки.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -6735,7 +8596,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6746,14 +8608,14 @@ export default {
     {
       n: "DEC2BIN",
       t: 9,
-      d: "Converts a decimal number to signed binary format.",
-      a: "Converts a decimal number to signed binary format.",
+      d: "Преобразует десятичное число в знаковый двоичный формат.",
+      a: "Преобразует десятичное число в знаковый двоичный формат.",
       m: [1, 2],
       p: [
         {
           name: "decimal_number",
           detail:
-            "The decimal value to be converted to signed binary, provided as a string.",
+            "Десятичное значение, которое нужно преобразовать в знаковое двоичное, предоставленное в виде строки.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6761,7 +8623,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6772,14 +8635,14 @@ export default {
     {
       n: "DEC2HEX",
       t: 9,
-      d: "Converts a decimal number to signed hexadecimal format.",
-      a: "Converts a decimal number to hexadecimal.",
+      d: "Преобразует десятичное число в знаковый шестнадцатеричный формат.",
+      a: "Преобразует десятичное число в шестнадцатеричное.",
       m: [1, 2],
       p: [
         {
           name: "decimal_number",
           detail:
-            "The decimal value to be converted to signed hexadecimal, provided as a string.",
+            "Десятичное значение, которое нужно преобразовать в знаковое шестнадцатеричное, предоставленное в виде строки.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6787,7 +8650,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6798,14 +8662,14 @@ export default {
     {
       n: "DEC2OCT",
       t: 9,
-      d: "Converts a decimal number to signed octal format.",
-      a: "Converts a decimal number to signed octal format.",
+      d: "Преобразует десятичное число в знаковый восьмеричный формат.",
+      a: "Преобразует десятичное число в знаковый восьмеричный формат.",
       m: [1, 2],
       p: [
         {
           name: "decimal_number",
           detail:
-            "The decimal value to be converted to signed octal, provided as a string.",
+            "Десятичное значение, которое нужно преобразовать в знаковое восьмеричное, предоставленное в виде строки.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6813,7 +8677,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6824,14 +8689,14 @@ export default {
     {
       n: "HEX2BIN",
       t: 9,
-      d: "Converts a signed hexadecimal number to signed binary format.",
-      a: "Converts a hexadecimal number to binary.",
+      d: "Преобразует знаковое шестнадцатеричное число в знаковый двоичный формат.",
+      a: "Преобразует шестнадцатеричное число в двоичное.",
       m: [1, 2],
       p: [
         {
           name: "signed_hexadecimal_number",
           detail:
-            "The signed 40-bit hexadecimal value to be converted to signed binary, provided as a string.",
+            "Знаковое 40-битное шестнадцатеричное значение, которое нужно преобразовать в знаковое двоичное, предоставленное в виде строки.",
           example: '"f3"',
           require: "m",
           repeat: "n",
@@ -6839,7 +8704,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6850,14 +8716,14 @@ export default {
     {
       n: "HEX2DEC",
       t: 9,
-      d: "Converts a signed hexadecimal number to decimal format.",
-      a: "Converts a hexadecimal number to decimal.",
+      d: "Преобразует знаковое шестнадцатеричное число в десятичный формат.",
+      a: "Преобразует шестнадцатеричное число в десятичное.",
       m: [1, 1],
       p: [
         {
           name: "signed_hexadecimal_number",
           detail:
-            "The signed 40-bit hexadecimal value to be converted to decimal, provided as a string.",
+            "Знаковое 40-битное шестнадцатеричное значение, которое нужно преобразовать в десятичное, предоставленное в виде строки.",
           example: '"f3"',
           require: "m",
           repeat: "n",
@@ -6868,14 +8734,14 @@ export default {
     {
       n: "HEX2OCT",
       t: 9,
-      d: "Converts a signed hexadecimal number to signed octal format.",
-      a: "Converts a hexadecimal number to octal.",
+      d: "Преобразует знаковое шестнадцатеричное число в знаковый восьмеричный формат.",
+      a: "Преобразует шестнадцатеричное число в восьмеричное.",
       m: [1, 2],
       p: [
         {
           name: "signed_hexadecimal_number",
           detail:
-            "The signed 40-bit hexadecimal value to be converted to signed octal, provided as a string.",
+            "Знаковое 40-битное шестнадцатеричное значение, которое нужно преобразовать в знаковое восьмеричное, предоставленное в виде строки.",
           example: '"f3"',
           require: "m",
           repeat: "n",
@@ -6883,7 +8749,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6894,14 +8761,14 @@ export default {
     {
       n: "OCT2BIN",
       t: 9,
-      d: "Converts a signed octal number to signed binary format.",
-      a: "Converts an octal number to binary.",
+      d: "Преобразует знаковое восьмеричное число в знаковый двоичный формат.",
+      a: "Преобразует восьмеричное число в двоичное.",
       m: [1, 2],
       p: [
         {
           name: "signed_octal_number",
           detail:
-            "The signed 30-bit octal value to be converted to signed binary, provided as a string.",
+            "Знаковое 30-битное восьмеричное значение, которое нужно преобразовать в знаковое двоичное, предоставленное в виде строки.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -6909,7 +8776,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6920,14 +8788,14 @@ export default {
     {
       n: "OCT2DEC",
       t: 9,
-      d: "Converts a signed octal number to decimal format.",
-      a: "Converts a signed octal number to decimal format.",
+      d: "Преобразует знаковое восьмеричное число в десятичный формат.",
+      a: "Преобразует знаковое восьмеричное число в десятичный формат.",
       m: [1, 1],
       p: [
         {
           name: "signed_octal_number",
           detail:
-            "The signed 30-bit octal value to be converted to decimal, provided as a string.",
+            "Знаковое 30-битное восьмеричное значение, которое нужно преобразовать в десятичное, предоставленное в виде строки.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -6938,14 +8806,14 @@ export default {
     {
       n: "OCT2HEX",
       t: 9,
-      d: "Converts a signed octal number to signed hexadecimal format.",
-      a: "Converts an octal number to hexadecimal.",
+      d: "Преобразует знаковое восьмеричное число в знаковый шестнадцатеричный формат.",
+      a: "Преобразует восьмеричное число в шестнадцатеричное.",
       m: [1, 2],
       p: [
         {
           name: "signed_octal_number",
           detail:
-            "The signed 30-bit octal value to be converted to signed hexadecimal, provided as a string.",
+            "Знаковое 30-битное восьмеричное значение, которое нужно преобразовать в знаковое шестнадцатеричное, предоставленное в виде строки.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -6953,7 +8821,8 @@ export default {
         },
         {
           name: "significant_digits",
-          detail: "The number of significant digits to ensure in the result.",
+          detail:
+            "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -6964,13 +8833,13 @@ export default {
     {
       n: "COMPLEX",
       t: 9,
-      d: "Creates a complex number given real and imaginary coefficients.",
-      a: "Creates a complex number.",
+      d: "Создает комплексное число на основе заданных действительного и мнимого коэффициентов.",
+      a: "Создает комплексное число.",
       m: [2, 3],
       p: [
         {
           name: "real_part",
-          detail: "The real coefficient.",
+          detail: "Действительный коэффициент.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -6978,7 +8847,7 @@ export default {
         },
         {
           name: "imaginary_part",
-          detail: "The imaginary coefficient.",
+          detail: "Мнимый коэффициент.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -6987,7 +8856,7 @@ export default {
         {
           name: "suffix",
           detail:
-            "The suffix for the imaginary coefficient, can only be 'i' or 'j'. If omitted, 'i' will be used.",
+            'Суффикс для мнимого коэффициента, может быть только "i" или "j". Если не указан, будет использоваться "i".',
           example: '"j"',
           require: "o",
           repeat: "n",
@@ -6998,13 +8867,13 @@ export default {
     {
       n: "IMREAL",
       t: 9,
-      d: "Returns the real coefficient of a complex number.",
-      a: "The real coefficient of a complex number.",
+      d: "Возвращает действительный коэффициент комплексного числа.",
+      a: "Действительный коэффициент комплексного числа.",
       m: [1, 1],
       p: [
         {
           name: "complex_number",
-          detail: "The complex number, in the a+bi or a+bj format.",
+          detail: "Комплексное число в формате a+bi или a+bj.",
           example: '"4+5i"',
           require: "m",
           repeat: "n",
@@ -7015,13 +8884,13 @@ export default {
     {
       n: "IMAGINARY",
       t: 9,
-      d: "Returns the imaginary coefficient of a complex number.",
-      a: "The imaginary coefficient of a complex number.",
+      d: "Возвращает мнимый коэффициент комплексного числа.",
+      a: "Мнимый коэффициент комплексного числа.",
       m: [1, 1],
       p: [
         {
           name: "complex_number",
-          detail: "The complex number, in the a+bi or a+bj format.",
+          detail: "Комплексное число в формате a+bi или a+bj.",
           example: '"4+5i"',
           require: "m",
           repeat: "n",
@@ -7032,13 +8901,13 @@ export default {
     {
       n: "IMCONJUGATE",
       t: 9,
-      d: "Returns the complex conjugate of a number.",
-      a: "The complex conjugate of a number.",
+      d: "Возвращает комплексно-сопряженное число.",
+      a: "Комплексно-сопряженное число.",
       m: [1, 1],
       p: [
         {
           name: "number",
-          detail: "The complex number to calculate the conjugate for.",
+          detail: "Комплексное число, для которого вычисляется сопряженное.",
           example: '"3+4i"',
           require: "m",
           repeat: "n",
@@ -7049,13 +8918,14 @@ export default {
     {
       n: "IMABS",
       t: 9,
-      d: "Returns absolute value (or modulus) of a complex number.",
-      a: "The absolute value of a complex number.",
+      d: "Возвращает абсолютное значение (или модуль) комплексного числа.",
+      a: "Абсолютное значение комплексного числа.",
       m: [1, 1],
       p: [
         {
           name: "number",
-          detail: "The complex number to calculate the absolute value of.",
+          detail:
+            "Комплексное число, для которого вычисляется абсолютное значение.",
           example: '"3+4i"',
           require: "m",
           repeat: "n",
@@ -7066,13 +8936,13 @@ export default {
     {
       n: "DELTA",
       t: 9,
-      d: "Compare two numeric values, returning 1 if they're equal.",
-      a: "Compare two numeric values.",
+      d: "Сравнивает два числовых значения, возвращая 1, если они равны.",
+      a: "Сравнивает два числовых значения.",
       m: [1, 2],
       p: [
         {
           name: "number1",
-          detail: "The first number to compare.",
+          detail: "Первое число для сравнения.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -7080,7 +8950,7 @@ export default {
         },
         {
           name: "number2",
-          detail: "The second number to compare.",
+          detail: "Второе число для сравнения.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -7091,13 +8961,13 @@ export default {
     {
       n: "IMSUM",
       t: 9,
-      d: "Returns the sum of a series of complex numbers.",
-      a: "Sum of a series of complex numbers.",
+      d: "Возвращает сумму ряда комплексных чисел.",
+      a: "Сумма ряда комплексных чисел.",
       m: [1, 255],
       p: [
         {
           name: "value1",
-          detail: "The first complex number or range to add together.",
+          detail: "Первое комплексное число или диапазон для сложения.",
           example: '"3+4i"',
           require: "m",
           repeat: "n",
@@ -7105,7 +8975,8 @@ export default {
         },
         {
           name: "value2",
-          detail: "Additional complex numbers or ranges to add to `value1`.",
+          detail:
+            "Дополнительные комплексные числа или диапазоны для добавления к `value1`.",
           example: '"5-3i"',
           require: "o",
           repeat: "y",
@@ -7116,13 +8987,13 @@ export default {
     {
       n: "IMSUB",
       t: 9,
-      d: "Returns the difference between two complex numbers.",
-      a: "The difference between two complex numbers.",
+      d: "Возвращает разность двух комплексных чисел.",
+      a: "Разность двух комплексных чисел.",
       m: [2, 2],
       p: [
         {
           name: "first_number",
-          detail: "The complex number to subtract second_number from.",
+          detail: "Комплексное число, из которого вычитается второе число.",
           example: '"6+5i"',
           require: "m",
           repeat: "n",
@@ -7130,7 +9001,7 @@ export default {
         },
         {
           name: "second_number",
-          detail: "The complex number to subtract from first_number.",
+          detail: "Комплексное число, которое вычитается из первого числа.",
           example: '"2+3i"',
           require: "m",
           repeat: "n",
@@ -7141,13 +9012,13 @@ export default {
     {
       n: "IMPRODUCT",
       t: 9,
-      d: "Returns the result of multiplying a series of complex numbers together.",
-      a: "Result of multiplying a series of complex numbers together.",
+      d: "Возвращает результат умножения ряда комплексных чисел.",
+      a: "Результат умножения ряда комплексных чисел.",
       m: [1, 255],
       p: [
         {
           name: "factor1",
-          detail: "The first number or range to calculate for the product.",
+          detail: "Первое число или диапазон для вычисления произведения.",
           example: '"3+4i"',
           require: "m",
           repeat: "n",
@@ -7156,7 +9027,7 @@ export default {
         {
           name: "factor2",
           detail:
-            "Additional complex numbers or ranges to calculate for the product.",
+            "Дополнительные комплексные числа или диапазоны для вычисления произведения.",
           example: '"5-3i"',
           require: "o",
           repeat: "y",
@@ -7167,13 +9038,13 @@ export default {
     {
       n: "IMDIV",
       t: 9,
-      d: "Returns one complex number divided by another.",
-      a: "One complex number divided by another.",
+      d: "Возвращает одно комплексное число, деленное на другое.",
+      a: "Одно комплексное число, деленное на другое.",
       m: [2, 2],
       p: [
         {
           name: "dividend",
-          detail: "The complex number to be divided.",
+          detail: "Комплексное число, которое делится.",
           example: '"11+16i"',
           require: "m",
           repeat: "n",
@@ -7181,7 +9052,7 @@ export default {
         },
         {
           name: "divisor",
-          detail: "The complex number to divide by.",
+          detail: "Комплексное число, на которое производится деление.",
           example: '"3+2i"',
           require: "m",
           repeat: "n",
@@ -7192,14 +9063,14 @@ export default {
     {
       n: "NOT",
       t: 10,
-      d: "Returns the opposite of a logical value - `NOT(TRUE)` returns `FALSE`; `NOT(FALSE)` returns `TRUE`.",
-      a: "Returns opposite of provided logical value.",
+      d: "Возвращает противоположное логическое значение - `NOT(TRUE)` возвращает `FALSE`; `NOT(FALSE)` возвращает `TRUE`.",
+      a: "Возвращает противоположное логическое значение.",
       m: [1, 1],
       p: [
         {
           name: "logical_expression",
           detail:
-            "An expression or reference to a cell holding an expression that represents some logical value.",
+            "Выражение или ссылка на ячейку, содержащую выражение, которое представляет некоторое логическое значение.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7210,30 +9081,30 @@ export default {
     {
       n: "TRUE",
       t: 10,
-      d: "Returns the logical value `TRUE`.",
-      a: "Logical value `true`.",
+      d: "Возвращает логическое значение `TRUE`.",
+      a: "Логическое значение `true`.",
       m: [0, 0],
       p: [],
     },
     {
       n: "FALSE",
       t: 10,
-      d: "Returns the logical value `FALSE`.",
-      a: "Logical value `false`.",
+      d: "Возвращает логическое значение `FALSE`.",
+      a: "Логическое значение `false`.",
       m: [0, 0],
       p: [],
     },
     {
       n: "AND",
       t: 10,
-      d: "Returns true if all of the provided arguments are logically true, and false if any of the provided arguments are logically false.",
-      a: "Logical `and` operator.",
+      d: "Возвращает `TRUE`, если все предоставленные аргументы логически истинны, и `FALSE`, если хотя бы один из аргументов логически ложен.",
+      a: "Логический оператор `and`.",
       m: [1, 255],
       p: [
         {
           name: "logical_expression1",
           detail:
-            "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`, or an expression that can be coerced to a logical value.",
+            "Выражение или ссылка на ячейку, содержащую выражение, которое представляет некоторое логическое значение, т.е. `TRUE` или `FALSE`, или выражение, которое может быть преобразовано в логическое значение.",
           example: 'A2 = "foo"',
           require: "m",
           repeat: "n",
@@ -7241,7 +9112,8 @@ export default {
         },
         {
           name: "logical_expression2",
-          detail: "More expressions that represent logical values.",
+          detail:
+            "Дополнительные выражения, представляющие логические значения.",
           example: 'A3 = "bar"',
           require: "o",
           repeat: "y",
@@ -7252,13 +9124,14 @@ export default {
     {
       n: "IFERROR",
       t: 10,
-      d: "Returns the first argument if it is not an error value, otherwise returns the second argument if present, or a blank if the second argument is absent.",
-      a: "Value if it is not an error, otherwise 2nd argument.",
+      d: "Возвращает первый аргумент, если он не является значением ошибки, в противном случае возвращает второй аргумент, если он присутствует, или пустую строку, если второй аргумент отсутствует.",
+      a: "Значение, если оно не является ошибкой, иначе второй аргумент.",
       m: [2, 2],
       p: [
         {
           name: "value",
-          detail: "The value to return if `value` itself is not an error.",
+          detail:
+            "Значение, которое возвращается, если само `value` не является ошибкой.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -7266,7 +9139,8 @@ export default {
         },
         {
           name: "value_if_error",
-          detail: "The value the function returns if `value` is an error.",
+          detail:
+            "Значение, которое возвращается функцией, если `value` является ошибкой.",
           example: '"Error in cell A1"',
           require: "m",
           repeat: "n",
@@ -7277,14 +9151,14 @@ export default {
     {
       n: "IF",
       t: 10,
-      d: "Returns one value if a logical expression is `TRUE` and another if it is `FALSE`.",
-      a: "Returns value depending on logical expression.",
+      d: "Возвращает одно значение, если логическое выражение `TRUE`, и другое, если оно `FALSE`.",
+      a: "Возвращает значение в зависимости от логического выражения.",
       m: [2, 3],
       p: [
         {
           name: "logical_expression",
           detail:
-            "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`.",
+            "Выражение или ссылка на ячейку, содержащую выражение, которое представляет некоторое логическое значение, т.е. `TRUE` или `FALSE`.",
           example: 'A2 = "foo"',
           require: "m",
           repeat: "n",
@@ -7293,7 +9167,7 @@ export default {
         {
           name: "value_if_true",
           detail:
-            "The value the function returns if `logical_expression` is `TRUE`.",
+            "Значение, которое возвращается функцией, если `logical_expression` равно `TRUE`.",
           example: '"A2 is foo"',
           require: "m",
           repeat: "n",
@@ -7302,7 +9176,7 @@ export default {
         {
           name: "value_if_false",
           detail:
-            "The value the function returns if `logical_expression` is `FALSE`.",
+            "Значение, которое возвращается функцией, если `logical_expression` равно `FALSE`.",
           example: '"A2 was false"',
           require: "o",
           repeat: "n",
@@ -7313,14 +9187,14 @@ export default {
     {
       n: "OR",
       t: 10,
-      d: "Returns true if any of the provided arguments are logically true, and false if all of the provided arguments are logically false.",
-      a: "Logical `or` operator.",
+      d: "Возвращает `TRUE`, если хотя бы один из предоставленных аргументов логически истинен, и `FALSE`, если все аргументы логически ложны.",
+      a: "Логический оператор `or`.",
       m: [1, 255],
       p: [
         {
           name: "logical_expression1",
           detail:
-            "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`, or an expression that can be coerced to a logical value.",
+            "Выражение или ссылка на ячейку, содержащую выражение, которое представляет некоторое логическое значение, т.е. `TRUE` или `FALSE`, или выражение, которое может быть преобразовано в логическое значение.",
           example: 'A2 = "foo"',
           require: "m",
           repeat: "n",
@@ -7328,7 +9202,8 @@ export default {
         },
         {
           name: "logical_expression2",
-          detail: "More expressions that evaluate to logical values.",
+          detail:
+            "Дополнительные выражения, которые оцениваются как логические значения.",
           example: ' A3 = "bar"',
           require: "m",
           repeat: "n",
@@ -7339,13 +9214,13 @@ export default {
     {
       n: "NE",
       t: 11,
-      d: "Returns `TRUE` if two specified values are not equal and `FALSE` otherwise. Equivalent to the `!=` operator.",
-      a: "Not equal.",
+      d: "Возвращает `TRUE`, если два указанных значения не равны, и `FALSE` в противном случае. Эквивалент оператору `!=`.",
+      a: "Не равно.",
       m: [2, 2],
       p: [
         {
           name: "value1",
-          detail: "The first value.",
+          detail: "Первое значение.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7353,7 +9228,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The value to test against `value1` for inequality.",
+          detail: "Значение, с которым сравнивается `value1` на неравенство.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7364,13 +9239,13 @@ export default {
     {
       n: "EQ",
       t: 11,
-      d: "Returns `TRUE` if two specified values are equal and `FALSE` otherwise. Equivalent to the `==` operator.",
-      a: "Equal.",
+      d: "Возвращает `TRUE`, если два указанных значения равны, и `FALSE` в противном случае. Эквивалент оператору `==`.",
+      a: "Равно.",
       m: [2, 2],
       p: [
         {
           name: "value1",
-          detail: "The first value.",
+          detail: "Первое значение.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7378,7 +9253,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The value to test against `value1` for equality.",
+          detail: "Значение, с которым сравнивается `value1` на равенство.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7389,13 +9264,14 @@ export default {
     {
       n: "GT",
       t: 11,
-      d: "Returns `TRUE` if the first argument is strictly greater than the second, and `FALSE` otherwise. Equivalent to the `>` operator.",
-      a: "Strictly greater than.",
+      d: "Возвращает `TRUE`, если первый аргумент строго больше второго, и `FALSE` в противном случае. Эквивалент оператору `>`.",
+      a: "Строго больше.",
       m: [2, 2],
       p: [
         {
           name: "value1",
-          detail: "The value to test as being greater than `value2`.",
+          detail:
+            "Значение, которое проверяется на строгое превышение над `value2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7403,7 +9279,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The second value.",
+          detail: "Второе значение.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7414,14 +9290,14 @@ export default {
     {
       n: "GTE",
       t: 11,
-      d: "Returns `TRUE` if the first argument is greater than or equal to the second, and `FALSE` otherwise. Equivalent to the `>=` operator.",
-      a: "Greater than or equal to.",
+      d: "Возвращает `TRUE`, если первый аргумент больше или равен второму, и `FALSE` в противном случае. Эквивалент оператору `>=`.",
+      a: "Больше или равно.",
       m: [2, 2],
       p: [
         {
           name: "value1",
           detail:
-            "The value to test as being greater than or equal to `value2`.",
+            "Значение, которое проверяется на превышение или равенство с `value2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7429,7 +9305,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The second value.",
+          detail: "Второе значение.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7440,13 +9316,14 @@ export default {
     {
       n: "LT",
       t: 11,
-      d: "Returns `TRUE` if the first argument is strictly less than the second, and `FALSE` otherwise. Equivalent to the `<` operator.",
-      a: "Less than.",
+      d: "Возвращает `TRUE`, если первый аргумент строго меньше второго, и `FALSE` в противном случае. Эквивалент оператору `<`.",
+      a: "Меньше.",
       m: [2, 2],
       p: [
         {
           name: "value1",
-          detail: "The value to test as being less than `value2`.",
+          detail:
+            "Значение, которое проверяется на строгое меньшинство по сравнению с `value2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7454,7 +9331,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The second value.",
+          detail: "Второе значение.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7465,13 +9342,14 @@ export default {
     {
       n: "LTE",
       t: 11,
-      d: "Returns `TRUE` if the first argument is less than or equal to the second, and `FALSE` otherwise. Equivalent to the `<=` operator.",
-      a: "Less than or equal to.",
+      d: "Возвращает `TRUE`, если первый аргумент меньше или равен второму, и `FALSE` в противном случае. Эквивалент оператору `<=`.",
+      a: "Меньше или равно.",
       m: [2, 2],
       p: [
         {
           name: "value1",
-          detail: "The value to test as being less than or equal to `value2`.",
+          detail:
+            "Значение, которое проверяется на меньшинство или равенство с `value2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7479,7 +9357,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The second value.",
+          detail: "Второе значение.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7490,13 +9368,13 @@ export default {
     {
       n: "ADD",
       t: 11,
-      d: "Returns the sum of two numbers. Equivalent to the `+` operator.",
-      a: "Sum of two numbers",
+      d: "Возвращает сумму двух чисел. Эквивалент оператору `+`.",
+      a: "Сумма двух чисел.",
       m: [2, 2],
       p: [
         {
           name: "value1",
-          detail: "The first addend.",
+          detail: "Первое слагаемое.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7504,7 +9382,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The second addend.",
+          detail: "Второе слагаемое.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7515,13 +9393,13 @@ export default {
     {
       n: "MINUS",
       t: 11,
-      d: "Returns the difference of two numbers. Equivalent to the `-` operator.",
-      a: "Difference of two numbers",
+      d: "Возвращает разность двух чисел. Эквивалент оператору `-`.",
+      a: "Разность двух чисел.",
       m: [2, 2],
       p: [
         {
           name: "value1",
-          detail: "The minuend, or number to be subtracted from.",
+          detail: "Уменьшаемое, число, из которого вычитается.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7529,7 +9407,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The subtrahend, or number to subtract from `value1`.",
+          detail: "Вычитаемое, число, которое вычитается из `value1`.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7540,13 +9418,13 @@ export default {
     {
       n: "MULTIPLY",
       t: 11,
-      d: "Returns the product of two numbers. Equivalent to the `*` operator.",
-      a: "Product of two numbers",
+      d: "Возвращает произведение двух чисел. Эквивалент оператору `*`.",
+      a: "Произведение двух чисел.",
       m: [2, 2],
       p: [
         {
           name: "factor1",
-          detail: "The first multiplicand.",
+          detail: "Первый множитель.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7554,7 +9432,7 @@ export default {
         },
         {
           name: "factor2",
-          detail: "The second multiplicand.",
+          detail: "Второй множитель.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -7565,13 +9443,13 @@ export default {
     {
       n: "DIVIDE",
       t: 11,
-      d: "Returns one number divided by another. Equivalent to the `/` operator.",
-      a: "One number divided by another",
+      d: "Возвращает одно число, деленное на другое. Эквивалент оператору `/`.",
+      a: "Одно число, деленное на другое.",
       m: [2, 2],
       p: [
         {
           name: "dividend",
-          detail: "The number to be divided.",
+          detail: "Число, которое делится.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -7579,7 +9457,7 @@ export default {
         },
         {
           name: "divisor",
-          detail: "The number to divide by.",
+          detail: "Число, на которое производится деление.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -7590,13 +9468,13 @@ export default {
     {
       n: "CONCAT",
       t: 11,
-      d: "Returns the concatenation of two values. Equivalent to the `&` operator.",
-      a: "Concatenation of two values",
+      d: "Возвращает конкатенацию двух значений. Эквивалент оператору `&`.",
+      a: "Конкатенация двух значений.",
       m: [2, 2],
       p: [
         {
           name: "value1",
-          detail: "The value to which `value2` will be appended.",
+          detail: "Значение, к которому будет присоединено `value2`.",
           example: '"de"',
           require: "m",
           repeat: "n",
@@ -7604,7 +9482,7 @@ export default {
         },
         {
           name: "value2",
-          detail: "The value to append to `value1`.",
+          detail: "Значение, которое будет присоединено к `value1`.",
           example: '"mystify"',
           require: "m",
           repeat: "n",
@@ -7615,13 +9493,13 @@ export default {
     {
       n: "UNARY_PERCENT",
       t: 11,
-      d: "Returns a value interpreted as a percentage; that is, `UNARY_PERCENT(100)` equals `1`.",
-      a: "Value interpreted as a percentage.",
+      d: "Возвращает значение, интерпретированное как процент; то есть `UNARY_PERCENT(100)` равно `1`.",
+      a: "Значение, интерпретированное как процент.",
       m: [1, 1],
       p: [
         {
           name: "percentage",
-          detail: "The value to interpret as a percentage.",
+          detail: "Значение, которое интерпретируется как процент.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7632,13 +9510,13 @@ export default {
     {
       n: "CONCATENATE",
       t: 12,
-      d: "Appends strings to one another.",
-      a: "Appends strings to one another.",
+      d: "Объединяет строки друг с другом.",
+      a: "Объединяет строки друг с другом.",
       m: [1, 255],
       p: [
         {
           name: "string1",
-          detail: "The initial string.",
+          detail: "Начальная строка.",
           example: '"Super"',
           require: "m",
           repeat: "n",
@@ -7646,7 +9524,7 @@ export default {
         },
         {
           name: "string2",
-          detail: "More strings to append in sequence.",
+          detail: "Дополнительные строки для объединения в последовательности.",
           example: '"calla"',
           require: "o",
           repeat: "y",
@@ -7657,14 +9535,14 @@ export default {
     {
       n: "CODE",
       t: 12,
-      d: "Returns the numeric Unicode map value of the first character in the string provided.",
-      a: "Numeric unicode map value of character.",
+      d: "Возвращает числовое значение Unicode для первого символа в предоставленной строке.",
+      a: "Числовое значение Unicode для символа.",
       m: [1, 1],
       p: [
         {
           name: "string",
           detail:
-            "The string whose first character's Unicode map value will be returned.",
+            "Строка, для первого символа которой будет возвращено значение Unicode.",
           example: '"a"',
           require: "m",
           repeat: "n",
@@ -7675,14 +9553,14 @@ export default {
     {
       n: "CHAR",
       t: 12,
-      d: "Convert a number into a character according to the current Unicode table.",
-      a: "Gets character associated with number.",
+      d: "Преобразует число в символ в соответствии с текущей таблицей Unicode.",
+      a: "Возвращает символ, связанный с числом.",
       m: [1, 1],
       p: [
         {
           name: "table_number",
           detail:
-            "The number of the character to look up from the current Unicode table in decimal format.",
+            "Число символа для поиска в текущей таблице Unicode в десятичном формате.",
           example: "97",
           require: "m",
           repeat: "n",
@@ -7693,14 +9571,14 @@ export default {
     {
       n: "ARABIC",
       t: 12,
-      d: "Computes the value of a Roman numeral.",
-      a: "Computes the value of a roman numeral.",
+      d: "Вычисляет значение римской цифры.",
+      a: "Вычисляет значение римской цифры.",
       m: [1, 1],
       p: [
         {
           name: "roman_numeral",
           detail:
-            "The Roman numeral to format, whose value must be between 1 and 3999, inclusive.",
+            "Римская цифра для форматирования, значение которой должно быть от 1 до 3999 включительно.",
           example: '"XIV"',
           require: "m",
           repeat: "n",
@@ -7711,13 +9589,13 @@ export default {
     {
       n: "ROMAN",
       t: 12,
-      d: "Formats a number in Roman numerals.",
-      a: "Formats a number in Roman numerals.",
+      d: "Форматирует число в римские цифры.",
+      a: "Форматирует число в римские цифры.",
       m: [1, 1],
       p: [
         {
           name: "number",
-          detail: "The number to format, between 1 and 3999, inclusive.",
+          detail: "Число для форматирования, от 1 до 3999 включительно.",
           example: "499",
           require: "m",
           repeat: "n",
@@ -7728,13 +9606,13 @@ export default {
     {
       n: "REGEXEXTRACT",
       t: 12,
-      d: "Extracts matching substrings according to a regular expression.",
-      a: "Extracts matching substrings with regular expression.",
+      d: "Извлекает подстроки, соответствующие регулярному выражению.",
+      a: "Извлекает подстроки с использованием регулярного выражения.",
       m: [2, 2],
       p: [
         {
           name: "text",
-          detail: "The input text.",
+          detail: "Входной текст.",
           example: '"Needle in a haystack"',
           require: "m",
           repeat: "n",
@@ -7743,7 +9621,7 @@ export default {
         {
           name: "regular_expression",
           detail:
-            "The first part of `text` that matches this expression will be returned.",
+            "Первая часть `text`, соответствующая этому выражению, будет возвращена.",
           example: '".e{2}dle"',
           require: "m",
           repeat: "n",
@@ -7754,13 +9632,14 @@ export default {
     {
       n: "REGEXMATCH",
       t: 12,
-      d: "Whether a piece of text matches a regular expression.",
-      a: "Whether a piece of text matches regular expression.",
+      d: "Проверяет, соответствует ли текст регулярному выражению.",
+      a: "Проверяет, соответствует ли текст регулярному выражению.",
       m: [2, 2],
       p: [
         {
           name: "text",
-          detail: "The text to be tested against the regular expression.",
+          detail:
+            "Текст, который проверяется на соответствие регулярному выражению.",
           example: '"Spreadsheets"',
           require: "m",
           repeat: "n",
@@ -7768,7 +9647,7 @@ export default {
         },
         {
           name: "regular_expression",
-          detail: "The regular expression to test the text against.",
+          detail: "Регулярное выражение, с которым проверяется текст.",
           example: '"S.r"',
           require: "m",
           repeat: "n",
@@ -7779,13 +9658,13 @@ export default {
     {
       n: "REGEXREPLACE",
       t: 12,
-      d: "Replaces part of a text string with a different text string using regular expressions.",
-      a: "Replaces text with regular expressions.",
+      d: "Заменяет часть текстовой строки другой текстовой строкой с использованием регулярных выражений.",
+      a: "Заменяет текст с использованием регулярных выражений.",
       m: [3, 3],
       p: [
         {
           name: "text",
-          detail: "The text, a part of which will be replaced.",
+          detail: "Текст, часть которого будет заменена.",
           example: '"Spreadsheets"',
           require: "m",
           repeat: "n",
@@ -7794,7 +9673,7 @@ export default {
         {
           name: "regular_expression",
           detail:
-            "The regular expression.  All matching instances in `text` will be replaced.",
+            "Регулярное выражение. Все совпадающие экземпляры в `text` будут заменены.",
           example: '"S.*d"',
           require: "m",
           repeat: "n",
@@ -7802,7 +9681,7 @@ export default {
         },
         {
           name: "replacement",
-          detail: "The text which will be inserted into the original text.",
+          detail: "Текст, который будет вставлен в исходный текст.",
           example: '"Bed"',
           require: "m",
           repeat: "n",
@@ -7813,13 +9692,13 @@ export default {
     {
       n: "T",
       t: 12,
-      d: "Returns string arguments as text, or the empty string if the value is not text.",
-      a: "String arguments as text.",
+      d: "Возвращает строковые аргументы как текст или пустую строку, если значение не является текстом.",
+      a: "Строковые аргументы как текст.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The argument to be converted to text.",
+          detail: "Аргумент для преобразования в текст.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7830,13 +9709,13 @@ export default {
     {
       n: "FIXED",
       t: 12,
-      d: "Formats a number with a fixed number of decimal places.",
-      a: "Formats number with fixed number of decimal places.",
+      d: "Форматирует число с фиксированным количеством знаков после запятой.",
+      a: "Форматирует число с фиксированным количеством знаков после запятой.",
       m: [1, 3],
       p: [
         {
           name: "number",
-          detail: "The number to format.",
+          detail: "Число для форматирования.",
           example: "3.141592653",
           require: "m",
           repeat: "n",
@@ -7844,7 +9723,8 @@ export default {
         },
         {
           name: "number_of_places",
-          detail: "The number of decimal places to display in the result.",
+          detail:
+            "Количество знаков после запятой для отображения в результате.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -7853,7 +9733,7 @@ export default {
         {
           name: "suppress_separator",
           detail:
-            "Whether or not to suppress the thousands separator used in some locales (e.g. `1,000` becomes `1000`). Separators will be present if this value is 0 or omitted, and absent otherwise.",
+            "Указывает, подавлять ли разделитель тысяч, используемый в некоторых локалях (например, `1,000` становится `1000`). Разделители будут присутствовать, если это значение равно 0 или не указано, и отсутствовать в противном случае.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -7862,15 +9742,15 @@ export default {
       ],
     },
     {
-      n: "FIND",
+      n: "ПОИСК",
       t: 12,
-      d: "Returns the position at which a string is first found within text where the capitalization of letters matters. Returns `#VALUE!` if the string is not found.",
-      a: "First position of string found in text, case-sensitive.",
+      d: "Возвращает позицию, на которой строка впервые найдена в тексте, с учетом регистра букв. Возвращает `#VALUE!`, если строка не найдена.",
+      a: "Первая позиция строки, найденной в тексте, с учетом регистра.",
       m: [2, 3],
       p: [
         {
           name: "search_for",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "Строка для поиска в `text_to_search`.",
           example: '"n"',
           require: "m",
           repeat: "n",
@@ -7878,8 +9758,7 @@ export default {
         },
         {
           name: "text_to_search",
-          detail:
-            "The text to search for the first occurrence of `search_for`.",
+          detail: "Текст для поиска первого вхождения `search_for`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7887,8 +9766,7 @@ export default {
         },
         {
           name: "starting_at",
-          detail:
-            "The character within `text_to_search` at which to start the search.",
+          detail: "Символ в `text_to_search`, с которого начинается поиск.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -7897,15 +9775,15 @@ export default {
       ],
     },
     {
-      n: "FINDB",
+      n: "ПОИСКА",
       t: 12,
-      d: "Returns the position at which a string is first found within text counting each double-character as 2.",
-      a: "Position at which a string is first found within text (binary).",
+      d: "Возвращает позицию, на которой строка впервые найдена в тексте, считая каждый двухбайтовый символ как 2.",
+      a: "Позиция, на которой строка впервые найдена в тексте (бинарный).",
       m: [2, 3],
       p: [
         {
           name: "search_for",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "Строка для поиска в `text_to_search`.",
           example: '"new"',
           require: "m",
           repeat: "n",
@@ -7913,8 +9791,7 @@ export default {
         },
         {
           name: "text_to_search",
-          detail:
-            "The text to search for the first occurrence of `search_for`.",
+          detail: "Текст для поиска первого вхождения `search_for`.",
           example: '"new year"',
           require: "m",
           repeat: "n",
@@ -7922,8 +9799,7 @@ export default {
         },
         {
           name: "starting_at",
-          detail:
-            "The character within `text_to_search` at which to start the search.",
+          detail: "Символ в `text_to_search`, с которого начинается поиск.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -7932,16 +9808,16 @@ export default {
       ],
     },
     {
-      n: "JOIN",
+      n: "ОБЪЕДИНИТЬ",
       t: 12,
-      d: "Concatenates the elements of one or more one-dimensional arrays using a specified delimiter.",
-      a: "Concatenates elements of arrays with delimiter.",
+      d: "Объединяет элементы одного или нескольких одномерных массивов, используя указанный разделитель.",
+      a: "Объединяет элементы массивов с разделителем.",
       m: [2, 255],
       p: [
         {
           name: "delimiter",
           detail:
-            "The character or string to place between each concatenated value.",
+            "Символ или строка, размещаемая между каждым объединенным значением.",
           example: '" and-a "',
           require: "m",
           repeat: "n",
@@ -7949,7 +9825,8 @@ export default {
         },
         {
           name: "value_or_array1",
-          detail: "The value or values to be appended using `delimiter`.",
+          detail:
+            "Значение или значения, которые будут объединены с использованием `delimiter`.",
           example: "{1",
           require: "m",
           repeat: "n",
@@ -7957,7 +9834,8 @@ export default {
         },
         {
           name: "value_or_array2",
-          detail: "More values to be appended using `delimiter`.",
+          detail:
+            "Дополнительные значения, которые будут объединены с использованием `delimiter`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -7966,15 +9844,15 @@ export default {
       ],
     },
     {
-      n: "LEFT",
+      n: "ЛЕВСИМВ",
       t: 12,
-      d: "Returns a substring from the beginning of a specified string.",
-      a: "Substring from beginning of specified string.",
+      d: "Возвращает подстроку с начала указанной строки.",
+      a: "Подстрока с начала указанной строки.",
       m: [1, 2],
       p: [
         {
           name: "string",
-          detail: "The string from which the left portion will be returned.",
+          detail: "Строка, из которой будет возвращена левая часть.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7983,7 +9861,7 @@ export default {
         {
           name: "number_of_characters",
           detail:
-            "The number of characters to return from the left side of `string`.",
+            "Количество символов, которое будет возвращено с левой стороны `string`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -7992,15 +9870,15 @@ export default {
       ],
     },
     {
-      n: "RIGHT",
+      n: "ПРАВСИМВ",
       t: 12,
-      d: "Returns a substring from the end of a specified string.",
-      a: "A substring from the end of a specified string.",
+      d: "Возвращает подстроку с конца указанной строки.",
+      a: "Подстрока с конца указанной строки.",
       m: [1, 2],
       p: [
         {
           name: "string",
-          detail: "The string from which the right portion will be returned.",
+          detail: "Строка, из которой будет возвращена правая часть.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8009,7 +9887,7 @@ export default {
         {
           name: "number_of_characters",
           detail:
-            "The number of characters to return from the right side of `string`.",
+            "Количество символов, которое будет возвращено с правой стороны `string`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8020,13 +9898,13 @@ export default {
     {
       n: "MID",
       t: 12,
-      d: "Returns a segment of a string.",
-      a: "A segment of a string.",
+      d: "Возвращает сегмент строки.",
+      a: "Сегмент строки.",
       m: [3, 3],
       p: [
         {
           name: "string",
-          detail: "The string to extract a segment from.",
+          detail: "Строка, из которой будет извлечен сегмент.",
           example: '"get this"',
           require: "m",
           repeat: "n",
@@ -8035,7 +9913,7 @@ export default {
         {
           name: "starting_at",
           detail:
-            "The index from the left of `string` from which to begin extracting. The first character in `string` has the index 1.",
+            "Индекс слева в `string`, с которого начинается извлечение. Первый символ в `string` имеет индекс 1.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -8043,7 +9921,7 @@ export default {
         },
         {
           name: "extract_length",
-          detail: "The length of the segment to extract.",
+          detail: "Длина извлекаемого сегмента.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8052,15 +9930,15 @@ export default {
       ],
     },
     {
-      n: "LEN",
+      n: "ДЛСТР",
       t: 12,
-      d: "Returns the length of a string.",
-      a: "Length of a string.",
+      d: "Возвращает длину строки.",
+      a: "Длина строки.",
       m: [1, 1],
       p: [
         {
           name: "text",
-          detail: "The string whose length will be returned.",
+          detail: "Строка, длина которой будет возвращена.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8069,15 +9947,15 @@ export default {
       ],
     },
     {
-      n: "LENB",
+      n: "ДЛИНБ",
       t: 12,
-      d: "Returns the length of a string in bytes.",
-      a: "Length of a string in bytes.",
+      d: "Возвращает длину строки в байтах.",
+      a: "Длина строки в байтах.",
       m: [1, 1],
       p: [
         {
           name: "text",
-          detail: "The string whose length will be returned.",
+          detail: "Строка, длина которой будет возвращена.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8086,15 +9964,15 @@ export default {
       ],
     },
     {
-      n: "LOWER",
+      n: "СТРПРОПИСН",
       t: 12,
-      d: "Converts a specified string to lowercase.",
-      a: "Converts a specified string to lowercase.",
+      d: "Преобразует указанную строку в нижний регистр.",
+      a: "Преобразует указанную строку в нижний регистр.",
       m: [1, 1],
       p: [
         {
           name: "text",
-          detail: "The string to convert to lowercase.",
+          detail: "Строка для преобразования в нижний регистр.",
           example: '"LOREM IPSUM"',
           require: "m",
           repeat: "n",
@@ -8103,15 +9981,15 @@ export default {
       ],
     },
     {
-      n: "UPPER",
+      n: "СТРЗАГЛ",
       t: 12,
-      d: "Converts a specified string to uppercase.",
-      a: "Converts a specified string to uppercase.",
+      d: "Преобразует указанную строку в верхний регистр.",
+      a: "Преобразует указанную строку в верхний регистр.",
       m: [1, 1],
       p: [
         {
           name: "text",
-          detail: "The string to convert to uppercase.",
+          detail: "Строка для преобразования в верхний регистр.",
           example: '"lorem ipsum"',
           require: "m",
           repeat: "n",
@@ -8120,15 +9998,15 @@ export default {
       ],
     },
     {
-      n: "EXACT",
+      n: "СОВПАД",
       t: 12,
-      d: "Tests whether two strings are identical.",
-      a: "Tests whether two strings are identical.",
+      d: "Проверяет, идентичны ли две строки.",
+      a: "Проверяет, идентичны ли две строки.",
       m: [2, 2],
       p: [
         {
           name: "string1",
-          detail: "The first string to compare",
+          detail: "Первая строка для сравнения.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -8136,7 +10014,7 @@ export default {
         },
         {
           name: "string2",
-          detail: "The second string to compare",
+          detail: "Вторая строка для сравнения.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8145,15 +10023,15 @@ export default {
       ],
     },
     {
-      n: "REPLACE",
+      n: "ЗАМЕНИТЬ",
       t: 12,
-      d: "Replaces part of a text string with a different text string.",
-      a: "Replaces part of a text string with different text.",
+      d: "Заменяет часть текстовой строки другой текстовой строкой.",
+      a: "Заменяет часть текстовой строки другой текстовой строкой.",
       m: [4, 4],
       p: [
         {
           name: "text",
-          detail: "The text, a part of which will be replaced.",
+          detail: "Текст, часть которого будет заменена.",
           example: '"Spreadsheets"',
           require: "m",
           repeat: "n",
@@ -8161,8 +10039,7 @@ export default {
         },
         {
           name: "position",
-          detail:
-            "The position where the replacement will begin (starting from 1).",
+          detail: "Позиция, с которой начинается замена (начиная с 1).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -8170,7 +10047,7 @@ export default {
         },
         {
           name: "length",
-          detail: "The number of characters in the text to be replaced.",
+          detail: "Количество символов в тексте, которые будут заменены.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -8178,7 +10055,7 @@ export default {
         },
         {
           name: "new_text",
-          detail: "The text which will be inserted into the original text.",
+          detail: "Текст, который будет вставлен в исходный текст.",
           example: '"Bed"',
           require: "m",
           repeat: "n",
@@ -8187,15 +10064,15 @@ export default {
       ],
     },
     {
-      n: "REPT",
+      n: "ПОВТОР",
       t: 12,
-      d: "Returns specified text repeated a number of times.",
-      a: "Specified text repeated a number of times.",
+      d: "Возвращает указанный текст, повторенный заданное количество раз.",
+      a: "Указанный текст, повторенный заданное количество раз.",
       m: [2, 2],
       p: [
         {
           name: "text_to_repeat",
-          detail: "The character or string to repeat.",
+          detail: "Символ или строка для повторения.",
           example: '"ha"',
           require: "m",
           repeat: "n",
@@ -8204,7 +10081,7 @@ export default {
         {
           name: "number_of_repetitions",
           detail:
-            "The number of times `text_to_repeat` should appear in the value returned.",
+            "Количество раз, которое `text_to_repeat` должно появиться в результате.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8213,15 +10090,15 @@ export default {
       ],
     },
     {
-      n: "SEARCH",
+      n: "НАЙТИ",
       t: 12,
-      d: "Returns the position at which a string is first found within text and ignores capitalization of letters. Returns `#VALUE!` if the string is not found.",
-      a: "First position of string found in text, ignoring case.",
+      d: "Возвращает позицию, на которой строка впервые найдена в тексте, игнорируя регистр букв. Возвращает `#VALUE!`, если строка не найдена.",
+      a: "Первая позиция строки, найденной в тексте, игнорируя регистр.",
       m: [2, 3],
       p: [
         {
           name: "search_for",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "Строка для поиска в `text_to_search`.",
           example: '"n"',
           require: "m",
           repeat: "n",
@@ -8229,8 +10106,7 @@ export default {
         },
         {
           name: "text_to_search",
-          detail:
-            "The text to search for the first occurrence of `search_for`.",
+          detail: "Текст для поиска первого вхождения `search_for`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8238,8 +10114,7 @@ export default {
         },
         {
           name: "starting_at",
-          detail:
-            "The character within `text_to_search` at which to start the search.",
+          detail: "Символ в `text_to_search`, с которого начинается поиск.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -8248,15 +10123,15 @@ export default {
       ],
     },
     {
-      n: "SUBSTITUTE",
+      n: "ПОДСТАВИТЬ",
       t: 12,
-      d: "Replaces existing text with new text in a string.",
-      a: "Replaces existing text with new text in a string.",
+      d: "Заменяет существующий текст новым текстом в строке.",
+      a: "Заменяет существующий текст новым текстом в строке.",
       m: [3, 4],
       p: [
         {
           name: "text_to_search",
-          detail: "The text within which to search and replace.",
+          detail: "Текст, в котором будет производиться поиск и замена.",
           example: '"search for it"',
           require: "m",
           repeat: "n",
@@ -8264,7 +10139,7 @@ export default {
         },
         {
           name: "search_for",
-          detail: "The string to search for within `text_to_search`.",
+          detail: "Строка для поиска в `text_to_search`.",
           example: '"search for"',
           require: "m",
           repeat: "n",
@@ -8272,7 +10147,7 @@ export default {
         },
         {
           name: "replace_with",
-          detail: "The string that will replace `search_for`.",
+          detail: "Строка, которая заменит `search_for`.",
           example: '"Google"',
           require: "m",
           repeat: "n",
@@ -8281,7 +10156,7 @@ export default {
         {
           name: "occurrence_number",
           detail:
-            "The instance of `search_for` within `text_to_search` to replace with `replace_with`. By default, all occurrences of `search_for` are replaced; however, if `occurrence_number` is specified, only the indicated instance of `search_for` is replaced.",
+            "Экземпляр `search_for` в `text_to_search`, который будет заменен на `replace_with`. По умолчанию заменяются все вхождения `search_for`; если указан `occurrence_number`, заменяется только указанный экземпляр.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -8290,15 +10165,15 @@ export default {
       ],
     },
     {
-      n: "CLEAN",
+      n: "ОЧИСТИТЬ",
       t: 12,
-      d: "Returns the text with the non-printable ASCII characters removed.",
-      a: "Removes non-printable characters from a piece of text.",
+      d: "Возвращает текст с удаленными непечатаемыми символами ASCII.",
+      a: "Удаляет непечатаемые символы из текста.",
       m: [1, 1],
       p: [
         {
           name: "text",
-          detail: "The text whose non-printable characters are to be removed.",
+          detail: "Текст, из которого будут удалены непечатаемые символы.",
           example: '"AF"&CHAR(31)',
           require: "m",
           repeat: "n",
@@ -8307,15 +10182,15 @@ export default {
       ],
     },
     {
-      n: "TEXT",
+      n: "ТЕКСТ",
       t: 12,
-      d: "Converts a number into text according to a specified format.",
-      a: "Formats a number into text.",
+      d: "Преобразует число в текст в соответствии с указанным форматом.",
+      a: "Форматирует число в текст.",
       m: [2, 2],
       p: [
         {
           name: "number",
-          detail: "The number, date, or time to format.",
+          detail: "Число, дата или время для форматирования.",
           example: "1.23",
           require: "m",
           repeat: "n",
@@ -8324,7 +10199,7 @@ export default {
         {
           name: "format",
           detail:
-            "The pattern by which to format the number, enclosed in quotation marks.",
+            "Шаблон, по которому будет отформатировано число, заключенный в кавычки.",
           example: '"$0.00"',
           require: "m",
           repeat: "n",
@@ -8333,16 +10208,15 @@ export default {
       ],
     },
     {
-      n: "TRIM",
+      n: "СЖПРОБЕЛЫ",
       t: 12,
-      d: "Removes leading, trailing, and repeated spaces in text.",
-      a: "Removes space characters.",
+      d: "Удаляет начальные, конечные и повторяющиеся пробелы в тексте.",
+      a: "Удаляет пробелы.",
       m: [1, 1],
       p: [
         {
           name: "text",
-          detail:
-            "The text or reference to a cell containing text to be trimmed.",
+          detail: "Текст или ссылка на ячейку, содержащую текст для обрезки.",
           example: '" lorem ipsum"',
           require: "m",
           repeat: "n",
@@ -8351,15 +10225,15 @@ export default {
       ],
     },
     {
-      n: "VALUE",
+      n: "ЗНАЧЕН",
       t: 12,
-      d: "Converts a string in any of the date, time or number formats that Google Sheets understands into a number.",
-      a: "Converts a date/time/number string into a number.",
+      d: "Преобразует строку в любом из форматов даты, времени или числа, которые понимает Google Sheets, в число.",
+      a: "Преобразует строку даты/времени/числа в число.",
       m: [1, 1],
       p: [
         {
           name: "text",
-          detail: "The string containing the value to be converted.",
+          detail: "Строка, содержащая значение для преобразования.",
           example: '"123"',
           require: "m",
           repeat: "n",
@@ -8368,16 +10242,16 @@ export default {
       ],
     },
     {
-      n: "PROPER",
+      n: "ПРОПНАЧ",
       t: 12,
-      d: "Capitalizes each word in a specified string.",
-      a: "Capitalizes each word in a specified string.",
+      d: "Преобразует каждое слово в указанной строке в формат с заглавной буквы.",
+      a: "Преобразует каждое слово в указанной строке в формат с заглавной буквы.",
       m: [1, 1],
       p: [
         {
           name: "text_to_capitalize",
           detail:
-            "The text which will be returned with the first letter of each word in uppercase and all other letters in lowercase.",
+            "Текст, который будет возвращен с первой буквой каждого слова в верхнем регистре и всеми остальными буквами в нижнем регистре.",
           example: '"united states"',
           require: "m",
           repeat: "n",
@@ -8386,15 +10260,16 @@ export default {
       ],
     },
     {
-      n: "CONVERT",
+      n: "ПРЕОБР",
       t: 13,
-      d: "Converts a numeric value to a different unit of measure.",
-      a: "Unit conversion for numbers.",
+      d: "Преобразует числовое значение в другую единицу измерения.",
+      a: "Преобразование единиц измерения для чисел.",
       m: [3, 3],
       p: [
         {
           name: "value",
-          detail: "The numeric value in `start_unit` to convert to `end_unit`.",
+          detail:
+            "Числовое значение в `start_unit` для преобразования в `end_unit`.",
           example: "5.1",
           require: "m",
           repeat: "n",
@@ -8402,7 +10277,8 @@ export default {
         },
         {
           name: "start_unit",
-          detail: "The starting unit, the unit currently assigned to `value`.",
+          detail:
+            "Начальная единица измерения, текущая единица, присвоенная `value`.",
           example: '"g"',
           require: "m",
           repeat: "n",
@@ -8411,7 +10287,7 @@ export default {
         {
           name: "end_unit",
           detail:
-            "The unit of measure into which to convert the argument, `value`.",
+            "Единица измерения, в которую будет преобразовано значение `value`.",
           example: '"kg"',
           require: "m",
           repeat: "n",
@@ -8420,16 +10296,16 @@ export default {
       ],
     },
     {
-      n: "SUMX2MY2",
+      n: "СУММКВРАЗН",
       t: 14,
-      d: "Calculates the sum of the differences of the squares of values in two arrays.",
-      a: "Sum of the differences of squares.",
+      d: "Вычисляет сумму разностей квадратов значений в двух массивах.",
+      a: "Сумма разностей квадратов.",
       m: [2, 2],
       p: [
         {
           name: "array_x",
           detail:
-            "The array or range of values whose squares will be reduced by the squares of corresponding entries in `array_y` and added together.",
+            "Массив или диапазон значений, квадраты которых будут уменьшены на квадраты соответствующих элементов в `array_y` и суммированы.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -8438,7 +10314,7 @@ export default {
         {
           name: "array_y",
           detail:
-            "The array or range of values whose squares will be subtracted from the squares of corresponding entries in `array_x` and added together.",
+            "Массив или диапазон значений, квадраты которых будут вычтены из квадратов соответствующих элементов в `array_x` и суммированы.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -8447,16 +10323,16 @@ export default {
       ],
     },
     {
-      n: "SUMX2PY2",
+      n: "СУММКВСУММ",
       t: 14,
-      d: "Calculates the sum of the sums of the squares of values in two arrays.",
-      a: "Sum of the sums of squares.",
+      d: "Вычисляет сумму сумм квадратов значений в двух массивах.",
+      a: "Сумма сумм квадратов.",
       m: [2, 2],
       p: [
         {
           name: "array_x",
           detail:
-            "The array or range of values whose squares will be added to the squares of corresponding entries in `array_y` and added together.",
+            "Массив или диапазон значений, квадраты которых будут добавлены к квадратам соответствующих элементов в `array_y` и суммированы.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -8465,7 +10341,7 @@ export default {
         {
           name: "array_y",
           detail:
-            "The array or range of values whose squares will be added to the squares of corresponding entries in `array_x` and added together.",
+            "Массив или диапазон значений, квадраты которых будут добавлены к квадратам соответствующих элементов в `array_x` и суммированы.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -8474,16 +10350,16 @@ export default {
       ],
     },
     {
-      n: "SUMXMY2",
+      n: "СУММРАЗНКВ",
       t: 14,
-      d: "Calculates the sum of the squares of differences of values in two arrays.",
-      a: "Sum of the squares of differences.",
+      d: "Вычисляет сумму квадратов разностей значений в двух массивах.",
+      a: "Сумма квадратов разностей.",
       m: [2, 2],
       p: [
         {
           name: "array_x",
           detail:
-            "The array or range of values that will be reduced by corresponding entries in `array_y`, squared, and added together.",
+            "Массив или диапазон значений, которые будут уменьшены на соответствующие элементы в `array_y`, возведены в квадрат и суммированы.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -8492,7 +10368,7 @@ export default {
         {
           name: "array_y",
           detail:
-            "The array or range of values that will be subtracted from corresponding entries in `array_x`, the result squared, and all such results added together.",
+            "Массив или диапазон значений, которые будут вычтены из соответствующих элементов в `array_x`, результат возведен в квадрат и все такие результаты суммированы.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -8501,15 +10377,16 @@ export default {
       ],
     },
     {
-      n: "TRANSPOSE",
+      n: "ТРАНСП",
       t: 14,
-      d: "Transposes the rows and columns of an array or range of cells.",
-      a: "Transposes the rows and columns of an array.",
+      d: "Транспонирует строки и столбцы массива или диапазона ячеек.",
+      a: "Транспонирует строки и столбцы массива.",
       m: [1, 1],
       p: [
         {
           name: "array_or_range",
-          detail: "The array or range whose rows and columns will be swapped.",
+          detail:
+            "Массив или диапазон, строки и столбцы которого будут переставлены местами.",
           example: "{1,2}",
           require: "m",
           repeat: "n",
@@ -8520,14 +10397,14 @@ export default {
     {
       n: "TREND",
       t: 14,
-      d: "Given partial data about a linear trend, fits an ideal linear trend using the least squares method and/or predicts further values.",
-      a: "Fits points to linear trend derived via least-squares.",
+      d: "На основе частичных данных о линейном тренде подгоняет идеальный линейный тренд с использованием метода наименьших квадратов и/или прогнозирует дальнейшие значения.",
+      a: "Подгоняет точки к линейному тренду с помощью метода наименьших квадратов.",
       m: [1, 4],
       p: [
         {
           name: "known_data_y",
           detail:
-            "The array or range containing dependent (y) values that are already known, used to curve fit an ideal linear trend.",
+            "Массив или диапазон, содержащий известные зависимые (y) значения, используемые для подгонки идеального линейного тренда.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -8536,7 +10413,7 @@ export default {
         {
           name: "known_data_x",
           detail:
-            "The values of the independent variable(s) corresponding with `known_data_y`.",
+            "Значения независимой переменной(ых), соответствующие `known_data_y`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -8545,7 +10422,7 @@ export default {
         {
           name: "new_data_x",
           detail:
-            "The data points to return the `y` values for on the ideal curve fit.",
+            "Точки данных, для которых нужно вернуть значения `y` на идеальной кривой подгонки.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -8554,7 +10431,7 @@ export default {
         {
           name: "b",
           detail:
-            "Given a general linear form of `y = m*x+b` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `0` and only calculates the `m` values if `FALSE`, i.e. forces the curve fit to pass through the origin.",
+            "Для общей линейной формы `y = m*x+b` для подгонки кривой вычисляет `b`, если `TRUE`, или заставляет `b` быть равным `0` и вычисляет только значения `m`, если `FALSE`, т.е. заставляет кривую подгонки проходить через начало координат.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -8565,13 +10442,13 @@ export default {
     {
       n: "FREQUENCY",
       t: 14,
-      d: "Calculates the frequency distribution of a one-column array into specified classes.",
-      a: "The frequency distribution of array.",
+      d: "Вычисляет частотное распределение одномерного массива по заданным классам.",
+      a: "Частотное распределение массива.",
       m: [2, 2],
       p: [
         {
           name: "data",
-          detail: "The array or range containing the values to be counted.",
+          detail: "Массив или диапазон, содержащий значения для подсчета.",
           example: "A2:A40",
           require: "m",
           repeat: "n",
@@ -8579,7 +10456,7 @@ export default {
         },
         {
           name: "classes",
-          detail: "The array or range containing the set of classes.",
+          detail: "Массив или диапазон, содержащий набор классов.",
           example: "B2:B5",
           require: "m",
           repeat: "n",
@@ -8590,14 +10467,14 @@ export default {
     {
       n: "GROWTH",
       t: 14,
-      d: "Given partial data about an exponential growth trend, fits an ideal exponential growth trend and/or predicts further values.",
-      a: "Fits points to exponential growth trend.",
+      d: "На основе частичных данных об экспоненциальном росте подгоняет идеальную кривую экспоненциального роста и/или прогнозирует дальнейшие значения.",
+      a: "Подгоняет точки к тренду экспоненциального роста.",
       m: [1, 4],
       p: [
         {
           name: "known_data_y",
           detail:
-            "The array or range containing dependent (y) values that are already known, used to curve fit an ideal exponential growth curve.",
+            "Массив или диапазон, содержащий известные зависимые (y) значения, используемые для подгонки идеальной кривой экспоненциального роста.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -8606,7 +10483,7 @@ export default {
         {
           name: "known_data_x",
           detail:
-            "The values of the independent variable(s) corresponding with `known_data_y`.",
+            "Значения независимой переменной(ых), соответствующие `known_data_y`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -8615,7 +10492,7 @@ export default {
         {
           name: "new_data_x",
           detail:
-            "The data points to return the `y` values for on the ideal curve fit.",
+            "Точки данных, для которых нужно вернуть значения `y` на идеальной кривой подгонки.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -8624,7 +10501,7 @@ export default {
         {
           name: "b",
           detail:
-            "Given a general exponential form of `y = b*m^x` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `1` and only calculates the `m` values if `FALSE`.",
+            "Для общей экспоненциальной формы `y = b*m^x` для подгонки кривой вычисляет `b`, если `TRUE`, или заставляет `b` быть равным `1` и вычисляет только значения `m`, если `FALSE`.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -8635,14 +10512,14 @@ export default {
     {
       n: "LINEST",
       t: 14,
-      d: "Given partial data about a linear trend, calculates various parameters about the ideal linear trend using the least-squares method.",
-      a: "Best-fit linear trend via least-squares.",
+      d: "На основе частичных данных о линейном тренде вычисляет различные параметры идеального линейного тренда с использованием метода наименьших квадратов.",
+      a: "Наилучший линейный тренд с помощью метода наименьших квадратов.",
       m: [1, 4],
       p: [
         {
           name: "known_data_y",
           detail:
-            "The array or range containing dependent (y) values that are already known, used to curve fit an ideal linear trend.",
+            "Массив или диапазон, содержащий известные зависимые (y) значения, используемые для подгонки идеального линейного тренда.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -8651,7 +10528,7 @@ export default {
         {
           name: "known_data_x",
           detail:
-            "The values of the independent variable(s) corresponding with `known_data_y`.",
+            "Значения независимой переменной(ых), соответствующие `known_data_y`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -8660,7 +10537,7 @@ export default {
         {
           name: "calculate_b",
           detail:
-            "Given a linear form of `y = m*x+b`, calculates the y-intercept (`b`) if `TRUE`. Otherwise, forces `b` to be `0` and only calculates the `m` values if `FALSE`, i.e. forces the curve fit to pass through the origin.",
+            "Для линейной формы `y = m*x+b` вычисляет y-пересечение (`b`), если `TRUE`. В противном случае заставляет `b` быть равным `0` и вычисляет только значения `m`, если `FALSE`, т.е. заставляет кривую подгонки проходить через начало координат.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -8669,7 +10546,7 @@ export default {
         {
           name: "verbose",
           detail:
-            "A flag specifying whether to return additional regression statistics or only the linear coefficients and the y-intercept (default).",
+            "Флаг, указывающий, возвращать ли дополнительные регрессионные статистики или только линейные коэффициенты и y-пересечение (по умолчанию).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -8680,14 +10557,14 @@ export default {
     {
       n: "LOGEST",
       t: 14,
-      d: "Given partial data about an exponential growth curve, calculates various parameters about the best fit ideal exponential growth curve.",
-      a: "Best-fit exponential growth curve.",
+      d: "На основе частичных данных об экспоненциальной кривой роста вычисляет различные параметры наилучшей идеальной кривой экспоненциального роста.",
+      a: "Наилучшая кривая экспоненциального роста.",
       m: [1, 4],
       p: [
         {
           name: "known_data_y",
           detail:
-            "The array or range containing dependent (y) values that are already known, used to curve fit an ideal exponential growth curve.",
+            "Массив или диапазон, содержащий известные зависимые (y) значения, используемые для подгонки идеальной кривой экспоненциального роста.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -8696,7 +10573,7 @@ export default {
         {
           name: "known_data_x",
           detail:
-            "The values of the independent variable(s) corresponding with `known_data_y`.",
+            "Значения независимой переменной(ых), соответствующие `known_data_y`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -8705,7 +10582,7 @@ export default {
         {
           name: "b",
           detail:
-            "Given a general exponential form of `y = b*m^x` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `1` and only calculates the `m` values if `FALSE`.",
+            "Для общей экспоненциальной формы `y = b*m^x` для подгонки кривой вычисляет `b`, если `TRUE`, или заставляет `b` быть равным `1` и вычисляет только значения `m`, если `FALSE`.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -8714,7 +10591,7 @@ export default {
         {
           name: "verbose",
           detail:
-            "A flag specifying whether to return additional regression statistics or only the calculated coefficient and exponents.",
+            "Флаг, указывающий, возвращать ли дополнительные регрессионные статистики или только вычисленные коэффициенты и экспоненты.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -8725,14 +10602,14 @@ export default {
     {
       n: "MDETERM",
       t: 14,
-      d: "Returns the matrix determinant of a square matrix specified as an array or range.",
-      a: "Matrix determinant of a square matrix.",
+      d: "Возвращает определитель квадратной матрицы, заданной в виде массива или диапазона.",
+      a: "Определитель квадратной матрицы.",
       m: [1, 1],
       p: [
         {
           name: "square_matrix",
           detail:
-            "An array or range with an equal number of rows and columns representing a matrix whose determinant will be calculated.",
+            "Массив или диапазон с равным количеством строк и столбцов, представляющий матрицу, определитель которой будет вычислен.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -8743,14 +10620,14 @@ export default {
     {
       n: "MINVERSE",
       t: 14,
-      d: "Returns the multiplicative inverse of a square matrix specified as an array or range.",
-      a: "Multiplicative inverse of square matrix.",
+      d: "Возвращает обратную матрицу для квадратной матрицы, заданной в виде массива или диапазона.",
+      a: "Обратная матрица квадратной матрицы.",
       m: [1, 1],
       p: [
         {
           name: "square_matrix",
           detail:
-            "An array or range with an equal number of rows and columns representing a matrix whose multiplicative inverse will be calculated.",
+            "Массив или диапазон с равным количеством строк и столбцов, представляющий матрицу, обратная матрица которой будет вычислена.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -8761,14 +10638,14 @@ export default {
     {
       n: "MMULT",
       t: 14,
-      d: "Calculates the matrix product of two matrices specified as arrays or ranges.",
-      a: "The matrix product of two matrices.",
+      d: "Вычисляет произведение двух матриц, заданных в виде массивов или диапазонов.",
+      a: "Произведение двух матриц.",
       m: [2, 2],
       p: [
         {
           name: "matrix1",
           detail:
-            "The first matrix in the matrix multiplication operation, represented as an array or range.",
+            "Первая матрица в операции умножения матриц, представленная в виде массива или диапазона.",
           example: "A1:B3",
           require: "m",
           repeat: "n",
@@ -8777,7 +10654,7 @@ export default {
         {
           name: "matrix2",
           detail:
-            "The second matrix in the matrix multiplication operation, represented as an array or range.",
+            "Вторая матрица в операции умножения матриц, представленная в виде массива или диапазона.",
           example: "C1:F2",
           require: "m",
           repeat: "n",
@@ -8788,14 +10665,14 @@ export default {
     {
       n: "SUMPRODUCT",
       t: 14,
-      d: "Calculates the sum of the products of corresponding entries in two equal-sized arrays or ranges.",
-      a: "Sum of products of elements in two arrays.",
+      d: "Вычисляет сумму произведений соответствующих элементов в двух массивах или диапазонах одинакового размера.",
+      a: "Сумма произведений элементов двух массивов.",
       m: [1, 255],
       p: [
         {
           name: "array1",
           detail:
-            "The first array or range whose entries will be multiplied with corresponding entries in the second such array or range.",
+            "Первый массив или диапазон, элементы которого будут умножены на соответствующие элементы второго массива или диапазона.",
           example: "A2:C5",
           require: "m",
           repeat: "n",
@@ -8804,7 +10681,7 @@ export default {
         {
           name: "array2",
           detail:
-            "The second array or range whose entries will be multiplied with corresponding entries in the first such array or range.",
+            "Второй массив или диапазон, элементы которого будут умножены на соответствующие элементы первого массива или диапазона.",
           example: "D2:F5",
           require: "o",
           repeat: "y",
@@ -8813,15 +10690,15 @@ export default {
       ],
     },
     {
-      n: "ISFORMULA",
+      n: "ЕСЛИФОРМУЛА",
       t: 15,
-      d: "Checks whether a value is a formula.",
-      a: "Whether a value is a formula.",
+      d: "Проверяет, является ли значение формулой.",
+      a: "Является ли значение формулой.",
       m: [1, 1],
       p: [
         {
           name: "cell",
-          detail: "The cell to be verified as containing a formula.",
+          detail: "Ячейка, проверяемая на наличие формулы.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8830,16 +10707,16 @@ export default {
       ],
     },
     {
-      n: "CELL",
+      n: "ЯЧЕЙКА",
       t: 15,
-      d: "Returns the requested information about the specified cell.",
-      a: "Gets information about a cell.",
+      d: "Возвращает запрошенную информацию об указанной ячейке.",
+      a: "Получает информацию о ячейке.",
       m: [2, 2],
       p: [
         {
           name: "info_type",
           detail:
-            "The type of information requested (see article for available types)",
+            "Тип запрашиваемой информации (см. статью для доступных типов).",
           example: '"type"',
           require: "m",
           repeat: "n",
@@ -8847,7 +10724,7 @@ export default {
         },
         {
           name: "reference",
-          detail: "The reference to the cell.",
+          detail: "Ссылка на ячейку.",
           example: "C2",
           require: "m",
           repeat: "n",
@@ -8858,22 +10735,22 @@ export default {
     {
       n: "NA",
       t: 15,
-      d: 'Returns the "value not available" error, `#N/A`.',
-      a: "The `#N/A` error.",
+      d: 'Возвращает ошибку "значение недоступно" `#N/A`.',
+      a: "Ошибка `#N/A`.",
       m: [0, 0],
       p: [],
     },
     {
       n: "ERROR_TYPE",
       t: 15,
-      d: "Returns a number corresponding to the error value in a different cell.",
-      a: "Error value of cell (as number).",
+      d: "Возвращает число, соответствующее значению ошибки в другой ячейке.",
+      a: "Значение ошибки ячейки (в виде числа).",
       m: [1, 1],
       p: [
         {
           name: "reference",
           detail:
-            "The cell to find the error number for although you can also provide the error value directly.",
+            "Ячейка, для которой нужно найти номер ошибки, хотя значение ошибки можно также указать напрямую.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8884,13 +10761,13 @@ export default {
     {
       n: "ISBLANK",
       t: 15,
-      d: "Checks whether the referenced cell is empty.",
-      a: "Whether the referenced cell is empty.",
+      d: "Проверяет, является ли указанная ячейка пустой.",
+      a: "Является ли указанная ячейка пустой.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "Reference to the cell that will be checked for emptiness.",
+          detail: "Ссылка на ячейку, которая будет проверена на пустоту.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8901,14 +10778,13 @@ export default {
     {
       n: "ISERR",
       t: 15,
-      d: "Checks whether a value is an error other than `#N/A`.",
-      a: "Whether a value is an error other than `#n/a`.",
+      d: "Проверяет, является ли значение ошибкой, кроме `#N/A`.",
+      a: "Является ли значение ошибкой, кроме `#N/A`.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail:
-            "The value to be verified as an error type other than `#N/A`.",
+          detail: "Значение для проверки на тип ошибки, кроме `#N/A`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8919,13 +10795,13 @@ export default {
     {
       n: "ISERROR",
       t: 15,
-      d: "Checks whether a value is an error.",
-      a: "Whether a value is an error.",
+      d: "Проверяет, является ли значение ошибкой.",
+      a: "Является ли значение ошибкой.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be verified as an error type.",
+          detail: "Значение для проверки на тип ошибки.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8936,13 +10812,14 @@ export default {
     {
       n: "ISLOGICAL",
       t: 15,
-      d: "Checks whether a value is `TRUE` or `FALSE`.",
-      a: "Whether a value is `true` or `false`.",
+      d: "Проверяет, является ли значение `TRUE` или `FALSE`.",
+      a: "Является ли значение `TRUE` или `FALSE`.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be verified as a logical `TRUE` or `FALSE`.",
+          detail:
+            "Значение для проверки на логическое значение `TRUE` или `FALSE`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8953,13 +10830,13 @@ export default {
     {
       n: "ISNA",
       t: 15,
-      d: "Checks whether a value is the error `#N/A`.",
-      a: "Whether a value is the error `#n/a`.",
+      d: "Проверяет, является ли значение ошибкой `#N/A`.",
+      a: "Является ли значение ошибкой `#N/A`.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be compared with the error value `#N/A`.",
+          detail: "Значение для сравнения с ошибкой `#N/A`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8970,13 +10847,13 @@ export default {
     {
       n: "ISNONTEXT",
       t: 15,
-      d: "Checks whether a value is non-textual.",
-      a: "Whether a value is non-textual.",
+      d: "Проверяет, является ли значение нетекстовым.",
+      a: "Является ли значение нетекстовым.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be checked.",
+          detail: "Значение для проверки.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8987,13 +10864,13 @@ export default {
     {
       n: "ISNUMBER",
       t: 15,
-      d: "Checks whether a value is a number.",
-      a: "Whether a value is a number.",
+      d: "Проверяет, является ли значение числом.",
+      a: "Является ли значение числом.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be verified as a number.",
+          detail: "Значение для проверки на число.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9004,13 +10881,13 @@ export default {
     {
       n: "ISREF",
       t: 15,
-      d: "Checks whether a value is a valid cell reference.",
-      a: "Whether a value is a valid cell reference.",
+      d: "Проверяет, является ли значение действительной ссылкой на ячейку.",
+      a: "Является ли значение действительной ссылкой на ячейку.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be verified as a cell reference.",
+          detail: "Значение для проверки на действительную ссылку на ячейку.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9021,13 +10898,13 @@ export default {
     {
       n: "ISTEXT",
       t: 15,
-      d: "Checks whether a value is text.",
-      a: "Whether a value is text.",
+      d: "Проверяет, является ли значение текстом.",
+      a: "Является ли значение текстом.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value to be verified as text.",
+          detail: "Значение для проверки на текст.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9038,13 +10915,13 @@ export default {
     {
       n: "TYPE",
       t: 15,
-      d: "Returns a number associated with the type of data passed into the function.",
-      a: "Get the type of a value.",
+      d: "Возвращает число, связанное с типом данных, переданных в функцию.",
+      a: "Получает тип значения.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The value whose type is to be determined.",
+          detail: "Значение, тип которого нужно определить.",
           example: "C4",
           require: "m",
           repeat: "n",
@@ -9055,13 +10932,13 @@ export default {
     {
       n: "N",
       t: 15,
-      d: "Returns the argument provided as a number. Text is converted to 0 and errors are returned as-is.",
-      a: "Argument provided as a number.",
+      d: "Возвращает аргумент, предоставленный в виде числа. Текст преобразуется в 0, а ошибки возвращаются без изменений.",
+      a: "Аргумент, предоставленный в виде числа.",
       m: [1, 1],
       p: [
         {
           name: "value",
-          detail: "The argument to be converted to a number.",
+          detail: "Аргумент для преобразования в число.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9072,14 +10949,14 @@ export default {
     {
       n: "TO_DATE",
       t: 16,
-      d: "Converts a provided number to a date.",
-      a: "Converts a provided number to a date.",
+      d: "Преобразует указанное число в дату.",
+      a: "Преобразует указанное число в дату.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The argument or reference to a cell to be converted to a date.",
+            "Аргумент или ссылка на ячейку, которую нужно преобразовать в дату.",
           example: "25405",
           require: "m",
           repeat: "n",
@@ -9090,14 +10967,14 @@ export default {
     {
       n: "TO_PURE_NUMBER",
       t: 16,
-      d: "Converts a provided date/time, percentage, currency or other formatted numeric value to a pure number without formatting.",
-      a: "Converts any numeric value to a pure number.",
+      d: "Преобразует указанную дату/время, процент, валюту или другое форматированное числовое значение в чистое число без форматирования.",
+      a: "Преобразует любое числовое значение в чистое число.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The argument or reference to a cell to be converted to a pure number.",
+            "Аргумент или ссылка на ячейку, которую нужно преобразовать в чистое число.",
           example: "50%",
           require: "m",
           repeat: "n",
@@ -9108,14 +10985,14 @@ export default {
     {
       n: "TO_TEXT",
       t: 16,
-      d: "Converts a provided numeric value to a text value.",
-      a: "Converts a provided numeric value to a text value.",
+      d: "Преобразует указанное числовое значение в текстовое значение.",
+      a: "Преобразует указанное числовое значение в текстовое значение.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The argument or reference to a cell to be converted to text.",
+            "Аргумент или ссылка на ячейку, которую нужно преобразовать в текст.",
           example: "24",
           require: "m",
           repeat: "n",
@@ -9126,14 +11003,14 @@ export default {
     {
       n: "TO_DOLLARS",
       t: 16,
-      d: "Converts a provided number to a dollar value.",
-      a: "Converts a provided number to a dollar value.",
+      d: "Преобразует указанное число в значение в долларах.",
+      a: "Преобразует указанное число в значение в долларах.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The argument or reference to a cell to be converted to a dollar value.",
+            "Аргумент или ссылка на ячейку, которую нужно преобразовать в значение в долларах.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9144,14 +11021,14 @@ export default {
     {
       n: "TO_PERCENT",
       t: 16,
-      d: "Converts a provided number to a percentage.",
-      a: "Converts a provided number to a percentage.",
+      d: "Преобразует указанное число в процентное значение.",
+      a: "Преобразует указанное число в процентное значение.",
       m: [1, 1],
       p: [
         {
           name: "value",
           detail:
-            "The argument or reference to a cell to be converted to a percentage.",
+            "Аргумент или ссылка на ячейку, которую нужно преобразовать в процент.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9162,14 +11039,14 @@ export default {
     {
       n: "DGET",
       t: 17,
-      d: "Returns a single value from a database table-like array or range using a SQL-like query.",
-      a: "Single value from a table-like range.",
+      d: "Возвращает одно значение из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Одно значение из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9178,7 +11055,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9187,7 +11064,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9198,14 +11075,14 @@ export default {
     {
       n: "DMAX",
       t: 17,
-      d: "Returns the maximum value selected from a database table-like array or range using a SQL-like query.",
-      a: "Maximum of values from a table-like range.",
+      d: "Возвращает максимальное значение, выбранное из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Максимум значений из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9214,7 +11091,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9223,7 +11100,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9234,14 +11111,14 @@ export default {
     {
       n: "DMIN",
       t: 17,
-      d: "Returns the minimum value selected from a database table-like array or range using a SQL-like query.",
-      a: "Minimum of values from a table-like range.",
+      d: "Возвращает минимальное значение, выбранное из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Минимум значений из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9250,7 +11127,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9259,7 +11136,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9270,14 +11147,14 @@ export default {
     {
       n: "DAVERAGE",
       t: 17,
-      d: "Returns the average of a set of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Average of a set of values from a table-like range.",
+      d: "Возвращает среднее значение набора значений, выбранных из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Среднее значение набора значений из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9286,7 +11163,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9295,7 +11172,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9306,14 +11183,14 @@ export default {
     {
       n: "DCOUNT",
       t: 17,
-      d: "Counts numeric values selected from a database table-like array or range using a SQL-like query.",
-      a: "Counts values from a table-like range.",
+      d: "Подсчитывает числовые значения, выбранные из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Подсчитывает значения из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9322,7 +11199,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9331,7 +11208,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9342,14 +11219,14 @@ export default {
     {
       n: "DCOUNTA",
       t: 17,
-      d: "Counts values, including text, selected from a database table-like array or range using a SQL-like query.",
-      a: "Counts values and text from a table-like range.",
+      d: "Подсчитывает значения, включая текст, выбранные из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Подсчитывает значения и текст из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9358,7 +11235,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9367,7 +11244,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9378,14 +11255,14 @@ export default {
     {
       n: "DPRODUCT",
       t: 17,
-      d: "Returns the product of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Product of values from a table-like range.",
+      d: "Возвращает произведение значений, выбранных из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Произведение значений из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9394,7 +11271,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9403,7 +11280,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9414,14 +11291,14 @@ export default {
     {
       n: "DSTDEV",
       t: 17,
-      d: "Returns the standard deviation of a population sample selected from a database table-like array or range using a SQL-like query.",
-      a: "Standard deviation of population sample from table.",
+      d: "Возвращает стандартное отклонение выборки популяции, выбранной из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Стандартное отклонение выборки популяции из таблицы.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9430,7 +11307,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9439,7 +11316,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9450,14 +11327,14 @@ export default {
     {
       n: "DSTDEVP",
       t: 17,
-      d: "Returns the standard deviation of an entire population selected from a database table-like array or range using a SQL-like query.",
-      a: "Standard deviation of entire population from table.",
+      d: "Возвращает стандартное отклонение всей популяции, выбранной из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Стандартное отклонение всей популяции из таблицы.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9466,7 +11343,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9475,7 +11352,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9486,14 +11363,14 @@ export default {
     {
       n: "DSUM",
       t: 17,
-      d: "Returns the sum of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Sum of values from a table-like range.",
+      d: "Возвращает сумму значений, выбранных из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Сумма значений из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9502,7 +11379,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9511,7 +11388,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9522,14 +11399,14 @@ export default {
     {
       n: "DVAR",
       t: 17,
-      d: "Returns the variance of a population sample selected from a database table-like array or range using a SQL-like query.",
-      a: "Variance of population sample from table-like range.",
+      d: "Возвращает дисперсию выборки популяции, выбранной из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Дисперсия выборки популяции из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9538,7 +11415,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9547,7 +11424,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9558,14 +11435,14 @@ export default {
     {
       n: "DVARP",
       t: 17,
-      d: "Returns the variance of an entire population selected from a database table-like array or range using a SQL-like query.",
-      a: "Variance of a population from a table-like range.",
+      d: "Возвращает дисперсию всей популяции, выбранной из массива или диапазона, похожего на таблицу базы данных, с использованием SQL-подобного запроса.",
+      a: "Дисперсия популяции из диапазона, похожего на таблицу.",
       m: [3, 3],
       p: [
         {
           name: "database",
           detail:
-            "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+            "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9574,7 +11451,7 @@ export default {
         {
           name: "field",
           detail:
-            "Indicates which column in `database` contains the values to be extracted and operated on.",
+            "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9583,7 +11460,7 @@ export default {
         {
           name: "criteria",
           detail:
-            "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+            "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9594,14 +11471,15 @@ export default {
     {
       n: "AGE_BY_IDCARD",
       t: "3",
-      d: "Calculate the age based on the Chinese ID number. Support 15 or 18",
-      a: "Get age based on ID number.",
+      d: "Вычисляет возраст на основе китайского идентификационного номера. Поддерживает 15 или 18 цифр.",
+      a: "Получение возраста на основе идентификационного номера.",
       m: [1, 2],
       p: [
         {
           name: "ID number",
           example: "A1",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail:
+            "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9610,7 +11488,7 @@ export default {
           name: "Deadline",
           example: '"2017-10-01"',
           detail:
-            "The deadline or range of age calculation. The default is the current day.",
+            "Крайний срок или диапазон для расчета возраста. По умолчанию — текущий день.",
           require: "o",
           repeat: "n",
           type: "rangedatetime",
@@ -9620,14 +11498,15 @@ export default {
     {
       n: "SEX_BY_IDCARD",
       t: "3",
-      d: "Calculate gender based on Chinese ID number. Support 15 or 18",
-      a: "Get gender based on ID number.",
+      d: "Вычисляет пол на основе китайского идентификационного номера. Поддерживает 15 или 18 цифр.",
+      a: "Получение пола на основе идентификационного номера.",
       m: [1, 1],
       p: [
         {
           name: "ID number",
           example: '"31033519900101XXXX"',
-          detail: "15-digit or 18-digit ID number or range.",
+          detail:
+            "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9637,14 +11516,15 @@ export default {
     {
       n: "BIRTHDAY_BY_IDCARD",
       t: "3",
-      d: "Calculate the birthday based on the Chinese ID number. Support 15 or 18",
-      a: "Get the birthday based on the ID number.",
+      d: "Вычисляет дату рождения на основе китайского идентификационного номера. Поддерживает 15 или 18 цифр.",
+      a: "Получение даты рождения на основе идентификационного номера.",
       m: [1, 2],
       p: [
         {
           name: "ID number",
           example: '"31033519900101XXXX"',
-          detail: "15-digit or 18-digit ID number or range.",
+          detail:
+            "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9653,7 +11533,7 @@ export default {
           name: "Birthday format",
           example: "0",
           detail:
-            "Date type, default:0:[1900/01/01], 1:[1900-01-01], 2:[1900年1月1日]",
+            "Тип даты, по умолчанию: 0:[1900/01/01], 1:[1900-01-01], 2:[1900年1月1日]",
           require: "o",
           repeat: "n",
           type: "rangeall",
@@ -9663,14 +11543,15 @@ export default {
     {
       n: "PROVINCE_BY_IDCARD",
       t: "3",
-      d: "Calculate the province of birthplace based on the Chinese ID number. Support 15 or 18",
-      a: "Get the province of birthplace based on the ID number.",
+      d: "Вычисляет провинцию места рождения на основе китайского идентификационного номера. Поддерживает 15 или 18 цифр.",
+      a: "Получение провинции места рождения на основе идентификационного номера.",
       m: [1, 1],
       p: [
         {
           name: "ID number",
           example: '"31033519900101XXXX"',
-          detail: "15-digit or 18-digit ID number or range.",
+          detail:
+            "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9680,14 +11561,15 @@ export default {
     {
       n: "CITY_BY_IDCARD",
       t: "3",
-      d: "Calculate the city of birthplace based on the Chinese ID number. Support 15 or 18",
-      a: "Get the city of birthplace based on the ID number.",
+      d: "Вычисляет город места рождения на основе китайского идентификационного номера. Поддерживает 15 или 18 цифр.",
+      a: "Получение города места рождения на основе идентификационного номера.",
       m: [1, 1],
       p: [
         {
           name: "ID number",
           example: '"31033519900101XXXX"',
-          detail: "15-digit or 18-digit ID number or range.",
+          detail:
+            "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9697,14 +11579,15 @@ export default {
     {
       n: "STAR_BY_IDCARD",
       t: "3",
-      d: "Calculate the constellation based on the Chinese ID number. Support 15 or 18",
-      a: "Get the constellation based on the ID number.",
+      d: "Вычисляет знак зодиака на основе китайского идентификационного номера. Поддерживает 15 или 18 цифр.",
+      a: "Получение знака зодиака на основе идентификационного номера.",
       m: [1, 1],
       p: [
         {
           name: "ID number",
           example: '"31033519900101XXXX"',
-          detail: "15-digit or 18-digit ID number or range.",
+          detail:
+            "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9714,14 +11597,15 @@ export default {
     {
       n: "ANIMAL_BY_IDCARD",
       t: "3",
-      d: "Calculate the zodiac (rat, ox, tiger, rabbit...) based on the Chinese ID number. Support 15 or 18",
-      a: "Get the zodiac according to the ID number.",
+      d: "Вычисляет животное китайского зодиака (крыса, бык, тигр, кролик...) на основе китайского идентификационного номера. Поддерживает 15 или 18 цифр.",
+      a: "Получение животного зодиака на основе идентификационного номера.",
       m: [1, 1],
       p: [
         {
           name: "ID number",
           example: '"31033519900101XXXX"',
-          detail: "15-digit or 18-digit ID number or range.",
+          detail:
+            "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9731,14 +11615,15 @@ export default {
     {
       n: "ISIDCARD",
       t: "3",
-      d: "Verify that the format of the ID card is correct. Support 15 or 18",
-      a: "Verify the correctness of the ID card format.",
+      d: "Проверяет правильность формата идентификационного номера. Поддерживает 15 или 18 цифр.",
+      a: "Проверка правильности формата идентификационного номера.",
       m: [1, 1],
       p: [
         {
           name: "ID number",
           example: '"31033519900101XXXX"',
-          detail: "15-digit or 18-digit ID number or range.",
+          detail:
+            "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9748,14 +11633,14 @@ export default {
     {
       n: "DM_TEXT_CUTWORD",
       t: "4",
-      d: "Text segmentation. Split a series of words into a series of individual words",
-      a: "Chinese text segmentation.",
+      d: "Сегментация текста. Разделяет последовательность слов на отдельные слова.",
+      a: "Сегментация китайского текста.",
       m: [1, 2],
       p: [
         {
           name: "Text",
-          example: '"I came to Beijing Tsinghua University"',
-          detail: "Any text that needs word segmentation.",
+          example: '"Я приехал в Пекинский университет Цинхуа"',
+          detail: "Любой текст, который нуждается в сегментации слов.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9764,7 +11649,7 @@ export default {
           name: "Word segmentation mode",
           example: "0",
           detail:
-            "The default is 0[precision mode], 1[full mode], 2[search engine mode].",
+            "По умолчанию 0 [точный режим], 1 [полный режим], 2 [режим поисковой системы].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9774,14 +11659,14 @@ export default {
     {
       n: "DM_TEXT_TFIDF",
       t: "4",
-      d: "Use tf-idf algorithm for keyword extraction. Identify keywords from a series of text",
-      a: "tf-idf keyword recognition.",
+      d: "Использует алгоритм TF-IDF для извлечения ключевых слов. Определяет ключевые слова из последовательности текста.",
+      a: "Распознавание ключевых слов с помощью TF-IDF.",
       m: [1, 3],
       p: [
         {
           name: "Text",
-          example: '"I came to Beijing Tsinghua University"',
-          detail: "Any text that needs word segmentation.",
+          example: '"Я приехал в Пекинский университет Цинхуа"',
+          detail: "Любой текст, который нуждается в сегментации слов.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9790,7 +11675,7 @@ export default {
           name: "Number of keywords",
           example: "20",
           detail:
-            "The number of keywords returned by the algorithm, the default is 20",
+            "Количество ключевых слов, возвращаемых алгоритмом, по умолчанию 20.",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9799,7 +11684,7 @@ export default {
           name: "Corpus",
           example: "1",
           detail:
-            "Select a corpus in a specific field, the default is 0[General], 1[Finance], 2[Medical]",
+            "Выбор корпуса в определенной области, по умолчанию 0 [общий], 1 [финансы], 2 [медицина].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9809,14 +11694,14 @@ export default {
     {
       n: "DM_TEXT_TEXTRANK",
       t: "4",
-      d: "Use TextRank algorithm to extract keywords. Identify keywords from a series of text",
-      a: "TextRank keyword recognition.",
+      d: "Использует алгоритм TextRank для извлечения ключевых слов. Определяет ключевые слова из последовательности текста.",
+      a: "Распознавание ключевых слов с помощью TextRank.",
       m: [1, 3],
       p: [
         {
           name: "Text",
-          example: '"I came to Beijing Tsinghua University"',
-          detail: "Any text that needs word segmentation.",
+          example: '"Я приехал в Пекинский университет Цинхуа"',
+          detail: "Любой текст, который нуждается в сегментации слов.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9825,7 +11710,7 @@ export default {
           name: "Number of keywords",
           example: "20",
           detail:
-            "The number of keywords returned by the algorithm, the default is 20",
+            "Количество ключевых слов, возвращаемых алгоритмом, по умолчанию 20.",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9834,7 +11719,7 @@ export default {
           name: "Corpus",
           example: "1",
           detail:
-            "Select a corpus in a specific field, the default is 0[General], 1[Finance], 2[Medical]",
+            "Выбор корпуса в определенной области, по умолчанию 0 [общий], 1 [финансы], 2 [медицина].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9844,14 +11729,14 @@ export default {
     {
       n: "DATA_CN_STOCK_CLOSE",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock closing price of A shares.",
-      a: "Returns the closing price of stock.",
+      d: "По коду акции и дате возвращает соответствующую цену закрытия акции А.",
+      a: "Возвращает цену закрытия акции.",
       m: [1, 3],
       p: [
         {
           name: "Stock code",
           example: '"000001"',
-          detail: "6-digit stock code, required.",
+          detail: "6-значный код акции, обязательный.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9860,7 +11745,7 @@ export default {
           name: "Date",
           example: "2015-01-08",
           detail:
-            "The trading day of the stock, the default is the latest trading day",
+            "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
           repeat: "n",
           type: "rangedate",
@@ -9869,7 +11754,7 @@ export default {
           name: "Reversion and exclusion",
           example: "0",
           detail:
-            "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+            "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9879,14 +11764,14 @@ export default {
     {
       n: "DATA_CN_STOCK_OPEN",
       t: "5",
-      d: "According to the stock code and date, return the opening price of stock.",
-      a: "Return the opening price of a shares.",
+      d: "По коду акции и дате возвращает цену открытия акции.",
+      a: "Возвращает цену открытия акции А.",
       m: [1, 3],
       p: [
         {
           name: "Stock code",
           example: '"000001"',
-          detail: "6-digit stock code, required.",
+          detail: "6-значный код акции, обязательный.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9895,7 +11780,7 @@ export default {
           name: "Date",
           example: "2015-01-08",
           detail:
-            "The trading day of the stock, the default is the latest trading day",
+            "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
           repeat: "n",
           type: "rangedate",
@@ -9904,7 +11789,7 @@ export default {
           name: "Reversion and exclusion",
           example: "0",
           detail:
-            "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+            "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9914,14 +11799,14 @@ export default {
     {
       n: "DATA_CN_STOCK_MAX",
       t: "5",
-      d: "According to the stock code and date, return the highest price of stock.",
-      a: "Return the highest price of stock.",
+      d: "По коду акции и дате возвращает максимальную цену акции.",
+      a: "Возвращает максимальную цену акции.",
       m: [1, 3],
       p: [
         {
           name: "Stock code",
           example: '"000001"',
-          detail: "6-digit stock code, required.",
+          detail: "6-значный код акции, обязательный.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9930,7 +11815,7 @@ export default {
           name: "Date",
           example: "2015-01-08",
           detail:
-            "The trading day of the stock, the default is the latest trading day",
+            "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
           repeat: "n",
           type: "rangedate",
@@ -9939,7 +11824,7 @@ export default {
           name: "Reversion and exclusion",
           example: "0",
           detail:
-            "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+            "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9949,14 +11834,14 @@ export default {
     {
       n: "DATA_CN_STOCK_MIN",
       t: "5",
-      d: "According to the stock code and date, return the lowest price of stock.",
-      a: "Returns the lowest price of stock.",
+      d: "По коду акции и дате возвращает минимальную цену акции.",
+      a: "Возвращает минимальную цену акции.",
       m: [1, 3],
       p: [
         {
           name: "Stock code",
           example: '"000001"',
-          detail: "6-digit stock code, required.",
+          detail: "6-значный код акции, обязательный.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -9965,7 +11850,7 @@ export default {
           name: "Date",
           example: "2015-01-08",
           detail:
-            "The trading day of the stock, the default is the latest trading day",
+            "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
           repeat: "n",
           type: "rangedate",
@@ -9974,7 +11859,7 @@ export default {
           name: "Reversion and exclusion",
           example: "0",
           detail:
-            "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+            "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -9984,14 +11869,14 @@ export default {
     {
       n: "DATA_CN_STOCK_VOLUMN",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock trading volume of A shares.",
-      a: "Returns the corresponding stock trading volume of A shares.",
+      d: "По коду акции и дате возвращает соответствующий объем торгов акциями А.",
+      a: "Возвращает объем торгов акциями А.",
       m: [1, 3],
       p: [
         {
           name: "Stock code",
           example: '"000001"',
-          detail: "6-digit stock code, required.",
+          detail: "6-значный код акции, обязательный.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -10000,7 +11885,7 @@ export default {
           name: "Date",
           example: "2015-01-08",
           detail:
-            "The trading day of the stock, the default is the latest trading day",
+            "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
           repeat: "n",
           type: "rangedate",
@@ -10009,7 +11894,7 @@ export default {
           name: "Reversion and exclusion",
           example: "0",
           detail:
-            "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+            "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -10019,32 +11904,32 @@ export default {
     {
       n: "DATA_CN_STOCK_AMOUNT",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock turnover of A shares.",
-      a: "Returns the corresponding stock turnover of A shares.",
+      d: "По коду акции и дате возвращает соответствующий оборот акций А.",
+      a: "Возвращает оборот акций А.",
       m: [1, 3],
       p: [
         {
-          name: "Stock code",
+          name: "Код акции",
           example: '"000001"',
-          detail: "6-digit stock code, required.",
+          detail: "6-значный код акции, обязательный.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Date",
+          name: "Дата",
           example: "2015-01-08",
           detail:
-            "The trading day of the stock, the default is the latest trading day",
+            "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
           repeat: "n",
           type: "rangedate",
         },
         {
-          name: "Reversion and exclusion",
+          name: "Восстановление и исключение",
           example: "0",
           detail:
-            "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+            "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
           repeat: "n",
           type: "rangenumber",
@@ -10054,14 +11939,14 @@ export default {
     {
       n: "ISDATE",
       t: "6",
-      d: "Returns whether a value is a date.",
-      a: "Whether a value is a date.",
+      d: "Проверяет, является ли значение датой.",
+      a: "Является ли значение датой.",
       m: [1, 1],
       p: [
         {
-          name: "value",
+          name: "Значение",
           example: '"1990-01-01"',
-          detail: "The value to be verified as a date.",
+          detail: "Значение, которое нужно проверить на соответствие дате.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -10071,77 +11956,77 @@ export default {
     {
       n: "LINESPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell to describe the continuous trend of data",
-      a: "Generate sparklines line chart",
+      d: "Создает спарклайны, встроенные в ячейку, для описания непрерывного тренда данных.",
+      a: "Создает линейный график спарклайнов.",
       m: [1, 8],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Line color",
+          name: "Цвет линии",
           example: "#2ec7c9",
           detail:
-            "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+            "Цвет линии графика, может быть диапазоном A1, значением индекса цветовой таблицы или конкретным значением цвета. Установите 0 или false, чтобы не отображать. Поддерживает regx, rgb, rgba и т.д. По умолчанию #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Line thickness",
+          name: "Толщина линии",
           example: "1",
-          detail: "Line thickness of the line graph, the default is 1px",
+          detail: "Толщина линии графика, по умолчанию 1px.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Auxiliary line",
+          name: "Вспомогательная линия",
           example: "avg",
           detail:
-            "A horizontal line, which can be min, max, avg, median, range or custom value, default 0 none",
+            "Горизонтальная линия, может быть min, max, avg, median, range или пользовательское значение, по умолчанию 0 (отсутствует).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Auxiliary line color",
+          name: "Цвет вспомогательной линии",
           example: "#000",
           detail:
-            "Color setting of auxiliary line, same as line color configuration, default #000",
+            "Настройка цвета вспомогательной линии, аналогична настройке цвета линии, по умолчанию #000.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Maximum mark",
+          name: "Максимальная отметка",
           example: "#fc5c5c",
           detail:
-            "Identifies the maximum value of the line graph, the same line color configuration, default 0 does not display",
+            "Отмечает максимальное значение линейного графика, аналогично настройке цвета линии, по умолчанию 0 (не отображается).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Minimum mark",
+          name: "Минимальная отметка",
           example: "#fc5c5c",
           detail:
-            "Identify the minimum value of the line graph, the same line color configuration, default 0 does not display",
+            "Отмечает минимальное значение линейного графика, аналогично настройке цвета линии, по умолчанию 0 (не отображается).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Mark size",
+          name: "Размер отметки",
           example: "1.5",
           detail:
-            "The maximum and minimum mark size settings, the default is 1.5",
+            "Настройка размера максимальной и минимальной отметок, по умолчанию 1.5.",
           require: "o",
           repeat: "n",
           type: "rangeall",
@@ -10151,59 +12036,59 @@ export default {
     {
       n: "AREASPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell area chart, generally used to describe the continuous cumulative value trend of the data",
-      a: "Generate sparklines area chart",
+      d: "Создает спарклайны, встроенные в ячейку, в виде графика области, обычно используется для описания непрерывного тренда накопленных значений данных.",
+      a: "Создает график области спарклайнов.",
       m: [1, 5],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Line color",
+          name: "Цвет линии",
           example: "#2ec7c9",
           detail:
-            "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+            "Цвет линии графика, может быть диапазоном A1, значением индекса цветовой таблицы или конкретным значением цвета. Установите 0 или false, чтобы не отображать. Поддерживает regx, rgb, rgba и т.д. По умолчанию #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Fill color",
+          name: "Цвет заливки",
           example: "#CCF3F4",
           detail:
-            "Form an area chart, the same line color configuration, default 0 does not display",
+            "Формирует график области, аналогично настройке цвета линии, по умолчанию 0 (не отображается).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Line thickness",
+          name: "Толщина линии",
           example: "1",
-          detail: "Line thickness of the line graph, the default is 1px",
+          detail: "Толщина линии графика, по умолчанию 1px.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Auxiliary line",
+          name: "Вспомогательная линия",
           example: "avg",
           detail:
-            "A horizontal line, which can be min, max, avg, median, range or custom value, default 0 none",
+            "Горизонтальная линия, может быть min, max, avg, median, range или пользовательское значение, по умолчанию 0 (отсутствует).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Auxiliary line color",
+          name: "Цвет вспомогательной линии",
           example: "#000",
           detail:
-            "Color setting of auxiliary line, same as line color configuration, default #000",
+            "Настройка цвета вспомогательной линии, аналогична настройке цвета линии, по умолчанию #000.",
           require: "o",
           repeat: "n",
           type: "rangeall",
@@ -10213,59 +12098,59 @@ export default {
     {
       n: "COLUMNSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the vertical histogram of cells, generally used to describe the size of discrete data",
-      a: "Generate sparklines vertical histogram",
+      d: "Создает спарклайны, встроенные в ячейку, в виде вертикальной гистограммы, обычно используется для описания размера дискретных данных.",
+      a: "Создает вертикальную гистограмму спарклайнов.",
       m: [1, 6],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Bar interval",
+          name: "Интервал между столбцами",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "Расстояние между столбцами, по умолчанию 1.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Bar color",
+          name: "Цвет столбца",
           example: "#fc5c5c",
           detail:
-            "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+            "Цвет столбцов графика, может быть диапазоном A1, значением индекса цветовой таблицы или конкретным значением цвета. Установите 0 или false, чтобы не отображать. Поддерживает regx, rgb, rgba и т.д. По умолчанию #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Negative bar color",
+          name: "Цвет отрицательного столбца",
           example: "#97b552",
           detail:
-            "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+            "Настройка цвета отрицательного столбца, представляющего цвет отрицательных значений, аналогична настройке цвета столбца, по умолчанию #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Max",
+          name: "Максимум",
           example: "100",
           detail:
-            "The maximum value of the bar chart, used to standardize the length of the bar chart, the default is to automatically calculate false, auto, null",
+            "Максимальное значение гистограммы, используется для стандартизации длины столбцов, по умолчанию автоматически рассчитывается (false, auto, null).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Color palette",
+          name: "Цветовая палитра",
           example: "#97b552",
           detail:
-            "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+            "Цветовая палитра позволяет индивидуально задавать цвет каждого столбца, поддерживает множественные настройки и два формата: 1) цвет, например, #000, означает, что первый столбец черный; 2) диапазон значений: цвет, например, -2:#000 означает, что столбец со значением -2 черный, 0:5:#000 означает, что столбцы со значениями от 0 до 5 черные. По умолчанию пусто.",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -10275,50 +12160,50 @@ export default {
     {
       n: "STACKCOLUMNSPLINES",
       t: "3",
-      d: "Generate sparklines, a cumulative vertical histogram embedded in a cell, generally used to describe the numerical size of multiple dimensions of discrete data",
-      a: "Generate sparklines cumulative vertical histogram",
+      d: "Создает спарклайны, встроенные в ячейку, в виде накопительной вертикальной гистограммы, обычно используется для описания числового размера нескольких измерений дискретных данных.",
+      a: "Создает накопительную вертикальную гистограмму спарклайнов.",
       m: [1, 5],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Stack by column",
+          name: "Накопление по столбцам",
           example: "1",
           detail:
-            "If you need to stack by row, set this item to false or 0, the default is 1",
+            "Если требуется накопление по строкам, установите этот параметр в false или 0, по умолчанию 1.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Bar interval",
+          name: "Интервал между столбцами",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "Расстояние между столбцами, по умолчанию 1.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Max",
+          name: "Максимум",
           example: "100",
           detail:
-            "The maximum value of the cumulative bar, used to regulate the length of the bar, the default is to automatically calculate false, auto, null",
+            "Максимальное значение накопительного столбца, используется для регулировки длины столбца, по умолчанию автоматически рассчитывается (false, auto, null).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Color palette",
+          name: "Цветовая палитра",
           example: "#97b552",
           detail:
-            "The color palette can individually set the bar color of each dimension, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+            "Цветовая палитра позволяет индивидуально задавать цвет столбцов каждого измерения, может быть задана диапазоном A1:A10 и т.д. По умолчанию #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -10328,59 +12213,59 @@ export default {
     {
       n: "BARSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the size of discrete data",
-      a: "Generate sparklines horizontal bar graph",
+      d: "Создает спарклайны, встроенные в ячейку, в виде горизонтальной гистограммы, обычно используется для описания размера дискретных данных.",
+      a: "Создает горизонтальную гистограмму спарклайнов.",
       m: [1, 6],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Bar interval",
+          name: "Интервал между столбцами",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "Расстояние между столбцами, по умолчанию 1.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Bar color",
+          name: "Цвет столбца",
           example: "#fc5c5c",
           detail:
-            "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+            "Цвет столбцов графика, может быть диапазоном A1, значением индекса цветовой таблицы или конкретным значением цвета. Установите 0 или false, чтобы не отображать. Поддерживает regx, rgb, rgba и т.д. По умолчанию #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Negative bar color",
+          name: "Цвет отрицательного столбца",
           example: "#97b552",
           detail:
-            "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+            "Настройка цвета отрицательного столбца, представляющего цвет отрицательных значений, аналогична настройке цвета столбца, по умолчанию #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Max",
+          name: "Максимум",
           example: "100",
           detail:
-            "The maximum value of the bar chart, used to standardize the length of the bar chart, the default is to automatically calculate false, auto, null",
+            "Максимальное значение гистограммы, используется для стандартизации длины столбцов, по умолчанию автоматически рассчитывается (false, auto, null).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Color palette",
+          name: "Цветовая палитра",
           example: "#97b552",
           detail:
-            "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+            "Цветовая палитра позволяет индивидуально задавать цвет каждого столбца, поддерживает множественные настройки и два формата: 1) цвет, например, #000, означает, что первый столбец черный; 2) диапазон значений: цвет, например, -2:#000 означает, что столбец со значением -2 черный, 0:5:#000 означает, что столбцы со значениями от 0 до 5 черные. По умолчанию пусто.",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -10390,50 +12275,50 @@ export default {
     {
       n: "STACKBARSPLINES",
       t: "3",
-      d: "Generate sparklines, a cumulative horizontal bar graph embedded in a cell, which is generally used to describe the numerical size of multiple dimensions of discrete data",
-      a: "Generate sparklines cumulative horizontal bar graph",
+      d: "Создает спарклайны, встроенные в ячейку, в виде накопительной горизонтальной гистограммы, обычно используется для описания числового размера нескольких измерений дискретных данных.",
+      a: "Создает накопительную горизонтальную гистограмму спарклайнов.",
       m: [1, 5],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Stack by column",
+          name: "Накопление по столбцам",
           example: "1",
           detail:
-            "If you need to stack by row, set this item to false or 0, the default is 1",
+            "Если требуется накопление по строкам, установите этот параметр в false или 0, по умолчанию 1.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Bar interval",
+          name: "Интервал между столбцами",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "Расстояние между столбцами, по умолчанию 1.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Max",
+          name: "Максимум",
           example: "100",
           detail:
-            "The maximum value of the cumulative bar, used to regulate the length of the bar, the default is to automatically calculate false, auto, null",
+            "Максимальное значение накопительного столбца, используется для регулировки длины столбца, по умолчанию автоматически рассчитывается (false, auto, null).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Color palette",
+          name: "Цветовая палитра",
           example: "#97b552",
           detail:
-            "The color palette can individually set the bar color of each dimension, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+            "Цветовая палитра позволяет индивидуально задавать цвет столбцов каждого измерения, может быть задана диапазоном A1:A10 и т.д. По умолчанию #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -10443,42 +12328,42 @@ export default {
     {
       n: "DISCRETESPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the trend of discrete data",
-      a: "Generate sparklines discrete graph",
+      d: "Создает спарклайны, встроенные в ячейку, обычно используется для описания тренда дискретных данных.",
+      a: "Создает дискретный график спарклайнов.",
       m: [1, 4],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Segmentation threshold",
+          name: "Порог сегментации",
           example: "1",
           detail:
-            "Discrete graph column color distinction, for example: if the value is 0, blue is greater than 0, red is less than 0, and the default is 0",
+            "Различие цвета столбцов дискретного графика, например: если значение 0, синий — больше 0, красный — меньше 0, по умолчанию 0.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Above threshold color",
+          name: "Цвет выше порога",
           example: "#2ec7c9",
           detail:
-            "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+            "Цвет линии графика, может быть диапазоном A1, значением индекса цветовой таблицы или конкретным значением цвета. Установите 0 или false, чтобы не отображать. Поддерживает regx, rgb, rgba и т.д. По умолчанию #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Below threshold color",
+          name: "Цвет ниже порога",
           example: "#fc5c5c",
           detail:
-            "The color setting of the bar below the threshold, the same as the color above the threshold, default #fc5c5c",
+            "Настройка цвета столбца ниже порога, аналогична настройке цвета выше порога, по умолчанию #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall",
@@ -10488,59 +12373,59 @@ export default {
     {
       n: "TRISTATESPLINES",
       t: "3",
-      d: "Generate sparklines, a three-state graph embedded in the cell, which is generally used to describe the trend of three situations, such as winning, losing, or drawing.",
-      a: "Generate sparklines three-state graph",
+      d: "Создает спарклайны, встроенные в ячейку, в виде трехсостояйного графика, обычно используется для описания тренда трех ситуаций, таких как победа, поражение или ничья.",
+      a: "Создает трехсостояйный график спарклайнов.",
       m: [1, 6],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Bar interval",
+          name: "Интервал между столбцами",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "Расстояние между столбцами, по умолчанию 1.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Bar color",
+          name: "Цвет столбца",
           example: "#fc5c5c",
           detail:
-            "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+            "Цвет столбцов графика, может быть диапазоном A1, значением индекса цветовой таблицы или конкретным значением цвета. Установите 0 или false, чтобы не отображать. Поддерживает regx, rgb, rgba и т.д. По умолчанию #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Negative bar color",
+          name: "Цвет отрицательного столбца",
           example: "#97b552",
           detail:
-            "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+            "Настройка цвета отрицательного столбца, представляющего цвет отрицательных значений, аналогична настройке цвета столбца, по умолчанию #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Zero value bar color",
+          name: "Цвет столбца нулевого значения",
           example: "#999",
           detail:
-            "Zero value bar color setting, representing 0 value color, the same color configuration of the bar, default #999",
+            "Настройка цвета столбца нулевого значения, представляющего цвет значения 0, аналогична настройке цвета столбца, по умолчанию #999.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Color palette",
+          name: "Цветовая палитра",
           example: "#97b552",
           detail:
-            "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+            "Цветовая палитра позволяет индивидуально задавать цвет каждого столбца, поддерживает множественные настройки и два формата: 1) цвет, например, #000, означает, что первый столбец черный; 2) диапазон значений: цвет, например, -2:#000 означает, что столбец со значением -2 черный, 0:5:#000 означает, что столбцы со значениями от 0 до 5 черные. По умолчанию пусто.",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -10550,48 +12435,49 @@ export default {
     {
       n: "PIESPLINES",
       t: "3",
-      d: "Generate sparklines pie chart embedded in the cell, generally used to describe the proportion of data",
-      a: "Generate sparklines pie chart",
+      d: "Создает спарклайны, встроенные в ячейку, в виде круговой диаграммы, обычно используется для описания пропорций данных.",
+      a: "Создает круговую диаграмму спарклайнов.",
       m: [1, 5],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Rotation angle",
+          name: "Угол поворота",
           example: "0",
-          detail: "The rotation angle of the pie chart, the default is 0",
+          detail: "Угол поворота круговой диаграммы, по умолчанию 0.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "border",
+          name: "Граница",
           example: "0",
-          detail: "Pie chart border size, default is none 0",
+          detail:
+            "Размер границы круговой диаграммы, по умолчанию 0 (отсутствует).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Border color",
+          name: "Цвет границы",
           example: "#000",
-          detail: "The border color of the pie chart, the default is #000",
+          detail: "Цвет границы круговой диаграммы, по умолчанию #000.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Color palette",
+          name: "Цветовая палитра",
           example: "#97b552",
           detail:
-            "The color of the slice can be set in the palette, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+            "Цвет секторов можно задать в палитре, которая может быть установлена диапазоном A1:A10 и т.д. По умолчанию #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -10601,42 +12487,41 @@ export default {
     {
       n: "BOXSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell box plot, generally used to describe the statistical distribution of the data set",
-      a: "Generate sparklines box plot",
+      d: "Создает спарклайны, встроенные в ячейку, в виде коробчатой диаграммы, обычно используется для описания статистического распределения набора данных.",
+      a: "Создает коробчатую диаграмму спарклайнов.",
       m: [1, 4],
       p: [
         {
-          name: "Range",
+          name: "Диапазон",
           example: "A1:A20",
           detail:
-            "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+            "Диапазон, значения которого могут быть эффективно рассчитаны, например, A1:A20, {1,2,3,4,5} и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Outlier ratio",
+          name: "Коэффициент выбросов",
           example: "1.5",
           detail:
-            "The threshold range of outliers, if it is 0 or false, it will not be displayed, the default is 1.5 times",
+            "Порог диапазона выбросов, если 0 или false, то не отображается, по умолчанию 1.5 раза.",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Target value",
+          name: "Целевое значение",
           example: "10",
           detail:
-            "The target value setting on the box plot, the default is false and does not display",
+            "Настройка целевого значения на коробчатой диаграмме, по умолчанию false (не отображается).",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Point size",
+          name: "Размер точки",
           example: "1.5",
-          detail:
-            "The radius of the target point and outlier is set, the default is 1.5",
+          detail: "Радиус целевой точки и выбросов, по умолчанию 1.5.",
           require: "o",
           repeat: "n",
           type: "rangeall",
@@ -10646,33 +12531,33 @@ export default {
     {
       n: "BULLETSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the task achievement rate",
-      a: "Generating sparklines bullets",
+      d: "Создает спарклайны, встроенные в ячейку, обычно используется для описания процента выполнения задачи.",
+      a: "Создает спарклайны в виде маркеров.",
       m: [2, 3],
       p: [
         {
-          name: "Target",
+          name: "Цель",
           example: "10",
           detail:
-            "The numerical value can be calculated effectively for the achieved target value, such as A1, 100, etc.",
+            "Числовое значение, которое можно эффективно рассчитать для достигнутой целевой величины, например, A1, 100 и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "achieved",
+          name: "Достигнуто",
           example: "8",
           detail:
-            "Only when the value is completed can the value be calculated effectively, such as A1, 100, etc.",
+            "Только завершенное значение может быть эффективно рассчитано, например, A1, 100 и т.д.",
           require: "m",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "Contrast",
+          name: "Сравнение",
           example: "12",
           detail:
-            "Comparative values, such as excess, minimum, and bottom line for awards, can be effectively calculated, such as A1, 100, etc. You can set up to 9 comparison values",
+            "Сравнительные значения, такие как превышение, минимум и нижняя граница для наград, могут быть эффективно рассчитаны, например, A1, 100 и т.д. Можно задать до 9 сравнительных значений.",
           require: "o",
           repeat: "y",
           type: "rangeall",
@@ -10682,15 +12567,15 @@ export default {
     {
       n: "COMPOSESPLINES",
       t: "3",
-      d: "Support multiple types of pictures in the same cell, each parameter represents a sparklines diagram",
-      a: "Combine sparklines graphs into one cell",
+      d: "Поддерживает несколько типов графиков в одной ячейке, каждый параметр представляет диаграмму спарклайнов.",
+      a: "Объединяет графики спарклайнов в одну ячейку.",
       m: [1, 1],
       p: [
         {
-          name: "config",
+          name: "Конфигурация",
           example: "PIESPLINES(A1:A20)",
           detail:
-            "Sparklines chart settings, such as A1:A20, a completed pie chart, line chart settings, etc.",
+            "Настройки диаграммы спарклайнов, такие как A1:A20, завершенная круговая диаграмма, настройки линейного графика и т.д.",
           require: "m",
           repeat: "y",
           type: "rangeall",
@@ -10698,41 +12583,41 @@ export default {
       ],
     },
     {
-      n: "SORT",
+      n: "СОРТ",
       t: "14",
-      d: "Sorts the rows of a given array or range by the values in one or more columns.",
-      a: "Sorts rows of range by specified column.",
+      d: "Сортирует строки указанного массива или диапазона по значениям в одном или нескольких столбцах.",
+      a: "Сортирует строки диапазона по указанному столбцу.",
       m: [1, 4],
       p: [
         {
-          name: "range",
-          detail: "The data to be sorted.",
+          name: "Диапазон",
+          detail: "Данные для сортировки.",
           example: "A2:A17",
           require: "m",
           repeat: "n",
           type: "rangenumber",
         },
         {
-          name: "sort_column",
+          name: "Столбец для сортировки",
           detail:
-            "The index of the column in `range` or a range outside of `range` containing the values by which to sort.",
+            "Индекс столбца в `диапазоне` или диапазон вне `диапазона`, содержащий значения для сортировки.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber",
         },
         {
-          name: "is_ascending",
+          name: "По возрастанию",
           detail:
-            "`TRUE` or `FALSE` indicating whether to sort `sort_column` in ascending order. `FALSE` sorts in descending order.",
+            "`TRUE` или `FALSE`, указывает, сортировать ли `столбец для сортировки` по возрастанию. `FALSE` сортирует по убыванию.",
           example: "-1",
           require: "o",
           repeat: "n",
           type: "rangenumber",
         },
         {
-          name: "sort_column2",
-          detail: "Additional columns.",
+          name: "Дополнительный столбец для сортировки",
+          detail: "Дополнительные столбцы.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -10741,33 +12626,33 @@ export default {
       ],
     },
     {
-      n: "FILTER",
+      n: "ФИЛЬТР",
       t: "14",
-      d: "Returns a filtered version of the source range, returning only rows or columns which meet the specified conditions.",
-      a: "Filters a range based off provided conditions.",
+      d: "Возвращает отфильтрованную версию исходного диапазона, возвращая только строки или столбцы, которые соответствуют указанным условиям.",
+      a: "Фильтрует диапазон на основе предоставленных условий.",
       m: [2, 3],
       p: [
         {
-          name: "range",
-          detail: "The data to be filtered.",
+          name: "Диапазон",
+          detail: "Данные для фильтрации.",
           example: "A5:D20",
           require: "m",
           repeat: "n",
           type: "range",
         },
         {
-          name: "condition1",
+          name: "Условие1",
           detail:
-            "A column or row containing true or false values corresponding to the first column or row of `range`, or an array formula evaluating to true or false.",
+            "Столбец или строка, содержащие значения true или false, соответствующие первому столбцу или строке `диапазона`, или формула массива, возвращающая true или false.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "range",
         },
         {
-          name: "condition2",
+          name: "Условие2",
           detail:
-            "Additional rows or columns containing boolean values `TRUE` or `FALSE` indicating whether the corresponding row or column in `range` should pass through `FILTER`. Can also contain array formula expressions which evaluate to such rows or columns. All conditions must be of the same type (row or column). Mixing row conditions and column conditions is not permitted.",
+            "Дополнительные строки или столбцы, содержащие логические значения `TRUE` или `FALSE`, указывающие, должна ли соответствующая строка или столбец в `диапазоне` пройти фильтр. Также могут содержать выражения формул массива, которые оцениваются как такие строки или столбцы. Все условия должны быть одного типа (строка или столбец). Смешивание условий строк и столбцов не допускается.",
           example: '""',
           require: "o",
           repeat: "n",
@@ -10776,33 +12661,33 @@ export default {
       ],
     },
     {
-      n: "UNIQUE",
+      n: "УНИКАЛЬНЫЕ",
       t: "14",
-      d: "Returns unique rows in the provided source range, discarding duplicates. Rows are returned in the order in which they first appear in the source range.",
-      a: "Unique rows in the provided source range.",
+      d: "Возвращает уникальные строки в указанном исходном диапазоне, отбрасывая дубликаты. Строки возвращаются в порядке их первого появления в исходном диапазоне.",
+      a: "Уникальные строки в указанном исходном диапазоне.",
       m: [1, 3],
       p: [
         {
-          name: "range",
-          detail: "The data to filter by unique entries.",
+          name: "Диапазон",
+          detail: "Данные для фильтрации по уникальным записям.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
           type: "rangenumber",
         },
         {
-          name: "by_col",
+          name: "По столбцам",
           detail:
-            "[Option] - Logical value, indicating how to compare; by row = FALSE() or omitted; by column = TRUE().",
+            "[Опционально] - Логическое значение, указывающее, как сравнивать; по строкам = FALSE() или опущено; по столбцам = TRUE().",
           example: "TRUE()",
           require: "o",
           repeat: "n",
           type: "rangeall",
         },
         {
-          name: "occurs_once",
+          name: "Только одно вхождение",
           detail:
-            "[Option] - Logical value, only one occurrence in the unique value is returned = TRUE(); including all unique values = FALSE() or omitted.",
+            "[Опционально] - Логическое значение, возвращается только одно вхождение уникального значения = TRUE(); включаются все уникальные значения = FALSE() или опущено.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -10811,23 +12696,23 @@ export default {
       ],
     },
     {
-      n: "RANDARRAY",
+      n: "СЛМАССИВ",
       t: "14",
-      d: "Returns a grid of random numbers between 0 inclusive and 1 exclusive. The grid size will match the provided rows and columns arguments. If neither rows nor columns are provided, then the grid will be size 1 x 1.",
-      a: "Returns a grid of random numbers.",
+      d: "Возвращает сетку случайных чисел от 0 (включительно) до 1 (исключительно). Размер сетки соответствует предоставленным аргументам строк и столбцов. Если строки и столбцы не указаны, сетка будет размером 1 x 1.",
+      a: "Возвращает сетку случайных чисел.",
       m: [0, 2],
       p: [
         {
-          name: "rows",
-          detail: "The number of rows to populate with a random number.",
+          name: "Строки",
+          detail: "Количество строк для заполнения случайным числом.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber",
         },
         {
-          name: "columns",
-          detail: "The number of columns to populate with a random number.",
+          name: "Столбцы",
+          detail: "Количество столбцов для заполнения случайным числом.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -10838,40 +12723,40 @@ export default {
     {
       n: "SEQUENCE",
       t: "14",
-      d: "Returns a grid of sequential numbers starting at a specified start value and  increasing by a specified step size. By default, the sequence starts at and  increases by 1.",
-      a: "Returns a grid of sequential numbers.",
+      d: "Возвращает сетку последовательных чисел, начиная с указанного начального значения и увеличивающихся на заданный шаг. По умолчанию последовательность начинается с 1 и увеличивается на 1.",
+      a: "Возвращает сетку последовательных чисел.",
       m: [1, 4],
       p: [
         {
-          name: "rows",
-          detail: "The number of rows in the function's resulting grid.",
+          name: "Строки",
+          detail: "Количество строк в результирующей сетке функции.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber",
         },
         {
-          name: "columns",
+          name: "Столбцы",
           detail:
-            "The number of columns in the function's resulting grid. If omitted, the result grid will have 1 column.",
+            "Количество столбцов в результирующей сетке функции. Если опущено, результирующая сетка будет содержать 1 столбец.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber",
         },
         {
-          name: "start",
+          name: "Начало",
           detail:
-            "The number, at which to start the sequence. If omitted, the sequence will start at 1.",
+            "Число, с которого начинается последовательность. Если опущено, последовательность начинается с 1.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber",
         },
         {
-          name: "step",
+          name: "Шаг",
           detail:
-            "The amount each value in the sequence will differ by. If omitted, each value will differ by 1.",
+            "Величина, на которую каждое значение в последовательности будет отличаться. Если опущено, каждое значение будет отличаться на 1.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -10882,14 +12767,14 @@ export default {
     {
       n: "EVALUATE",
       t: "3",
-      d: "Evaluate a formula or expression expressed in words and return the result",
-      a: "Evaluate according to literal formula or expression.",
+      d: "Выполняет формулу или выражение, выраженное словами, и возвращает результат.",
+      a: "Выполняет вычисление по буквальной формуле или выражению.",
       m: [1, 1],
       p: [
         {
-          name: "expression",
+          name: "Выражение",
           example: '"A1+5*2^2"',
-          detail: "Formula or expression",
+          detail: "Формула или выражение.",
           require: "m",
           repeat: "n",
           type: "rangeall",
@@ -10899,14 +12784,14 @@ export default {
     {
       n: "REMOTE",
       t: "5",
-      d: "Calls a function on a remote server",
-      a: "Calls a function on a remote back end server/API.",
+      d: "Вызывает функцию на удаленном сервере.",
+      a: "Вызывает функцию на удаленном сервере/в API.",
       m: [1, 1],
       p: [
         {
-          name: "remote_expression",
+          name: "Удаленное выражение",
           example: "SUM(A1:A10000000)",
-          detail: "Formula",
+          detail: "Формула.",
           require: "m",
           repeat: "n",
           type: "string",
@@ -10920,29 +12805,29 @@ export default {
     redo: "Повторить",
     "clear-format": "Очистить формат",
     "format-painter": "Копировать формат",
-    paintFormat: "Применить формат",
-    "currency-format": "Денежный формат",
-    "percentage-format": "Процентный формат",
-    "number-decrease": "Уменьшить разрядность",
-    "number-increase": "Увеличить разрядность",
-    moreFormats: "Другие форматы",
+    paintFormat: "Копировать формат",
+    "currency-format": "Форматировать как валюту",
+    "percentage-format": "Форматировать как процент",
+    "number-decrease": "Уменьшить количество знаков после запятой",
+    "number-increase": "Увеличить количество знаков после запятой",
+    moreFormats: "Дополнительные форматы",
     "border-all": "Все границы",
     "merge-all": "Объединить все ячейки",
     format: "Формат",
     font: "Шрифт",
     "font-size": "Размер шрифта",
-    bold: "Полужирный (Ctrl+B)",
+    bold: "Жирный (Ctrl+B)",
     italic: "Курсив (Ctrl+I)",
     "strike-through": "Зачеркнутый (Alt+Shift+5)",
     underline: "Подчеркнутый",
     "font-color": "Цвет шрифта",
-    "align-left": "По левому краю",
-    "align-center": "По центру горизонтально",
-    "align-right": "По правому краю",
-    "align-top": "По верхнему краю",
-    "align-mid": "По центру вертикально",
-    "align-bottom": "По нижнему краю",
-    chooseColor: "выбрать цвет",
+    "align-left": "Выровнять по левому краю",
+    "align-center": "Выровнять по центру горизонтально",
+    "align-right": "Выровнять по правому краю",
+    "align-top": "Выровнять по верхнему краю",
+    "align-mid": "Выровнять по центру вертикально",
+    "align-bottom": "Выровнять по нижнему краю",
+    chooseColor: "Выбрать цвет",
     resetColor: "Сбросить",
     customColor: "ПОЛЬЗОВАТЕЛЬСКИЙ",
     alternatingColors: "Чередующиеся цвета",
@@ -10953,7 +12838,7 @@ export default {
     border: "Граница",
     borderStyle: "Стиль границы",
     "merge-cell": "Объединить ячейки",
-    chooseMergeType: "Выберите тип объединения",
+    chooseMergeType: "Выбрать тип объединения",
     horizontalAlign: "Горизонтальное выравнивание",
     verticalAlign: "Вертикальное выравнивание",
     alignment: "Выравнивание",
@@ -10961,14 +12846,14 @@ export default {
     textWrapMode: "Режим переноса текста",
     textRotate: "Поворот текста",
     textRotateMode: "Режим поворота текста",
-    freeze: "Закрепить",
+    freeze: "Заморозить",
     sort: "Сортировка",
     filter: "Фильтр",
-    sortAndFilter: "Сортировка и фильтр",
+    sortAndFilter: "Сортировка и фильтрация",
     findAndReplace: "Найти и заменить",
     "formula-sum": "СУММА",
     autoSum: "Автосумма",
-    moreFunction: "Больше функций",
+    moreFunction: "Дополнительные функции",
     conditionalFormat: "Условное форматирование",
     comment: "Комментарий",
     pivotTable: "Сводная таблица",
@@ -10979,16 +12864,13 @@ export default {
     insertLink: "Вставить ссылку",
     dataVerification: "Проверка данных",
     protection: "Защитить лист",
-
     clearText: "Очистить цвет",
     noColorSelectedText: "Цвет не выбран",
-
     toolMore: "Больше",
     toolLess: "Меньше",
     toolClose: "Закрыть",
-    toolMoreTip: "Больше возможностей",
-    moreOptions: "Больше опций",
-
+    toolMoreTip: "Дополнительные функции",
+    moreOptions: "Дополнительные параметры",
     cellFormat: "Настройка формата ячейки",
     print: "Печать",
   },
@@ -10996,23 +12878,21 @@ export default {
     applyRange: "Применить к диапазону",
     selectRange: "Выберите диапазон данных",
     header: "Заголовок",
-    footer: "Подвал",
-
+    footer: "Нижний колонтитул",
     errorInfo:
-      "Невозможно выполнить эту операцию для нескольких выделенных областей, выберите одну область и повторите попытку",
+      "Невозможно выполнить эту операцию для нескольких выбранных областей, выберите одну область и попробуйте снова",
     textTitle: "Стиль формата",
     custom: "ПОЛЬЗОВАТЕЛЬСКИЙ",
-    close: "закрыть",
+    close: "Закрыть",
     selectionTextColor: "Нажмите, чтобы выбрать цвет текста",
     selectionCellColor: "Нажмите, чтобы выбрать цвет ячейки",
     removeColor: "Удалить чередующиеся цвета",
-    colorShow: "цвет",
+    colorShow: "Цвет",
     currentColor: "Текущий",
-
-    tipSelectRange: "Пожалуйста, выберите диапазон чередующихся цветов",
+    tipSelectRange: "Пожалуйста, выберите диапазон для чередующихся цветов",
     errorNoRange: "Диапазон не выбран",
     errorExistColors:
-      "Чередующиеся цвета уже существуют и не могут быть изменены",
+      "Чередующиеся цвета уже существуют и не могут быть отредактированы",
   },
   button: {
     confirm: "ОК",
@@ -11023,29 +12903,27 @@ export default {
     insert: "Вставить",
     prevPage: "Предыдущая",
     nextPage: "Следующая",
-    total: "всего:",
+    total: "Всего:",
   },
   paint: {
-    start: "Начало копирования формата",
+    start: "Начать копирование формата",
     end: "ESC",
-
     tipSelectRange: "Пожалуйста, выберите диапазон для копирования",
     tipNotMulti:
-      "Невозможно выполнить эту операцию для нескольких выделенных диапазонов",
+      "Невозможно выполнить эту операцию для нескольких выбранных диапазонов",
   },
   format: {
-    moreCurrency: "Больше денежных форматов",
-    moreDateTime: "Больше форматов даты и времени",
-    moreNumber: "Больше числовых форматов",
-
-    titleCurrency: "Денежные форматы",
+    moreCurrency: "Дополнительные форматы валют",
+    moreDateTime: "Дополнительные форматы даты и времени",
+    moreNumber: "Дополнительные числовые форматы",
+    titleCurrency: "Форматы валют",
     decimalPlaces: "Знаки после запятой",
     titleDateTime: "Форматы даты и времени",
     titleNumber: "Числовые форматы",
     tipDecimalPlaces: "Количество знаков после запятой должно быть от 0 до 9!",
     select: "Выбрать",
-    format: "формат",
-    currency: "валюта",
+    format: "Формат",
+    currency: "Валюта",
   },
   info: {
     detailUpdate: "Открыт новый",
@@ -11053,45 +12931,40 @@ export default {
     row: "",
     column: "",
     loading: "Загрузка...",
-
     copy: "Копировать",
-    return: "Выход",
+    return: "Выйти",
     rename: "Переименовать",
-    tips: "Переименование книги",
+    tips: "Переименование рабочей книги",
     noName: "Безымянная таблица",
-    wait: "ожидание обновления",
-
+    wait: "Ожидание обновления",
     add: "Добавить",
-    addLast: "еще строк внизу",
-    backTop: "Назад к началу",
-    pageInfo: "Всего ${total}, ${totalPage} стр., текущая ${currentPage}",
-    nextPage: "Далее",
-
+    addLast: "Добавить строки внизу",
+    backTop: "Вернуться к началу",
+    pageInfo: "Всего ${total}, ${totalPage} страниц, текущая ${currentPage}",
+    nextPage: "Следующая",
     tipInputNumber: "Пожалуйста, введите число",
-    tipInputNumberLimit: "Диапазон увеличения ограничен 1-100",
-
-    tipRowHeightLimit: "Высота строки должна быть между 0 ~ 545",
-    tipColumnWidthLimit: "Ширина столбца должна быть между 0 ~ 2038",
-    pageInfoFull: "Всего ${total}, ${totalPage} стр., все данные отображены",
-
-    sheetIsFocused: "Блокировка фокуса листа включена.",
-    sheetNotFocused: "Блокировка фокуса листа отключена.",
+    tipInputNumberLimit: "Диапазон увеличения ограничен от 1 до 100",
+    tipRowHeightLimit: "Высота строки должна быть от 0 до 545",
+    tipColumnWidthLimit: "Ширина столбца должна быть от 0 до 2038",
+    pageInfoFull: "Всего ${total}, ${totalPage} страниц, все данные отображены",
+    sheetIsFocused: "Фокус листа включен.",
+    sheetNotFocused: "Фокус листа отключен.",
     sheetSrIntro:
-      "Чтобы переключить фокус листа для помощи с панелью инструментов и другой навигацией вне листа, используйте Shift, Control, F.",
-    currentCellInput: "Ввод в текущую ячейку",
+      "Для переключения фокуса листа для помощи с навигацией по панели инструментов и другим элементам вне листа используйте Shift, Control, F.",
+    currentCellInput: "Ввод текущей ячейки",
     newSheet: "Новый лист",
     sheetOptions: "Параметры листа",
     Dropdown: "Выпадающий список",
     zoomIn: "Увеличить",
     zoomOut: "Уменьшить",
     toggleSheetFocusShortcut:
-      "Переключить блокировку фокуса листа: Shift, Control, F.",
-    selectRangeShortcut: "Выбрать диапазон: Shift, клавиши стрелок.",
+      "Переключение блокировки фокуса листа: Shift, Control, F.",
+    selectRangeShortcut: "Выбор диапазона: Shift, клавиши со стрелками.",
     autoFillDownShortcut:
-      "Автозаполнение выделения вниз от первой ячейки: Control или Meta, D.",
+      "Автозаполнение вниз из первой ячейки: Control или Meta, D.",
     autoFillRightShortcut:
-      "Автозаполнение выделения вправо от первой ячейки: Control или Meta, R.",
-    boldTextShortcut: "Полужирный текст: Control или Meta, B.",
+      "Автозаполнение вправо из первой ячейки: Control или Meta, R.",
+    boldTextShortcut: "Жирный текст: Control или Meta, B.",
     copyShortcut: "Копировать: Control или Meta, C.",
     pasteShortcut: "Вставить: Control или Meta, V.",
     undoShortcut: "Отменить: Control или Meta, Z.",
@@ -11099,216 +12972,900 @@ export default {
     deleteCellContentShortcut:
       "Удалить содержимое ячейки: Delete или Backspace.",
     confirmCellEditShortcut:
-      "Подтвердить редактирование ячейки и переместиться вниз: Enter.",
-    moveRightShortcut: "Переместиться вправо: Tab.",
-    moveLeftShortcut: "Переместиться влево: Shift, Tab.",
+      "Подтвердить редактирование ячейки и перейти вниз: Enter.",
+    moveRightShortcut: "Перейти вправо: Tab.",
+    moveLeftShortcut: "Перейти влево: Shift, Tab.",
     shortcuts: "Горячие клавиши",
   },
   currencyDetail: [
-    { name: "Китайский юань", pos: "before", value: "¥" },
-    { name: "Доллар США", pos: "before", value: "$" },
-    { name: "Евро", pos: "before", value: "€" },
-    { name: "Британский фунт", pos: "before", value: "￡" },
-    { name: "Гонконгский доллар", pos: "before", value: "$" },
-    { name: "Японская йена", pos: "before", value: "￥" },
-    { name: "Albanian Lek", pos: "before", value: "Lek" },
-    { name: "Algerian Dinar", pos: "before", value: "din" },
-    { name: "Afghani", pos: "after", value: "Af" },
-    { name: "Argentine Peso", pos: "before", value: "$" },
-    { name: "United Arab Emirates Dirham", pos: "before", value: "dh" },
-    { name: "Aruban Florin", pos: "before", value: "Afl" },
-    { name: "Omani Rial", pos: "before", value: "Rial" },
-    { name: "Azerbaijani manat", pos: "before", value: "?" },
-    { name: "Egyptian Pound", pos: "before", value: "￡" },
-    { name: "Ethiopian Birr", pos: "before", value: "Birr" },
-    { name: "Angola Kwanza", pos: "before", value: "Kz" },
-    { name: "Australian Dollar", pos: "before", value: "$" },
-    { name: "Patacas", pos: "before", value: "MOP" },
-    { name: "Barbados Dollar", pos: "before", value: "$" },
-    { name: "Papua New Guinea Kina", pos: "before", value: "PGK" },
-    { name: "Bahamian Dollar", pos: "before", value: "$" },
-    { name: "Pakistan Rupee", pos: "before", value: "Rs" },
-    { name: "Paraguayan Guarani", pos: "after", value: "Gs" },
-    { name: "Bahraini Dinar", pos: "before", value: "din" },
-    { name: "Panamanian Balboa", pos: "before", value: "B/" },
-    { name: "Brazilian real", pos: "before", value: "R$" },
-    { name: "Belarusian ruble", pos: "after", value: "р" },
-    { name: "Bermudian Dollar", pos: "before", value: "$" },
-    { name: "Bulgarian Lev", pos: "before", value: "lev" },
-    { name: "Iceland Krona", pos: "before", value: "kr" },
-    { name: "Bosnia-Herzegovina Convertible Mark", pos: "before", value: "KM" },
-    { name: "Polish Zloty", pos: "after", value: "z?" },
-    { name: "Boliviano", pos: "before", value: "Bs" },
-    { name: "Belize Dollar", pos: "before", value: "$" },
-    { name: "Botswana Pula", pos: "before", value: "P" },
-    { name: "Not Dannuzhamu", pos: "before", value: "Nu" },
-    { name: "Burundi Franc", pos: "before", value: "FBu" },
-    { name: "North Korean Won", pos: "before", value: "?KP" },
-    { name: "Danish Krone", pos: "after", value: "kr" },
-    { name: "East Caribbean Dollar", pos: "before", value: "$" },
-    { name: "Dominica Peso", pos: "before", value: "RD$" },
-    { name: "Russian Ruble", pos: "after", value: "?" },
-    { name: "Eritrean Nakfa", pos: "before", value: "Nfk" },
-    { name: "CFA franc", pos: "before", value: "CFA" },
-    { name: "Philippine Peso", pos: "before", value: "?" },
-    { name: "Fiji Dollar", pos: "before", value: "$" },
-    { name: "Cape Verde Escudo", pos: "before", value: "CVE" },
-    { name: "Falkland Islands Pound", pos: "before", value: "￡" },
-    { name: "Gambian Dalasi", pos: "before", value: "GMD" },
-    { name: "Congolese franc", pos: "before", value: "FrCD" },
-    { name: "Colombian Peso", pos: "before", value: "$" },
-    { name: "Costa Rican Colon", pos: "before", value: "?" },
-    { name: "Cuban Peso", pos: "before", value: "$" },
-    { name: "Cuban convertible peso", pos: "before", value: "$" },
-    { name: "Guyana Dollar", pos: "before", value: "$" },
-    { name: "Kazakhstan Tenge", pos: "before", value: "?" },
-    { name: "Haitian gourde", pos: "before", value: "HTG" },
-    { name: "won", pos: "before", value: "?" },
-    { name: "Netherlands Antilles Guilder", pos: "before", value: "NAf." },
-    { name: "Honduras lempiras", pos: "before", value: "L" },
-    { name: "Djibouti Franc", pos: "before", value: "Fdj" },
-    { name: "Kyrgyzstan Som", pos: "before", value: "KGS" },
-    { name: "Guinea Franc", pos: "before", value: "FG" },
-    { name: "Canadian Dollar", pos: "before", value: "$" },
-    { name: "Ghanaian Cedi", pos: "before", value: "GHS" },
-    { name: "Cambodian riel", pos: "before", value: "Riel" },
-    { name: "Czech Koruna", pos: "after", value: "K?" },
-    { name: "Zimbabwe Dollar", pos: "before", value: "$" },
-    { name: "Qatari Riyal", pos: "before", value: "Rial" },
-    { name: "Cayman Islands Dollar", pos: "before", value: "$" },
-    { name: "Comorian franc", pos: "before", value: "CF" },
-    { name: "Kuwaiti Dinar", pos: "before", value: "din" },
-    { name: "Croatian Kuna", pos: "before", value: "kn" },
-    { name: "Kenyan Shilling", pos: "before", value: "Ksh" },
-    { name: "Lesotho Loti", pos: "before", value: "LSL" },
-    { name: "Lao Kip", pos: "before", value: "?" },
-    { name: "Lebanese Pound", pos: "before", value: "L￡" },
-    { name: "Lithuanian litas", pos: "before", value: "Lt" },
-    { name: "Libyan Dinar", pos: "before", value: "din" },
-    { name: "Liberian Dollar", pos: "before", value: "$" },
-    { name: "Rwanda Franc", pos: "before", value: "RF" },
-    { name: "Romanian Leu", pos: "before", value: "RON" },
-    { name: "Malagasy Ariary", pos: "before", value: "Ar" },
-    { name: "Maldivian Rufiyaa", pos: "before", value: "Rf" },
-    { name: "Malawi Kwacha", pos: "before", value: "MWK" },
-    { name: "Malaysian Ringgit", pos: "before", value: "RM" },
-    { name: "Macedonia wearing Dinar", pos: "before", value: "din" },
-    { name: "Mauritius Rupee", pos: "before", value: "MURs" },
-    { name: "Mauritanian Ouguiya", pos: "before", value: "MRO" },
-    { name: "Mongolian Tugrik", pos: "before", value: "?" },
-    { name: "Bangladeshi Taka", pos: "before", value: "?" },
-    { name: "Peruvian Nuevo Sol", pos: "before", value: "S/" },
-    { name: "Myanmar Kyat", pos: "before", value: "K" },
-    { name: "Moldovan Leu", pos: "before", value: "MDL" },
-    { name: "Moroccan Dirham", pos: "before", value: "dh" },
-    { name: "Mozambique Metical", pos: "before", value: "MTn" },
-    { name: "Mexican Peso", pos: "before", value: "$" },
-    { name: "Namibian Dollar", pos: "before", value: "$" },
-    { name: "South African Rand", pos: "before", value: "R" },
-    { name: "South Sudanese Pound", pos: "before", value: "￡" },
-    { name: "Nicaragua Cordoba", pos: "before", value: "C$" },
-    { name: "Nepalese Rupee", pos: "before", value: "Rs" },
-    { name: "Nigerian Naira", pos: "before", value: "?" },
-    { name: "Norwegian Krone", pos: "after", value: "kr" },
-    { name: "Georgian Lari", pos: "before", value: "GEL" },
-    { name: "Swedish Krona", pos: "after", value: "kr" },
-    { name: "Swiss Franc", pos: "before", value: "CHF" },
-    { name: "Serbian Dinar", pos: "before", value: "din" },
-    { name: "Sierra Leone", pos: "before", value: "SLL" },
-    { name: "Seychelles Rupee", pos: "before", value: "SCR" },
-    { name: "Saudi Riyal", pos: "before", value: "Rial" },
-    { name: "Sao Tome Dobra", pos: "before", value: "Db" },
-    { name: "Saint Helena pound", pos: "before", value: "￡" },
-    { name: "Sri Lanka Rupee", pos: "before", value: "Rs" },
-    { name: "Swaziland Lilangeni", pos: "before", value: "SZL" },
-    { name: "Sudanese Pound", pos: "before", value: "SDG" },
-    { name: "Surinamese dollar", pos: "before", value: "$" },
-    { name: "Solomon Islands Dollar", pos: "before", value: "$" },
-    { name: "Somali Shilling", pos: "before", value: "SOS" },
-    { name: "Tajikistan Somoni", pos: "before", value: "Som" },
-    { name: "Pacific Franc", pos: "after", value: "FCFP" },
-    { name: "Thai Baht", pos: "before", value: "?" },
-    { name: "Tanzanian Shilling", pos: "before", value: "TSh" },
-    { name: "Tongan Pa'anga", pos: "before", value: "T$" },
-    { name: "Trinidad and Tobago Dollar", pos: "before", value: "$" },
-    { name: "Tunisian Dinar", pos: "before", value: "din" },
-    { name: "Turkish Lira", pos: "before", value: "?" },
-    { name: "Vanuatu Vatu", pos: "before", value: "VUV" },
-    { name: "Guatemalan Quetzal", pos: "before", value: "Q" },
-    { name: "Commission Bolivar", pos: "before", value: "Bs" },
-    { name: "Brunei Dollar", pos: "before", value: "$" },
-    { name: "Ugandan Shilling", pos: "before", value: "UGX" },
-    { name: "Ukrainian Hryvnia", pos: "before", value: "грн." },
-    { name: "Uruguayan Peso", pos: "before", value: "$" },
-    { name: "Uzbekistan som", pos: "before", value: "so?m" },
-    { name: "Western Samoa Tala", pos: "before", value: "WST" },
-    { name: "Singapore Dollar", pos: "before", value: "$" },
-    { name: "NT", pos: "before", value: "NT$" },
-    { name: "New Zealand Dollar", pos: "before", value: "$" },
-    { name: "Hungarian Forint", pos: "before", value: "Ft" },
-    { name: "Syrian Pound", pos: "before", value: "￡" },
-    { name: "Jamaican Dollar", pos: "before", value: "$" },
-    { name: "Armenian Dram", pos: "before", value: "Dram" },
-    { name: "Yemeni Rial", pos: "before", value: "Rial" },
-    { name: "Iraqi Dinar", pos: "before", value: "din" },
-    { name: "Iranian Rial", pos: "before", value: "Rial" },
-    { name: "New Israeli Shekel", pos: "before", value: "?" },
-    { name: "Indian Rupee", pos: "before", value: "₹" },
-    { name: "Indonesian Rupiah", pos: "before", value: "Rp" },
-    { name: "Jordanian Dinar", pos: "before", value: "din" },
-    { name: "VND", pos: "after", value: "?" },
-    { name: "Zambian Kwacha", pos: "before", value: "ZMW" },
-    { name: "Gibraltar Pound", pos: "before", value: "￡" },
-    { name: "Chilean Peso", pos: "before", value: "$" },
-    { name: "CFA Franc BEAC", pos: "before", value: "FCFA" },
+    {
+      name: "Юань",
+      pos: "before",
+      value: "¥",
+    },
+    {
+      name: "Доллар США",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Евро",
+      pos: "before",
+      value: "€",
+    },
+    {
+      name: "Фунт стерлингов",
+      pos: "before",
+      value: "￡",
+    },
+    {
+      name: "Гонконгский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Японская иена",
+      pos: "before",
+      value: "￥",
+    },
+    {
+      name: "Албанский лек",
+      pos: "before",
+      value: "Lek",
+    },
+    {
+      name: "Алжирский динар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Афгани",
+      pos: "after",
+      value: "Af",
+    },
+    {
+      name: "Аргентинский песо",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Дирхам ОАЭ",
+      pos: "before",
+      value: "dh",
+    },
+    {
+      name: "Арубанский флорин",
+      pos: "before",
+      value: "Afl",
+    },
+    {
+      name: "Оманский риал",
+      pos: "before",
+      value: "Rial",
+    },
+    {
+      name: "Азербайджанский манат",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Египетский фунт",
+      pos: "before",
+      value: "￡",
+    },
+    {
+      name: "Эфиопский быр",
+      pos: "before",
+      value: "Birr",
+    },
+    {
+      name: "Ангольская кванза",
+      pos: "before",
+      value: "Kz",
+    },
+    {
+      name: "Австралийский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Патака",
+      pos: "before",
+      value: "MOP",
+    },
+    {
+      name: "Барбадосский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Кина Папуа — Новой Гвинеи",
+      pos: "before",
+      value: "PGK",
+    },
+    {
+      name: "Багамский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Пакистанская рупия",
+      pos: "before",
+      value: "Rs",
+    },
+    {
+      name: "Парагвайский гуарани",
+      pos: "after",
+      value: "Gs",
+    },
+    {
+      name: "Бахрейнский динар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Панамская бальбоа",
+      pos: "before",
+      value: "B/",
+    },
+    {
+      name: "Бразильский реал",
+      pos: "before",
+      value: "R$",
+    },
+    {
+      name: "Белорусский рубль",
+      pos: "after",
+      value: "р",
+    },
+    {
+      name: "Бермудский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Болгарский лев",
+      pos: "before",
+      value: "lev",
+    },
+    {
+      name: "Исландская крона",
+      pos: "before",
+      value: "kr",
+    },
+    {
+      name: "Конвертируемая марка Боснии и Герцеговины",
+      pos: "before",
+      value: "KM",
+    },
+    {
+      name: "Польский злотый",
+      pos: "after",
+      value: "z?",
+    },
+    {
+      name: "Боливийский боливиано",
+      pos: "before",
+      value: "Bs",
+    },
+    {
+      name: "Белизский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Ботсванская пула",
+      pos: "before",
+      value: "P",
+    },
+    {
+      name: "Бутанский нгултрум",
+      pos: "before",
+      value: "Nu",
+    },
+    {
+      name: "Бурундийский франк",
+      pos: "before",
+      value: "FBu",
+    },
+    {
+      name: "Северокорейская вона",
+      pos: "before",
+      value: "?KP",
+    },
+    {
+      name: "Датская крона",
+      pos: "after",
+      value: "kr",
+    },
+    {
+      name: "Восточнокарибский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Доминиканский песо",
+      pos: "before",
+      value: "RD$",
+    },
+    {
+      name: "Российский рубль",
+      pos: "after",
+      value: "?",
+    },
+    {
+      name: "Эритрейская накфа",
+      pos: "before",
+      value: "Nfk",
+    },
+    {
+      name: "Франк КФА",
+      pos: "before",
+      value: "CFA",
+    },
+    {
+      name: "Филиппинский песо",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Фиджийский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Эскудо Кабо-Верде",
+      pos: "before",
+      value: "CVE",
+    },
+    {
+      name: "Фунт Фолклендских островов",
+      pos: "before",
+      value: "￡",
+    },
+    {
+      name: "Гамбийский даласи",
+      pos: "before",
+      value: "GMD",
+    },
+    {
+      name: "Конголезский франк",
+      pos: "before",
+      value: "FrCD",
+    },
+    {
+      name: "Колумбийский песо",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Костариканский колон",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Кубинский песо",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Конвертируемый кубинский песо",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Гайанский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Казахстанский тенге",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Гаитянский гурд",
+      pos: "before",
+      value: "HTG",
+    },
+    {
+      name: "Южнокорейская вона",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Нидерландский антильский гульден",
+      pos: "before",
+      value: "NAf.",
+    },
+    {
+      name: "Гондурасская лемпира",
+      pos: "before",
+      value: "L",
+    },
+    {
+      name: "Джибутийский франк",
+      pos: "before",
+      value: "Fdj",
+    },
+    {
+      name: "Киргизский сом",
+      pos: "before",
+      value: "KGS",
+    },
+    {
+      name: "Гвинейский франк",
+      pos: "before",
+      value: "FG",
+    },
+    {
+      name: "Канадский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Ганский седи",
+      pos: "before",
+      value: "GHS",
+    },
+    {
+      name: "Камбоджийский риель",
+      pos: "before",
+      value: "Riel",
+    },
+    {
+      name: "Чешская крона",
+      pos: "after",
+      value: "K?",
+    },
+    {
+      name: "Зимбабвийский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Катарский риал",
+      pos: "before",
+      value: "Rial",
+    },
+    {
+      name: "Доллар Кbudder Каймановых островов",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Коморский франк",
+      pos: "before",
+      value: "CF",
+    },
+    {
+      name: "Кувейтский динар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Хорватская куна",
+      pos: "before",
+      value: "kn",
+    },
+    {
+      name: "Кенийский шиллинг",
+      pos: "before",
+      value: "Ksh",
+    },
+    {
+      name: "Лоти Лесото",
+      pos: "before",
+      value: "LSL",
+    },
+    {
+      name: "Лаосский кип",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Ливанский фунт",
+      pos: "before",
+      value: "L￡",
+    },
+    {
+      name: "Литовский лит",
+      pos: "before",
+      value: "Lt",
+    },
+    {
+      name: "Ливийский динар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Либерийский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Руандийский франк",
+      pos: "before",
+      value: "RF",
+    },
+    {
+      name: "Румынский лей",
+      pos: "before",
+      value: "RON",
+    },
+    {
+      name: "Малагасийский ариари",
+      pos: "before",
+      value: "Ar",
+    },
+    {
+      name: "Мальдивская руфия",
+      pos: "before",
+      value: "Rf",
+    },
+    {
+      name: "Малавийская квача",
+      pos: "before",
+      value: "MWK",
+    },
+    {
+      name: "Малайзийский ринггит",
+      pos: "before",
+      value: "RM",
+    },
+    {
+      name: "Македонский денар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Маврикийская рупия",
+      pos: "before",
+      value: "MURs",
+    },
+    {
+      name: "Мавританская угия",
+      pos: "before",
+      value: "MRO",
+    },
+    {
+      name: "Монгольский тугрик",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Бангладешская така",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Перуанский новый соль",
+      pos: "before",
+      value: "S/",
+    },
+    {
+      name: "Мьянманский кьят",
+      pos: "before",
+      value: "K",
+    },
+    {
+      name: "Молдавский лей",
+      pos: "before",
+      value: "MDL",
+    },
+    {
+      name: "Марокканский дирхам",
+      pos: "before",
+      value: "dh",
+    },
+    {
+      name: "Мозамбикский метикал",
+      pos: "before",
+      value: "MTn",
+    },
+    {
+      name: "Мексиканский песо",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Намибийский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Южноафриканский рэнд",
+      pos: "before",
+      value: "R",
+    },
+    {
+      name: "Южносуданский фунт",
+      pos: "before",
+      value: "￡",
+    },
+    {
+      name: "Никарагуанская кордоба",
+      pos: "before",
+      value: "C$",
+    },
+    {
+      name: "Непальская рупия",
+      pos: "before",
+      value: "Rs",
+    },
+    {
+      name: "Нигерийская найра",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Норвежская крона",
+      pos: "after",
+      value: "kr",
+    },
+    {
+      name: "Грузинский лари",
+      pos: "before",
+      value: "GEL",
+    },
+    {
+      name: "Шведская крона",
+      pos: "after",
+      value: "kr",
+    },
+    {
+      name: "Швейцарский франк",
+      pos: "before",
+      value: "CHF",
+    },
+    {
+      name: "Сербский динар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Леоне Сьерра-Леоне",
+      pos: "before",
+      value: "SLL",
+    },
+    {
+      name: "Сейшельская рупия",
+      pos: "before",
+      value: "SCR",
+    },
+    {
+      name: "Саудовский риял",
+      pos: "before",
+      value: "Rial",
+    },
+    {
+      name: "Добра Сан-Томе и Принсипи",
+      pos: "before",
+      value: "Db",
+    },
+    {
+      name: "Фунт острова Святой Елены",
+      pos: "before",
+      value: "￡",
+    },
+    {
+      name: "Шри-ланкийская рупия",
+      pos: "before",
+      value: "Rs",
+    },
+    {
+      name: "Свазилендский лилангени",
+      pos: "before",
+      value: "SZL",
+    },
+    {
+      name: "Суданский фунт",
+      pos: "before",
+      value: "SDG",
+    },
+    {
+      name: "Суринамский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Доллар Соломоновых Островов",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Сомалийский шиллинг",
+      pos: "before",
+      value: "SOS",
+    },
+    {
+      name: "Таджикский сомони",
+      pos: "before",
+      value: "Som",
+    },
+    {
+      name: "Тихоокеанский франк",
+      pos: "after",
+      value: "FCFP",
+    },
+    {
+      name: "Таиландский бат",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Танзанийский шиллинг",
+      pos: "before",
+      value: "TSh",
+    },
+    {
+      name: "Тонганская паанга",
+      pos: "before",
+      value: "T$",
+    },
+    {
+      name: "Доллар Тринидада и Тобаго",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Тунисский динар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Турецкая лира",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Вануатский вату",
+      pos: "before",
+      value: "VUV",
+    },
+    {
+      name: "Гватемальский кетсаль",
+      pos: "before",
+      value: "Q",
+    },
+    {
+      name: "Венесуэльский боливар",
+      pos: "before",
+      value: "Bs",
+    },
+    {
+      name: "Брунейский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Угандийский шиллинг",
+      pos: "before",
+      value: "UGX",
+    },
+    {
+      name: "Украинская гривна",
+      pos: "before",
+      value: "грн.",
+    },
+    {
+      name: "Уругвайский песо",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Узбекский сум",
+      pos: "before",
+      value: "so?m",
+    },
+    {
+      name: "Самоанская тала",
+      pos: "before",
+      value: "WST",
+    },
+    {
+      name: "Сингапурский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Тайваньский доллар",
+      pos: "before",
+      value: "NT$",
+    },
+    {
+      name: "Новозеландский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Венгерский форинт",
+      pos: "before",
+      value: "Ft",
+    },
+    {
+      name: "Сирийский фунт",
+      pos: "before",
+      value: "￡",
+    },
+    {
+      name: "Ямайский доллар",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Армянский драм",
+      pos: "before",
+      value: "Dram",
+    },
+    {
+      name: "Йеменский риал",
+      pos: "before",
+      value: "Rial",
+    },
+    {
+      name: "Иракский динар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Иранский риал",
+      pos: "before",
+      value: "Rial",
+    },
+    {
+      name: "Новый израильский шекель",
+      pos: "before",
+      value: "?",
+    },
+    {
+      name: "Индийская рупия",
+      pos: "before",
+      value: "₹",
+    },
+    {
+      name: "Индонезийская рупия",
+      pos: "before",
+      value: "Rp",
+    },
+    {
+      name: "Иорданский динар",
+      pos: "before",
+      value: "din",
+    },
+    {
+      name: "Вьетнамский донг",
+      pos: "after",
+      value: "?",
+    },
+    {
+      name: "Замбийская квача",
+      pos: "before",
+      value: "ZMW",
+    },
+    {
+      name: "Гибралтарский фунт",
+      pos: "before",
+      value: "￡",
+    },
+    {
+      name: "Чилийский песо",
+      pos: "before",
+      value: "$",
+    },
+    {
+      name: "Франк КФА BEAC",
+      pos: "before",
+      value: "FCFA",
+    },
   ],
   numberFmtList: [
-    { name: "Volts", pos: "after", value: "V" },
-    { name: "Ampere", pos: "after", value: "A" },
-    { name: "Ohms", pos: "after", value: "Ω" },
-  ],
-  defaultFmt: (currency: string) => [
-    { text: "Automatic", value: "General", example: "" },
-    { text: "Plain text", value: "@", example: "" },
-    { text: "", value: "split", example: "" },
-    { text: "Number", value: "##0.00", example: "1000.12" },
-    { text: "Percent", value: "#0.00%", example: "12.21%" },
-    { text: "Scientific", value: "0.00E+00", example: "1.01E+5" },
-    { text: "", value: "split", example: "" },
     {
-      text: "Accounting",
-      value: `${currency}(0.00)`,
-      example: `${currency}(1200.09)`,
-    },
-
-    {
-      text: "Currency",
-      value: `${currency}0.00`,
-      example: `${currency}1200.09`,
-    },
-
-    { text: "", value: "split", example: "" },
-    { text: "Date", value: "yyyy-MM-dd", example: "2017-11-29" },
-    { text: "Time", value: "hh:mm AM/PM", example: "3:00 PM" },
-    { text: "Time 24H", value: "hh:mm", example: "15:00" },
-    {
-      text: "Date time",
-      value: "yyyy-MM-dd hh:mm AM/PM",
-      example: "2017-11-29 3:00 PM",
+      name: "Вольты",
+      pos: "after",
+      value: "V",
     },
     {
-      text: "Date time 24 H",
-      value: "yyyy-MM-dd hh:mm",
-      example: "2017-11-29 15:00",
+      name: "Амперы",
+      pos: "after",
+      value: "A",
     },
-    { text: "", value: "split", example: "" },
     {
-      text: "Custom formats",
-      value: "fmtOtherSelf",
-      example: "",
-      icon: "rightArrow",
+      name: "Омы",
+      pos: "after",
+      value: "Ω",
     },
   ],
+  defaultFmt: (currency: string) => {
+    return [
+      {
+        text: "Автоматически",
+        value: "General",
+        example: "",
+      },
+      {
+        text: "Обычный текст",
+        value: "@",
+        example: "",
+      },
+      {
+        text: "",
+        value: "split",
+        example: "",
+      },
+      {
+        text: "Число",
+        value: "##0.00",
+        example: "1000.12",
+      },
+      {
+        text: "Процент",
+        value: "#0.00%",
+        example: "12.21%",
+      },
+      {
+        text: "Научный",
+        value: "0.00E+00",
+        example: "1.01E+5",
+      },
+      {
+        text: "",
+        value: "split",
+        example: "",
+      },
+      {
+        text: "Бухгалтерский",
+        value: "".concat(currency, "(0.00)"),
+        example: "".concat(currency, "(1200.09)"),
+      },
+      {
+        text: "Валюта",
+        value: "".concat(currency, "0.00"),
+        example: "".concat(currency, "1200.09"),
+      },
+      {
+        text: "",
+        value: "split",
+        example: "",
+      },
+      {
+        text: "Дата",
+        value: "yyyy-MM-dd",
+        example: "2017-11-29",
+      },
+      {
+        text: "Время",
+        value: "hh:mm AM/PM",
+        example: "15:00",
+      },
+      {
+        text: "Время 24ч",
+        value: "hh:mm",
+        example: "15:00",
+      },
+      {
+        text: "Дата и время",
+        value: "yyyy-MM-dd hh:mm AM/PM",
+        example: "2017-11-29 15:00",
+      },
+      {
+        text: "Дата и время 24ч",
+        value: "yyyy-MM-dd hh:mm",
+        example: "2017-11-29 15:00",
+      },
+      {
+        text: "",
+        value: "split",
+        example: "",
+      },
+      {
+        text: "Пользовательские форматы",
+        value: "fmtOtherSelf",
+        example: "",
+        icon: "rightArrow",
+      },
+    ];
+  },
   dateFmtList: [
     {
       name: "1930-08-05",
@@ -11335,19 +13892,19 @@ export default {
       value: "h:mm",
     },
     {
-      name: "PM 01:30",
+      name: "01:30 PM",
       value: "AM/PM hh:mm",
     },
     {
-      name: "PM 1:30",
+      name: "1:30 PM",
       value: "AM/PM h:mm",
     },
     {
-      name: "PM 1:30:30",
+      name: "1:30:30 PM",
       value: "AM/PM h:mm:ss",
     },
     {
-      name: "08-05 PM 01:30",
+      name: "08-05 01:30 PM",
       value: "MM-dd AM/PM hh:mm",
     },
   ],
@@ -11355,7 +13912,12 @@ export default {
     MicrosoftYaHei: "YaHei",
   },
   fontarray: ["Times New Roman", "Arial", "Tahoma", "Verdana"],
-  fontjson: { "times new roman": 0, arial: 1, tahoma: 2, verdana: 3 },
+  fontjson: {
+    "times new roman": 0,
+    arial: 1,
+    tahoma: 2,
+    verdana: 3,
+  },
   border: {
     borderTop: "Верхняя граница",
     borderBottom: "Нижняя граница",
@@ -11363,33 +13925,32 @@ export default {
     borderRight: "Правая граница",
     borderNone: "Без границы",
     borderAll: "Все границы",
-    borderOutside: "Внешние границы",
-    borderInside: "Внутренние границы",
+    borderOutside: "Внешняя граница",
+    borderInside: "Внутренняя граница",
     borderHorizontal: "Горизонтальные границы",
     borderVertical: "Вертикальные границы",
-    borderColor: "цвет границы",
-    borderSize: "размер границы",
+    borderColor: "Цвет границы",
+    borderSize: "Размер границы",
     borderSlash: "Диагональная граница",
-    borderDefault: "по умолчанию",
-    borderStyle: "стиль границы",
+    borderDefault: "По умолчанию",
+    borderStyle: "Стиль границы",
   },
   merge: {
     mergeAll: "Объединить все",
-    mergeV: "Объединить по вертикали",
-    mergeH: "Объединить по горизонтали",
+    mergeV: "Объединить вертикально",
+    mergeH: "Объединить горизонтально",
     mergeCancel: "Разъединить",
-    overlappingError: "Невозможно объединить перекрывающиеся области",
+    overlappingError: "Невозможно объединить пересекающиеся области",
     partiallyError:
-      "Невозможно выполнить эту операцию с частично объединенными ячейками",
+      "Невозможно выполнить эту операцию над частично объединёнными ячейками",
   },
   align: {
-    left: "по левому краю",
-    center: "по центру",
-    right: "по правому краю",
-
-    top: "Сверху",
+    left: "По левому краю",
+    center: "По центру",
+    right: "По правому краю",
+    top: "По верхнему краю",
     middle: "По середине",
-    bottom: "Снизу",
+    bottom: "По нижнему краю",
   },
   textWrap: {
     overflow: "Переполнение",
@@ -11397,75 +13958,64 @@ export default {
     clip: "Обрезка",
   },
   rotation: {
-    none: "Нет",
+    none: "Без поворота",
     angleup: "Наклон вверх",
     angledown: "Наклон вниз",
-    vertical: "Вертикально",
+    vertical: "Вертикальный текст",
     rotationUp: "Поворот вверх",
     rotationDown: "Поворот вниз",
   },
   freezen: {
-    default: "Закрепить",
-    freezenRow: "Первую строку",
+    default: "Заморозить",
+    freezenRow: "Первая строка",
     freezenColumn: "Первый столбец",
     freezenRC: "Оба",
-    freezenRowRange: "Закрепить до текущей строки",
-    freezenColumnRange: "Закрепить до текущего столбца",
-    freezenRCRange: "Закрепить до текущей ячейки",
-    freezenCancel: "Отменить закрепление",
-
-    noSeletionError: "Нет диапазона для выбора",
-    rangeRCOverErrorTitle: "Напоминание о закреплении",
+    freezenRowRange: "Заморозить до текущей строки",
+    freezenColumnRange: "Заморозить до текущего столбца",
+    freezenRCRange: "Заморозить до текущей ячейки",
+    freezenCancel: "Отменить заморозку",
+    noSeletionError: "Нет выбранного диапазона",
+    rangeRCOverErrorTitle: "Напоминание о заморозке",
     rangeRCOverError:
-      "Закрепленная панель находится за пределами видимого диапазона, что приведет к неправильной работе. Пожалуйста, сбросьте закрепленную область.",
+      "Замороженная область находится за пределами видимого диапазона, что приведёт к некорректной работе. Пожалуйста, сбросьте область заморозки.",
   },
   sort: {
-    asc: "По возрастанию ",
-    desc: "По убыванию ",
+    asc: "По возрастанию",
+    desc: "По убыванию",
     custom: "Пользовательская сортировка",
-
-    hasTitle: "Данные имеют заголовок",
+    hasTitle: "Данные содержат заголовок",
     sortBy: "Сортировать по",
-    addOthers: "Добавить еще один столбец сортировки",
-    close: "закрыть",
-    confirm: "сортировать",
-
+    addOthers: "Добавить другой столбец сортировки",
+    close: "Закрыть",
+    confirm: "Сортировать",
     columnOperation: "Столбец",
-    secondaryTitle: "затем по",
-
+    secondaryTitle: "Затем по",
     sortTitle: "Диапазон сортировки",
-
-    sortRangeTitle: "Диапазон сортировки от",
+    sortRangeTitle: "Сортировать диапазон от",
     sortRangeTitleTo: "до",
-
     noRangeError:
-      "Невозможно выполнить эту операцию для нескольких выделенных областей, выберите один диапазон и повторите попытку",
+      "Невозможно выполнить эту операцию над несколькими выделенными областями, выберите один диапазон и попробуйте снова",
     mergeError:
-      "В выделении есть объединенные ячейки, эта операция не может быть выполнена!",
+      "В выделении есть объединённые ячейки, эту операцию выполнить нельзя!",
   },
   filter: {
-    filter: "создать фильтр",
-
+    filter: "Создать фильтр",
     sortByAsc: "Сортировка по возрастанию",
     sortByDesc: "Сортировка по убыванию",
     filterByColor: "Фильтр по цвету",
     filterByCondition: "Фильтр по условию",
     filterByValues: "Фильтр по значениям",
-
     filiterInputNone: "Нет",
-
-    filiterInputTip: "Введите значение фильтра",
+    filiterInputTip: "Введите значение для фильтра",
     filiterRangeStartTip: "Значение для формулы",
     filiterRangeEndTip: "Значение для формулы",
-
-    filterValueByAllBtn: "Отметить все",
+    filterValueByAllBtn: "Выбрать все",
     filterValueByClearBtn: "Очистить",
-    filterValueByInverseBtn: "Обратить",
-    filterValueByTip: "фильтр по значениям",
+    filterValueByInverseBtn: "Инвертировать",
+    filterValueByTip: "Фильтр по значениям",
     filterConform: "Подтвердить",
-    filterCancel: "Отмена",
+    filterCancel: "Отменить",
     clearFilter: "Очистить фильтр",
-
     conditionNone: "Нет",
     conditionCellIsNull: "Пусто",
     conditionCellNotNull: "Не пусто",
@@ -11473,30 +14023,28 @@ export default {
     conditionCellTextNotContain: "Текст не содержит",
     conditionCellTextStart: "Текст начинается с",
     conditionCellTextEnd: "Текст заканчивается на",
-    conditionCellTextEqual: "Текст точно",
+    conditionCellTextEqual: "Текст точно совпадает",
     conditionCellDateEqual: "Дата равна",
-    conditionCellDateBefore: "Дата до",
-    conditionCellDateAfter: "Дата после",
-    conditionCellGreater: "Больше чем",
+    conditionCellDateBefore: "Дата раньше",
+    conditionCellDateAfter: "Дата позже",
+    conditionCellGreater: "Больше",
     conditionCellGreaterEqual: "Больше или равно",
-    conditionCellLess: "Меньше чем",
+    conditionCellLess: "Меньше",
     conditionCellLessEqual: "Меньше или равно",
     conditionCellEqual: "Равно",
     conditionCellNotEqual: "Не равно",
     conditionCellBetween: "Между",
     conditionCellNotBetween: "Не между",
-
-    filiterMoreDataTip: "Большой объем данных! пожалуйста, подождите",
+    filiterMoreDataTip: "Большой объём данных! Пожалуйста, подождите",
     filiterMonthText: "Месяц",
     filiterYearText: "Год",
     filiterByColorTip: "Фильтр по цвету ячейки",
     filiterByTextColorTip: "Фильтр по цвету шрифта",
     filterContainerOneColorTip: "Этот столбец содержит только один цвет",
     filterDateFormatTip: "Формат даты",
-
     valueBlank: "(Пусто)",
     mergeError:
-      "В выборе фильтра есть объединенные ячейки, эта операция не может быть выполнена!",
+      "В выделении для фильтра есть объединённые ячейки, эту операцию выполнить нельзя!",
   },
   rightclick: {
     copy: "Копировать",
@@ -11507,15 +14055,15 @@ export default {
     link: "Вставить ссылку",
     delete: "Удалить",
     deleteCell: "Удалить ячейку",
-    deleteSelected: "Удалить выбранное ",
+    deleteSelected: "Удалить выбранное",
     hide: "Скрыть",
-    hideSelected: "Скрыть выбранное ",
-    showHide: "Показать скрытое ",
+    hideSelected: "Скрыть выбранное",
+    showHide: "Показать скрытое",
     to: "К",
     left: "Влево",
     right: "Вправо",
-    top: "Вверх",
-    bottom: "Вниз",
+    top: "Выше",
+    bottom: "Ниже",
     moveLeft: "Переместить влево",
     moveUp: "Переместить вверх",
     add: "Добавить",
@@ -11528,27 +14076,27 @@ export default {
     orderAZ: "Сортировка по возрастанию",
     orderZA: "Сортировка по убыванию",
     clearContent: "Очистить содержимое",
-    matrix: "Операции с матрицей",
+    matrix: "Матричная операция",
     sortSelection: "Сортировать",
-    filterSelection: "Фильтр",
+    filterSelection: "Фильтровать",
     chartGeneration: "Создать диаграмму",
-    firstLineTitle: "заголовок первой строки",
-    untitled: "без названия",
+    firstLineTitle: "Заголовок первой строки",
+    untitled: "Без названия",
     array1: "Одномерный массив",
     array2: "Двумерный массив",
-    array3: "Многомерный массив",
+    array3: "Многомерные массивы",
     diagonal: "Диагональ",
     antiDiagonal: "Антидиагональ",
     diagonalOffset: "Смещение диагонали",
     offset: "Смещение",
-    boolean: "Логический",
-    flip: "Отразить",
+    boolean: "Булево",
+    flip: "Перевернуть",
     upAndDown: "Вверх и вниз",
     leftAndRight: "Влево и вправо",
     clockwise: "По часовой стрелке",
     counterclockwise: "Против часовой стрелки",
     transpose: "Транспонировать",
-    matrixCalculation: "Вычисление матрицы",
+    matrixCalculation: "Матричные вычисления",
     plus: "Плюс",
     minus: "Минус",
     multiply: "Умножить",
@@ -11556,19 +14104,20 @@ export default {
     power: "Степень",
     root: "Корень",
     log: "Логарифм",
-    delete0: "Удалить нулевые значения с обеих сторон",
-    removeDuplicate: "Удалить повторяющиеся значения",
+    delete0: "Удалить нулевые значения с обоих концов",
+    removeDuplicate: "Удалить дублирующиеся значения",
     byRow: "По строкам",
     byCol: "По столбцам",
-    generateNewMatrix: "Создать новую матрицу",
+    generateNewMatrix: "Сгенерировать новую матрицу",
     noMulti:
-      "Невозможно выполнить эту операцию для нескольких выделенных областей, выберите одну область",
-    cannotDeleteAllRow: "Нельзя удалить все строки",
-    cannotDeleteAllColumn: "Нельзя удалить все столбцы",
-    cannotDeleteRowReadOnly: "Нельзя удалить строку только для чтения",
-    cannotDeleteColumnReadOnly: "Нельзя удалить столбец только для чтения",
-    cannotInsertOnRowReadOnly: "Нельзя вставить в строку только для чтения",
-    cannotInsertOnColumnReadOnly: "Нельзя вставить в столбец только для чтения",
+      "Невозможно выполнить эту операцию для нескольких выбранных областей, выберите одну область",
+    cannotDeleteAllRow: "Невозможно удалить все строки",
+    cannotDeleteAllColumn: "Невозможно удалить все столбцы",
+    cannotDeleteRowReadOnly: "Невозможно удалить строку только для чтения",
+    cannotDeleteColumnReadOnly: "Невозможно удалить столбец только для чтения",
+    cannotInsertOnRowReadOnly: "Невозможно вставить в строку только для чтения",
+    cannotInsertOnColumnReadOnly:
+      "Невозможно вставить в столбец только для чтения",
     rowOverLimit: "Превышен лимит в 10000 строк",
     columnOverLimit: "Превышен лимит в 1000 столбцов",
   },
@@ -11581,110 +14130,112 @@ export default {
   },
   screenshot: {
     screenshotTipNoSelection: "Пожалуйста, выберите область для снимка экрана",
-    screenshotTipTitle: "Предупреждение！",
+    screenshotTipTitle: "Предупреждение!",
     screenshotTipHasMerge:
-      "Эта операция не может быть выполнена с объединенными ячейками",
+      "Эта операция не может быть выполнена для объединенных ячеек",
     screenshotTipHasMulti:
-      "Эта операция не может быть выполнена для нескольких выделенных областей",
+      "Эта операция не может быть выполнена для нескольких выбранных областей",
     screenshotTipSuccess: "Успешно",
     screenshotImageName: "Снимок экрана",
-
     downLoadClose: "Закрыть",
     downLoadCopy: "Копировать в буфер обмена",
-    downLoadBtn: "Загрузить",
-    browserNotTip: "не поддерживается браузером IE!",
+    downLoadBtn: "Скачать",
+    browserNotTip: "Не поддерживается браузером IE!",
     rightclickTip:
-      'Пожалуйста, щелкните правой кнопкой мыши "копировать" на изображении',
+      'Пожалуйста, щелкните правой кнопкой мыши на изображении и выберите "Копировать"',
     successTip:
-      'Успешно (если вставка не удалась, щелкните правой кнопкой мыши на изображении и выберите "копировать изображение")',
+      'Успешно (если вставка не удалась, щелкните правой кнопкой мыши на изображении и выберите "Копировать изображение")',
   },
   splitText: {
     splitDelimiters: "Разделители",
-    splitOther: "Другой",
-    splitContinueSymbol: "Последовательные разделители обрабатываются как один",
-    splitDataPreview: "Предварительный просмотр",
+    splitOther: "Другое",
+    splitContinueSymbol:
+      "Последовательные разделители рассматриваются как один",
+    splitDataPreview: "Предпросмотр",
     splitTextTitle: "Разделить текст",
-    splitConfirmToExe: "Здесь уже есть данные, хотите их заменить?",
+    splitConfirmToExe: "Здесь уже есть данные, хотите ли вы их заменить?",
     splitSymbols: [
-      { name: "Табуляция", value: "Tab" },
-      { name: "точка с запятой", value: "semicolon" },
-      { name: "запятая", value: "comma" },
-      { name: "пробел", value: "space" },
+      {
+        name: "Табуляция",
+        value: "Tab",
+      },
+      {
+        name: "Точка с запятой",
+        value: "semicolon",
+      },
+      {
+        name: "Запятая",
+        value: "comma",
+      },
+      {
+        name: "Пробел",
+        value: "space",
+      },
     ],
-
     tipNoMulti:
-      "Невозможно выполнить эту операцию для нескольких выделенных областей, выберите одну область и повторите попытку",
+      "Невозможно выполнить эту операцию для нескольких выбранных областей, выберите одну область и попробуйте снова",
     tipNoMultiColumn:
-      "За раз можно преобразовать только один столбец данных. Выбранная область может иметь несколько строк, но не несколько столбцов. Повторите попытку после выбора диапазона из одного столбца",
-    tipNoSelect: "Вы не можете разделить ячейку, не выбрав её",
+      "Одновременно можно преобразовать только один столбец данных. Выбранная область может содержать несколько строк, но не несколько столбцов. Попробуйте снова, выбрав диапазон с одним столбцом",
+    tipNoSelect: "Нельзя разделить ячейку без ее выбора",
   },
   imageText: {
-    imageSetting: "Настройка изображения",
+    imageSetting: "Настройки изображения",
     close: "Закрыть",
     conventional: "Обычный",
-    moveCell1: "Перемещать и изменять размер ячеек",
-    moveCell2: "Перемещать и не изменять размер ячейки",
-    moveCell3: "Не перемещать и изменять размер ячейки",
-    fixedPos: "Фиксированная позиция",
+    moveCell1: "Переместить и изменить размер ячеек",
+    moveCell2: "Переместить без изменения размера ячейки",
+    moveCell3: "Не перемещать и не изменять размер ячейки",
+    fixedPos: "Фиксированное положение",
     border: "Граница",
     width: "Ширина",
     radius: "Радиус",
     style: "Стиль",
-    solid: "Сплошная",
-    dashed: "Пунктирная",
-    dotted: "Точечная",
-    double: "Double",
-    color: "Color",
+    solid: "Сплошной",
+    dashed: "Пунктирный",
+    dotted: "Точечный",
+    double: "Двойной",
+    color: "Цвет",
   },
   punctuation: {
-    tab: "Tab",
-    semicolon: "semicolon",
-    comma: "comma",
-    space: "space",
+    tab: "Табуляция",
+    semicolon: "Точка с запятой",
+    comma: "Запятая",
+    space: "Пробел",
   },
   findAndReplace: {
     find: "Найти",
     replace: "Заменить",
     goto: "Перейти к",
-    location: "Расположение",
+    location: "Местоположение",
     formula: "Формула",
     date: "Дата",
     number: "Число",
     string: "Строка",
     error: "Ошибка",
     condition: "Условие",
-    rowSpan: "Диапазон строк",
-    columnSpan: "Диапазон столбцов",
-    locationExample: "Расположение",
-    lessTwoRowTip: "Пожалуйста, выберите не менее двух строк",
-    lessTwoColumnTip: "Пожалуйста, выберите не менее двух столбцов",
-
+    rowSpan: "Объединение строк",
+    columnSpan: "Объединение столбцов",
+    locationExample: "Местоположение",
+    lessTwoRowTip: "Выберите как минимум две строки",
+    lessTwoColumnTip: "Выберите как минимум два столбца",
     findTextbox: "Найти содержимое",
     replaceTextbox: "Заменить содержимое",
-
     regexTextbox: "Регулярное выражение",
     wholeTextbox: "Целое слово",
-    distinguishTextbox: "Учитывать регистр",
-
+    distinguishTextbox: "С учетом регистра",
     allReplaceBtn: "Заменить все",
     replaceBtn: "Заменить",
     allFindBtn: "Найти все",
     findBtn: "Найти следующий",
-
     noFindTip: "Содержимое не найдено",
-    modeTip: "Эта операция недоступна в данном режиме",
-
+    modeTip: "Эта операция недоступна в этом режиме",
     searchTargetSheet: "Лист",
     searchTargetCell: "Ячейка",
     searchTargetValue: "Значение",
-
-    searchInputTip: "Пожалуйста, введите содержимое для поиска",
-
-    noReplceTip: "Нечего заменять",
+    searchInputTip: "Введите содержимое для поиска",
+    noReplceTip: "Нет данных для замены",
     noMatchTip: "Совпадений не найдено",
-
-    successTip: "Найдено элементов: ${xlength}",
-
+    successTip: "Найдено ${xlength} элементов",
     locationConstant: "Константа",
     locationFormula: "Формула",
     locationDate: "Дата",
@@ -11692,13 +14243,12 @@ export default {
     locationString: "Строка",
     locationBool: "Логическое",
     locationError: "Ошибка",
-    locationNull: "Пустое",
+    locationNull: "Пусто",
     locationCondition: "Условное форматирование",
-    locationRowSpan: "Диапазон строк",
-    locationColumnSpan: "Диапазон столбцов",
-
-    locationTiplessTwoRow: "Пожалуйста, выберите не менее двух строк",
-    locationTiplessTwoColumn: "Пожалуйста, выберите не менее двух столбцов",
+    locationRowSpan: "Объединение строк",
+    locationColumnSpan: "Объединение столбцов",
+    locationTiplessTwoRow: "Выберите как минимум две строки",
+    locationTiplessTwoColumn: "Выберите как минимум два столбца",
     locationTipNotFindCell: "Ячейка не найдена",
   },
   sheetconfig: {
@@ -11714,43 +14264,45 @@ export default {
     cancelText: "Отмена",
     chooseText: "Подтвердить цвет",
     focus: "Фокус",
-
     tipNameRepeat: "Имя вкладки не может повторяться! Пожалуйста, измените",
     noMoreSheet:
-      "Книга содержит как минимум один видимый лист. Чтобы удалить выбранный лист, вставьте новый лист или отобразите скрытый лист.",
+      "Рабочая книга должна содержать как минимум один видимый лист. Чтобы удалить выбранный лист, вставьте новый лист или покажите скрытый лист.",
     confirmDelete: "Вы уверены, что хотите удалить",
     redoDelete: "Можно отменить с помощью Ctrl+Z",
-    noHide: "Нельзя скрыть, нужно оставить хотя бы одну вкладку листа",
+    noHide: "Нельзя скрыть, должен остаться хотя бы один тег листа",
     chartEditNoOpt:
-      "Эта операция не разрешена в режиме редактирования диаграммы!",
-    sheetNameSpecCharError: "Имя не может содержать:[ ] :  ? * / ' \"",
+      "Эта операция недоступна в режиме редактирования диаграммы!",
+    sheetNameSpecCharError: "Имя не может содержать символы: [ ] : ? * / ' \"",
     sheetNamecannotIsEmptyError: "Имя листа не может быть пустым",
   },
   conditionformat: {
     conditionformat_greaterThan: "Условное форматирование - Больше чем",
-    conditionformat_greaterThan_title: "Форматировать ячейки больше чем",
+    conditionformat_greaterThan_title:
+      "Форматировать ячейки, которые больше чем",
     conditionformat_lessThan: "Условное форматирование - Меньше чем",
-    conditionformat_lessThan_title: "Форматировать ячейки меньше чем",
+    conditionformat_lessThan_title: "Форматировать ячейки, которые меньше чем",
     conditionformat_between: "Условное форматирование - Между",
     conditionformat_between_title: "Форматировать ячейки со значениями между",
     conditionformat_equal: "Условное форматирование - Равно",
-    conditionformat_equal_title: "Форматировать ячейки равные",
+    conditionformat_equal_title: "Форматировать ячейки, равные",
     conditionformat_textContains: "Условное форматирование - Содержит текст",
     conditionformat_textContains_title:
       "Форматировать ячейки, содержащие следующий текст",
-    conditionformat_occurrenceDate: "Условное форматирование - Дата появления",
+    conditionformat_occurrenceDate: "Условное форматирование - Дата",
     conditionformat_occurrenceDate_title:
       "Форматировать ячейки, содержащие следующие даты",
     conditionformat_duplicateValue:
-      "Условное форматирование - Повторяющееся значение",
+      "Условное форматирование - Дублирующиеся значения",
     conditionformat_duplicateValue_title:
       "Форматировать ячейки, содержащие следующие типы значений",
     conditionformat_top10: "Условное форматирование - Топ 10",
     conditionformat_top10_percent: "Условное форматирование - Топ 10%",
-    conditionformat_top10_title: "Форматировать ячейки с наибольшим значением",
+    conditionformat_top10_title:
+      "Форматировать ячейки с наибольшими значениями",
     conditionformat_last10: "Условное форматирование - Последние 10",
     conditionformat_last10_percent: "Условное форматирование - Последние 10%",
-    conditionformat_last10_title: "Форматировать ячейки с наименьшим значением",
+    conditionformat_last10_title:
+      "Форматировать ячейки с наименьшими значениями",
     conditionformat_aboveAverage: "Условное форматирование - Выше среднего",
     conditionformat_aboveAverage_title: "Форматировать ячейки выше среднего",
     conditionformat_belowAverage: "Условное форматирование - Ниже среднего",
@@ -11769,34 +14321,31 @@ export default {
     format: "Формат",
     setFormat: "Установить формат",
     setAs: "Установить как",
-    setAsByArea: "Для выбранной области, установить как",
-    applyRange: "Применить диапазон",
-    selectRange: "Выберите диапазон применения",
-    selectRange_percent: "Процент от выбранного диапазона",
+    setAsByArea: "Для выбранной области установить как",
+    applyRange: "Применить к диапазону",
+    selectRange: "Выбрать диапазон применения",
+    selectRange_percent: "Процент выбранного диапазона",
     selectRange_average: "Среднее значение выбранного диапазона",
     selectRange_value: "Значение в выбранном диапазоне",
     pleaseSelectRange: "Пожалуйста, выберите диапазон применения",
-    selectDataRange: "Выберите диапазон данных",
-    selectCell: "выберите ячейку",
+    selectDataRange: "Выбрать диапазон данных",
+    selectCell: "Выбрать ячейку",
     pleaseSelectCell: "Пожалуйста, выберите ячейку",
     pleaseSelectADate: "Пожалуйста, выберите дату",
     pleaseEnterInteger: "Пожалуйста, введите целое число от 1 до 1000",
     onlySingleCell: "Можно ссылаться только на одну ячейку",
     conditionValueCanOnly:
-      "Значение условия может быть только числом или одной ячейкой",
-    ruleTypeItem1:
-      "Форматировать все ячейки на основе их соответствующих значений",
+      "Условное значение может быть только числом или одной ячейкой",
+    ruleTypeItem1: "Форматировать все ячейки на основе их значений",
     ruleTypeItem2: "Форматировать только ячейки, которые содержат",
-    ruleTypeItem2_title:
-      "Только для ячеек, которые отвечают следующим условиям",
+    ruleTypeItem2_title: "Только для ячеек, соответствующих следующим условиям",
     ruleTypeItem3: "Форматировать только верхние или нижние числа",
-    ruleTypeItem3_title: "Является значением в следующем рейтинге",
+    ruleTypeItem3_title: "Значение находится в следующем рейтинге",
     ruleTypeItem4: "Форматировать только значения выше или ниже среднего",
     ruleTypeItem4_title:
-      "Является значением, которое удовлетворяет следующим условиям",
+      "Является значением, удовлетворяющим следующим условиям",
     ruleTypeItem5: "Форматировать только уникальные или повторяющиеся значения",
-    ruleTypeItem6:
-      "Использовать формулы для определения ячеек для форматирования",
+    ruleTypeItem6: "Использовать формулы для определения форматируемых ячеек",
     formula: "Формула",
     textColor: "Цвет текста",
     cellColor: "Цвет ячейки",
@@ -11807,114 +14356,113 @@ export default {
     clearColorSelect: "Очистить выбор цвета",
     sheet: "Лист",
     currentSheet: "Текущий лист",
-    dataBar: "data bar",
-    dataBarColor: "data bar color",
-    gradientDataBar_1: "Blue-white gradient data bar",
-    gradientDataBar_2: "Green-white gradient data bar",
-    gradientDataBar_3: "Red-white gradient data bar",
-    gradientDataBar_4: "Orange-white gradient stripes",
-    gradientDataBar_5: "Light blue-white gradient stripes",
-    gradientDataBar_6: "Purple-white gradient data bar",
-    solidColorDataBar_1: "Blue data bar",
-    solidColorDataBar_2: "Green data bar",
-    solidColorDataBar_3: "Red data bar",
-    solidColorDataBar_4: "Orange data bar",
-    solidColorDataBar_5: "Light blue data bar",
-    solidColorDataBar_6: "Purple data bar",
-    colorGradation: "color gradation",
-    colorGradation_1: "Green-yellow-red color gradation",
-    colorGradation_2: "Red-yellow-green color gradation",
-    colorGradation_3: "Green-white-red color gradation",
-    colorGradation_4: "Red-white-green color gradation",
-    colorGradation_5: "Blue-white-red color gradation",
-    colorGradation_6: "Red-white-blue color gradation",
-    colorGradation_7: "White-red color gradation",
-    colorGradation_8: "Red-white color gradation",
-    colorGradation_9: "Green-white color gradation",
-    colorGradation_10: "White-green color gradation",
-    colorGradation_11: "Green-yellow color gradation",
-    colorGradation_12: "Yellow-green color gradation",
-    icons: "icons",
-    pleaseSelectIcon: "Please click to select a group of icons:",
-    cellValue: "Cell value",
-    specificText: "Specific text",
-    occurrenceDate: "Date",
-    greaterThan: "Greater than",
-    lessThan: "Less than",
-    between: "Between",
-    equal: "Equal",
-    in: "In",
-    to: "To",
+    dataBar: "Гистограмма данных",
+    dataBarColor: "Цвет гистограммы данных",
+    gradientDataBar_1: "Сине-белая градиентная гистограмма",
+    gradientDataBar_2: "Зелено-белая градиентная гистограмма",
+    gradientDataBar_3: "Красно-белая градиентная гистограмма",
+    gradientDataBar_4: "Оранжево-белые градиентные полосы",
+    gradientDataBar_5: "Светло-синие-белые градиентные полосы",
+    gradientDataBar_6: "Фиолетово-белая градиентная гистограмма",
+    solidColorDataBar_1: "Синяя гистограмма данных",
+    solidColorDataBar_2: "Зеленая гистограмма данных",
+    solidColorDataBar_3: "Красная гистограмма данных",
+    solidColorDataBar_4: "Оранжевая гистограмма данных",
+    solidColorDataBar_5: "Светло-синяя гистограмма данных",
+    solidColorDataBar_6: "Фиолетовая гистограмма данных",
+    colorGradation: "Цветовой градиент",
+    colorGradation_1: "Зелено-желто-красный цветовой градиент",
+    colorGradation_2: "Красно-желто-зеленый цветовой градиент",
+    colorGradation_3: "Зелено-белый-красный цветовой градиент",
+    colorGradation_4: "Красно-белый-зеленый цветовой градиент",
+    colorGradation_5: "Сине-белый-красный цветовой градиент",
+    colorGradation_6: "Красно-белый-синий цветовой градиент",
+    colorGradation_7: "Бело-красный цветовой градиент",
+    colorGradation_8: "Красно-белый цветовой градиент",
+    colorGradation_9: "Зелено-белый цветовой градиент",
+    colorGradation_10: "Бело-зеленый цветовой градиент",
+    colorGradation_11: "Зелено-желтый цветовой градиент",
+    colorGradation_12: "Желто-зеленый цветовой градиент",
+    icons: "Иконки",
+    pleaseSelectIcon: "Пожалуйста, выберите группу иконок:",
+    cellValue: "Значение ячейки",
+    specificText: "Конкретный текст",
+    occurrenceDate: "Дата",
+    greaterThan: "Больше чем",
+    lessThan: "Меньше чем",
+    between: "Между",
+    equal: "Равно",
+    in: "В",
     between2: "",
-    contain: "Contain",
-    textContains: "Text contains",
-    duplicateValue: "Duplicate value",
-    uniqueValue: "Unique value",
-    top: "Top",
-    top10: "Top 10",
-    top10_percent: "Top 10%",
-    last: "Last",
-    last10: "Last 10",
-    last10_percent: "Last 10%",
+    contain: "Содержит",
+    textContains: "Текст содержит",
+    duplicateValue: "Дублирующееся значение",
+    uniqueValue: "Уникальное значение",
+    top: "Верх",
+    top10: "Топ 10",
+    top10_percent: "Топ 10%",
+    last: "Последний",
+    last10: "Последние 10",
+    last10_percent: "Последние 10%",
     oneself: "",
-    above: "Above",
-    aboveAverage: "Above average",
-    below: "Below",
-    belowAverage: "Below average",
-    all: "All",
-    yesterday: "YTD",
-    today: "Today",
-    tomorrow: "Tomorrow",
-    lastWeek: "Last week",
-    thisWeek: "This week",
-    lastMonth: "Last month",
-    thisMonth: "This month",
-    lastYear: "Last year",
-    thisYear: "This year",
-    last7days: "Last 7 days",
-    last30days: "Last 30 days",
-    next7days: "Next 7 days",
-    next30days: "Next 30 days",
-    next60days: "Next 60 days",
-    chooseRuleType: "Choose rule type",
-    editRuleDescription: "Edit rule description",
-    newFormatRule: "New format rule",
-    editFormatRule: "Edit format rule",
-    formatStyle: "Style",
-    fillType: "Fill",
-    color: "Color",
-    twocolor: "Two-color",
-    tricolor: "Tricolor",
-    multicolor: "Multi color",
-    grayColor: "Gray color",
-    gradient: "Gradient",
-    solid: "Solid",
-    maxValue: "Max value",
-    medianValue: "Median value",
-    minValue: "Min value",
-    direction: "Direction",
-    threeWayArrow: "Three-way arrow",
-    fourWayArrow: "Four-way arrow",
-    fiveWayArrow: "Five-way arrow",
-    threeTriangles: "Three triangles",
-    shape: "Shape",
-    threeColorTrafficLight: "Three-color traffic light",
-    fourColorTrafficLight: "Four-color traffic light",
-    threeSigns: "Three signs",
-    greenRedBlackGradient: "Green-red-black gradient",
-    rimless: "Rimless",
-    bordered: "Bordered",
-    mark: "Mark",
-    threeSymbols: "Three symbols",
-    tricolorFlag: "Tricolor flag",
-    circled: "Circled",
-    noCircle: "No circle",
-    grade: "Grade",
-    grade4: "4 Grade",
-    grade5: "5 Grade",
-    threeStars: "3 Stars",
-    fiveQuadrantDiagram: "Five-quadrant diagram",
-    fiveBoxes: "5 Boxes",
+    above: "Выше",
+    aboveAverage: "Выше среднего",
+    below: "Ниже",
+    belowAverage: "Ниже среднего",
+    all: "Все",
+    yesterday: "Вчера",
+    today: "Сегодня",
+    tomorrow: "Завтра",
+    lastWeek: "Прошлая неделя",
+    thisWeek: "Эта неделя",
+    lastMonth: "Прошлый месяц",
+    thisMonth: "Этот месяц",
+    lastYear: "Прошлый год",
+    thisYear: "Этот год",
+    last7days: "Последние 7 дней",
+    last30days: "Последние 30 дней",
+    next7days: "Следующие 7 дней",
+    next30days: "Следующие 30 дней",
+    next60days: "Следующие 60 дней",
+    chooseRuleType: "Выбрать тип правила",
+    editRuleDescription: "Редактировать описание правила",
+    newFormatRule: "Новое правило форматирования",
+    editFormatRule: "Редактировать правило форматирования",
+    formatStyle: "Стиль",
+    fillType: "Заливка",
+    color: "Цвет",
+    twocolor: "Двухцветный",
+    tricolor: "Трехцветный",
+    multicolor: "Многоцветный",
+    grayColor: "Серый цвет",
+    gradient: "Градиент",
+    solid: "Сплошной",
+    maxValue: "Максимальное значение",
+    medianValue: "Медианное значение",
+    minValue: "Минимальное значение",
+    direction: "Направление",
+    threeWayArrow: "Трехсторонняя стрелка",
+    fourWayArrow: "Четырехсторонняя стрелка",
+    fiveWayArrow: "Пятисторонняя стрелка",
+    threeTriangles: "Три треугольника",
+    shape: "Форма",
+    threeColorTrafficLight: "Трехцветный светофор",
+    fourColorTrafficLight: "Четырехцветный светофор",
+    threeSigns: "Три знака",
+    greenRedBlackGradient: "Зелено-красно-черный градиент",
+    rimless: "Без рамки",
+    bordered: "С рамкой",
+    mark: "Метка",
+    threeSymbols: "Три символа",
+    tricolorFlag: "Трехцветный флаг",
+    circled: "С окружностью",
+    noCircle: "Без окружности",
+    grade: "Оценка",
+    grade4: "4 оценки",
+    grade5: "5 оценок",
+    threeStars: "3 звезды",
+    fiveQuadrantDiagram: "Пятиквадрантная диаграмма",
+    fiveBoxes: "5 коробок",
   },
   insertLink: {
     linkText: "Отображаемый текст",
@@ -11923,21 +14471,31 @@ export default {
     linkSheet: "Лист",
     linkCell: "Диапазон ячеек",
     linkTooltip: "Подсказка",
-    selectCellRange: "Выберите диапазон ячеек",
-    cellRangePlaceholder: "Выберите ячейки курсором или введите напрямую",
+    selectCellRange: "Выбрать диапазон ячеек",
+    cellRangePlaceholder:
+      "Выберите ячейки с помощью курсора или введите напрямую",
     placeholder1: "Пожалуйста, введите адрес веб-ссылки",
-    placeholder2: "Пожалуйста, введите ячейку для цитирования, например A1",
-    placeholder3: "Пожалуйста, введите содержимое подсказки",
+    placeholder2: "Пожалуйста, введите ячейку для ссылки, например, A1",
+    placeholder3: "Пожалуйста, введите текст подсказки",
     tooltipInfo1: "Пожалуйста, введите действительную ссылку",
     invalidCellRangeTip:
-      "Пожалуйста, введите правильный диапазон ячеек, например Sheet1!A1:C8",
+      "Пожалуйста, введите правильный диапазон ячеек, например, Sheet1!A1:C8",
     openLink: "Открыть ссылку",
     goTo: "Перейти к ${linkAddress}",
   },
   linkTypeList: [
-    { text: "Веб-страницы", value: "webpage" },
-    { text: "Диапазон ячеек", value: "cellrange" },
-    { text: "Лист", value: "sheet" },
+    {
+      text: "Веб-страницы",
+      value: "webpage",
+    },
+    {
+      text: "Диапазон ячеек",
+      value: "cellrange",
+    },
+    {
+      text: "Лист",
+      value: "sheet",
+    },
   ],
   dataVerification: {
     cellRange: "Диапазон ячеек",
@@ -11945,7 +14503,7 @@ export default {
     selectCellRange2: "Пожалуйста, выберите диапазон ячеек",
     verificationCondition: "Условие проверки",
     allowMultiSelect: "Разрешить множественный выбор",
-    dropdown: "выпадающий список",
+    dropdown: "Выпадающий список",
     checkbox: "Флажок",
     number: "Число",
     number_integer: "Число-целое",
@@ -11954,13 +14512,11 @@ export default {
     text_length: "Текст-длина",
     date: "Дата",
     validity: "Действительность",
-    placeholder1:
-      "Пожалуйста, введите варианты, разделенные запятыми, например 1,2,3,4,5",
-    placeholder2: "Пожалуйста, введите содержимое",
-    placeholder3: "Числовое значение, например 10",
-    placeholder4: "Пожалуйста, введите указанный текст",
-    placeholder5:
-      "Пожалуйста, введите подсказку, отображаемую при выборе ячейки",
+    placeholder1: "Введите варианты, разделенные запятыми, например, 1,2,3,4,5",
+    placeholder2: "Введите содержимое",
+    placeholder3: "Числовое значение, например, 10",
+    placeholder4: "Введите указанный текст",
+    placeholder5: "Введите подсказку, отображаемую при выборе ячейки",
     selected: "Выбрано",
     notSelected: "Не выбрано",
     between: "Между",
@@ -11971,19 +14527,19 @@ export default {
     lessThan: "Меньше чем",
     greaterOrEqualTo: "Больше или равно",
     lessThanOrEqualTo: "Меньше или равно",
-    include: "Включить",
-    exclude: "Исключить",
-    earlierThan: "Раньше чем",
-    noEarlierThan: "Не раньше чем",
+    include: "Включает",
+    exclude: "Исключает",
+    earlierThan: "Ранее чем",
+    noEarlierThan: "Не ранее чем",
     laterThan: "Позже чем",
     noLaterThan: "Не позже чем",
     identificationNumber: "Идентификационный номер",
     phoneNumber: "Номер телефона",
-    remote: "Автоматическое удаленное получение опции",
-    prohibitInput: "Запретить ввод при неправильных входных данных",
+    remote: "Автоматический удаленный выбор",
+    prohibitInput: "Запретить ввод при недействительных данных",
     hintShow: "Показать подсказку при выборе ячейки",
     deleteVerification: "Удалить проверку",
-    tooltipInfo1: "Опция выпадающего списка не может быть пустой",
+    tooltipInfo1: "Вариант выпадающего списка не может быть пустым",
     tooltipInfo2: "Содержимое флажка не может быть пустым",
     tooltipInfo3: "Введенное значение не является числовым типом",
     tooltipInfo4: "Значение 2 не может быть меньше значения 1",
@@ -11991,7 +14547,7 @@ export default {
     tooltipInfo6: "Введенное значение не является типом даты",
     tooltipInfo7: "Дата 2 не может быть меньше даты 1",
     textlengthInteger:
-      "Длина текста должна быть целым числом больше или равным 0",
+      "Длина текста должна быть целым числом, большим или равным 0",
   },
   formula: {
     sum: "Сумма",
@@ -12001,261 +14557,232 @@ export default {
     min: "Минимум",
     ifGenerate: "Генератор формулы IF",
     find: "Узнать больше",
-
-    tipNotBelongToIf: "Эта функция ячейки не принадлежит формуле if!",
+    tipNotBelongToIf: "Эта функция ячейки не относится к формуле IF!",
     tipSelectCell: "Пожалуйста, выберите ячейку для вставки функции",
-
-    ifGenCompareValueTitle: "Comparison value",
-    ifGenSelectCellTitle: "Click to select cell",
-    ifGenRangeTitle: "Range",
-    ifGenRangeTo: "to",
-    ifGenRangeEvaluate: "Range evaluate",
-    ifGenSelectRangeTitle: "Click to select range",
-    ifGenCutWay: "Partition way",
-    ifGenCutSame: "Same Partition value",
-    ifGenCutNpiece: "Partition by N",
-    ifGenCutCustom: "Custom",
-    ifGenCutConfirm: "Confirm",
-
-    ifGenTipSelectCell: "Select cells",
-    ifGenTipSelectCellPlace: "Please select cells",
-
-    ifGenTipSelectRange: "Select range",
-    ifGenTipSelectRangePlace: "Please select range",
-
-    ifGenTipNotNullValue: "The comparison value cannot be empty!",
-    ifGenTipLableTitile: "Label",
-    ifGenTipRangeNotforNull: "The range cannot be empty!",
-    ifGenTipCutValueNotforNull: "The partition value cannot be empty!",
-    ifGenTipNotGenCondition: "No conditions are available for generation!",
+    ifGenCompareValueTitle: "Значение для сравнения",
+    ifGenSelectCellTitle: "Нажмите, чтобы выбрать ячейку",
+    ifGenRangeTitle: "Диапазон",
+    ifGenRangeTo: "до",
+    ifGenRangeEvaluate: "Оценка диапазона",
+    ifGenSelectRangeTitle: "Нажмите, чтобы выбрать диапазон",
+    ifGenCutWay: "Способ разделения",
+    ifGenCutSame: "Одинаковое значение разделения",
+    ifGenCutNpiece: "Разделение на N частей",
+    ifGenCutCustom: "Пользовательское",
+    ifGenCutConfirm: "Подтвердить",
+    ifGenTipSelectCell: "Выбрать ячейки",
+    ifGenTipSelectCellPlace: "Пожалуйста, выберите ячейки",
+    ifGenTipSelectRange: "Выбрать диапазон",
+    ifGenTipSelectRangePlace: "Пожалуйста, выберите диапазон",
+    ifGenTipNotNullValue: "Значение для сравнения не может быть пустым!",
+    ifGenTipLableTitile: "Метка",
+    ifGenTipRangeNotforNull: "Диапазон не может быть пустым!",
+    ifGenTipCutValueNotforNull: "Значение разделения не может быть пустым!",
+    ifGenTipNotGenCondition: "Нет доступных условий для генерации!",
   },
   formulaMore: {
-    valueTitle: "Value",
-    tipSelectDataRange: "Select data range",
-    tipDataRangeTile: "Data range",
-    findFunctionTitle: "Search function",
-    tipInputFunctionName: "Function name or brief description of function",
-
-    Array: "Array",
-    Database: "Database",
-    Date: "Date",
-    Engineering: "Engineering",
-    Filter: "Filter",
-    Financial: "Financial",
+    valueTitle: "Значение",
+    tipSelectDataRange: "Выбрать диапазон данных",
+    tipDataRangeTile: "Диапазон данных",
+    findFunctionTitle: "Поиск функции",
+    tipInputFunctionName: "Имя функции или краткое описание функции",
+    Array: "Массив",
+    Database: "База данных",
+    Date: "Дата",
+    Engineering: "Инженерия",
+    Filter: "Фильтр",
+    Financial: "Финансы",
     luckysheet: "Luckysheet",
-    other: "Other",
-    Logical: "Logical",
-    Lookup: "Lookup",
-    Math: "Math",
-    Operator: "Operator",
-    Parser: "Parser",
-    Statistical: "Statistical",
-    Text: "Text",
-    dataMining: "Data Mining",
-
-    selectFunctionTitle: "Select a function",
-    calculationResult: "Result",
-
-    tipSuccessText: "Success",
-    tipParamErrorText: "Parameter type error",
-
-    helpClose: "Close",
-    helpCollapse: "Collapse",
-    helpExample: "Example",
-    helpAbstract: "Abstract",
-
-    execfunctionError: "Error in the formula",
-    execfunctionSelfError: "The formula cannot refer to its own cell",
+    other: "Другое",
+    Logical: "Логические",
+    Lookup: "Поиск",
+    Math: "Математика",
+    Operator: "Оператор",
+    Parser: "Парсер",
+    Statistical: "Статистика",
+    Text: "Текст",
+    dataMining: "Анализ данных",
+    selectFunctionTitle: "Выбрать функцию",
+    calculationResult: "Результат",
+    tipSuccessText: "Успех",
+    tipParamErrorText: "Ошибка типа параметра",
+    helpClose: "Закрыть",
+    helpCollapse: "Свернуть",
+    helpExample: "Пример",
+    helpAbstract: "Аннотация",
+    execfunctionError: "Ошибка в формуле",
+    execfunctionSelfError: "Формула не может ссылаться на собственную ячейку",
     execfunctionSelfErrorResult:
-      "The formula cannot refer to its own cell, which will lead to inaccurate calculation results",
-
-    allowRepeatText: "Repeatable",
-    allowOptionText: "Optional",
-
-    selectCategory: "Or select a category",
+      "Формула не может ссылаться на собственную ячейку, что приведет к неточным результатам вычислений",
+    allowRepeatText: "Повторяемый",
+    allowOptionText: "Необязательный",
+    selectCategory: "Или выберите категорию",
   },
   drag: {
-    noMerge: "Cannot perform this operation on merged cells",
+    noMerge: "Невозможно выполнить эту операцию для объединенных ячеек",
     affectPivot:
-      "This change cannot be made to the selected cell because it will affect the pivot table!",
+      "Это изменение нельзя применить к выбранной ячейке, так как оно повлияет на сводную таблицу!",
     noMulti:
-      "Cannot perform this operation on multiple selection areas, please select a single area",
+      "Невозможно выполнить эту операцию для нескольких выбранных областей, выберите одну область",
     noPaste:
-      "Unable to paste this content here, please select a cell in the paste area and try to paste again",
-    noPartMerge: "Cannot perform this operation on partially merged cells",
-
-    inputCorrect: "Please enter the correct value",
-    notLessOne: "The number of rows and columns cannot be less than 1",
-    offsetColumnLessZero: "The offset column cannot be negative!",
-
+      "Невозможно вставить это содержимое здесь, выберите ячейку в области вставки и попробуйте снова",
+    noPartMerge:
+      "Невозможно выполнить эту операцию для частично объединенных ячеек",
+    inputCorrect: "Пожалуйста, введите правильное значение",
+    notLessOne: "Количество строк и столбцов не может быть меньше 1",
+    offsetColumnLessZero: "Смещение столбца не может быть отрицательным!",
     pasteMustKeybordAlert:
-      "在表格中进行复制粘贴: Ctrl + C 进行复制, Ctrl + V 进行粘贴, Ctrl + X 进行剪切",
-    pasteMustKeybordAlertHTMLTitle: "在表格中进行复制粘贴",
+      "В таблице для копирования и вставки: Ctrl + C для копирования, Ctrl + V для вставки, Ctrl + X для вырезания",
+    pasteMustKeybordAlertHTMLTitle: "В таблице для копирования и вставки",
     pasteMustKeybordAlertHTML:
-      "<span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + C</span>&nbsp;&nbsp;进行复制<br/><span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + V</span>&nbsp;&nbsp;进行粘贴<br/><span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + X</span>&nbsp;&nbsp;进行剪切",
+      "<span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + C</span> для копирования<br/><span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + V</span> для вставки<br/><span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + X</span> для вырезания",
   },
   pivotTable: {
-    title: "Pivot Table",
-    closePannel: "Close",
-    editRange: "Range",
-    tipPivotFieldSelected: "Select the fields",
-    tipClearSelectedField: "Clear all fields",
-    btnClearSelectedField: "Clear",
-    btnFilter: "Filter",
-    titleRow: "Row",
-    titleColumn: "Column",
-    titleValue: "Value",
-    tipShowColumn: "Statistics fields are displayed as columns",
-    tipShowRow: "Statistics fields are displayed as rows",
-
-    titleSelectionDataRange: "Select range",
-    titleDataRange: "Data range",
-
-    valueSum: "SUM",
-
-    valueStatisticsSUM: "Sum",
-    valueStatisticsCOUNT: "Count",
-    valueStatisticsCOUNTA: "Count A",
-    valueStatisticsCOUNTUNIQUE: "Count Unique",
-    valueStatisticsAVERAGE: "Average",
-    valueStatisticsMAX: "Max",
-    valueStatisticsMIN: "Min",
-    valueStatisticsMEDIAN: "Median",
-    valueStatisticsPRODUCT: "Product",
-    valueStatisticsSTDEV: "Stdev",
-
-    valueStatisticsSTDEVP: "Stdevp",
-    valueStatisticslet: "Var",
-    valueStatisticsVARP: "VarP",
-
-    errorNotAllowEdit: "This operation is prohibited in non-editing mode!",
+    title: "Сводная таблица",
+    closePannel: "Закрыть",
+    editRange: "Диапазон",
+    tipPivotFieldSelected: "Выберите поля",
+    tipClearSelectedField: "Очистить все поля",
+    btnClearSelectedField: "Очистить",
+    btnFilter: "Фильтр",
+    titleRow: "Строка",
+    titleColumn: "Столбец",
+    titleValue: "Значение",
+    tipShowColumn: "Статистические поля отображаются как столбцы",
+    tipShowRow: "Статистические поля отображаются как строки",
+    titleSelectionDataRange: "Выбрать диапазон",
+    titleDataRange: "Диапазон данных",
+    valueSum: "СУММА",
+    valueStatisticsSUM: "Сумма",
+    valueStatisticsCOUNT: "Количество",
+    valueStatisticsCOUNTA: "Количество A",
+    valueStatisticsCOUNTUNIQUE: "Количество уникальных",
+    valueStatisticsAVERAGE: "Среднее",
+    valueStatisticsMAX: "Максимум",
+    valueStatisticsMIN: "Минимум",
+    valueStatisticsMEDIAN: "Медиана",
+    valueStatisticsPRODUCT: "Произведение",
+    valueStatisticsSTDEV: "Стандартное отклонение",
+    valueStatisticsSTDEVP: "Стандартное отклонение популяции",
+    valueStatisticslet: "Дисперсия",
+    valueStatisticsVARP: "Дисперсия популяции",
+    errorNotAllowEdit: "Эта операция запрещена в режиме без редактирования!",
     errorNotAllowMulti:
-      "Cannot perform this operation on multiple selection areas, please select a single range and try again",
-    errorSelectRange: "Please select the range of the new pivot table",
-    errorIsDamage: "The source data of this pivot table is corrupted!",
-    errorNotAllowPivotData: "Cannot select pivot table as source data!",
-    errorSelectionRange: "Selection failed, wrong input range!",
-    errorIncreaseRange: "Please expand the selected range!",
-
-    titleAddColumn: "Add column to pivot table",
-    titleMoveColumn: "Move the column to the white box below",
-    titleClearColumnFilter: "Clear the filter for this column",
-    titleFilterColumn: "Filter",
-
-    titleSort: "Sort",
-    titleNoSort: "No sort",
-    titleSortAsc: "ASC",
-    titleSortDesc: "DESC",
-    titleSortBy: "Sort by",
-    titleShowSum: "Show total",
-    titleStasticTrue: "Yes",
-    titleStasticFalse: "No",
+      "Невозможно выполнить эту операцию для нескольких выбранных областей, выберите один диапазон и попробуйте снова",
+    errorSelectRange: "Выберите диапазон для новой сводной таблицы",
+    errorIsDamage: "Исходные данные этой сводной таблицы повреждены!",
+    errorNotAllowPivotData:
+      "Невозможно выбрать сводную таблицу в качестве исходных данных!",
+    errorSelectionRange: "Ошибка выбора, неверный диапазон ввода!",
+    errorIncreaseRange: "Пожалуйста, расширьте выбранный диапазон!",
+    titleAddColumn: "Добавить столбец в сводную таблицу",
+    titleMoveColumn: "Переместить столбец в белое поле ниже",
+    titleClearColumnFilter: "Очистить фильтр для этого столбца",
+    titleFilterColumn: "Фильтр",
+    titleSort: "Сортировка",
+    titleNoSort: "Без сортировки",
+    titleSortAsc: "По возрастанию",
+    titleSortDesc: "По убыванию",
+    titleSortBy: "Сортировать по",
+    titleShowSum: "Показать итог",
+    titleStasticTrue: "Да",
+    titleStasticFalse: "Нет",
   },
   dropCell: {
-    copyCell: "Copy",
-    sequence: "Sequence",
-    onlyFormat: "Only format",
-    noFormat: "Not format",
-    day: "Day",
-    workDay: "Work Day",
-    month: "Month",
-    year: "Year",
-    chineseNumber: "Chinese numbers",
+    copyCell: "Копировать",
+    sequence: "Последовательность",
+    onlyFormat: "Только формат",
+    noFormat: "Без формата",
+    day: "День",
+    workDay: "Рабочий день",
+    month: "Месяц",
+    year: "Год",
+    chineseNumber: "Китайские числа",
   },
   imageCtrl: {
-    borderTile: "Image border color",
-    borderCur: "Color",
+    borderTile: "Цвет границы изображения",
+    borderCur: "Цвет",
   },
   protection: {
-    protectiontTitle: "Protection",
-    enterPassword: "Enter a password (optional)",
-    enterHintTitle: "Prompt when editing is prohibited (optional)",
+    protectiontTitle: "Защита",
+    enterPassword: "Введите пароль (необязательно)",
+    enterHintTitle: "Подсказка при запрете редактирования (необязательно)",
     enterHint:
-      "The cell or chart you are trying to change is in a protected worksheet. If you want to change it, please unprotect the worksheet. You may need to enter a password",
-    swichProtectionTip: "Protect the sheet and contents of locked cells",
-    authorityTitle: "Allow users of this sheet to:",
-    selectLockedCells: "Select locked cells",
-    selectunLockedCells: "Select unlocked cells",
-    formatCells: "Format cells",
-    formatColumns: "Format columns",
-    formatRows: "Format rows",
-    insertColumns: "Insert columns",
-    insertRows: "Insert rows",
-    insertHyperlinks: "Insert hyperlinks",
-    deleteColumns: "Delete columns",
-    deleteRows: "Delete rows",
-    sort: "Sort",
-    filter: "Filter",
-    usePivotTablereports: "Use Pivot Table reports",
-    editObjects: "Edit objects",
-    editScenarios: "Edit scenarios",
-
-    allowRangeTitle: "Allow users of range to:",
-    allowRangeAdd: "New...",
-
-    allowRangeAddTitle: "Title",
-    allowRangeAddSqrf: "Reference",
-    selectCellRange: "Click to select a cell range",
-    selectCellRangeHolder: "Cell range",
-    allowRangeAddTitlePassword: "Password",
-    allowRangeAddTitleHint: "Prompt",
-    allowRangeAddTitleHintTitle: "Prompt when a password is set (optional)",
-    allowRangeAddtitleDefault: "Input range name",
-
-    rangeItemDblclick: "Double click to edit",
-    rangeItemHasPassword: "Has password",
-
-    rangeItemErrorTitleNull: "Title is null",
-    rangeItemErrorRangeNull: "Reference is null",
-    rangeItemErrorRange: "Reference is error",
-
-    validationTitle: "Password validation",
-    validationTips:
-      "Need to enter a password to unlock the protection of the worksheet",
-    validationInputHint: "Enter a password",
-
-    checkPasswordNullalert: "Password is required!",
-    checkPasswordWrongalert: "Incorrect password, please try again!",
-
-    checkPasswordSucceedalert: "Unlock Succeed!",
-    defaultRangeHintText: "The cell is being password protected.",
+      "Ячейка или диаграмма, которую вы пытаетесь изменить, находится на защищенном листе. Чтобы внести изменения, снимите защиту с листа. Возможно, потребуется ввести пароль",
+    swichProtectionTip: "Защитить лист и содержимое заблокированных ячеек",
+    authorityTitle: "Разрешить пользователям этого листа:",
+    selectLockedCells: "Выбирать заблокированные ячейки",
+    selectunLockedCells: "Выбирать разблокированные ячейки",
+    formatCells: "Форматировать ячейки",
+    formatColumns: "Форматировать столбцы",
+    formatRows: "Форматировать строки",
+    insertColumns: "Вставлять столбцы",
+    insertRows: "Вставлять строки",
+    insertHyperlinks: "Вставлять гиперссылки",
+    deleteColumns: "Удалять столбцы",
+    deleteRows: "Удалять строки",
+    sort: "Сортировать",
+    filter: "Фильтровать",
+    usePivotTablereports: "Использовать отчеты сводной таблицы",
+    editObjects: "Редактировать объекты",
+    editScenarios: "Редактировать сценарии",
+    allowRangeTitle: "Разрешить пользователям диапазона:",
+    allowRangeAdd: "Добавить...",
+    allowRangeAddTitle: "Название",
+    allowRangeAddSqrf: "Ссылка",
+    selectCellRange: "Нажмите, чтобы выбрать диапазон ячеек",
+    selectCellRangeHolder: "Диапазон ячеек",
+    allowRangeAddTitlePassword: "Пароль",
+    allowRangeAddTitleHint: "Подсказка",
+    allowRangeAddTitleHintTitle:
+      "Подсказка при установке пароля (необязательно)",
+    allowRangeAddtitleDefault: "Введите имя диапазона",
+    rangeItemDblclick: "Двойной щелчок для редактирования",
+    rangeItemHasPassword: "Имеет пароль",
+    rangeItemErrorTitleNull: "Название пустое",
+    rangeItemErrorRangeNull: "Ссылка пустая",
+    rangeItemErrorRange: "Ссылка содержит ошибку",
+    validationTitle: "Проверка пароля",
+    validationTips: "Необходимо ввести пароль для снятия защиты с листа",
+    validationInputHint: "Введите пароль",
+    checkPasswordNullalert: "Требуется пароль!",
+    checkPasswordWrongalert: "Неверный пароль, попробуйте снова!",
+    checkPasswordSucceedalert: "Разблокировка успешна!",
+    defaultRangeHintText: "Ячейка защищена паролем.",
     defaultSheetHintText:
-      "The cell or chart is in a protected worksheet. To make changes, please unprotect the worksheet. You may need to enter a password",
+      "Ячейка или диаграмма находится на защищенном листе. Для внесения изменений снимите защиту с листа. Возможно, потребуется ввести пароль",
   },
   cellFormat: {
-    cellFormatTitle: "Format cells",
-    protection: "Protection",
-    locked: "Locked",
-    hidden: "Hidden",
+    cellFormatTitle: "Форматировать ячейки",
+    protection: "Защита",
+    locked: "Заблокировано",
+    hidden: "Скрыто",
     protectionTips:
-      "To lock cells or hide formulas, protect the worksheet. On the toolbar, Click Protect Sheet Button",
-    tipsPart: "Partial checked",
-    tipsAll: "All checked",
-
-    selectionIsNullAlert: "Selection is required!",
-    sheetDataIsNullAlert: "error, Data is none!",
+      "Чтобы заблокировать ячейки или скрыть формулы, защитите лист. На панели инструментов нажмите кнопку «Защитить лист»",
+    tipsPart: "Частично выбрано",
+    tipsAll: "Все выбрано",
+    selectionIsNullAlert: "Требуется выбор!",
+    sheetDataIsNullAlert: "Ошибка, данные отсутствуют!",
   },
   print: {
-    normalBtn: "Normal",
-    layoutBtn: "Page Layout",
-    pageBtn: "Page break preview",
-
-    menuItemPrint: "Print (Ctrl+P)",
-    menuItemAreas: "Print areas",
-    menuItemRows: "Print title rows",
-    menuItemColumns: "Print title columns",
+    normalBtn: "Обычный",
+    layoutBtn: "Макет страницы",
+    pageBtn: "Предпросмотр разрывов страниц",
+    menuItemPrint: "Печать (Ctrl+P)",
+    menuItemAreas: "Области печати",
+    menuItemRows: "Печатать заголовки строк",
+    menuItemColumns: "Печатать заголовки столбцов",
   },
   edit: {
-    typing: "typing",
+    typing: "ввод",
   },
   websocket: {
-    success: "WebSocket connection success",
-    refresh:
-      "An error occurred in the WebSocket connection, please refresh the page!",
-    wait: "An error occurred in the WebSocket connection, please be patient!",
-    close: "WebSocket connection closed",
+    success: "Успешное соединение WebSocket",
+    refresh: "Произошла ошибка в соединении WebSocket, обновите страницу!",
+    wait: "Произошла ошибка в соединении WebSocket, пожалуйста, подождите!",
+    close: "Соединение WebSocket закрыто",
     contact:
-      "Server communication error occurred, please refresh the page and try again, if not, please contact the administrator!",
-    support: "The current browser does not support WebSocket",
+      "Произошла ошибка связи с сервером, обновите страницу и попробуйте снова, если не помогает, свяжитесь с администратором!",
+    support: "Текущий браузер не поддерживает WebSocket",
   },
 };
