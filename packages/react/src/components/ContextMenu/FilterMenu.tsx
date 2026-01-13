@@ -203,9 +203,7 @@ const FilterMenu: React.FC = () => {
     });
   }, [setContext]);
 
-  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, close, [
-    close,
-  ]);
+  useOutsideClick(containerRef, close, [close]);
 
   const initialExpand = useCallback((key: string) => {
     const expand = dateTreeExpandState.current[key];

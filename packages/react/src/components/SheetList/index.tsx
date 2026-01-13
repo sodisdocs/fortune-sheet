@@ -14,9 +14,7 @@ const SheetList: React.FC = () => {
       ctx.showSheetList = false;
     });
   }, [setContext]);
-  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, close, [
-    close,
-  ]);
+  useOutsideClick(containerRef, close, [close]);
 
   return (
     <div

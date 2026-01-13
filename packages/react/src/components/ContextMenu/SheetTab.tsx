@@ -39,9 +39,7 @@ const SheetTabContextMenu: React.FC = () => {
     }
   }, [x, y]);
 
-  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, close, [
-    close,
-  ]);
+  useOutsideClick(containerRef, close, [close]);
 
   const moveSheet = useCallback(
     (delta: number) => {

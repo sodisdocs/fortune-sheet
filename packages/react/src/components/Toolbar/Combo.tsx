@@ -35,7 +35,7 @@ const Combo: React.FC<Props> = ({
   const buttonRef = useRef<HTMLDivElement>(null);
   const { info } = locale(context);
 
-  useOutsideClick(popupRef as React.RefObject<HTMLDivElement>, () => {
+  useOutsideClick(popupRef, () => {
     setOpen(false);
   });
 

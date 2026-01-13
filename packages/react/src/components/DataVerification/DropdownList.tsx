@@ -33,9 +33,7 @@ const DropDownList: React.FC = () => {
     });
   }, [setContext]);
 
-  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, close, [
-    close,
-  ]);
+  useOutsideClick(containerRef, close, [close]);
 
   // 初始化
   useEffect(() => {

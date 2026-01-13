@@ -7,7 +7,7 @@ const MoreItemsContaier: React.FC<{
 }> = ({ onClose, children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   useOutsideClick(
-    containerRef as React.RefObject<HTMLDivElement>,
+    containerRef,
     () => {
       onClose?.();
     },
