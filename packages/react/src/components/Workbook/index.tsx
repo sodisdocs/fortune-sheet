@@ -670,6 +670,8 @@ const Workbook = React.forwardRef<WorkbookInstance, Settings & AdditionalProps>(
               ) as number
             ].data!.length;
           const range = context.luckysheet_select_save;
+
+          // Объединяем добавление строк и вставку данных в один setContextWithProduce
           if (rowToBeAdded > 0) {
             const insertRowColOp: SetContextOptions["insertRowColOp"] = {
               type: "row",
@@ -688,19 +690,28 @@ const Workbook = React.forwardRef<WorkbookInstance, Settings & AdditionalProps>(
               (draftCtx) => {
                 insertRowCol(draftCtx, insertRowColOp);
                 draftCtx.luckysheet_select_save = range;
+
+                // Call handlePaste in the same context after adding rows
+                try {
+                  handlePaste(draftCtx, e);
+                } catch (err: any) {
+                  console.error(err);
+                }
               },
               {
                 insertRowColOp,
               }
             );
+          } else {
+            // If no rows need to be added, just paste the data
+            setContextWithProduce((draftCtx) => {
+              try {
+                handlePaste(draftCtx, e);
+              } catch (err: any) {
+                console.error(err);
+              }
+            });
           }
-          setContextWithProduce((draftCtx) => {
-            try {
-              handlePaste(draftCtx, e);
-            } catch (err: any) {
-              console.error(err);
-            }
-          });
         }
       },
       [context, setContextWithProduce]
