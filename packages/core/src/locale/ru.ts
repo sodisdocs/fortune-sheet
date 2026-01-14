@@ -14393,6 +14393,7 @@ export default {
     between: "Между",
     equal: "Равно",
     in: "В",
+    to: "до",
     between2: "",
     contain: "Содержит",
     textContains: "Текст содержит",
